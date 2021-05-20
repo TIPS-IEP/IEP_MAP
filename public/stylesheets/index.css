@@ -1,4 +1,11 @@
 #map{
+<<<<<<< HEAD
     width: 800px;
     height: 600px;
+=======
+    display: none;
+}
+.hello {
+    color: aqua;
+>>>>>>> 71ef6673477b4cb3751d19f5342e2449f6fb5c9f
 }
