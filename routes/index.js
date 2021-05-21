@@ -10,5 +10,9 @@ router.get('/map', function(req, res, next) {
   res.render('map');
 });
 
+router.get('/signin', function(req, res, next) {
+  res.render('testsignin');
+});
+
 module.exports = router;
 
