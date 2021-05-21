@@ -18,5 +18,12 @@ router.get('/signin', function(req, res, next) {
   res.render('test/testsignin', {formaData: {}, errors: {}});
 });
 
+// router.post('/login', function(req, res, next) {
+  
+// })
+// router.post('/signin', function(req, res, next) {
+  
+// })
+
 module.exports = router;
 

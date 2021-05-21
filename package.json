@@ -1,24 +1,18 @@
-module.exports = {
-  "development": {
-    "username": "express-mvp-dbuser",
-    "password": '123.456',
-    "database": "express-mvp-db",
-    "host": "127.0.0.1",
-    "dialect": "postgres",
-    "port" : 5432
+{
+  "name": "iep",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
   },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pg": "^8.6.0",
+    "pug": "2.0.0-beta11",
+    "sequelize": "^6.6.2"
   }
 }
