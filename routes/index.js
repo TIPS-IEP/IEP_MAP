@@ -11,11 +11,11 @@ router.get('/map', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next) {
-  res.render('test/testlogin');
+  res.render('test/testlogin', {formaData: {}, errors: {}});
 });
 
 router.get('/signin', function(req, res, next) {
-  res.render('test/testsignin');
+  res.render('test/testsignin', {formaData: {}, errors: {}});
 });
 
 module.exports = router;
