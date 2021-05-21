@@ -8,7 +8,7 @@ function initMap() {
   });
 
   var georssLayer = new google.maps.KmlLayer({
-    url: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBe1QeUX_0RUClAA5hJjpXB6XKw7icJy3A&libraries=geometry&callback=initMap'
+    url: 'https://www.google.com/maps/d/u/0/embed?mid=1sItIYWAALKvp2787yj9uxeYB3rQGoJi1'
   });
   georssLayer.setMap(map);
 }
