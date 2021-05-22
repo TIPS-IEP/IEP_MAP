@@ -41,22 +41,12 @@ module.exports = (sequelize, DataTypes) => {
 //University Data
 module.exports = (sequelize, DataTypes) => {
   var University = sequelize.define('University', {
-    id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      allowNull: false,
-      primaryKey: true
-    },
-    englishName: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    university: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    email: {
-      type: DataTypes.STRING,
+    location_lat: {
+      type: DataTypes.DOUBLE,
       allowNull: false,
       unique: true
     },
