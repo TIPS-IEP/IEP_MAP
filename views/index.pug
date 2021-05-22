@@ -16,45 +16,74 @@ html(lang='en')
   
     //- center website 
     meta(name='viewport' content='width=device-width, initial-scale=1')
-    style.
-      body {
-      background: #555;
-      }
-      .content {
-      max-width: 1000px;
-      margin: auto;
-      background: white;
-      padding: 10px;
-      }
     
-  body 
+  body
     div(class="content")
     .content
       h1 Wego Alumni Network 
-      h1 Resize the browser window to see the effect.
       p
-        | This page is always centered on screens that are wider than 500px. On screens that are less than
-        | 500px wide, it will span the whole of the page.
-    .container
-  div(style='text-align:center')
-    h2 Contact Us
-    p Swing by for a cup of coffee, or leave us a message:
-  .row
-    .column
-      img(src='/w3images/map.jpg' style='width:100%')
-    .column
-      form(action='/action_page.php')
-        label(for='fname') First Name
-        input#fname(type='text' name='firstname' placeholder='Your name..')
-        label(for='lname') Last Name
-        input#lname(type='text' name='lastname' placeholder='Your last name..')
-        label(for='country') Country
-        select#country(name='country')
-          option(value='taiwan') Taiwan
-          option(value='usa') USA
-        label(for='subject') Subject
-        textarea#subject(name='subject' placeholder='Write something..' style='height:170px')
-        input(type='submit' value='Submit')
-        
-    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
-  
+        | We strive to connect current and graduated students to form a collaborative international community.  
+      
+      //- About us 
+      .about-section
+        h1 About Us Page
+        p(style='text-align:left') We are Wego IEP Alums!
+        h2(style='text-align:center') At A Glance
+        .row
+          .column
+            .card
+              img(src='/w3images/team1.jpg' alt='person icon' style='width:100%')
+              .container
+                h2 Student Profiles
+                p.title Colleges, Countries, and Industries
+                p
+                  button.button Read More 
+          .column
+            .card
+              img(src='/w3images/team2.jpg' alt='3 ppl icon' style='width:100%')
+              .container
+                h2 Advisory Board 
+                p.title Wego IEP Alumni Board
+                p
+                  button.button Read More 
+          .column
+            .card
+              img(src='/w3images/team3.jpg' alt='seminar icon' style='width:100%')
+              .container
+                h2 Sharing Session
+                p.title Applying, Student Life, Careers
+                p
+                  button.button Read More 
+          .column
+            .card
+              img(src='/w3images/team3.jpg' alt='10 ppl icon' style='width:100%')
+              .container
+                h2 Annual Events
+                p.title Event connecting alums
+                p
+                  button.button Read More 
+
+        //- contact us
+        .container
+      div(style='text-align:center')
+        h2 Contact Us
+        p Swing by for a cup of coffee, or leave us a message:
+      .row
+        .column
+          img(src='/w3images/map.jpg' style='width:100%')
+        .column
+          form(action='/action_page.php')
+            label(for='fname') First Name
+            input#fname(type='text' name='firstname' placeholder='Your name..')
+            label(for='lname') Last Name
+            input#lname(type='text' name='lastname' placeholder='Your last name..')
+            label(for='country') Country
+            select#country(name='country')
+              option(value='taiwan') Taiwan
+              option(value='usa') USA
+            label(for='subject') Subject
+            textarea#subject(name='subject' placeholder='Write something..' style='height:170px')
+            input(type='submit' value='Submit')
+          
+      script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+    
