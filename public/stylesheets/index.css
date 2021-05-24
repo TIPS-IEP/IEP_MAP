@@ -13,7 +13,7 @@ resize: vertical;
 }
 
 input[type=submit] {
-background-color: #04AA6D;
+background-color: #f3c441;
 color: white;
 padding: 12px 20px;
 border: none;
@@ -69,7 +69,7 @@ box-sizing: inherit;
 
 .column {
 float: left;
-width: 50%;
+width: 25%;
 margin-bottom: 16px;
 padding: 0 8px;
 }
@@ -131,4 +131,47 @@ max-width: 1000px;
 margin: auto;
 background: white;
 padding: 10px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #ffc400;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+  }
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: rgb(51, 51, 51);
+    overflow: hidden;
+  }
+  
+/* Style the links inside the navigation bar */
+.topnav a {
+float: left;
+color: #fafafa;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 30px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+background-color: #3d5381;
+color: white;
 }

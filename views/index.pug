@@ -19,12 +19,19 @@ html(lang='en')
     
   body
     div(class="content")
-    .content
-      h1 Wego Alumni Network 
-      p
-        | We strive to connect current and graduated students to form a collaborative international community.  
-      
+    
+     //- Header and navigation bar
+    .header
+      h1 Wego Alumni Network
+      p We strive to connect current and graduated students to form a collaborative international community.
+    .topnav
+      a.active(href='#home') Home
+      a(href='#about') About
+      a(href='#engage') Engage
+      a(href='#contact') Contact
+
       //- About us 
+    .content  
       .about-section
         h1 About Us Page
         p(style='text-align:left') We are Wego IEP Alums!
@@ -32,7 +39,7 @@ html(lang='en')
         .row
           .column
             .card
-              img(src='/w3images/team1.jpg' alt='person icon' style='width:100%')
+              img(src='/images/icons/profiles.png' alt='person icon' style='width:75%' class='center')
               .container
                 h2 Student Profiles
                 p.title Colleges, Countries, and Industries
@@ -40,7 +47,7 @@ html(lang='en')
                   button.button Read More 
           .column
             .card
-              img(src='/w3images/team2.jpg' alt='3 ppl icon' style='width:100%')
+              img(src='/images/icons/board.png' alt='3 ppl icon' style='width:75%' class='center')
               .container
                 h2 Advisory Board 
                 p.title Wego IEP Alumni Board
@@ -48,7 +55,7 @@ html(lang='en')
                   button.button Read More 
           .column
             .card
-              img(src='/w3images/team3.jpg' alt='seminar icon' style='width:100%')
+              img(src='/images/icons/sharing.png' alt='seminar icon' style='width:75%' class='center')
               .container
                 h2 Sharing Session
                 p.title Applying, Student Life, Careers
@@ -56,7 +63,7 @@ html(lang='en')
                   button.button Read More 
           .column
             .card
-              img(src='/w3images/team3.jpg' alt='10 ppl icon' style='width:100%')
+              img(src='/images/icons/events.png' alt='10 ppl icon' style='width:75%' class='center')
               .container
                 h2 Annual Events
                 p.title Event connecting alums
