@@ -13,7 +13,7 @@ resize: vertical;
 }
 
 input[type=submit] {
-background-color: #04AA6D;
+background-color: #f3c441;
 color: white;
 padding: 12px 20px;
 border: none;
@@ -69,7 +69,7 @@ box-sizing: inherit;
 
 .column {
 float: left;
-width: 50%;
+width: 25%;
 margin-bottom: 16px;
 padding: 0 8px;
 }
@@ -132,3 +132,10 @@ margin: auto;
 background: white;
 padding: 10px;
 }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
