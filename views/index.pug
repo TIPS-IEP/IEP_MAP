@@ -4,6 +4,9 @@ html(lang='en')
     //- css
     link(rel="stylesheet" href="stylesheets/index.css")
 
+    //- js
+    script(src="javascripts/index.js")
+
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
     
@@ -19,12 +22,25 @@ html(lang='en')
     
   body
     div(class="content")
-    .content
-      h1 Wego Alumni Network 
-      p
-        | We strive to connect current and graduated students to form a collaborative international community.  
-      
-      //- About us 
+    
+     //- Header and navigation bar
+   
+    #navbar
+      a#logo(href='#default') CompanyLogo
+      #navbar-right
+        a.active(href='#home') Home
+        a(href='#contact') Contact
+        a(href='#about') About
+
+
+    .hero-image
+        .hero-text
+          h1 Our Mission:
+          h3 To connect all former and current IEP students 
+          |In high school, college, and beyond! 
+    
+    //- About us 
+    .content  
       .about-section
         h1 About Us Page
         p(style='text-align:left') We are Wego IEP Alums!
@@ -86,4 +102,3 @@ html(lang='en')
             input(type='submit' value='Submit')
           
       script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
-    
