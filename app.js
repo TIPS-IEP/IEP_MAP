@@ -7,8 +7,14 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+//mongoose for mongodb
+var mongoose = require('mongoose');
+
 var app = express();
 
+//connect to mongodb cloud
+const dbURI = 'mongodb+srv://alanhou:alan2357@iepmap.rejkd.mongodb.net/IEPMAPretryWrites=true&w=majority';
+mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology:true});
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
