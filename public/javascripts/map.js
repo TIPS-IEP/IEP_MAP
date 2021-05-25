@@ -9,6 +9,7 @@ function initMap() {
 const icons = {
   UofM: {
     icon: "images/UofM.png",
+    
   },
 };
 const features = [
@@ -23,6 +24,7 @@ for (let i = 0; i < features.length; i++) {
   const marker = new google.maps.Marker({
     position: features[i].position,
     icon: icons[features[i].type].icon,
+    scaledSize : new google.maps.Size(2, 30),
     map: map,
   });
 }

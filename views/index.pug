@@ -4,9 +4,6 @@ html(lang='en')
     //- css
     link(rel="stylesheet" href="stylesheets/index.css")
 
-    //- js
-    script(src="javascripts/index.js")
-
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
     
@@ -22,25 +19,12 @@ html(lang='en')
     
   body
     div(class="content")
-    
-     //- Header and navigation bar
-    .header
-      h1 Wego Alumni Network
-    
-    #topnav
-      a.active(href='#home') Home
-      a(href='#about') About
-      a(href='#engage') Engage
-      a(href='#contact') Contact
-
-    .hero-image
-        .hero-text
-          h1 Our Mission:
-          h3 To connect all former and current IEP students 
-          |In high school, college, and beyond! 
-
-    //- About us 
-    .content  
+    .content
+      h1 Wego Alumni Network 
+      p
+        | We strive to connect current and graduated students to form a collaborative international community.  
+      
+      //- About us 
       .about-section
         h1 About Us Page
         p(style='text-align:left') We are Wego IEP Alums!
