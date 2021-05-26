@@ -14,8 +14,9 @@ var app = express();
 //connect to mongodb cloud
 const dbURI = 'mongodb+srv://alanhou:alan2357@iepmap.rejkd.mongodb.net/IEPMAPretryWrites=true&w=majority';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
-  .then((result) => app.listen(3000))
+  .then((result) => console.log('connect to db'))
   .catch((err) => console.log(err));
+  
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
