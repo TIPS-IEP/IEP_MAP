@@ -17,7 +17,7 @@ router.get('/map', function(req, res, next) {
   res.render('map');
 });
 
-/* GET add-alunmi page. */
+/* GET mongodb test pages. */
 router.get('/add-alumni', (req,res) => {
   const alumni = new Alumni({
     EnglishName:'Alan',
@@ -26,7 +26,6 @@ router.get('/add-alumni', (req,res) => {
     GraduationYear: '2021',
     Major: 'Computer Science'
   });
-
   alumni.save()
     .then((result) => {
       res.send(result)
@@ -34,6 +33,24 @@ router.get('/add-alumni', (req,res) => {
     .catch((err) => {
       console.log(err);
     })
+})
+router.get('/all-alumni', (req,res) => {
+  Alumni.find()
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+})
+router.get('/findalan', (req,res) => {
+  Alumni.findById('60adf1cf39218d31133e8659')
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 })
 
 router.get('/login', function(req, res, next) {
