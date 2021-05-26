@@ -14,7 +14,7 @@ const AlumniSchema = new Schema({
     type: String
   },
   GraduationYear: {
-    type: Int,
+    type: String,
     required: true
   },
   Major: {
@@ -23,5 +23,5 @@ const AlumniSchema = new Schema({
   }
 }, {timestamps: true})
 
-const ALUMNI = mongoose.model('Alumni_Information', AlumniSchema);
-module.exports = ALUMNI;
+const Alumni = mongoose.model('Alumni_Information', AlumniSchema);
+module.exports = Alumni;
