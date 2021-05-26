@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-// var bcrypt = require('bcrypt')
+const passport = require('passport');
 
 const users = []
 
@@ -25,6 +25,11 @@ router.get('/signup', function(req, res, next) {
 router.post('/login', function(req, res, next) {
   
 })
+
+router.get('/callback', 
+  passport.authenticate('google', {scope: ['email', 'profile']}), (req,res)=>{
+     return res.send("Congrats");
+});
 
 // router.post('/signup', async (req, res, next) => {
 //   try{
