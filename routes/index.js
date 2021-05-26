@@ -48,10 +48,26 @@ router.post('/login', function(req, res, next) {
   
 })
 
-router.get('/callback', 
-  passport.authenticate('google', {scope: ['email', 'profile']}), (req,res)=>{
-     return res.send("Congrats");
-});
+// router.get('/callback', 
+//   passport.authenticate('google', {scope: ['email', 'profile']}), (req,res)=>{
+//     return res.send("Congrats");
+// });
+
+router.get('/auth', passport.authenticate('google', { scope: ['profile', 'email'] }));
+router.get('/auth/error', (req, res) => res.send('Unknown Error'))
+router.get('/api/account/google', passport.authenticate('google', { failureRedirect: '/auth/error' }),
+  function(req, res) {
+    res.redirect('/');
+  }
+);
+
+router.get('/logout', (req, res) => {
+  console.log("is logged out");
+  req.session = null;
+  req.logout();
+  res.redirect('/');
+})
+
 
 // router.post('/signup', async (req, res, next) => {
 //   try{
