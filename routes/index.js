@@ -74,9 +74,13 @@ router.get('/logout', (req, res) => {
 
 
 router.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
-router.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), (req, red) => {
-    resizeBy.redirect('/')
-});
+router.get(
+  '/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login' }), 
+  (req, res) => {
+    res.redirect('/')
+  }
+);
 
 
 
