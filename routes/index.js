@@ -65,19 +65,6 @@ router.post('/login', function(req, res, next) {
   
 })
 
-// router.get('/callback', 
-//   passport.authenticate('google', {scope: ['email', 'profile']}), (req,res)=>{
-//     return res.send("Congrats");
-// });
-
-router.get('/auth', passport.authenticate('google', { scope: ['profile', 'email'] }));
-router.get('/auth/error', (req, res) => res.send('Unknown Error'))
-router.get('/api/account/google', passport.authenticate('google', { failureRedirect: '/auth/error' }),
-  function(req, res) {
-    res.redirect('/');
-  }
-);
-
 router.get('/logout', (req, res) => {
   console.log("is logged out");
   req.session = null;
@@ -86,22 +73,12 @@ router.get('/logout', (req, res) => {
 })
 
 
-// router.post('/signup', async (req, res, next) => {
-//   try{
-//     const hashedPassword = await bcrypt.hash(req.body.password, 10)
-//     users.push({
-//       id: Date.now().toString(),
-//       name: req.body.name,
-//       email: req.body.email,
-//       password: hashedPassword
-//     })
-//     res.redirect('/login')
-//   }catch (error){
-//     console.log(error)
-//     res.redirect('/signup')
-//   }
-//   console.log(users)
-// })
+router.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
+router.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), (req, red) => {
+    resizeBy.redirect('/')
+});
+
+
 
 module.exports = router;
 
