@@ -182,17 +182,17 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  }
+}
   
-  /* Place text in the middle of the image */
-  .hero-text2 {
+/* Place text in the middle of the image */
+.hero-text2 {
   text-align: center;
   position: absolute;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  }
+}
 
 /* The hero image */
 .hero-image3 {
