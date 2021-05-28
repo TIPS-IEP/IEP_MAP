@@ -53,26 +53,6 @@ router.get('/findalan', (req,res) => {
     });
 })
 
-router.get('/login', function(req, res, next) {
-  res.render('test/testlogin', {formaData: {}, errors: {}});
-});
-
-router.get('/signup', function(req, res, next) {
-  res.render('test/testsignup', {formaData: {}, errors: {}});
-});
-
-router.post('/login', function(req, res, next) {
-  
-})
-
-router.get('/logout', (req, res) => {
-  console.log("is logged out");
-  req.session = null;
-  req.logout();
-  res.redirect('/');
-})
-
-
 router.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
 router.get(
   '/auth/google/callback', 
@@ -81,6 +61,11 @@ router.get(
     res.redirect('/')
   }
 );
+
+router.get('/logout', (req, res) => {
+  req.logout()
+  res.redirect('/')
+})
 
 
 
