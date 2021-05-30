@@ -53,6 +53,13 @@ router.get('/findalan', (req,res) => {
     });
 })
 
+//dashboard
+router.get('/dashboard', function(req, res, next) {
+  res.render('dashboard');
+});
+
+
+//login and out
 router.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
 router.get(
   '/auth/google/callback', 
@@ -66,8 +73,6 @@ router.get('/logout', (req, res) => {
   req.logout()
   res.redirect('/')
 })
-
-
 
 module.exports = router;
 
