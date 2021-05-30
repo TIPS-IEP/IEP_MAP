@@ -3,6 +3,7 @@ var router = express.Router();
 const passport = require('passport');
 
 const users = []
+
 //Alumni
 var Alumni = require('../models/Alumni');
 
@@ -53,13 +54,12 @@ router.get('/findalan', (req,res) => {
     });
 })
 
-//dashboard
-router.get('/dashboard', function(req, res, next) {
-  res.render('dashboard');
+//login and out
+
+router.get('/login', function(req, res, next) {
+  res.render('login');
 });
 
-
-//login and out
 router.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
 router.get(
   '/auth/google/callback', 
