@@ -22,33 +22,18 @@ html(lang='en')
     
   body
     div(class="content")
-    
-     //- Header and navigation bar
-   
-    #navbar
-      a#logo(href='/' style='width:15%') IEP Alumni 
-      #navbar-right
-        a.active(href='/home') Home
-        a(href='/contact') Contact
-        a(href='/about') About
-        a(href='/auth/google') Login
+    include common/nav.pug
 
     .hero-image1
         .hero-text1
-    //- .waves
     .hero-image2
         .hero-text2
           h1 Our Vision:
-          h3.line-height IEP Alumni Association aims to build a bridge between the school, students, and alumni. Through these partnerships, we leverage the resources of the school and the experience of our alumni to elevate our students’ successes in school, university, and beyond.  
- 
-
-
+          h3 
     .hero-image3
         .hero-text3
-          h1 Our Mission:
-          h3.line-height IEP Alumni Association utilizes an advisory board, student infographics and distribution maps, experience sharing sessions, and annual events to promote and leverage the value of the International Education Program; assemble current students and alumni from various universities, industries, and countries; and create an international network platform.
-    
-
+          h1 Our Team:
+          h3 We are Class of 2020 ~ 2026
 
     //- About us 
     .content  

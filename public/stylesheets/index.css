@@ -147,7 +147,7 @@ body, html {
 /* The hero image */
 .hero-image1 {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0)), url("/images/1.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0)), url("/images/1fix.png");
 
   /* Set a specific height */
   height: 120%;
@@ -166,7 +166,6 @@ body, html {
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  line-height: 10%;
   color: white;
 }
 
@@ -183,19 +182,17 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  }
+}
   
-  /* Place text in the middle of the image */
-  .hero-text2 {
-  text-align: left;
+/* Place text in the middle of the image */
+.hero-text2 {
+  text-align: center;
   position: absolute;
-  top: 40%;
+  top: 20%;
   left: 50%;
-  width: 70%;
-  line-height: 20px;
   transform: translate(-50%, -50%);
   color: white;
-  }
+}
 
 /* The hero image */
 .hero-image3 {
@@ -214,12 +211,10 @@ body, html {
   
   /* Place text in the middle of the image */
   .hero-text3 {
-  text-align: left;
+  text-align: center;
   position: absolute;
-  top: 40%;
+  top: 55%;
   left: 50%;
-  width: 70%;
-  line-height: 1000%;
   transform: translate(-50%, -50%);
   color: white;
   }
@@ -287,48 +282,3 @@ body, html {
   }
 }
 
-/* .waves {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 200px;
-  box-shadow: inset 0 0 50px rgba(187, 45, 45, 0);
-  transition: 500ms;
-}
-
-.waves::before,
-.waves::after {
-  content: '';
-  position: absolute;
-  width: 300vw;
-  height: 300vw;
-  top: -65vw;
-  left: 50%;
-  transform: translate(-50%, -75%);
-}
-
-.waves::before {
-  border-radius: 44%;
-  background: rgb(36, 65, 192);
-  animation: waves 8s linear infinite;
-}
-
-.waves::after {
-  border-radius: 44%;
-  background: rgba(226, 226, 226, 0.637);
-  animation: waves 15s linear infinite;
-}
-
-@keyframes waves {
-  0% {
-    transform: translate(-50%, -75%) rotate(0deg);
-  }
-  
-  100% {
-    transform: translate(-50%, -75%) rotate(360deg);
-  }
-} */
-.line-height {
-  line-height: 40px;
-}
