@@ -22,15 +22,6 @@ html(lang='en')
     
   body
     include common/nav
-     //- Header and navigation bar
-    //- #navbar
-    //-   a#logo(href='/' style='width:15%') IEP Alumni 
-    //-   #navbar-right
-    //-     a.active(href='/home') Home
-    //-     a(href='/contact') Contact
-    //-     a(href='/about') About
-    //-     a(href='/auth/google') Login
-
     .hero-image1
         .hero-text1
     .hero-image2
@@ -46,53 +37,73 @@ html(lang='en')
 
 
     //- About us 
-    .content  
-      .about-section
-        h1 About Us Page
-        p(style='text-align:left') We are Wego IEP Alums!
-        h2(style='text-align:center') At A Glance
-        .row
-          .column
-            .card
+      
+    .about-section
+      //- h1 About Us Page
+      //- p(style='text-align:left') We are Wego IEP Alums!
+      h1(style='text-align:center') At A Glance
+      | Our features 
+      br 
+      br
+      .row
+        .column
+          .container
+            p 
+              br
               img(src='/images/icons/profiles.png' alt='person icon' style='width:75%' class='center')
-              .container
+            .container2
+              p
                 h2 Student Profiles
-                p.title Colleges, Countries, and Industries
+              p.title Colleges, Countries, Industries
+              p
                 a(href="/map")
                   button.button Read More 
-          .column
-            .card
+        .column
+          .container
+            p 
+              br
               img(src='/images/icons/board.png' alt='3 ppl icon' style='width:75%' class='center')
-              .container
+            .container2
+              p
                 h2 Advisory Board 
-                p.title Wego IEP Alumni Board
+              p.title Wego IEP Alumni Board
+              p
                 a(href="#")
                   button.button Read More 
-          .column
-            .card
+        .column
+          .container
+            p
+              br
               img(src='/images/icons/sharing.png' alt='seminar icon' style='width:75%' class='center')
-              .container
+            .container2
+              p 
                 h2 Sharing Session
-                p.title Applying, Student Life, Careers
+              p.title Applying, Student Life, Careers
+              p
                 a(href="#")
                   button.button Read More 
-          .column
-            .card
+        .column
+          .container
+            p 
+              br
               img(src='/images/icons/events.png' alt='10 ppl icon' style='width:75%' class='center')
-              .container
+            .container2
+              p
                 h2 Annual Events
-                p.title Event connecting alums
-                p
+              p.title Event Connecting Alums
+              p
+                a(href="#")
                   button.button Read More 
 
-        //- contact us
-        .container
+      //- contact us
+    .content
       div(style='text-align:center')
         h2 Contact Us
         p Swing by for a cup of coffee, or leave us a message:
       .row
         .column
-          img(src='/w3images/map.jpg' style='width:100%')
+          img(src='/images/hero/hello.jpg' style='width:80%')
+        .column
         .column
           form(action='/action_page.php')
             label(for='fname') First Name
