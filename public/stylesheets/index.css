@@ -139,9 +139,8 @@ body {
 }
 .content {
   width: auto;
-  margin: auto;
-  background: rgb(255, 167, 2);
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.486) 68%, rgba(0, 0, 0, 0.555) 75%, rgba(0, 0, 0, 0.705) 85%, rgb(0, 0, 0) 100%); */
+  margin: 80px;
+  background: rgb(255, 255, 255);
   padding: 10px;
 }
 
@@ -343,4 +342,16 @@ body, html {
 }  */
 .line-height {
   line-height: 40px;
+}
+
+.column2 {
+  float: left;
+  width: 22%;
+  /* margin: 5px; */
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+#big {
+  font-size: 50px;
 }
