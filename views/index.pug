@@ -26,12 +26,12 @@ html(lang='en')
         .hero-text1
     .hero-image2
         .hero-text2
-          h1 Our Vision:
+          h1#big Our Vision:
           h3.line-height IEP Alumni Association aims to build a bridge between the school, students, and alumni. Through these partnerships, we leverage the resources of the school and the experience of our alumni to elevate our students’ successes in school, university, and beyond.  
  
     .hero-image3
         .hero-text3
-          h1 Our Mission:
+          h1#big Our Mission:
           h3.line-height IEP Alumni Association utilizes an advisory board, student infographics and distribution maps, experience sharing sessions, and annual events to promote and leverage the value of the International Education Program; assemble current students and alumni from various universities, industries, and countries; and create an international network platform.
     
 
@@ -41,9 +41,7 @@ html(lang='en')
     .about-section
       //- h1 About Us Page
       //- p(style='text-align:left') We are Wego IEP Alums!
-      h1(style='text-align:center') At A Glance
-      | Our features 
-      br 
+      h1#big(style='text-align:center') Our Features
       br
       .row
         .column
@@ -97,14 +95,14 @@ html(lang='en')
 
       //- contact us
     .content
-      div(style='text-align:center')
-        h2 Contact Us
-        p Swing by for a cup of coffee, or leave us a message:
+      div(style='text-align:left')
+        h1#big Contact Us 
       .row
         .column
-          img(src='/images/hero/hello.jpg' style='width:80%')
+          img(src='/images/hero/letter2.jpg' style='width:270%')
         .column
-        .column
+        .column2
+        .column2
           form(action='/action_page.php')
             label(for='fname') First Name
             input#fname(type='text' name='firstname' placeholder='Your name..')
@@ -114,6 +112,12 @@ html(lang='en')
             select#country(name='country')
               option(value='taiwan') Taiwan
               option(value='usa') USA
+              option(value='canada') Canada 
+              option(value='uk') UK
+              option(value='japan') Japan 
+              option(value='singapore') Singapore 
+              option(value='china')  China
+              option(value='thailand') Thailand
             label(for='subject') Subject
             textarea#subject(name='subject' placeholder='Write something..' style='height:170px')
             input(type='submit' value='Submit')
