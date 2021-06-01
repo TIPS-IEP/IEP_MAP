@@ -89,9 +89,10 @@ html {
 } */
 
 .about-section {
-  padding: 100px;
+  padding: 80px 125px;
   text-align: center;
   background-color:rgb(0, 0, 0);
+  background-image: linear-gradient(rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.363) 68%, rgba(0, 0, 0, 0.26) 75%, rgba(0, 0, 0, 0.192) 85%, rgba(0, 0, 0, 0) 100%), url("/images/hero/waves.jpg");
   color: rgb(255, 255, 255);
 }
 
@@ -139,7 +140,7 @@ body {
 }
 .content {
   width: auto;
-  margin: 80px;
+  margin: 50px;
   background: rgb(255, 255, 255);
   padding: 10px;
 }
@@ -346,12 +347,12 @@ body, html {
 
 .column2 {
   float: left;
-  width: 22%;
+  width: 21%;
   /* margin: 5px; */
   margin-bottom: 16px;
   padding: 0 8px;
 }
 
 #big {
-  font-size: 50px;
+  font-size: 48px;
 }
