@@ -12,9 +12,23 @@ body {
     flex-direction: row !important;
     width: 75%;
     left: 12.5%;
+    height: 500px;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 25px;
+}
+
+.cardbg {
+    background-color: cornsilk;
+    width: 50%;
+    height: 100%;
 
 }
 
 .card img {
-    width: 50%
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
 }
