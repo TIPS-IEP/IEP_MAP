@@ -10,11 +10,10 @@ html(lang='en')
 
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
-    
+    link(href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet")
+
     //- jquery
-    script(src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous")
+    script(src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
   
@@ -24,9 +23,33 @@ html(lang='en')
   body
     include common/nav
     .card
-      img(src="/images/login/login.png").card-img-top(alt="")
+      .cardbg
+        img(src="/images/login/tran.png").card-img-top(alt="")
       .card-body
-        h5.card-title Card Title
-        p.card-text HEllo
-        a(href="#").btn.btn-primary Go somewhere
+        h5.card-title IEP Alumni
+        .container
+          .row
+            .col-md-2
+            .col-md-8
+              .box
+                .input-container
+                  input(type="text" required="" disabled)
+                  label Username
+                .input-container
+                  input(type="password" required="" disabled)
+                  label Password
+                p#warn we currently do not offer username login
+                button.btn(type="button") Log In
+                .section
+                  a(href="/auth/google")
+                    button.btn#google(type="button") Log In With Google
+        
+
+//- #username.feild(type="input" placeholder="Username")
+        //- label.label(for="name") Name
+        //- p.card-text HEllo
+        //- a(href="#").btn.btn-primary Go somewhere
+        //- .section
+        //-   a.btn.red.darken-1(href="/auth/google")
+        //-     i.fab.fa-google.left Log In With Google
 
