@@ -66,11 +66,10 @@ body {
  border-bottom:1px solid #e74c3c;	
 }
 .btn{
-	color:#fff;
+	color:#fff !important;
 	background-color: steelblue !important;
 	outline: none;
     border: 0;
-    color: #fff;
 	padding:10px 20px;
 	text-transform:uppercase;
 	border-radius:2px;
