@@ -2,11 +2,21 @@
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+  if (document.body.scrollTop > 35 || document.documentElement.scrollTop > 35) {
     document.getElementById("navbar").style.padding = "7px 10px";
     document.getElementById("logo").style.fontSize = "25px";
   } else {
     document.getElementById("navbar").style.padding = "25px 10px";
     document.getElementById("logo").style.fontSize = "35px";
   }
+}
+
+/* Set the width of the side navigation to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
 }

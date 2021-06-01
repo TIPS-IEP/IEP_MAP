@@ -26,6 +26,14 @@ html(lang='en')
     
   body
     include common/nav
+    #mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      a(href='#') About
+      a(href='#') Services
+      a(href='#') Clients
+      a(href='#') Contact
+    span(style='font-size:30px;cursor:pointer' onclick='openNav()') ☰ open
+
     .hero-image1
         .hero-text1
     .hero-image2
@@ -41,7 +49,7 @@ html(lang='en')
 
 
     //- About us 
-      
+    #about  
     .about-section
       //- h1 About Us Page
       //- p(style='text-align:left') We are Wego IEP Alums!
