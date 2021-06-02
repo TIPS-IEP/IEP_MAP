@@ -16,7 +16,10 @@ router.get('/', function(req, res, next) {
 
 /* GET map page. */
 router.get('/map', function(req, res, next) {
-  res.render('map');
+  var myVar = 40.496675;
+  res.render('map',{
+    test: myVar
+  });
 });
 
 /* GET mongodb test pages. */
