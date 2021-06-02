@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
+const {ensureAuth, ensureGuest} = require('../middleware/auth')
 
 const users = []
 
@@ -35,6 +36,7 @@ router.get('/add-alumni', (req,res) => {
       console.log(err);
     })
 })
+
 router.get('/all-alumni', (req,res) => {
   Alumni.find()
     .then((result) => {
@@ -44,6 +46,7 @@ router.get('/all-alumni', (req,res) => {
       console.log(err);
     });
 })
+
 router.get('/findalan', (req,res) => {
   Alumni.findById('60adf1cf39218d31133e8659')
     .then((result) => {
@@ -56,7 +59,7 @@ router.get('/findalan', (req,res) => {
 
 //login and out
 
-router.get('/login', function(req, res, next) {
+router.get('/login', ensureGuest, function(req, res, next) {
   res.render('login');
 });
 
@@ -74,5 +77,9 @@ router.get('/logout', (req, res) => {
   res.redirect('/')
 })
 
+// for testing
+// router.get('/test', ensureAuth, (req, res) => {
+//   res.render('map');
+// })
 module.exports = router;
 
