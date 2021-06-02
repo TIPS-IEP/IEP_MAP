@@ -81,7 +81,7 @@ router.get('/logout', (req, res) => {
 
 router.get('/user', ensureAuth, (req, res) => {
   res.render('login/access', {
-    name: req.user.firstname,
+    name: req.user.firstName,
   });
 })
 
