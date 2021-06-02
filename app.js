@@ -7,14 +7,16 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+//mongoose for mongodb
+var mongoose = require('mongoose');
+
 const passport = require('passport');
 const session = require('express-session')
+const MongoStore = require('connect-mongo')(session)
 
 //passport config
 require('./config/passport')(passport)
 
-//mongoose for mongodb
-var mongoose = require('mongoose');
 var app = express();
 
 //connect to mongodb cloud
@@ -38,7 +40,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  store: new MongoStore({ mongooseConnection: mongoose.connection})
 }))
 
 //passport set up
