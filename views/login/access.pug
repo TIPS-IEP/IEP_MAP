@@ -1,0 +1,133 @@
+doctype html
+html(lang='en') 
+
+  head
+    //- css
+    link(rel="stylesheet" href="stylesheets/index.css")
+
+    //- js
+    script(src="javascripts/index.js")
+
+    //- bootstrap setup
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    
+    //- jquery
+    script(src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+
+    //- center website 
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    
+  body
+    include usernav
+    #mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      a(href='#') About
+      a(href='#') Services
+      a(href='#') Clients
+      a(href='#') Contact
+    span(style='font-size:30px;cursor:pointer' onclick='openNav()') ☰ open #
+
+    .hero-image1
+        .hero-text1
+    .hero-image2
+        .hero-text2
+          h1#big Our Vision:
+          h3.line-height IEP Alumni Association aims to build a bridge between the school, students, and alumni. Through these partnerships, we leverage the resources of the school and the experience of our alumni to elevate our students’ successes in school, university, and beyond.  
+ 
+    .hero-image3
+        .hero-text3
+          h1#big Our Mission:
+          h3.line-height IEP Alumni Association utilizes an advisory board, student infographics and distribution maps, experience sharing sessions, and annual events to promote and leverage the value of the International Education Program; assemble current students and alumni from various universities, industries, and countries; and create an international network platform.
+    
+
+
+    //- About us 
+    #about  
+    .about-section
+      //- h1 About Us Page
+      //- p(style='text-align:left') We are Wego IEP Alums!
+      h1#big(style='text-align:center') Our Features
+      br
+      .row
+        .column
+          .container
+            p 
+              br
+              img(src='/images/icons/profiles.png' alt='person icon' style='width:75%' class='center')
+            .container2
+              p
+                h2 Student Profiles
+              p.title Colleges, Countries, Industries
+              p
+                a(href="/map")
+                  button.button Read More 
+        .column
+          .container
+            p 
+              br
+              img(src='/images/icons/board.png' alt='3 ppl icon' style='width:75%' class='center')
+            .container2
+              p
+                h2 Advisory Board 
+              p.title Wego IEP Alumni Board
+              p
+                a(href="#")
+                  button.button Read More 
+        .column
+          .container
+            p
+              br
+              img(src='/images/icons/sharing.png' alt='seminar icon' style='width:75%' class='center')
+            .container2
+              p 
+                h2 Sharing Session
+              p.title Applying, Student Life, Careers
+              p
+                a(href="#")
+                  button.button Read More 
+        .column
+          .container
+            p 
+              br
+              img(src='/images/icons/events.png' alt='10 ppl icon' style='width:75%' class='center')
+            .container2
+              p
+                h2 Annual Events
+              p.title Event Connecting Alums
+              p
+                a(href="#")
+                  button.button Read More 
+
+      //- contact us
+    #contactus
+    .content
+      div(style='text-align:left')
+        h1#big Contact Us 
+      .row
+        .column
+          img(src='/images/hero/letter2.jpg' style='width:270%')
+        .column
+        .column2
+        .column2
+          form(action='/action_page.php')
+            label(for='fname') First Name
+            input#fname(type='text' name='firstname' placeholder='Your name..')
+            label(for='lname') Last Name
+            input#lname(type='text' name='lastname' placeholder='Your last name..')
+            label(for='country') Country
+            select#country(name='country')
+              option(value='taiwan') Taiwan
+              option(value='usa') USA
+              option(value='canada') Canada 
+              option(value='uk') UK
+              option(value='japan') Japan 
+              option(value='singapore') Singapore 
+              option(value='china')  China
+              option(value='thailand') Thailand
+            label(for='subject') Subject
+            textarea#subject(name='subject' placeholder='Write something..' style='height:170px')
+            input(type='submit' value='Submit')
+          
+      script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")

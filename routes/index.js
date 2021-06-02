@@ -10,8 +10,10 @@ var Alumni = require('../models/Alumni');
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', ensureGuest, function(req, res, next) {
+  res.render('index', { 
+    title: 'Express' 
+  });
 });
 
 /* GET map page. */
@@ -60,15 +62,15 @@ router.get('/findalan', (req,res) => {
 //login and out
 
 router.get('/login', ensureGuest, function(req, res, next) {
-  res.render('login');
+  res.render('login/login');
 });
 
 router.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
 router.get(
   '/auth/google/callback', 
-  passport.authenticate('google', { failureRedirect: '/login' }), 
+  passport.authenticate('google', { failureRedirect: '/login/login' }), 
   (req, res) => {
-    res.redirect('/')
+    res.redirect('/user')
   }
 );
 
@@ -77,9 +79,17 @@ router.get('/logout', (req, res) => {
   res.redirect('/')
 })
 
+router.get('/user', ensureAuth, (req, res) => {
+  res.render('login/access', {
+    name: req.user.firstName,
+  });
+})
+
+
 // for testing
 // router.get('/test', ensureAuth, (req, res) => {
 //   res.render('map');
 // })
 module.exports = router;
+
 
