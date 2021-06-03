@@ -1,16 +1,13 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
-
-const {MongoClient} = require('mongodb');
-const uri = 'mongodb+srv://alanhou:alan2357@iepmap.rejkd.mongodb.net/IEPMAPretryWrites=true&w=majority';
-const client = new MongoClient(uri);
-
 const {ensureAuth, ensureGuest} = require('../middleware/auth')
 
-//Alumni
+//database
+var mongoose = require('mongoose');
+
 var Alumni = require('../models/Alumni');
-var University = require('../models/Universities')
+var Universities = require('../models/Universities')
 
 
 /* GET home page. */
@@ -26,37 +23,39 @@ router.get('/map', function(req, res) {
     test: "myVar",
   });
 });
-router.get('/testmongoose', async function(req, res) {
-  try {
-    // Connect to the MongoDB cluster
-    await client.connect();
- 
-    // Make the appropriate DB calls
-    await  listDatabases(client);
-
-  } catch (e) {
-    console.error(e);
-  } finally {
-      await client.close();
-  }
-  databasesList = await client.db().admin().listDatabases();
- 
-  console.log("Databases:");
-  databasesList.databases.forEach(db => console.log(` - ${db.name}`));
-
+router.get('/testmongoose', function(req, res) {
+  // console.log(University.find());
+  mongoose.model('Universities').findOne(function(err,Universities){
+    res.send(Universities);
+  });
 });
 
 
 /* GET mongodb test pages. */
 router.get('/add-alumni', (req,res) => {
   const alumni = new Alumni({
-    EnglishName:'Alan',
-    Email:'alanhou911222@gmail.com',
-    InstagramUsername:'alanhou.987',
-    GraduationYear: '2021',
-    Major: 'Computer Science'
+    EnglishName:'test',
+    Email:'test@gmail.com',
+    InstagramUsername:'test.987',
+    GraduationYear: 'trst',
+    Major: 'test Science'
   });
   alumni.save()
+    .then((result) => {
+      res.send(result)
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+})
+
+router.get('/add-Uni', (req,res) => {
+  const Uni = new Universities({
+    university:'test',
+    lat:'test@gmail.com',
+    lng:'test.987',
+  });
+  Uni.save()
     .then((result) => {
       res.send(result)
     })
@@ -74,7 +73,15 @@ router.get('/all-alumni', (req,res) => {
       console.log(err);
     });
 })
-
+router.get('/all-University', (req,res) => {
+  Universities.find()
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+})
 router.get('/findalan', (req,res) => {
   Alumni.findById('60adf1cf39218d31133e8659')
     .then((result) => {

@@ -22,5 +22,5 @@ const AlumniSchema = new Schema({
   }
 }, {timestamps: true})
 
-const Alumni = mongoose.model('Alumni_Information', AlumniSchema);
+const Alumni = mongoose.model('Alumni', AlumniSchema);
 module.exports = Alumni;
