@@ -37,25 +37,10 @@ router.get('/add-alumni', (req,res) => {
     EnglishName:'test',
     Email:'test@gmail.com',
     InstagramUsername:'test.987',
-    GraduationYear: 'trst',
+    GraduationYear: 'test',
     Major: 'test Science'
   });
   alumni.save()
-    .then((result) => {
-      res.send(result)
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-})
-
-router.get('/add-Uni', (req,res) => {
-  const Uni = new Universities({
-    university:'test',
-    lat:'test@gmail.com',
-    lng:'test.987',
-  });
-  Uni.save()
     .then((result) => {
       res.send(result)
     })
