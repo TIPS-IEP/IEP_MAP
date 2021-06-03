@@ -1,12 +1,18 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
+
+const {MongoClient} = require('mongodb');
+const uri = 'mongodb+srv://alanhou:alan2357@iepmap.rejkd.mongodb.net/IEPMAPretryWrites=true&w=majority';
+const client = new MongoClient(uri);
+
 const {ensureAuth, ensureGuest} = require('../middleware/auth')
 
 const users = []
 
 //Alumni
 var Alumni = require('../models/Alumni');
+var University = require('../models/Universities')
 
 
 /* GET home page. */
@@ -17,12 +23,31 @@ router.get('/', ensureGuest, function(req, res, next) {
 });
 
 /* GET map page. */
-router.get('/map', function(req, res, next) {
-  var myVar = 40.496675;
+router.get('/map', function(req, res) {
   res.render('map',{
-    test: myVar
+    test: "myVar",
   });
 });
+router.get('/testmongoose', async function(req, res) {
+  try {
+    // Connect to the MongoDB cluster
+    await client.connect();
+ 
+    // Make the appropriate DB calls
+    await  listDatabases(client);
+
+  } catch (e) {
+    console.error(e);
+  } finally {
+      await client.close();
+  }
+  databasesList = await client.db().admin().listDatabases();
+ 
+  console.log("Databases:");
+  databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+
+});
+
 
 /* GET mongodb test pages. */
 router.get('/add-alumni', (req,res) => {
