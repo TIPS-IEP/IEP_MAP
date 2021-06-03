@@ -1,36 +1,62 @@
-- 
-    const map = items
-    function initMap() {
-    var x = 40;
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
-        center: {lat: x, lng: -96.65625}
-    });
+doctype html
+html(lang='en')
+  head
+    //- css
+    link(rel="stylesheet" href="stylesheets/index.css")
+    link(rel="stylesheet" href="stylesheets/map.css")
 
-    var features = [10];
-    features[0]={
-        position: new google.maps.LatLng(42.27656, -83.74256),
-        type: "UniversityofMichigan",
-    }
+    //- js
+    script(src="javascripts/index.js")
+    //- script(src="javascripts/map.js")
 
-    var image = {
-        url: "images/universities/University of Michigan.png",
-        scaledSize: new google.maps.Size(30,32)
-    };
-    const icons = {
-        UniversityofMichigan: {
-        icon: image,
-        },
-    };
-    // Create markers.
-    for (let i = 0; i < features.length; i++) {
-        const marker = new google.maps.Marker({
-        position: features[i].position,
-        icon: icons[features[i].type].icon,
-        map: map,
-        });
-    }
-    }
+    //- bootstrap setup
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
     
-each item in map
-    li=item.lat
+    //- jquery
+    script(src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+  
+    //- center website 
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+
+    script.
+        const data = items
+        for(item in data){
+            var x=item.lat;
+        }
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: {lat: x, lng: -96.65625}
+        });
+
+        var features = [10];
+        features[0]={
+            position: new google.maps.LatLng(42.27656, -83.74256),
+            type: "UniversityofMichigan",
+        }
+
+        var image = {
+            url: "images/universities/University of Michigan.png",
+            scaledSize: new google.maps.Size(30,32)
+        };
+        const icons = {
+            UniversityofMichigan: {
+            icon: image,
+            },
+        };
+        // Create markers.
+        for (let i = 0; i < features.length; i++) {
+            const marker = new google.maps.Marker({
+            position: features[i].position,
+            icon: icons[features[i].type].icon,
+            map: map,
+            });
+        }
+        
+body
+    div#map
+    script(async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy8QR6hkmBw9pMJWs2XhY111wiGl5H3Sg&libraries=geometry&callback=initMap")
+    
