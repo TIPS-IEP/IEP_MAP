@@ -103,6 +103,19 @@ router.get('/user', ensureAuth, (req, res) => {
   });
 })
 
+router.get('/admin', ensureAuth, async (req, res) => {
+  try{
+    const items = await Universities.find().lean()
+    console.log(items)
+    res.render('admin', {
+      name: req.user.firstName,
+      items
+    });
+  }catch(error){
+    console.error(error)
+  }
+})
+
 
 // for testing
 // router.get('/test', ensureAuth, (req, res) => {
