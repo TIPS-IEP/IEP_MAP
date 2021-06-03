@@ -1,7 +1,16 @@
 #navbar
+    span#z-index(style='font-size:33px;cursor:pointer' onclick='openNav()') ☰
     a#logo(href='/' ) IEP Alumni 
     #navbar-right
         a.active(href='#') Home
         a(href='#about') About
         a(href='#contactus') Contact
         a(href='#') Welcome #{name}
+
+#mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      a(href='#') Home 
+      a(href='#vision') Vision
+      a(href='#mission') Mission
+      a(href='#about') Features
+      a(href='#contactus') Contact 

@@ -8,8 +8,6 @@ const client = new MongoClient(uri);
 
 const {ensureAuth, ensureGuest} = require('../middleware/auth')
 
-const users = []
-
 //Alumni
 var Alumni = require('../models/Alumni');
 var University = require('../models/Universities')

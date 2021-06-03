@@ -409,7 +409,7 @@ body, html {
 }
 #z-index {
   z-index: 100;
-  transition: 0.4s;
+  /* transition: 0.4s; */
   /* position: absolute;
   top: 27.5px;
   left: 50px; */
