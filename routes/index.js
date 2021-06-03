@@ -3,8 +3,6 @@ var router = express.Router();
 const passport = require('passport');
 const {ensureAuth, ensureGuest} = require('../middleware/auth')
 
-const users = []
-
 //Alumni
 var Alumni = require('../models/Alumni');
 
