@@ -19,8 +19,9 @@ router.get('/', ensureGuest, function(req, res, next) {
 
 /* GET map page. */
 router.get('/map', function(req, res) {
+  var x = 20;
   res.render('map',{
-    test: "myVar",
+    x: x,
   });
 });
 
@@ -116,11 +117,13 @@ router.get('/user', ensureAuth, (req, res) => {
 
 router.get('/admin', ensureAuth, async (req, res) => {
   try{
-    const items = await Universities.find().lean()
-    console.log(items)
+    const items = await Universities.find().lean();
+    console.log(items);
+    var x = 20;
     res.render('admin', {
       name: req.user.firstName,
-      items
+      items,
+      x:x
     });
   }catch(error){
     console.error(error)
