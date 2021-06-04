@@ -21,6 +21,14 @@ html(lang='en')
     
   body#main
     include common/nav
+    
+    #mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      a(href='#') Home 
+      a(href='#vision') Vision
+      a(href='#mission') Mission
+      a(href='#about') Features
+      a(href='#contactus') Contact 
 
     .hero-image1
         .hero-text1
@@ -98,10 +106,12 @@ html(lang='en')
     #contactus
     .content
       div(style='text-align:left')
+        .column3
         h1#big Contact Us 
       .row
+        .column3
         .column
-          img(src='/images/hero/letter2.jpg' style='width:270%')
+          img(src='/images/hero/letter2.jpg' style='width:260%')
         .column
         .column2
         .column2
@@ -121,7 +131,7 @@ html(lang='en')
               option(value='china')  China
               option(value='thailand') Thailand
             label(for='subject') Subject
-            textarea#subject(name='subject' placeholder='Write something..' style='height:170px')
+            textarea#subject(name='subject' placeholder='Write something..' style='height:110px')
             input(type='submit' value='Submit')
           
       script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
