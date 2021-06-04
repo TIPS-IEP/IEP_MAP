@@ -19,8 +19,9 @@ router.get('/', ensureGuest, function(req, res, next) {
 
 /* GET map page. */
 router.get('/map', function(req, res) {
+  var x = 20;
   res.render('map',{
-    test: "myVar",
+    x: x,
   });
 });
 router.get('/testmongoose', function(req, res) {
@@ -105,44 +106,13 @@ router.get('/user', ensureAuth, (req, res) => {
 
 router.get('/admin', ensureAuth, async (req, res) => {
   try{
-    
-      var x = 50;
-      var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
-      center: {lat: x, lng: -96.65625}
-      });
-
-      var features = [10];
-      features[0]={
-          position: new google.maps.LatLng(42.27656, -83.74256),
-          type: "UniversityofMichigan",
-      }
-
-      var image = {
-          url: "images/universities/University of Michigan.png",
-          scaledSize: new google.maps.Size(30,32)
-      };
-      const icons = {
-          UniversityofMichigan: {
-          icon: image,
-          },
-      };
-      // Create markers.
-      for (let i = 0; i < features.length; i++) {
-          const marker = new google.maps.Marker({
-          position: features[i].position,
-          icon: icons[features[i].type].icon,
-          map: map,
-          });
-      }
-  
-  
-  
-    const items = await Universities.find().lean()
-    console.log(items)
+    const items = await Universities.find().lean();
+    console.log(items);
+    var x = 20;
     res.render('admin', {
       name: req.user.firstName,
-      items
+      items,
+      x:x
     });
   }catch(error){
     console.error(error)
