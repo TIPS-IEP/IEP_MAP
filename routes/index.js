@@ -23,6 +23,17 @@ router.get('/map', function(req, res) {
     test: "myVar",
   });
 });
+
+/* GET about page. */
+router.get('/about', function(req, res) {
+  res.render('about');
+});
+
+/* GET about page. */
+router.get('/contact', function(req, res) {
+  res.render('contact');
+});
+
 router.get('/testmongoose', function(req, res) {
   // console.log(University.find());
   mongoose.model('Universities').findOne(function(err,Universities){

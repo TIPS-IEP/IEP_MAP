@@ -349,11 +349,19 @@ body, html {
 
 .column2 {
   float: left;
-  width: 21%;
-  /* margin: 5px; */
+  width: 20%;
+  margin: 5px;
   margin-bottom: 16px;
   padding: 0 8px;
 }
+.column3 {
+  float: left;
+  width: 15px;
+  margin: 5px;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
 
 #big {
   font-size: 48px;
