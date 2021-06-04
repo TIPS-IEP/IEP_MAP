@@ -18,10 +18,26 @@ router.get('/', ensureGuest, function(req, res, next) {
 });
 
 /* GET map page. */
-router.get('/map', function(req, res) {
-  var x = 20;
+router.get('/map', async function(req, res) {
+  var uniItems = await Universities.find().lean();
+  var length = uniItems.length;
+  var universityName = [];
+  var universityLat = [];
+  var universityLng = [];
+  uniItems.forEach(function(item){
+    universityName.push(item.university);
+    universityLat.push(item.lat);
+    universityLng.push(item.lng);
+  });
+  
+  for(var j=0;j<length;j++){
+    console.log(universityName[j]);
+    console.log(universityLat[j]);
+    console.log(universityLng[j]);
+  }
+  var x = 40;
   res.render('map',{
-    x: x,
+    x: x
   });
 });
 router.get('/testmongoose', function(req, res) {
@@ -108,11 +124,9 @@ router.get('/admin', ensureAuth, async (req, res) => {
   try{
     const items = await Universities.find().lean();
     console.log(items);
-    var x = 20;
     res.render('admin', {
       name: req.user.firstName,
       items,
-      x:x
     });
   }catch(error){
     console.error(error)

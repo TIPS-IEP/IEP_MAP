@@ -21,9 +21,43 @@ html(lang='en')
   
     //- center website 
     meta(name='viewport' content='width=device-width, initial-scale=1')
-    
+
+    script.
+      var x = #{x};
+      console.log(x);
+      function initMap(){
+          var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: {lat: 42, lng: -96.65625}
+          });
+
+          var features = [10];
+          features[0]={
+              position: new google.maps.LatLng(42.27656, -83.74256),
+              type: "UniversityofMichigan",
+          }
+
+          var image = {
+              url: "images/universities/University of Michigan.png",
+              scaledSize: new google.maps.Size(30,32)
+          };
+          const icons = {
+              UniversityofMichigan: {
+              icon: image,
+              },
+          };
+          // Create markers.
+          for (let i = 0; i < features.length; i++) {
+              const marker = new google.maps.Marker({
+              position: features[i].position,
+              icon: icons[features[i].type].icon,
+              map: map,
+              });
+          }
+      
+      }
+        
   body
     include common/nav
     div#map
     script(async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy8QR6hkmBw9pMJWs2XhY111wiGl5H3Sg&libraries=geometry&callback=initMap")
-    
