@@ -4,6 +4,8 @@ html(lang='en')
   head
     //- css
     link(rel="stylesheet" href="stylesheets/index.css")
+    link(rel="stylesheet" href="stylesheets/about.css")
+
 
     //- js
     script(src="javascripts/index.js")
@@ -21,12 +23,15 @@ html(lang='en')
     
   body#main
     include common/nav
-    
+      
     #mySidenav.sidenav
       a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
-      a(href='#') Home 
-      a(href='#origin') Origin
-      a(href='#mission') Mission
-      a(href='#vision') Vision
+      a(href='#origins') Origins
       a(href='#features') Features
       a(href='#team') Team  
+    section.hero
+      .content
+        h2 Hero Header
+        p
+          | Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa ac turpis faucibus orci luctus non
+      .waves
