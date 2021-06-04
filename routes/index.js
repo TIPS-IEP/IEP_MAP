@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const passport = require('passport');
 const {ensureAuth, ensureGuest} = require('../middleware/auth')
+const {ensureSuper} = require('../middleware/super')
 
 //database
 var mongoose = require('mongoose');
@@ -84,7 +85,7 @@ router.get('/login', ensureGuest, function(req, res, next) {
   res.render('login/login');
 });
 
-router.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
+router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'https://www.googleapis.com/auth/userinfo.email'] }));
 router.get(
   '/auth/google/callback', 
   passport.authenticate('google', { failureRedirect: '/login/login' }), 
@@ -121,9 +122,13 @@ router.get('/admin', ensureAuth, async (req, res) => {
 
 
 // for testing
-// router.get('/test', ensureAuth, (req, res) => {
-//   res.render('map');
-// })
+router.get('/test', ensureAuth, ensureSuper, async (req, res) => {
+  const emails = await Alumni.find().lean()
+  res.render('test/test', {
+    myemail: req.user.email,
+    emails
+  });
+})
 module.exports = router;
 
 
