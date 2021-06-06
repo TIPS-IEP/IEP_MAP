@@ -25,6 +25,30 @@ html(lang='en')
     script.
       var x = #{x};
       console.log(x);
+      var length = #{length};
+      var i = 0;
+      var tempName = "#{universityName[i]}";
+      var tempLat = "#{universityLat}";
+      var tempLng = "#{universityLng}";
+      tempName = tempName.split(",");
+      var universityName = [];
+      var universityLat = [];
+      var universityLng = [];
+      for(i in tempName){
+        universityName[i] = tempName[i];
+      }
+      
+      var k = 2;
+      //- for(var j=0;j<length;j++){
+      //-   universityName[j] = ;
+      //- }
+      //- universityLat[] = #{universityLat};
+      //- universityLng[] = #{universityLng};
+      for(var j=0;j<length;j++){
+        console.log(universityName[j]);
+        console.log(universityLat[j]);
+        console.log(universityLng[j]);
+      }
       function initMap(){
           var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
