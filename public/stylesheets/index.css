@@ -247,6 +247,7 @@ body, html {
   width: 100%;
   top: 0; /* At the top */
   z-index: 50;
+  /* opacity: 80%; */
 }
 
 /* Style the navbar links */
@@ -284,6 +285,14 @@ body, html {
 /* Display some links to the right */
 #navbar-right {
   float: right;
+  font-family: 'Lato', sans-serif !important;
+  text-transform: uppercase;
+}
+
+#navbar-right .active {
+  background-color: transparent !important;
+  color: #000 !important;
+  font-weight: bold;
 }
 
 /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
