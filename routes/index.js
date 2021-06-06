@@ -31,14 +31,18 @@ router.get('/map', async function(req, res) {
     universityLng.push(item.lng);
   });
   
-  for(var j=0;j<length;j++){
-    console.log(universityName[j]);
-    console.log(universityLat[j]);
-    console.log(universityLng[j]);
-  }
-  var x = 40;
+  // for(var j=0;j<length;j++){
+  //   console.log(universityName[j]);
+  //   console.log(universityLat[j]);
+  //   console.log(universityLng[j]);
+  // }
+  var x = 20;
   res.render('map',{
-    x: x
+    x:x,
+    length: length,
+    universityName: universityName,
+    universityLat: universityLat,
+    universityLng: universityLng,
   });
 });
 

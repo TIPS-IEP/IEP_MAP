@@ -25,32 +25,48 @@ html(lang='en')
     script.
       var x = #{x};
       console.log(x);
+      var length = #{length};
+      var i = 0;
+      var tempName = "#{universityName}".split(/\,+(?!\ )/);
+      var tempLat = "#{universityLat}".split(/\,+(?!\ )/);
+      var tempLng = "#{universityLng}".split(/\,+(?!\ )/);
+      var universityName = [];
+      var universityLat = [];
+      var universityLng = [];
+      for(i in tempName){
+        universityName[i] = tempName[i];
+        universityLat[i] = tempLat[i];
+        universityLng[i] = tempLng[i];
+      }
+
       function initMap(){
           var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: {lat: 42, lng: -96.65625}
           });
 
-          var features = [10];
-          features[0]={
-              position: new google.maps.LatLng(42.27656, -83.74256),
-              type: "UniversityofMichigan",
-          }
-
-          var image = {
-              url: "images/universities/University of Michigan.png",
+          var features = [];
+          var image = [];
+          var icons = [];
+          for(let i = 0; i<length; i++){
+            features[i]={
+              type:universityName[i],
+              position: new google.maps.LatLng(universityLat[i],universityLng[i]),
+            };
+            image[i] = {
+              url: "images/universities/"+universityName[i]+".png",
               scaledSize: new google.maps.Size(30,32)
-          };
-          const icons = {
-              UniversityofMichigan: {
-              icon: image,
-              },
-          };
+            };
+            icons[i] = {
+              icon: image[i],
+            };
+          }
+          
           // Create markers.
-          for (let i = 0; i < features.length; i++) {
+          for (let i = 0; i < length; i++) {
               const marker = new google.maps.Marker({
               position: features[i].position,
-              icon: icons[features[i].type].icon,
+              icon: icons[i].icon,
               map: map,
               });
           }
