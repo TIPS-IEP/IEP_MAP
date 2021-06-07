@@ -4,13 +4,10 @@ html(lang='en')
   head
     //- css
     link(rel="stylesheet" href="stylesheets/index.css")
-    link(rel="stylesheet" href="stylesheets/about.css")
-
+    link(rel="stylesheet" href="stylesheets/profile.css")
 
     //- js
     script(src="javascripts/index.js")
-    script(src="javascripts/about.js")
-
 
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
@@ -22,18 +19,32 @@ html(lang='en')
 
     //- center website 
     meta(name='viewport' content='width=device-width, initial-scale=1')
-
+    
     //- google font set up
     link(rel="preconnect" href="https://fonts.gstatic.com")
     link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
 
-
-
   body#main
-    include common/nav
-    #mySidenav.sidenav
-      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
-      a(href='#origins') Origins
-      a(href='#features') Features
-      a(href='#team') Team  
-    include common/footer
+    include ../login/usernav
+    .row
+        .col-md-2
+        .col-md-2
+            .card(style="margin-top: 200px; width: 200px")
+                .bg
+                    img#image.card-img-top
+                .card-body
+                    .card-title Hi #{name}
+                    .card-title
+                        a.btn.btn-primary(href="/logout") Logout
+        .col-md-6
+            .card(style="margin-top: 200px;")
+                .card-body
+                    .card-title Hi #{name}
+                    .card-text hi
+        .col-md-2
+    script.
+        var image_url = "#{picture}";
+        const doc = document.getElementById("image");
+        doc.style.content = "url(#{picture})";
+    
+
