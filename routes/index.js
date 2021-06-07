@@ -48,12 +48,28 @@ router.get('/map', async function(req, res) {
 
 /* GET about page. */
 router.get('/about', function(req, res) {
-  res.render('about');
+  if(req.isAuthenticated()){
+    var firstName = req.user.firstName;
+  }else{
+    var firstName = null
+  }
+  res.render('about', {
+    loggedin: req.isAuthenticated(),
+    name: firstName,
+  });
 });
 
 /* GET about page. */
 router.get('/contact', function(req, res) {
-  res.render('contact');
+  if(req.isAuthenticated()){
+    var firstName = req.user.firstName;
+  }else{
+    var firstName = null
+  }
+  res.render('contact', {
+    loggedin: req.isAuthenticated(),
+    name: firstName,
+  });
 });
 
 router.get('/testmongoose', function(req, res) {

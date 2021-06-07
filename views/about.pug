@@ -35,7 +35,12 @@ html(lang='en')
     link(rel="preconnect" href="https://fonts.gstatic.com")
     link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
   body#main
-    include common/nav
+    script.
+      var loggedin = #{loggedin}
+    if loggedin
+      include login/usernav
+    else
+      include common/nav
     #mySidenav.sidenav
       a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
       a(href='#origins') Origins
