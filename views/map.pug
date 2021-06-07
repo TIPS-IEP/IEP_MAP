@@ -70,6 +70,10 @@ html(lang='en')
               icon: icons[i].icon,
               map: map,
               });
+              marker.addListener("click", () => {
+                map.setZoom(8);
+                map.setCenter(marker.getPosition());
+              });
           }
       
       }
