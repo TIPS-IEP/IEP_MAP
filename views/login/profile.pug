@@ -25,3 +25,19 @@ html(lang='en')
 
   body#main
     include ../login/usernav
+    .row
+        .col-md-2
+        .col-md-4
+            .card(style="width: 100%; margin-top: 200px;")
+                .center
+                    img#image.card-img-top(style="width: 180px; height: 180px;")
+                .card-body
+                    .card-title Hi #{name}
+        .col-md-4 
+        .col-md-2
+    script.
+        var image_url = "#{picture}";
+        const doc = document.getElementById("image");
+        doc.style.content = "url(#{picture})";
+    
+
