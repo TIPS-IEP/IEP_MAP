@@ -9,6 +9,8 @@ html(lang='en')
 
     //- js
     script(src="javascripts/index.js")
+    script(src="javascripts/about.js")
+
 
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
@@ -20,21 +22,142 @@ html(lang='en')
 
     //- center website 
     meta(name='viewport' content='width=device-width, initial-scale=1')
+
+    title W3.CSS Template
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css')
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+
     
     //- google font set up
     link(rel="preconnect" href="https://fonts.gstatic.com")
     link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
   body#main
     include common/nav
-      
     #mySidenav.sidenav
       a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
       a(href='#origins') Origins
       a(href='#features') Features
       a(href='#team') Team  
-    section.hero
-      .content
-        h2 Hero Header
-        p
-          | Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa ac turpis faucibus orci luctus non
-      .waves
+
+    //- First Parallax Image with Logo Text
+    #home.bgimg-1.w3-display-container.w3-opacity-min
+      #origins 
+      .w3-display-middle(style='white-space:nowrap;')
+        span.w3-center.w3-padding-large.w3-black.w3-xlarge.w3-wide.w3-animate-opacity
+          | OUR ORIGINS
+    // Container (About Section)
+    #about.w3-content.w3-container.w3-padding-64
+      h3.w3-center ABOUT US
+      p.w3-center
+        em I love photography
+      p
+        | We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+        | qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      .w3-row
+        .w3-col.m6.w3-center.w3-padding-large
+          p
+            b
+              i.fa.fa-user.w3-margin-right
+              | My Name
+          br
+          img.w3-round.w3-image.w3-opacity.w3-hover-opacity-off(src='/w3images/avatar_hat.jpg' alt='Photo of Me' width='500' height='333')
+        // Hide this text on small devices
+        .w3-col.m6.w3-hide-small.w3-padding-large
+          p
+            | Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            | dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+            | incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      p.w3-large.w3-center.w3-padding-16 Im really good at:
+      p.w3-wide
+        i.fa.fa-camera
+        | Photography
+      .w3-light-grey
+        .w3-container.w3-padding-small.w3-dark-grey.w3-center(style='width:90%') 90%
+      p.w3-wide
+        i.fa.fa-laptop
+        | Web Design
+      .w3-light-grey
+        .w3-container.w3-padding-small.w3-dark-grey.w3-center(style='width:85%') 85%
+      p.w3-wide
+        i.fa.fa-photo
+        | Photoshop
+      .w3-light-grey
+        .w3-container.w3-padding-small.w3-dark-grey.w3-center(style='width:75%') 75%
+    .w3-row.w3-center.w3-dark-grey.w3-padding-16
+      .w3-quarter.w3-section
+        span.w3-xlarge 14+
+        br
+        |     Partners
+      .w3-quarter.w3-section
+        span.w3-xlarge 55+
+        br
+        |     Projects Done
+      .w3-quarter.w3-section
+        span.w3-xlarge 89+
+        br
+        |     Happy Clients
+      .w3-quarter.w3-section
+        span.w3-xlarge 150+
+        br
+        |     Meetings
+    // Second Parallax Image with Portfolio Text
+    .bgimg-2.w3-display-container.w3-opacity-min
+      .w3-display-middle
+        span.w3-xxlarge.w3-text-white.w3-wide PORTFOLIO
+    // Container (Portfolio Section)
+    #portfolio.w3-content.w3-container.w3-padding-64
+      h3.w3-center MY WORK
+      p.w3-center
+        em
+          | Here are some of my latest lorem work ipsum tipsum.
+          br
+          |  Click on the images to make them bigger
+      br
+      // Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width)
+      .w3-row-padding.w3-center
+        .w3-col.m3
+          img.w3-hover-opacity(src='/w3images/p1.jpg' style='width:100%' onclick='onClick(this)' alt='The mist over the mountains')
+        .w3-col.m3
+          img.w3-hover-opacity(src='/w3images/p2.jpg' style='width:100%' onclick='onClick(this)' alt='Coffee beans')
+        .w3-col.m3
+          img.w3-hover-opacity(src='/w3images/p3.jpg' style='width:100%' onclick='onClick(this)' alt='Bear closeup')
+        .w3-col.m3
+          img.w3-hover-opacity(src='/w3images/p4.jpg' style='width:100%' onclick='onClick(this)' alt='Quiet ocean')
+      .w3-row-padding.w3-center.w3-section
+        .w3-col.m3
+          img.w3-hover-opacity(src='/w3images/p5.jpg' style='width:100%' onclick='onClick(this)' alt='The mist')
+        .w3-col.m3
+          img.w3-hover-opacity(src='/w3images/p6.jpg' style='width:100%' onclick='onClick(this)' alt='My beloved typewriter')
+        .w3-col.m3
+          img.w3-hover-opacity(src='/w3images/p7.jpg' style='width:100%' onclick='onClick(this)' alt='Empty ghost train')
+        .w3-col.m3
+          img.w3-hover-opacity(src='/w3images/p8.jpg' style='width:100%' onclick='onClick(this)' alt='Sailing')
+        button.w3-button.w3-padding-large.w3-light-grey(style='margin-top:64px') LOAD MORE
+    // Modal for full size images on click
+    #modal01.w3-modal.w3-black(onclick="this.style.display='none'")
+      span.w3-button.w3-large.w3-black.w3-display-topright(title='Close Modal Image')
+        i.fa.fa-remove
+      .w3-modal-content.w3-animate-zoom.w3-center.w3-transparent.w3-padding-64
+        img#img01.w3-image
+        p#caption.w3-opacity.w3-large
+    // Third Parallax Image with Portfolio Text
+    .bgimg-3.w3-display-container.w3-opacity-min
+      .w3-display-middle
+        span.w3-xxlarge.w3-text-white.w3-wide CONTACT
+    
+    // Footer
+    footer.w3-center.w3-black.w3-padding-64.w3-opacity.w3-hover-opacity-off
+      a.w3-button.w3-light-grey(href='#home')
+        i.fa.fa-arrow-up.w3-margin-right
+        | To the top
+      .w3-xlarge.w3-section
+        i.fa.fa-facebook-official.w3-hover-opacity
+        i.fa.fa-instagram.w3-hover-opacity
+        i.fa.fa-linkedin.w3-hover-opacity
+      p
+        | Powered by 
+        a.w3-hover-text-green(href='https://www.w3schools.com/w3css/default.asp' title='W3.CSS' target='_blank') sexy banana 
