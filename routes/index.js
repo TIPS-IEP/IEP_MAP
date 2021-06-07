@@ -136,6 +136,12 @@ router.get('/user', ensureAuth, (req, res) => {
   });
 })
 
+router.get('/profile', ensureAuth, (req, res) => {
+  res.render('login/profile', {
+    name: req.user.firstName,
+  });
+})
+
 router.get('/admin', ensureAuth, async (req, res) => {
   try{
     const items = await Universities.find().lean();
