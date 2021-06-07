@@ -25,20 +25,13 @@ router.get('/map', async function(req, res) {
   var universityName = [];
   var universityLat = [];
   var universityLng = [];
+  const uniImages = [];
   uniItems.forEach(function(item){
     universityName.push(item.university);
     universityLat.push(item.lat);
     universityLng.push(item.lng);
   });
-  
-  // for(var j=0;j<length;j++){
-  //   console.log(universityName[j]);
-  //   console.log(universityLat[j]);
-  //   console.log(universityLng[j]);
-  // }
-  var x = 20;
   res.render('map',{
-    x:x,
     length: length,
     universityName: universityName,
     universityLat: universityLat,
