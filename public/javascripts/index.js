@@ -24,6 +24,7 @@ function openNav() {
   document.getElementById("hide1").style.display = "none";
   document.getElementById("hide2").style.display = "none";
   document.getElementById("hide3").style.display = "none";
+  document.getElementById("hide4").style.display = "none";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
@@ -34,4 +35,5 @@ function closeNav() {
   document.getElementById("hide1").style.display = "block";
   document.getElementById("hide2").style.display = "block";
   document.getElementById("hide3").style.display = "block";
+  document.getElementById("hide4").style.display = "block";
 }
