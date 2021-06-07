@@ -139,6 +139,7 @@ router.get('/user', ensureAuth, (req, res) => {
 router.get('/profile', ensureAuth, (req, res) => {
   res.render('login/profile', {
     name: req.user.firstName,
+    picture: req.user.image,
   });
 })
 
