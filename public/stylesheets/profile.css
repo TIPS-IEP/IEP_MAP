@@ -1,9 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
 .bg {
     width: 100%;
     background-color: #ddd;
 }
-
-
 
 #image {
     width: 180px;
@@ -18,4 +18,15 @@
 
 .btn {
     width: 90%;
+}
+
+#main-title{
+    background-color: rgb(183, 221, 247);
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    /* border-radius: 30%; */
+}
+
+#storyboard{
+    background-color: rgb(235, 247, 255);
 }

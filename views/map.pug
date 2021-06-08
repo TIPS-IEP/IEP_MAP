@@ -7,6 +7,7 @@ html(lang='en')
 
     //- js
     script(src="javascripts/index.js")
+    script(src="javascripts/map.js")
 
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
@@ -45,15 +46,13 @@ html(lang='en')
           var features = [];
           var image = [];
           var icons = [];
-          for(let i = 0; i<length; i++){
+          for (let i = 0; i<length; i++){
             features[i]={
               type:universityName[i],
               position: new google.maps.LatLng(universityLat[i],universityLng[i]),
             };
             const img = new Image();
             img.src = 'images/universities/'+universityName[i]+'.png';
-            console.log(img.width/Math.sqrt(img.width*img.height/100));
-            console.log(img.height/Math.sqrt(img.width*img.height/100));
             image[i] = {
               url: "images/universities/"+universityName[i]+".png",
               scaledSize: new google.maps.Size(img.width/Math.sqrt(img.width*img.height/1200),img.height/Math.sqrt(img.width*img.height/1200))
@@ -73,12 +72,23 @@ html(lang='en')
               marker.addListener("click", () => {
                 map.setZoom(8);
                 map.setCenter(marker.getPosition());
+                openNav();
               });
-          }
-      
+          }      
       }
-        
+      function delayRefreshPage() {
+        window.setTimeout(location.reload(true), 4000);
+      }
   body
     include common/nav
+    div#map(onload ='delayRefreshPage()')
+    script.
+        var loggedin = #{loggedin}
+    if loggedin
+      include login/usernav
+    else
+      include common/nav
     div#map
     script(async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy8QR6hkmBw9pMJWs2XhY111wiGl5H3Sg&libraries=geometry&callback=initMap")
+      div#mapSideShow.sideShow
+        a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
