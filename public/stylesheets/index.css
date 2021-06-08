@@ -6,6 +6,7 @@
 
 /* Style inputs */
   input[type=text], select, textarea {
+  border-radius: 15px;
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -16,6 +17,7 @@
 
 input[type=submit] {
   background-color: #f3c441;
+  border-radius: 15px;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -23,7 +25,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #0082fc;
 }
 
 /* Style the container/contact section */
@@ -138,12 +140,12 @@ html {
 }
 
 body {
-  background: #555;
+  background: rgb(234 240 242);
 }
 .content {
   width: auto;
   margin: 50px;
-  background: rgb(255, 255, 255);
+  background: rgb(234 240 242);
   padding: 10px;
 }
 
@@ -615,16 +617,16 @@ footer{
 
 .footer-distributed .footer-icons a{
 	display: inline-block;
-	width: 35px;
-	height: 35px;
+	width: 50px;
+	height: 50px;
 	cursor: pointer;
 	background-color:  #33383b;
 	border-radius: 2px;
 
-	font-size: 20px;
+	font-size: 38px;
 	color: #ffffff;
 	text-align: center;
-	line-height: 35px;
+	line-height: 55px;
 
 	margin-right: 3px;
 	margin-bottom: 5px;
@@ -649,4 +651,8 @@ footer{
 		margin-left: 0;
 	}
 
+}
+
+#round {
+  border-radius: 15px;
 }

@@ -23,6 +23,9 @@ html(lang='en')
     link(rel="preconnect" href="https://fonts.gstatic.com")
     link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
 
+    title Wego IEP Alumni 
+
+
   body#main
     include common/nav
     
@@ -115,7 +118,7 @@ html(lang='en')
       .row
         .column3
         .column
-          img(src='/images/hero/letter2.jpg' style='width:260%')
+          img#round(src='/images/hero/letter2.1.jpg' style='width:260%')
         .column
         .column2
         .column2
@@ -126,10 +129,10 @@ html(lang='en')
             input#lname(type='text' name='lastname' placeholder='Your last name..')
             label(for='country') Country
             select#country(name='country')
-              option(value='taiwan') Taiwan
-              option(value='usa') USA
+              option(value='taiwan') Taiwan 
+              option(value='usa') USA 
               option(value='canada') Canada 
-              option(value='uk') UK
+              option(value='uk') UK 
               option(value='japan') Japan 
               option(value='singapore') Singapore 
               option(value='china')  China
@@ -137,6 +140,5 @@ html(lang='en')
             label(for='subject') Subject
             textarea#subject(name='subject' placeholder='Write something..' style='height:110px')
             input(type='submit' value='Submit')
-          
       script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
     include common/footer

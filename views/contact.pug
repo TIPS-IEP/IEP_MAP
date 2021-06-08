@@ -22,6 +22,9 @@ html(lang='en')
     //- google font set up
     link(rel="preconnect" href="https://fonts.gstatic.com")
     link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
+
+    title Contact Us
+
   body#main
     script.
       var loggedin = #{loggedin}
@@ -44,7 +47,7 @@ html(lang='en')
       .row
         .column3
         .column
-          img(src='/images/hero/letter2.jpg' style='width:260%')
+          img#round(src='/images/hero/letter2.1.jpg' style='width:260%')
         .column
         .column2
         .column2
@@ -68,3 +71,4 @@ html(lang='en')
             input(type='submit' value='Submit')
           
       script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+    include common/footer
