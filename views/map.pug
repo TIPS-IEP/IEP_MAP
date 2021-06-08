@@ -76,12 +76,13 @@ html(lang='en')
               });
           }      
       }
-      function delayRefreshPage() {
-        window.setTimeout(location.reload(true), 4000);
+      window.onload = function() {
+        if(!window.location.hash) {
+            window.location = window.location + '#loaded';
+            window.location.reload();
+        }
       }
   body
-    include common/nav
-    div#map(onload ='delayRefreshPage()')
     script.
         var loggedin = #{loggedin}
     if loggedin
@@ -92,3 +93,4 @@ html(lang='en')
     script(async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy8QR6hkmBw9pMJWs2XhY111wiGl5H3Sg&libraries=geometry&callback=initMap")
       div#mapSideShow.sideShow
         a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+    div
