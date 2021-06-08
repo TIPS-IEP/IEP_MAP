@@ -79,6 +79,11 @@ html(lang='en')
       }
         
   body
-    include common/nav
+    script.
+        var loggedin = #{loggedin}
+    if loggedin
+      include login/usernav
+    else
+      include common/nav
     div#map
     script(async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy8QR6hkmBw9pMJWs2XhY111wiGl5H3Sg&libraries=geometry&callback=initMap")

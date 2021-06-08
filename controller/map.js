@@ -11,14 +11,23 @@ exports.showMap = async function(req, res) {
     var universityLng = [];
     const uniImages = [];
     uniItems.forEach(function(item){
-      universityName.push(item.university);
-      universityLat.push(item.lat);
-      universityLng.push(item.lng);
+        universityName.push(item.university);
+        universityLat.push(item.lat);
+        universityLng.push(item.lng);
     });
+
+    if(req.isAuthenticated()){
+        var firstName = req.user.firstName;
+    }else{
+        var firstName = null
+    }
+
     res.render('map',{
-      length: length,
-      universityName: universityName,
-      universityLat: universityLat,
-      universityLng: universityLng,
+        length: length,
+        universityName: universityName,
+        universityLat: universityLat,
+        universityLng: universityLng,
+        loggedin: req.isAuthenticated(),
+        name: firstName,
     });
 }
