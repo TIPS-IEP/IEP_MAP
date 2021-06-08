@@ -80,10 +80,8 @@ html(lang='en')
         indow.setTimeout(location.reload(), 2000);
       }
   body
-<<<<<<< HEAD
     include common/nav
     div#map(onload ='delayRefreshPage()')
-=======
     script.
         var loggedin = #{loggedin}
     if loggedin
@@ -91,7 +89,6 @@ html(lang='en')
     else
       include common/nav
     div#map
->>>>>>> 8701df720cdb7dad72659b3a32ec5e6828d27ceb
     script(async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy8QR6hkmBw9pMJWs2XhY111wiGl5H3Sg&libraries=geometry&callback=initMap")
       div#mapSideShow.sideShow
         a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
