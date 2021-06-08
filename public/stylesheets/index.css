@@ -34,14 +34,14 @@ input[type=submit]:hover {
 .container {
   border-radius: 30px;
   background-color: #dfdfdf;
-  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.267);
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.63);
   padding: 10px;
-  margin: 20px;
+  margin: 10px;
 }
 .container2 {
-  border-radius: 20px;
+  border-radius: 13px;
   background-color: #dfdfdf;
-  padding: 10px;
+  padding: 5px;
   margin: 5px;
 }
 
@@ -83,7 +83,7 @@ html {
 
 .column {
   float: left;
-  width: 25%;
+  width: 24.5%;
   /* margin: 5px; */
   margin-bottom: 16px;
   padding: 0 8px;
@@ -654,7 +654,18 @@ footer{
 	}
 
 }
-
+/* rounding image */
 #round {
   border-radius: 15px;
+}
+
+/* zoom features */
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.08); /* IE 9 */
+  -webkit-transform: scale(1.08); /* Safari 3-8 */
+  transform: scale(1.08); 
 }
