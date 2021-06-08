@@ -41,7 +41,7 @@ router.get('/user', ensureAuth, usersController.showUser)
 router.get('/profile', ensureAuth, usersController.showProfile)
 
 // GET map page
-router.get('/map', mapController.showMap);
+router.get('/map', ensureAuth, ensureSuper, mapController.showMap);
 
 module.exports = router;
 
