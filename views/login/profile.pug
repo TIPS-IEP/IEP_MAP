@@ -26,6 +26,10 @@ html(lang='en')
 
   body#main
     include ../login/usernav
+    script.
+        var user = "#{data}"
+        var data = user.split(/\,+(?!\ )/);
+        console.log(data)
     .row
         .col-md-2
         .col-md-2
@@ -40,12 +44,13 @@ html(lang='en')
             .card(style="margin-top: 200px;")#storyboard
                 .card-body
                     .card-title#main-title Profile Page
-                    .card-text EnglishName: 
-                    .card-text Last Name: 
-                    .card-text First Name: 
-                    .card-text Email: 
-                    .card-text GraduationYear: 
-                    .card-text Major: 
+                    .card-text EnglishName: #{data[0]}
+                    .card-text Last Name:
+                    .card-text First Name:
+                    .card-text Email: #{data[1]}
+                    .card-text Instagram Account: #{data[2]}
+                    .card-text GraduationYear: #{data[3]}
+                    .card-text Major: #{data[4]}
 
         .col-md-2
     script.
