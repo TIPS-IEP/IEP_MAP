@@ -76,8 +76,11 @@ html(lang='en')
               });
           }      
       }
-      function delayRefreshPage() {
-        setTimeout(location.reload(true), 4000);
+      window.onload = function() {
+        if(!window.location.hash) {
+            window.location = window.location + '#loaded';
+            window.location.reload();
+        }
       }
   body
     script.
