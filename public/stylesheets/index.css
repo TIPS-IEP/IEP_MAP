@@ -429,6 +429,7 @@ body, html {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
 #z-index {
   z-index: 100;
   /* transition: 0.4s; */

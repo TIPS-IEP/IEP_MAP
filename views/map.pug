@@ -4,7 +4,6 @@ html(lang='en')
     //- css
     link(rel="stylesheet" href="stylesheets/index.css")
     link(rel="stylesheet" href="stylesheets/map.css")
-
     //- js
     script(src="javascripts/index.js")
     script(src="javascripts/map.js")
@@ -72,16 +71,18 @@ html(lang='en')
               marker.addListener("click", () => {
                 map.setZoom(8);
                 map.setCenter(marker.getPosition());
-                openNav();
+                opensideShow();
               });
           }      
       }
       window.onload = function() {
+        document.getElementById("z-index").style.display = "none";
         if(!window.location.hash) {
             window.location = window.location + '#loaded';
             window.location.reload();
         }
       }
+    
   body
     script.
         var loggedin = #{loggedin}
@@ -91,6 +92,8 @@ html(lang='en')
       include common/nav
     div#map
     script(async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy8QR6hkmBw9pMJWs2XhY111wiGl5H3Sg&libraries=geometry&callback=initMap")
-      div#mapSideShow.sideShow
-        a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
-    div
+    #sideShow.sideShow
+      a.closebtn(href='javascript:void(0)' onclick='closesideShow()') &times;
+    
+    
+  

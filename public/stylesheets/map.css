@@ -15,7 +15,7 @@
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
-  }
+}
 /* The sidepanel links */
 .sideShow a {
     padding: 8px 8px 8px 32px;
@@ -24,11 +24,11 @@
     color: #818181;
     display: block;
     transition: 0.3s;
-  }
+}
 /* When you mouse over the navigation links, change their color */
 .sideShow a:hover {
     color: #f1f1f1;
-  }
+}
 /* Position and style the close button (top right corner) */
 .sideShow .closebtn {
     position: absolute;
@@ -36,4 +36,9 @@
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sideShow {padding-top: 15px;}
+    .sideShow a {font-size: 18px;}
   }
