@@ -44,20 +44,29 @@ html(lang='en')
             .card(style="margin-top: 200px;")#storyboard
                 .card-body
                     .card-title#main-title Profile Page
-                    .card-text EnglishName: #{data[0]}
-                    .card-text Last Name: #{data[1]}
-                    .card-text First Name: #{data[2]}
-                    .card-text Email: #{data[3]}
-                    .card-text Instagram Account: #{data[4]}
-                    .card-text GraduationYear: #{data[5]}
-                    .card-text Major: #{data[6]}
-                    .card-text Status:
-                    .card-title
-                        a.btn.btn-primary(href="/add") Update Profile
+                    form(action = "/add" method="POST")
+                        .form-group
+                            label English Name:
+                            input.form-control(type="text" id="EnglishName" name="EnglishName" placeholder="Enter English Name" required)
+                        .form-group
+                            label Last Name:
+                            input.form-control(type="text" id="LastName" name="LastName" placeholder="Enter Last Name" required)
+                        .form-group
+                            label First Name:
+                            input.form-control(type="text" id="FirstName" name="FirstName" aria-describedby="emailHelp" placeholder="Enter First Name" required)
+                        .form-group
+                            label Instagram Account:
+                            input.form-control(type="text" id="InstagramUsername" name="InstagramUsername" aria-describedby="emailHelp" placeholder="Enter Your Instagram Account Name" required)
+                        .form-group
+                            label GraduationYear:
+                            input.form-control(type="text" id="GraduationYear" name="GraduationYear" aria-describedby="emailHelp" placeholder="Enter Your GraduationYear" required)
+                        .form-group
+                            label Major:
+                            input.form-control(type="text" id="Major" name="Major" aria-describedby="emailHelp" placeholder="Enter Your Major" required)
+                        input.btn(type="submit" Value="Save")
         .col-md-2
+        p yo
     script.
         var image_url = "#{picture}";
         const doc = document.getElementById("image");
         doc.style.content = "url(#{picture})";
-    
-
