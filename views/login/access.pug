@@ -25,6 +25,14 @@ html(lang='en')
   body#main
     include usernav
 
+    #mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      a(href='#') Home 
+      a(href='#vision') Vision
+      a(href='#mission') Mission
+      a(href='#about') Features
+      a(href='#contactus') Contact 
+
     .hero-image1
         .hero-text1
     #vision
@@ -45,53 +53,53 @@ html(lang='en')
     .about-section
       //- h1 About Us Page
       //- p(style='text-align:left') We are Wego IEP Alums!
-      h1#big(style='text-align:center') Our Features
+      h1#big(style='text-align:center') Our Features 
       br
       .row
         .column
-          .container
+          .container.zoom
             p 
               br
               img(src='/images/icons/profiles.png' alt='person icon' style='width:75%' class='center')
             .container2
               p
-                h2 Student Profiles
+                h3 Student Profiles
               p.title Colleges, Countries, Industries
               p
                 a(href="/map")
                   button.button Read More 
         .column
-          .container
+          .container.zoom
             p 
               br
               img(src='/images/icons/board.png' alt='3 ppl icon' style='width:75%' class='center')
             .container2
               p
-                h2 Advisory Board 
+                h3 Advisory Board 
               p.title Wego IEP Alumni Board
               p
                 a(href="#")
                   button.button Read More 
         .column
-          .container
+          .container.zoom
             p
               br
               img(src='/images/icons/sharing.png' alt='seminar icon' style='width:75%' class='center')
             .container2
               p 
-                h2 Sharing Session
+                h3 Sharing Session
               p.title Applying, Student Life, Careers
               p
                 a(href="#")
                   button.button Read More 
         .column
-          .container
+          .container.zoom
             p 
               br
               img(src='/images/icons/events.png' alt='10 ppl icon' style='width:75%' class='center')
             .container2
               p
-                h2 Annual Events
+                h3 Annual Events
               p.title Event Connecting Alums
               p
                 a(href="#")
@@ -101,10 +109,12 @@ html(lang='en')
     #contactus
     .content
       div(style='text-align:left')
+        .column3
         h1#big Contact Us 
       .row
+        .column3
         .column
-          img(src='/images/hero/letter2.jpg' style='width:270%')
+          img#round(src='/images/hero/letter2.1.jpg' style='width:260%')
         .column
         .column2
         .column2
@@ -115,16 +125,16 @@ html(lang='en')
             input#lname(type='text' name='lastname' placeholder='Your last name..')
             label(for='country') Country
             select#country(name='country')
-              option(value='taiwan') Taiwan
-              option(value='usa') USA
+              option(value='taiwan') Taiwan 
+              option(value='usa') USA 
               option(value='canada') Canada 
-              option(value='uk') UK
+              option(value='uk') UK 
               option(value='japan') Japan 
               option(value='singapore') Singapore 
               option(value='china')  China
               option(value='thailand') Thailand
             label(for='subject') Subject
-            textarea#subject(name='subject' placeholder='Write something..' style='height:170px')
+            textarea#subject(name='subject' placeholder='Write something..' style='height:110px')
             input(type='submit' value='Submit')
-          
       script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+    include ../common/footer
