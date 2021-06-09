@@ -1,20 +1,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const AlumniSchema = new Schema({
+const unAuthSchema = new Schema({
   EnglishName: {
     type: String,
     required: true
   },
   FirstName: {
     type: String,
+    required: true
   },
   LastName: {
     type: String,
+    required: true
   },
   Email: {
     type: String,
-    required: true
   },
   InstagramUsername: {
     type: String
@@ -25,8 +26,9 @@ const AlumniSchema = new Schema({
   },
   Major: {
     type: String,
+    required: true
   }
 }, {timestamps: true})
 
-const Alumni = mongoose.model('alumni', AlumniSchema);
-module.exports = Alumni;
+const unAuth = mongoose.model('unAuth', unAuthSchema);
+module.exports = unAuth;

@@ -39,6 +39,12 @@ router.get('/logout', usersController.logout)
 // show user
 router.get('/user', ensureAuth, usersController.showUser)
 router.get('/profile', ensureAuth, usersController.showProfile)
+router.get('/add', ensureAuth, usersController.showAdd)
+router.post('/add', ensureAuth, usersController.add)
+
+router.get('/admin', usersController.admin)
+// router.get('/temp', usersController.temp)
+// router.post('/admin', usersController.addAdmin)
 
 // GET map page
 router.get('/map', mapController.showMap);
