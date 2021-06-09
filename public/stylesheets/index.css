@@ -33,16 +33,16 @@ input[type=submit]:hover {
 /* Style the container/contact section */
 .container {
   border-radius: 30px;
-  background-color: rgb(234 240 242);
+  background-color: rgb(234, 240, 242);
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.63);
   padding: 10px;
   margin: 10px;
 }
 .container2 {
   border-radius: 13px;
-  background-color: rgb(234 240 242);
-  padding: 5px;
-  margin: 5px;
+  background-color: rgb(234, 240, 242);
+  padding: 1px;
+  margin: 1px;
 }
 
 /* Create two columns that float next to eachother */
@@ -83,8 +83,8 @@ html {
 
 .column {
   float: left;
-  width: 24.5%;
-  /* margin: 5px; */
+  width: 23%;
+  margin: 0.9%;
   margin-bottom: 16px;
   padding: 0 8px;
 }
@@ -115,6 +115,7 @@ html {
 
 .title {
   color: grey;
+  font-size: 15px;
 }
 
 .button {
@@ -122,7 +123,7 @@ html {
   border-radius: 20px;
   outline: 0;
   display: inline-block;
-  padding: 8px;
+  padding: 5px;
   color: white;
   background-color: #000;
   text-align: center;
@@ -142,12 +143,12 @@ html {
 }
 
 body {
-  background: rgb(234 240 242);
+  background: rgb(234, 240, 242);
 }
 .content {
   width: auto;
   margin: 50px;
-  background: rgb(234 240 242);
+  background: rgb(234, 240, 242);
   padding: 10px;
 }
 
@@ -244,7 +245,7 @@ body, html {
 /* Create a sticky/fixed navbar */
 #navbar {
   overflow: hidden;
-  background: rgb(234 240 242);
+  background: rgb(234, 240, 242);
   padding: 25px 10px; /* Large padding which will shrink on scroll (using JS) */
   transition: 0.4s; /* Adds a transition effect when the padding is decreased */
   position: fixed; /* Sticky/fixed navbar */
