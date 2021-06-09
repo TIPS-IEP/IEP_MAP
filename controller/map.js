@@ -9,7 +9,6 @@ exports.showMap = async function(req, res) {
     var universityName = [];
     var universityLat = [];
     var universityLng = [];
-    const uniImages = [];
     uniItems.forEach(function(item){
         universityName.push(item.university);
         universityLat.push(item.lat);
