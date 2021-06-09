@@ -33,14 +33,14 @@ input[type=submit]:hover {
 /* Style the container/contact section */
 .container {
   border-radius: 30px;
-  background-color: #dfdfdf;
+  background-color: rgb(234 240 242);
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.63);
   padding: 10px;
   margin: 10px;
 }
 .container2 {
   border-radius: 13px;
-  background-color: #dfdfdf;
+  background-color: rgb(234 240 242);
   padding: 5px;
   margin: 5px;
 }
@@ -244,7 +244,7 @@ body, html {
 /* Create a sticky/fixed navbar */
 #navbar {
   overflow: hidden;
-  background-color: #f1f1f1;
+  background: rgb(234 240 242);
   padding: 25px 10px; /* Large padding which will shrink on scroll (using JS) */
   transition: 0.4s; /* Adds a transition effect when the padding is decreased */
   position: fixed; /* Sticky/fixed navbar */
@@ -376,9 +376,18 @@ body, html {
   padding: 0 8px;
 }
 
+.column4 {
+  float: left;
+  width: 95px;
+  margin: 5px;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
 
-#big {
-  font-size: 48px;
+.big {
+  font-size: 55px;
+  font-weight:700;
+  line-height: 100px;
 }
 
 /* The side navigation menu */
@@ -429,6 +438,7 @@ body, html {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
 #z-index {
   z-index: 100;
   /* transition: 0.4s; */
@@ -668,4 +678,26 @@ footer{
   -ms-transform: scale(1.08); /* IE 9 */
   -webkit-transform: scale(1.08); /* Safari 3-8 */
   transform: scale(1.08); 
+}
+.bold {
+  font-family: proxima-nova,Sans-serif;
+  font-size: 90px;
+  font-weight: 700;
+  line-height: 1.3em;
+  letter-spacing: 1.4px;
+  text-align: center;
+}
+.paragraph {
+  margin-left: 15%;
+  margin-right: 15%;
+  font-family: proxima-nova,Sans-serif;
+  font-size: 20px;
+  /* font-weight: 700; */
+  line-height: 1.4em;
+  letter-spacing: 1.4px;
+  text-align: left;
+}
+.pic_align {
+  margin-left: 15%;
+  margin-right: 15%;
 }
