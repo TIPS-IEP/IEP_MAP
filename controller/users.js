@@ -82,18 +82,30 @@ exports.add = async function(req, res, next) {
     }
 }
 
-//problem havent fixed
 exports.admin = async function(req, res) {
+    var data = []
     if(await Admin.find({ email: req.user.email }).lean() == ""){
         res.redirect('/')
     }else{
+        const unAuthUsers = await unAuth.find().lean();
+        unAuthUsers.forEach(function(item){
+            data.push(item.EnglishName);
+            data.push(item.FirstName);
+            data.push(item.LastName);
+            data.push(item.Email);
+            data.push(item.InstagramUsername);
+            data.push(item.GraduationYear);
+            data.push(item.Major);
+        });
+        console.log(unAuthUsers);
         res.render('login/admin', {
             name: req.user.firstName,
+            userData: data,
         });
     }
 }
 
-
+//used to add admin
 exports.temp = function(req, res) {
     res.render('login/temp', {
         name: req.user.firstName,
