@@ -38,11 +38,15 @@ input[type=submit]:hover {
   padding: 10px;
   margin: 10px;
 }
+.container:hover {
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.63);
+}
+
 .container2 {
   border-radius: 13px;
   background-color: rgb(234, 240, 242);
-  padding: 1px;
-  margin: 1px;
+  padding: 5px;
+  margin: 5px;
 }
 
 /* Create two columns that float next to eachother */
@@ -630,8 +634,8 @@ footer{
 
 .footer-distributed .footer-icons a{
 	display: inline-block;
-	width: 50px;
-	height: 50px;
+	width: 42px;
+	height: 42px;
 	cursor: pointer;
 	background-color:  #33383b;
 	border-radius: 2px;
@@ -639,7 +643,6 @@ footer{
 	font-size: 38px;
 	color: #ffffff;
 	text-align: center;
-	line-height: 55px;
 
 	margin-right: 3px;
 	margin-bottom: 5px;
@@ -702,3 +705,4 @@ footer{
   margin-left: 15%;
   margin-right: 15%;
 }
+
