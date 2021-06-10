@@ -84,8 +84,7 @@ exports.add = async function(req, res, next) {
 
 //problem havent fixed
 exports.admin = async function(req, res) {
-    console.log(req.user.email)
-    if(await Admin.find({ Email: req.user.email }).lean() == ""){
+    if(await Admin.find({ email: req.user.email }).lean() == ""){
         res.redirect('/')
     }else{
         res.render('login/admin', {
