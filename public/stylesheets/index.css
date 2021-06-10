@@ -373,6 +373,7 @@ body, html {
   margin-bottom: 16px;
   padding: 0 8px;
 }
+
 .column3 {
   float: left;
   width: 15px;
@@ -383,7 +384,15 @@ body, html {
 
 .column4 {
   float: left;
-  width: 95px;
+  width: 6.5%;
+  margin: 5px;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.column5 {
+  float: left;
+  width: 47%;
   margin: 5px;
   margin-bottom: 16px;
   padding: 0 8px;
@@ -701,6 +710,18 @@ footer{
   letter-spacing: 1.4px;
   text-align: left;
 }
+
+.medium {
+  margin-left: 15%;
+  margin-right: 15%;
+  font-family: proxima-nova,Sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.4em;
+  letter-spacing: 1.4px;
+  text-align: left;
+}
+
 .pic_align {
   margin-left: 15%;
   margin-right: 15%;
