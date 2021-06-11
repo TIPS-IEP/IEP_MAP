@@ -23,19 +23,42 @@ html(lang='en')
 
     script.
       var length = #{length};
+      var aLength = #{aLength};
       var i = 0;
       var tempName = "#{universityName}".split(/\,+(?!\ )/);
       var tempLat = "#{universityLat}".split(/\,+(?!\ )/);
       var tempLng = "#{universityLng}".split(/\,+(?!\ )/);
+      var tempAEN = "#{alumniEnglishName}".split(/\,+(?!\ )/);
+      var tempAU = "#{alumniUniversity}".split(/\,+(?!\ )/);
+      var tempAE = "#{alumniEmail}".split(/\,+(?!\ )/);
+      var tempAIU = "#{alumniInstagramUsername}".split(/\,+(?!\ )/);
+      var tempAGY = "#{alumniGraduationYear}".split(/\,+(?!\ )/);
+      var tempAM = "#{alumniMajor}".split(/\,+(?!\ )/);
       var universityName = [];
       var universityLat = [];
       var universityLng = [];
+      var alumniEnglishName = [];
+      var alumniUniversity = [];
+      var alumniEmail = [];
+      var alumniInstagramUsername = [];
+      var alumniGraduationYear = [];
+      var alumniMajor = [];
       for(i in tempName){
         universityName[i] = tempName[i];
         universityLat[i] = tempLat[i];
         universityLng[i] = tempLng[i];
       }
-
+      for(i in tempAEN){
+        alumniEnglishName[i] = tempAEN[i];
+        alumniUniversity[i] = tempAU[i];
+        alumniEmail[i] = tempAE[i];
+        alumniInstagramUsername[i] = tempAIU[i];
+        alumniGraduationYear[i] = tempAGY[i];
+        alumniMajor[i] = tempAM[i];
+        if(alumniUniversity[i].slice(-1)==" "){
+          alumniUniversity[i] = alumniUniversity[i].slice(0,-1);
+        }
+      }
       function initMap(){
           var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
@@ -71,6 +94,22 @@ html(lang='en')
               marker.addListener("click", () => {
                 map.setZoom(8);
                 map.setCenter(marker.getPosition());
+                const elements = document.getElementsByClassName("alumniBlock");
+                while(elements.length > 0){
+                  elements[0].parentNode.removeChild(elements[0]);
+                }
+                var div = document.createElement("div");
+                div.classList.add("alumniBlock");
+                div.innerHTML = universityName[i];
+                document.getElementById("sideShow").appendChild(div);
+                for(let j = 0; j < aLength; j++){
+                  if(alumniUniversity[j] == universityName[i]){
+                    var div = document.createElement("div");
+                    div.classList.add("alumniBlock");
+                    div.innerHTML = alumniEnglishName[j]+ " "+ alumniEmail[j];
+                    document.getElementById("sideShow").appendChild(div);
+                  }
+                }
                 opensideShow();
               });
           }      
@@ -94,6 +133,7 @@ html(lang='en')
     script(async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy8QR6hkmBw9pMJWs2XhY111wiGl5H3Sg&libraries=geometry&callback=initMap")
     div#sideShow.sideShow
       a.closebtn(href='javascript:void(0)' onclick='closesideShow()') &times;
+      div.alumniBlock hello!
     
     
   

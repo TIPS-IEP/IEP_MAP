@@ -3,7 +3,7 @@
     width: 800px;
     height: 540px;
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
-
+    position: fixed;
 }
 
 /* map side show*/
@@ -43,3 +43,7 @@
     .sideShow {padding-top: 15px;}
     .sideShow a {font-size: 18px;}
   }
+
+.alumniBlock{
+    color: #f1f1f1;
+}
