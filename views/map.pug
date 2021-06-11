@@ -20,7 +20,7 @@ html(lang='en')
   
     //- center website 
     meta(name='viewport' content='width=device-width, initial-scale=1')
-
+    title Student Profiles
     script.
       var length = #{length};
       var aLength = #{aLength};
@@ -84,35 +84,46 @@ html(lang='en')
             };
           }
           
-          // Create markers.
-          for (let i = 0; i < length; i++) {
-              const marker = new google.maps.Marker({
-              position: features[i].position,
-              icon: icons[i].icon,
-              map: map,
-              });
-              marker.addListener("click", () => {
-                map.setZoom(8);
-                map.setCenter(marker.getPosition());
-                const elements = document.getElementsByClassName("alumniBlock");
-                while(elements.length > 0){
-                  elements[0].parentNode.removeChild(elements[0]);
-                }
+        // Create markers.
+        for (let i = 0; i < length; i++) {
+          const marker = new google.maps.Marker({
+          position: features[i].position,
+          icon: icons[i].icon,
+          map: map,
+          });
+          marker.addListener("click", () => {
+            map.setZoom(8);
+            map.setCenter(marker.getPosition());
+            const elements = document.getElementsByClassName("alumniBlock");
+            while(elements.length > 0){
+              elements[0].parentNode.removeChild(elements[0]);
+            }
+            var div = document.createElement("div");
+            div.classList.add("alumniBlock");
+            div.innerHTML = universityName[i];
+            document.getElementById("sideShow").appendChild(div);
+            for(let j = 0; j < aLength; j++){
+              if(alumniUniversity[j] == universityName[i]){
                 var div = document.createElement("div");
                 div.classList.add("alumniBlock");
-                div.innerHTML = universityName[i];
+                div.innerHTML = alumniEnglishName[j]+ " "+ alumniEmail[j];
                 document.getElementById("sideShow").appendChild(div);
-                for(let j = 0; j < aLength; j++){
-                  if(alumniUniversity[j] == universityName[i]){
-                    var div = document.createElement("div");
-                    div.classList.add("alumniBlock");
-                    div.innerHTML = alumniEnglishName[j]+ " "+ alumniEmail[j];
-                    document.getElementById("sideShow").appendChild(div);
-                  }
-                }
-                opensideShow();
-              });
-          }      
+              }
+            }
+            opensideShow();
+          });
+        }
+        //add University List
+        for(let i = 0; i < length; i++){
+          var div = document.createElement("div");
+          div.classList.add("universityBlock");
+          div.innerHTML = universityName[i];
+          div.addEventListener('click', function (event) {
+            map.setZoom(8);
+            map.setCenter(features[i].position);
+          });
+          document.getElementById("allUniversity").appendChild(div);
+        }      
       }
       window.onload = function() {
         document.getElementById("z-index").style.display = "none";
@@ -120,6 +131,7 @@ html(lang='en')
             window.location = window.location + '#loaded';
             window.location.reload();
         }
+        
       }
     
   body
@@ -129,11 +141,11 @@ html(lang='en')
       include login/usernav
     else
       include common/nav
-    div#map
+    input#pac-input.controls(type='text' placeholder='Search Box')
+    #map
     script(async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy8QR6hkmBw9pMJWs2XhY111wiGl5H3Sg&libraries=geometry&callback=initMap")
-    div#sideShow.sideShow
+    #sideShow.sideShow
       a.closebtn(href='javascript:void(0)' onclick='closesideShow()') &times;
-      div.alumniBlock hello!
+      .alumniBlock hello!
+    #allUniversity
     
-    
-  

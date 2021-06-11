@@ -1,9 +1,10 @@
 #map {
-    margin-top: 100px;
-    width: 800px;
-    height: 540px;
+    margin-top: 40px;
+    width: 60%;
+    height: 70%;
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
     position: fixed;
+    display: inline-block;
 }
 
 /* map side show*/
@@ -46,4 +47,23 @@
 
 .alumniBlock{
     color: #f1f1f1;
+}
+
+#allUniversity{
+    margin-left: 1%;
+    display: inline-block;
+    width: 30%;
+    margin-top: 40px;
+    height: 70%;
+    overflow: scroll;
+    background: #000000;
+    color: #f1f1f1;
+}
+.universityBlock{
+    cursor: pointer;
+    
+}
+.universityBlock:hover{
+    color: rgb(255, 106, 106);
+    transition: 0.5s;
 }
