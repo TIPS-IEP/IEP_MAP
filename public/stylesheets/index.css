@@ -45,8 +45,8 @@ input[type=submit]:hover {
 .container2 {
   border-radius: 13px;
   background-color: rgb(234, 240, 242);
-  padding: 5px;
-  margin: 5px;
+  padding: 2px;
+  margin: 2px;
 }
 
 /* Create two columns that float next to eachother */
