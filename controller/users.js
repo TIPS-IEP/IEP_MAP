@@ -84,25 +84,47 @@ exports.add = async function(req, res, next) {
 
 exports.admin = async function(req, res) {
     var data = []
-    if(await Admin.find({ email: req.user.email }).lean() == ""){
-        res.redirect('/')
-    }else{
-        const unAuthUsers = await unAuth.find().lean();
-        unAuthUsers.forEach(function(item){
-            data.push(item.EnglishName);
-            data.push(item.FirstName);
-            data.push(item.LastName);
-            data.push(item.Email);
-            data.push(item.InstagramUsername);
-            data.push(item.GraduationYear);
-            data.push(item.Major);
-        });
-        console.log(unAuthUsers);
-        res.render('login/admin', {
-            name: req.user.firstName,
-            userData: data,
-        });
+    const unAuthUsers = await unAuth.find().lean();
+    unAuthUsers.forEach(function(item){
+        data.push(item.EnglishName);
+        data.push(item.FirstName);
+        data.push(item.LastName);
+        data.push(item.Email);
+        data.push(item.InstagramUsername);
+        data.push(item.GraduationYear);
+        data.push(item.Major);
+    });
+    console.log(unAuthUsers);
+    res.render('login/admin', {
+        name: req.user.firstName,
+        userData: data,
+    });
+}
+
+exports.adminA = async function(req, res) {
+    var data = []
+    const AuthUsers = await Alumni.find().lean();
+    function testEmpty(d, a) {
+        if(!a){
+            d.push("empty");
+        }else{
+            d.push(a);
+        }
     }
+    AuthUsers.forEach(function(item){
+        testEmpty(data, item.EnglishName)
+        testEmpty(data, item.FirstName)
+        testEmpty(data, item.LastName)
+        testEmpty(data, item.Email)
+        testEmpty(data, item.InstagramUsername)
+        testEmpty(data, item.GraduationYear)
+        testEmpty(data, item.Major)
+    });
+    console.log(AuthUsers);
+    res.render('login/adminA', {
+        name: req.user.firstName,
+        userData: data,
+    });
 }
 
 //used to add admin
@@ -116,6 +138,47 @@ exports.addAdmin = async function(req, res) {
     try{
         await admin.create(req.body)
         res.redirect('/')
+    } catch (error) {
+      console.log(error)
+    }
+}
+
+exports.remove = async function(req, res, next) {
+    try{
+        await unAuth.deleteOne({Email: req.params.email}, function(err, obj) {
+            if (err) throw err;
+            console.log("1 document deleted from unAuth");
+        });
+        res.redirect('/admin')
+    } catch (error) {
+      console.log(error)
+    }
+}
+
+exports.confirm = async function(req, res, next) {
+    try{
+        const newAuthUser = await unAuth.find({Email: req.params.email}).lean();
+        await Alumni.create(newAuthUser, async function(err, obj) {
+            if (err) throw err;
+            console.log("1 document added in Alumni");
+            await unAuth.deleteOne({Email: req.params.email}, function(err, obj) {
+                if (err) throw err;
+                console.log("1 document deleted from unAuth");
+            });
+        });
+        res.redirect('/admin')
+    } catch (error) {
+      console.log(error)
+    }
+}
+
+exports.alumiRemove = async function(req, res, next) {
+    try{
+        // await Alumni.deleteOne({Email: req.params.email}, function(err, obj) {
+        //     if (err) throw err;
+        //     console.log("1 document deleted from Alumni");
+        // });
+        res.redirect('/adminA')
     } catch (error) {
       console.log(error)
     }
