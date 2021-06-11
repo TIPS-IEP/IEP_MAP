@@ -41,6 +41,8 @@ router.get('/user', ensureAuth, usersController.showUser)
 router.get('/profile', ensureAuth, usersController.showProfile)
 router.get('/add', ensureAuth, usersController.showAdd)
 router.post('/add', ensureAuth, usersController.add)
+router.post('/remove/:email', ensureAuth, usersController.remove)
+router.post('/confirm/:email', ensureAuth, usersController.confirm)
 
 router.get('/admin', usersController.admin)
 // router.get('/temp', usersController.temp)

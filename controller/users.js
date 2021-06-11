@@ -120,3 +120,32 @@ exports.addAdmin = async function(req, res) {
       console.log(error)
     }
 }
+
+exports.remove = async function(req, res, next) {
+    try{
+        await unAuth.deleteOne({Email: req.params.email}, function(err, obj) {
+            if (err) throw err;
+            console.log("1 document deleted from unAuth");
+        });
+        res.redirect('/admin')
+    } catch (error) {
+      console.log(error)
+    }
+}
+
+exports.confirm = async function(req, res, next) {
+    try{
+        const newAuthUser = await unAuth.find({Email: req.params.email}).lean();
+        await Alumni.create(newAuthUser, async function(err, obj) {
+            if (err) throw err;
+            console.log("1 document added in Alumni");
+            await unAuth.deleteOne({Email: req.params.email}, function(err, obj) {
+                if (err) throw err;
+                console.log("1 document deleted from unAuth");
+            });
+        });
+        res.redirect('/admin')
+    } catch (error) {
+      console.log(error)
+    }
+}

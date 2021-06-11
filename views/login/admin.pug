@@ -54,13 +54,41 @@ body
           // creates a table row
           var row = document.createElement("tr");
 
-          for (var j = 0; j < 7; j++) {
+          for (var j = 0; j < 9; j++) {
             // Create a <td> element and a text node, make the text
             // node the contents of the <td>, and put the <td> at
             // the end of the table row
             var cell = document.createElement("td");
-            var cellText = document.createTextNode(unAuthUsers[i][j]);
-            cell.appendChild(cellText);
+            if(j == 7){
+              var form = document.createElement("form");
+              form.setAttribute("action", "/confirm/" + unAuthUsers[i][3]);
+              form.setAttribute("method", "POST");
+
+              var b = document.createElement("button");
+              b.innerHTML = "confirm";
+              b.setAttribute("id", "confirm");
+              b.setAttribute("type", "submit");
+
+              cell.appendChild(form);
+              form.appendChild(b);
+
+            }else if(j == 8){
+              var form = document.createElement("form");
+              form.setAttribute("action", "/remove/" + unAuthUsers[i][3]);
+              form.setAttribute("method", "POST");
+
+              var b = document.createElement("button");
+              b.innerHTML = "delete";
+              b.setAttribute("id", "delete");
+              b.setAttribute("type", "submit");
+
+              cell.appendChild(form);
+              form.appendChild(b);
+            }
+            else{
+              var cellText = document.createTextNode(unAuthUsers[i][j]);
+              cell.appendChild(cellText);
+            }
             row.appendChild(cell);
           }
 
