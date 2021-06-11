@@ -32,5 +32,13 @@ exports.showLogin = function(req, res, next) {
     res.render('login/login');
 }
 
+exports.showBoard = function(req, res, next) {
+  res.render('board');
+}
+exports.showShare = function(req, res, next) {
+  res.render('share');
+}
 
-
+exports.showEvents = function(req, res, next) {
+  res.render('events');
+}

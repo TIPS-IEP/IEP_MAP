@@ -45,8 +45,8 @@ input[type=submit]:hover {
 .container2 {
   border-radius: 13px;
   background-color: rgb(234, 240, 242);
-  padding: 2px;
-  margin: 2px;
+  padding: 5px;
+  margin: 5px;
 }
 
 /* Create two columns that float next to eachother */
@@ -722,8 +722,43 @@ footer{
   text-align: left;
 }
 
+.medium-small {
+  margin-left: 15%;
+  margin-right: 15%;
+  font-family: proxima-nova,Sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.1em;
+  letter-spacing: 1.4px;
+  text-align: left;
+}
+
 .pic_align {
   margin-left: 15%;
   margin-right: 15%;
 }
 
+
+.medium-small a:link, .medium-small a:visited {
+  color: inherit !important;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.medium-small a:hover, .medium-small a:active {
+  color: rgb(255, 106, 106)!important; 
+}
+
+.socials a:link, .socials a:visited {
+  color: rgb(255, 61, 61);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.socials a:hover {
+  color: rgb(255, 106, 106)!important;
+  transition: 0.3s;
+}
+ 

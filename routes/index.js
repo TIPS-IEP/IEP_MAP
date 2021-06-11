@@ -42,6 +42,11 @@ router.get('/profile', ensureAuth, usersController.showProfile)
 router.get('/add', ensureAuth, usersController.showAdd)
 router.post('/add', ensureAuth, usersController.add)
 
+router.get('/board', indexController.showBoard)
+router.get('/share', indexController.showShare)
+router.get('/events', indexController.showEvents)
+
+
 router.get('/admin', usersController.admin)
 // router.get('/temp', usersController.temp)
 // router.post('/admin', usersController.addAdmin)
