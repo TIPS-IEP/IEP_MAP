@@ -32,6 +32,7 @@ exports.showProfile = async function(req, res) {
             data.push(item.InstagramUsername);
             data.push(item.GraduationYear);
             data.push(item.Major);
+            data.push(item.University);
         });
     }else{
         const users = await unAuth.find({ Email: req.user.email }).lean()
@@ -44,6 +45,7 @@ exports.showProfile = async function(req, res) {
             data.push(item.InstagramUsername);
             data.push(item.GraduationYear);
             data.push(item.Major);
+            data.push(item.University);
         });
     }
     res.render('login/profile', {
@@ -72,6 +74,7 @@ exports.showAdd = async function(req, res) {
             data.push(item.InstagramUsername);
             data.push(item.GraduationYear);
             data.push(item.Major);
+            data.push(item.University);
         });
     }else{
         const users = await unAuth.find({ Email: req.user.email }).lean()
@@ -84,6 +87,7 @@ exports.showAdd = async function(req, res) {
             data.push(item.InstagramUsername);
             data.push(item.GraduationYear);
             data.push(item.Major);
+            data.push(item.University);
         });
     }
     res.render('login/add', {
@@ -158,6 +162,7 @@ exports.adminA = async function(req, res) {
         testEmpty(data, item.InstagramUsername)
         testEmpty(data, item.GraduationYear)
         testEmpty(data, item.Major)
+        testEmpty(data, item.University)
     });
     res.render('login/adminA', {
         name: req.user.firstName,

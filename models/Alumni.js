@@ -25,6 +25,9 @@ const AlumniSchema = new Schema({
   },
   Major: {
     type: String,
+  },
+  University: {
+    type: String,
   }
 }, {timestamps: true})
 
