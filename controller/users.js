@@ -19,8 +19,10 @@ exports.logout = function(req, res) {
 }
 
 exports.showProfile = async function(req, res) {
+    var authorize = false;
     if(await Alumni.find({ Email: req.user.email }).lean() != ""){
-        const normalUsers = await Alumni.find({ Email: req.user.email }).lean()
+        const normalUsers = await Alumni.find({ Email: req.user.email }).lean();
+        authorize = true;
         var data = []
         normalUsers.forEach(function(item){
             data.push(item.EnglishName);
@@ -44,11 +46,11 @@ exports.showProfile = async function(req, res) {
             data.push(item.Major);
         });
     }
-    console.log(data)
     res.render('login/profile', {
         name: req.user.firstName,
         picture: req.user.image,
-        data: data
+        data: data,
+        status: authorize,
     });
 }
 
@@ -84,7 +86,6 @@ exports.showAdd = async function(req, res) {
             data.push(item.Major);
         });
     }
-    console.log(data)
     res.render('login/add', {
         name: req.user.firstName,
         picture: req.user.image,
@@ -139,7 +140,6 @@ exports.admin = async function(req, res) {
         data.push(item.GraduationYear);
         data.push(item.Major);
     });
-    console.log(unAuthUsers);
     res.render('login/admin', {
         name: req.user.firstName,
         userData: data,

@@ -39,7 +39,6 @@ body
         }
         unAuthUsers[count].push(data[i]);
       }
-      console.log(unAuthUsers.length)
 
       function generate_table() {
         // get the reference for the body
@@ -54,7 +53,7 @@ body
           // creates a table row
           var row = document.createElement("tr");
 
-          for (var j = 0; j < 9; j++) {
+          for (var j = 0; j < 8; j++) {
             // Create a <td> element and a text node, make the text
             // node the contents of the <td>, and put the <td> at
             // the end of the table row
@@ -72,18 +71,18 @@ body
               cell.appendChild(form);
               form.appendChild(b);
 
-            }else if(j == 8){
-              var form = document.createElement("form");
-              form.setAttribute("action", "/remove/" + unAuthUsers[i][3]);
-              form.setAttribute("method", "POST");
+            //- }else if(j == 8){
+            //-   var form = document.createElement("form");
+            //-   form.setAttribute("action", "/remove/" + unAuthUsers[i][3]);
+            //-   form.setAttribute("method", "POST");
 
-              var b = document.createElement("button");
-              b.innerHTML = "delete";
-              b.setAttribute("id", "delete");
-              b.setAttribute("type", "submit");
+            //-   var b = document.createElement("button");
+            //-   b.innerHTML = "delete";
+            //-   b.setAttribute("id", "delete");
+            //-   b.setAttribute("type", "submit");
 
-              cell.appendChild(form);
-              form.appendChild(b);
+            //-   cell.appendChild(form);
+            //-   form.appendChild(b);
             }
             else{
               var cellText = document.createTextNode(unAuthUsers[i][j]);
