@@ -1,0 +1,103 @@
+doctype html
+html(lang='en') 
+
+  head
+    //- css
+    link(rel="stylesheet" href="stylesheets/index.css")
+    link(rel="stylesheet" href="stylesheets/about.css")
+
+
+    //- js
+    script(src="javascripts/index.js")
+    script(src="javascripts/about.js")
+
+
+    //- bootstrap setup
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    
+    //- jquery
+    script(src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+
+    //- center website 
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+
+    //- google font set up
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
+
+    title Experience Sharing
+
+
+
+  body#main
+    script.
+      var loggedin = #{loggedin}
+    if loggedin
+      include login/usernav
+    else
+      include common/nav
+    #mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      a(href='#origins') Origins
+      a(href='#features') Features
+      a(href='#team') Team  
+    .content
+      p 
+        br
+        br
+      div(style='text-align:left')
+        .column3
+        h1.bold Experience Sharing
+        p.paragraph The experience sharing sessions of alumni, be it in-person or online, provides students with various aspects of study abroad experiences: 
+          |
+          br
+          | • High School (Extracurriculars, projects, grades, preparing for tests, developing interests…)
+          |
+          br
+          | • Applications (Choosing schools, essays, common app (activities, honors), letter of recs…)
+          |
+          br
+          | • University & Career (Student life, clubs, orgs, courses, graduate school, interns, jobs…)    
+          .column3
+        p 
+          br
+      .row
+        .column4
+        .column3
+        .column2
+          img#round.pic_align(src='/images/hero/share1.jpg' style='width:200%')
+        .column4
+        .column4
+        .column3
+        .column5
+            p.medium Sharing Sessions
+            p.paragraph Sharings in school or online in the forms of workshops, large classroom lectures, or panels seminars. 
+            p.medium Guides & Advice
+            p.paragraph Students and alumni share articles, faqs, and videos of the sharing session on our website and FB community. 
+
+      .row 
+        .column4
+        .column5
+        h1.medium Other Features
+        p.paragraph IEP Alumni Association utilizes an advisory board, student infographics and distribution maps, experience sharing sessions, and annual events to promote and leverage the value of the International Education Program; assemble current students and alumni from various universities, industries, and countries; and create an international network platform. 
+          br
+          br
+        .column3 
+        .column3 
+        .column3
+        .column6
+          h1.medium-small2 
+            a(href='/board' target='_blank' rel='noopener') 👔 Advisory Board 
+        .column6
+          h1.medium-small2 
+            a(href='/map' target='_blank' rel='noopener') 👨‍🎓 Student Profiles 
+        .column6
+          h1.medium-small2 
+            a(href='/events' target='_blank' rel='noopener') 🥂 Annual Events 
+
+
+
+        
+    include common/footer
