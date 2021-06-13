@@ -17,7 +17,8 @@ html(lang='en')
   crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
-  
+    //- search bar
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css')
     //- center website 
     meta(name='viewport' content='width=device-width, initial-scale=1')
     title Student Profiles
@@ -117,6 +118,7 @@ html(lang='en')
         for(let i = 0; i < length; i++){
           var div = document.createElement("div");
           div.classList.add("universityBlock");
+          div.id = (i);
           div.innerHTML = universityName[i];
           div.addEventListener('click', function (event) {
             map.setZoom(8);
@@ -131,8 +133,9 @@ html(lang='en')
             window.location = window.location + '#loaded';
             window.location.reload();
         }
-        
       }
+      
+      
     
   body
     script.
@@ -148,4 +151,88 @@ html(lang='en')
       a.closebtn(href='javascript:void(0)' onclick='closesideShow()') &times;
       .alumniBlock hello!
     #allUniversity
+     .wrapper
+      .search-input
+        a(href='' target='_blank' hidden='')
+        input(type='text' placeholder='Type to search..')
+        .autocom-box
+          //- here list are inserted from javascript
+        .icon
+          i.fas.fa-search
     
+    script.
+      // getting all required elements
+      const searchWrapper = document.querySelector(".search-input");
+      const inputBox = searchWrapper.querySelector("input");
+      const suggBox = searchWrapper.querySelector(".autocom-box");
+      const icon = searchWrapper.querySelector(".icon");
+      let linkTag = searchWrapper.querySelector("a");
+      let webLink;
+      // if user press any key and release
+      inputBox.onkeyup = (e)=>{
+          let userData = e.target.value; //user enetered data
+          let emptyArray = [];
+          if(userData){
+              icon.onclick = ()=>{
+                  webLink = `https://www.google.com/search?q=${userData}`;
+                  linkTag.setAttribute("href", webLink);
+                  linkTag.click();
+              }
+              emptyArray = universityName.filter((data)=>{
+                  //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
+                  return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+              });
+              emptyArray = emptyArray.map((data)=>{
+                  // passing return data inside li tag
+                  return data = `${data}`;
+              });
+              searchWrapper.classList.add("active"); //show autocomplete box
+              showSuggestions(emptyArray);
+              let allList = suggBox.querySelectorAll("li");
+              for (let i = 0; i < allList.length; i++) {
+                  //adding onclick attribute in all li tag
+                  allList[i].setAttribute("onclick", "select(this)");
+              }
+          }else{
+              searchWrapper.classList.remove("active"); //hide autocomplete box
+          }
+        if(emptyArray==""){
+          for(i=0;i<length;i++){
+            document.getElementsByClassName("universityBlock")[i].style.display = "block";
+          }
+        }
+      }
+      function select(element){
+          let selectData = element.textContent;
+          inputBox.value = selectData;
+          icon.onclick = ()=>{
+              webLink = `https://www.google.com/search?q=${selectData}`;
+              linkTag.setAttribute("href", webLink);
+              linkTag.click();
+          }
+          searchWrapper.classList.remove("active");
+      }
+      function showSuggestions(list){
+          //- let listData;
+          //- if(!list.length){
+          //-     userValue = inputBox.value;
+          //-     listData = `<li>${userValue}</li>`;
+          //- }else{
+          //-   listData = list.join('');
+          //- }
+          //- suggBox.innerHTML = listData;
+          console.log(list);
+          for(j=0;j<length;j++){
+            document.getElementsByClassName("universityBlock")[j].style.display = "none";
+          }
+          for(i in list){
+            for(j=0;j<length;j++){
+              console.log(universityName[j]);
+              console.log(list[i]);
+              if(universityName[j]==list[i]){
+                document.getElementsByClassName("universityBlock")[j].style.display = "block";
+                continue;
+              }
+            }
+          }
+      }
