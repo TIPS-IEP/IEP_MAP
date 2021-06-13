@@ -5,6 +5,13 @@ var Universities = require('../models/Universities')
 var unAuth = require('../models/unAuth')
 var Admin = require('../models/admin')
 
+function testEmpty(d, a) {
+    if(!a){
+        d.push("empty");
+    }else{
+        d.push(a);
+    }
+}
 
 exports.logout = function(req, res) {
     req.logout()
@@ -59,11 +66,13 @@ exports.showAdd = async function(req, res) {
     const users = await Alumni.find({ Email: req.user.email }).lean()
     var data = []
     users.forEach(function(item){
-        data.push(item.EnglishName);
-        data.push(item.Email);
-        data.push(item.InstagramUsername);
-        data.push(item.GraduationYear);
-        data.push(item.Major);
+        testEmpty(data, item.EnglishName)
+        testEmpty(data, item.FirstName)
+        testEmpty(data, item.LastName)
+        testEmpty(data, item.Email)
+        testEmpty(data, item.InstagramUsername)
+        testEmpty(data, item.GraduationYear)
+        testEmpty(data, item.Major)
     });
     res.render('login/add', {
         name: req.user.firstName,
@@ -104,13 +113,7 @@ exports.admin = async function(req, res) {
 exports.adminA = async function(req, res) {
     var data = []
     const AuthUsers = await Alumni.find().lean();
-    function testEmpty(d, a) {
-        if(!a){
-            d.push("empty");
-        }else{
-            d.push(a);
-        }
-    }
+
     AuthUsers.forEach(function(item){
         testEmpty(data, item.EnglishName)
         testEmpty(data, item.FirstName)
@@ -120,7 +123,6 @@ exports.adminA = async function(req, res) {
         testEmpty(data, item.GraduationYear)
         testEmpty(data, item.Major)
     });
-    console.log(AuthUsers);
     res.render('login/adminA', {
         name: req.user.firstName,
         userData: data,
@@ -174,10 +176,10 @@ exports.confirm = async function(req, res, next) {
 
 exports.alumiRemove = async function(req, res, next) {
     try{
-        // await Alumni.deleteOne({Email: req.params.email}, function(err, obj) {
-        //     if (err) throw err;
-        //     console.log("1 document deleted from Alumni");
-        // });
+        await Alumni.deleteOne({Email: req.body.email}, function(err, obj) {
+            if (err) throw err;
+            console.log("1 document deleted from Alumni");
+        });
         res.redirect('/adminA')
     } catch (error) {
       console.log(error)

@@ -45,7 +45,9 @@ router.post('/add', ensureAuth, usersController.add)
 router.post('/remove/:email', ensureAdmin, usersController.remove)
 router.post('/confirm/:email', ensureAdmin, usersController.confirm)
 
-router.post('/alumiRemove/:email', ensureAdmin, usersController.alumiRemove)
+// router.post('/alumiRemove/:email', ensureAdmin, usersController.alumiRemove)
+router.post('/alumiRemove', ensureAdmin, usersController.alumiRemove)
+
 
 router.get('/admin', ensureAdmin, usersController.admin)
 router.get('/adminA', ensureAdmin, usersController.adminA)

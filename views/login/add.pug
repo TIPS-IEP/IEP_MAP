@@ -47,22 +47,22 @@ html(lang='en')
                     form(action = "/add" method="POST")
                         .form-group
                             label English Name:
-                            input.form-control(type="text" id="EnglishName" name="EnglishName" placeholder="Enter English Name" required)
+                            input.form-control(type="text" id="EnglishName" name="EnglishName" placeholder="Enter English Name" required, value = data[0])
                         .form-group
                             label Last Name:
-                            input.form-control(type="text" id="LastName" name="LastName" placeholder="Enter Last Name" required)
+                            input.form-control(type="text" id="LastName" name="LastName" placeholder="Enter Last Name" required, value = data[2])
                         .form-group
                             label First Name:
-                            input.form-control(type="text" id="FirstName" name="FirstName" aria-describedby="emailHelp" placeholder="Enter First Name" required)
+                            input.form-control(type="text" id="FirstName" name="FirstName" aria-describedby="emailHelp" placeholder="Enter First Name" required, value = data[1])
                         .form-group
                             label Instagram Account:
-                            input.form-control(type="text" id="InstagramUsername" name="InstagramUsername" aria-describedby="emailHelp" placeholder="Enter Your Instagram Account Name" required)
+                            input.form-control(type="text" id="InstagramUsername" name="InstagramUsername" aria-describedby="emailHelp" placeholder="Enter Your Instagram Account Name" required, value = data[4])
                         .form-group
                             label GraduationYear:
-                            input.form-control(type="text" id="GraduationYear" name="GraduationYear" aria-describedby="emailHelp" placeholder="Enter Your GraduationYear" required)
+                            input.form-control(type="text" id="GraduationYear" name="GraduationYear" aria-describedby="emailHelp" placeholder="Enter Your GraduationYear" required, value = data[5])
                         .form-group
                             label Major:
-                            input.form-control(type="text" id="Major" name="Major" aria-describedby="emailHelp" placeholder="Enter Your Major" required)
+                            input.form-control(type="text" id="Major" name="Major" aria-describedby="emailHelp" placeholder="Enter Your Major" required, value = data[6])
                         input.btn(type="submit" Value="Save")
         .col-md-2
         p yo
