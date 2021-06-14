@@ -30,4 +30,10 @@
 
 #storyboard{
     background-color: rgb(235, 247, 255);
+    height: 350px;
+}
+
+
+#profileImageContainer{
+    height: 350px;
 }
