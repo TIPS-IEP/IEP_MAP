@@ -27,13 +27,14 @@ body
     script.
       var limit = 1;
       var data = "#{userData}".split(/\,+(?!\ )/);
-      var unAuthUsers = new Array((data.length)/7)
+      console.log(data)
+      var unAuthUsers = new Array((data.length)/8)
       for (var i = 0; i < unAuthUsers.length; i++){
         unAuthUsers[i] = new Array();
       }
       var count = 0
       for(var i = 0; i < data.length; i++){
-        if((i / 7) >= limit){
+        if((i / 8) >= limit){
           count = count + 1;
           limit = limit + 1;
         }
@@ -53,12 +54,12 @@ body
           // creates a table row
           var row = document.createElement("tr");
 
-          for (var j = 0; j < 8; j++) {
+          for (var j = 0; j < 9; j++) {
             // Create a <td> element and a text node, make the text
             // node the contents of the <td>, and put the <td> at
             // the end of the table row
             var cell = document.createElement("td");
-            if(j == 7){
+            if(j == 8){
               var form = document.createElement("form");
               form.setAttribute("action", "/confirm/" + unAuthUsers[i][3]);
               form.setAttribute("method", "POST");

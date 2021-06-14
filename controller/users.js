@@ -143,6 +143,7 @@ exports.admin = async function(req, res) {
         data.push(item.InstagramUsername);
         data.push(item.GraduationYear);
         data.push(item.Major);
+        data.push(item.University);
     });
     res.render('login/admin', {
         name: req.user.firstName,
