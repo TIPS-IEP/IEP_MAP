@@ -27,6 +27,10 @@ const unAuthSchema = new Schema({
   Major: {
     type: String,
     required: true
+  },
+  University: {
+    type: String,
+    required: true
   }
 }, {timestamps: true})
 
