@@ -62,7 +62,7 @@ router.get('/admin', usersController.admin)
 // router.post('/admin', usersController.addAdmin)
 
 // GET map page
-router.get('/map', ensureSuper, mapController.showMap);
+router.get('/map', mapController.showMap);
 
 module.exports = router;
 

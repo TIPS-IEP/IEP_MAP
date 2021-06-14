@@ -23,5 +23,6 @@ module.exports = {
   },
   clientId: "1061733762911-t88po8vnhmtp3tvfdhcblhoshinbunbi.apps.googleusercontent.com",
   secret: "g25x6ba7U6buClbk60_p-gkz",
+  // callback: 'https://iepmap.herokuapp.com/auth/google/callback'
   callback: 'http://localhost:3000/auth/google/callback'
 }
