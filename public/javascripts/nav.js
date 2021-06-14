@@ -1,4 +1,4 @@
-window.onload = function displayzIndex(){
+$(document).ready(function() {
   var path = window.location.pathname.toString();
   if(path == "/contact"){
     document.getElementById("z-index").style.display = "none";
@@ -6,4 +6,4 @@ window.onload = function displayzIndex(){
   else{
     document.getElementById("z-index").style.display= "contents";
   }
-}
+});
