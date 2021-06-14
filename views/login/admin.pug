@@ -10,15 +10,16 @@ body
       var JumpToNextRowThreshold = 1;
       var rowNumber = 0;
 
+      var amountOfInfoType = 8;
       var notSortOutUsersInfo = "#{userData}".split(/\,+(?!\ )/);
-      var unAuthUsers = new Array((notSortOutUsersInfo.length)/8);
+      var unAuthUsers = new Array((notSortOutUsersInfo.length)/amountOfInfoType);
 
       for (var i = 0; i < unAuthUsers.length; i++){
         unAuthUsers[i] = new Array();
       }
 
       for(var i = 0; i < notSortOutUsersInfo.length; i++){
-        if((i / 8) >= JumpToNextRowThreshold){
+        if((i / amountOfInfoType) >= JumpToNextRowThreshold){
           rowNumber += 1;
           JumpToNextRowThreshold += 1;
         }
@@ -58,6 +59,7 @@ body
         body.appendChild(table);
         table.setAttribute("border", "2");
       }
+      
       window.onload = generate_table();
     
     .container#table
