@@ -108,7 +108,7 @@ html(lang='en')
               if(alumniUniversity[j] == universityName[i]){
                 var div = document.createElement("div");
                 div.classList.add("alumniBlock");
-                div.innerHTML = alumniEnglishName[j]+ " "+ alumniEmail[j];
+                div.innerHTML = alumniEnglishName[j]+ " "+ alumniEmail[j]+" "+alumniInstagramUsername+" "+alumniGraduationYear+" "+alumniMajor;
                 document.getElementById("sideShow").appendChild(div);
               }
             }

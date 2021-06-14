@@ -38,6 +38,7 @@ function closeNav() {
   document.getElementById("hide4").style.display = "block";
 }
 /* Control z-index*/
+<<<<<<< HEAD
 window.onload = function displayzIndex(){
   var path = window.location.pathname.toString();
   if(path == "/contact" || path == "/about" || path == "/board" || path == "/events" || path == "/share"){
@@ -47,4 +48,7 @@ window.onload = function displayzIndex(){
     document.getElementById("z-index").style.display= "contents";
   }
 }
+=======
+
+>>>>>>> 7855e4a6f60a9c5e1e04c5997dd817a303ef90ca
 
