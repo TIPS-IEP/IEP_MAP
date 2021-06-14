@@ -72,7 +72,6 @@
 
 body{
     background: #644bff;
-    padding: 0 20px;
 }
 ::selection{
     color: #fff;
@@ -127,16 +126,4 @@ body{
 }
 .autocom-box li:hover{
     background: #efefef;
-}
-.search-input .icon{
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    height: 55px;
-    width: 55px;
-    text-align: center;
-    line-height: 55px;
-    font-size: 20px;
-    color: #644bff;
-    cursor: pointer;
 }
