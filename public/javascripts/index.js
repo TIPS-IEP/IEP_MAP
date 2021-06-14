@@ -38,9 +38,14 @@ function closeNav() {
   document.getElementById("hide4").style.display = "block";
 }
 /* Set the card of our features to the same height*/
-function changeLines() {
-  if (document.getElementsByClass[1]("container2").style.height > "166px" );{
-    (document.getElementsByClass[2]("container2").style.height = "223px" );
-    (document.getElementsByClass[3]("container2").style.height = "223px" );
-    (document.getElementsByClass[4]("container2").style.height = "223px" );
-}}
+window.onload = function() {
+  // if (document.getElementsByClassName("container2")[1].style.height > "166px" ) {
+    (document.getElementsByClassName("container2")[1].style.height = "223px" );
+    (document.getElementsByClassName("container2")[2].style.height = "223px" );
+    (document.getElementsByClassName("container2")[3].style.height = "223px" );
+    (document.getElementsByClassName("container2")[4].style.height = "223px" );
+  // }
+  console.log(document.getElementsByClassName("container2")[2].style.height);
+  console.log("helloooos");
+}
+
