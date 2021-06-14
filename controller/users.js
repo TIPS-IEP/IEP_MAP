@@ -132,7 +132,7 @@ exports.add = async function(req, res, next) {
     }
 }
 
-exports.admin = async function(req, res) {
+exports.showUnAuthUsers = async function(req, res) {
     var data = []
     const unAuthUsers = await unAuth.find().lean();
     unAuthUsers.forEach(function(item){
@@ -145,13 +145,13 @@ exports.admin = async function(req, res) {
         data.push(item.Major);
         data.push(item.University);
     });
-    res.render('login/admin', {
+    res.render('login/unAuthUsers', {
         name: req.user.firstName,
         userData: data,
     });
 }
 
-exports.adminA = async function(req, res) {
+exports.showAuthUsers = async function(req, res) {
     var data = []
     const AuthUsers = await Alumni.find().lean();
 
@@ -165,7 +165,7 @@ exports.adminA = async function(req, res) {
         testEmpty(data, item.Major)
         testEmpty(data, item.University)
     });
-    res.render('login/adminA', {
+    res.render('login/authUsers', {
         name: req.user.firstName,
         userData: data,
     });
@@ -187,19 +187,7 @@ exports.addAdmin = async function(req, res) {
     }
 }
 
-exports.remove = async function(req, res, next) {
-    try{
-        await unAuth.deleteOne({Email: req.params.email}, function(err, obj) {
-            if (err) throw err;
-            console.log("1 document deleted from unAuth");
-        });
-        res.redirect('/admin')
-    } catch (error) {
-      console.log(error)
-    }
-}
-
-exports.confirm = async function(req, res, next) {
+exports.confirmUnAuthUsers = async function(req, res, next) {
     try{
         const newAuthUser = await unAuth.find({Email: req.params.email}).lean();
         await Alumni.create(newAuthUser, async function(err, obj) {
@@ -210,7 +198,7 @@ exports.confirm = async function(req, res, next) {
                 console.log("1 document deleted from unAuth");
             });
         });
-        res.redirect('/admin')
+        res.redirect('/unAuthUsers')
     } catch (error) {
       console.log(error)
     }
@@ -227,7 +215,7 @@ exports.alumiRemove = async function(req, res, next) {
                 console.log("1 document deleted from Alumni");
             });
         });
-        res.redirect('/adminA')
+        res.redirect('/authUsers')
     } catch (error) {
       console.log(error)
     }
