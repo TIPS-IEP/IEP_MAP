@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
+body {
+    background-color: rgb(234, 240, 242) !important;
+}
 
 .bg {
     width: 100%;
     background-color: #ddd;
+}
+
+.row {
+    width: 100%;
 }
 
 #image {
@@ -21,19 +28,52 @@
     width: 90%;
 }
 
-#main-title{
-    background-color: rgb(183, 221, 247);
-    font-family: 'Lato', sans-serif;
-    font-size: 30px;
-    /* border-radius: 30%; */
-}
-
 #storyboard{
-    background-color: rgb(235, 247, 255);
-    height: 350px;
+    background-color: rgb(255, 255, 255) !important;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* height: 350px; */
+    font-family: 'Lato', sans-serif;
 }
 
+.miniCard {
+    padding: 10px !important;
+    background-color: rgb(247, 247, 247) !important;
+    transition: 0.3s;
+}
+
+.mini{
+    border: none !important;
+    margin-top: 10px;
+}
+
+.miniCard:hover{
+    background-color: rgb(230, 230, 230) !important;
+}
 
 #profileImageContainer{
     height: 350px;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#status {
+    margin-top: 10px;
+}
+
+#update {
+    margin-top: 10px;
+}
+
+#profileTitle {
+    font-family: proxima-nova,Sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    letter-spacing: 1.4px;
+}
+
+#profileName {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
 }

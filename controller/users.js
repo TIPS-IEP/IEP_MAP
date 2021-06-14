@@ -50,7 +50,7 @@ exports.showProfile = async function(req, res) {
     }
     res.render('login/profile', {
         name: req.user.firstName,
-        picture: req.user.image,
+        // picture: req.user.image,
         data: data,
         status: authorize,
     });
