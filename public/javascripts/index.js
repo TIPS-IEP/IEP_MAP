@@ -37,5 +37,10 @@ function closeNav() {
   document.getElementById("hide3").style.display = "block";
   document.getElementById("hide4").style.display = "block";
 }
-/* Control z-index*/
-
+/* Set the card of our features to the same height*/
+function changeLines() {
+  if (document.getElementsByClass[1]("container2").style.height > "166px" );{
+    (document.getElementsByClass[2]("container2").style.height = "223px" );
+    (document.getElementsByClass[3]("container2").style.height = "223px" );
+    (document.getElementsByClass[4]("container2").style.height = "223px" );
+}}
