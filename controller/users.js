@@ -1,7 +1,7 @@
 //database
+const passport = require('passport');
 var mongoose = require('mongoose');
 var Alumni = require('../models/Alumni');
-var Universities = require('../models/Universities')
 var unAuth = require('../models/unAuth')
 var Admin = require('../models/admin')
 
@@ -65,7 +65,7 @@ exports.showLoggedInPage = function(req, res) {
 exports.showAdd = async function(req, res) {
     if(await Alumni.find({ Email: req.user.email }).lean() != ""){
         const normalUsers = await Alumni.find({ Email: req.user.email }).lean()
-        var data = []
+        var data = [];
         normalUsers.forEach(function(item){
             data.push(item.EnglishName);
             data.push(item.LastName);
@@ -78,7 +78,7 @@ exports.showAdd = async function(req, res) {
         });
     }else{
         const users = await unAuth.find({ Email: req.user.email }).lean()
-        var data = []
+        var data = [];
         users.forEach(function(item){
             data.push(item.EnglishName);
             data.push(item.LastName);
@@ -103,11 +103,11 @@ exports.add = async function(req, res, next) {
             await Alumni.deleteOne({Email: req.user.email}, function(err, obj) {
                 if (err) throw err;
             });
-            req.body.Email = req.user.email
-            await Alumni.create(req.body)
-            res.redirect('/profile')
+            req.body.Email = req.user.email;
+            await Alumni.create(req.body);
+            res.redirect('/profile');
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
 
     }else if(await unAuth.find({ Email: req.user.email }).lean() != ""){
@@ -115,19 +115,19 @@ exports.add = async function(req, res, next) {
             await unAuth.deleteOne({Email: req.user.email}, function(err, obj) {
                 if (err) throw err;
             });
-            req.body.Email = req.user.email
-            await unAuth.create(req.body)
-            res.redirect('/profile')
+            req.body.Email = req.user.email;
+            await unAuth.create(req.body);
+            res.redirect('/profile');
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }else{
         try{
             req.body.Email = req.user.email
-            await unAuth.create(req.body)
-            res.redirect('/profile')
+            await unAuth.create(req.body);
+            res.redirect('/profile');
         } catch (error) {
-          console.log(error)
+          console.log(error);
         }
     }
 }
@@ -152,18 +152,18 @@ exports.showUnAuthUsers = async function(req, res) {
 }
 
 exports.showAuthUsers = async function(req, res) {
-    var data = []
+    var data = [];
     const AuthUsers = await Alumni.find().lean();
 
     AuthUsers.forEach(function(item){
-        testEmpty(data, item.EnglishName)
-        testEmpty(data, item.FirstName)
-        testEmpty(data, item.LastName)
-        testEmpty(data, item.Email)
-        testEmpty(data, item.InstagramUsername)
-        testEmpty(data, item.GraduationYear)
-        testEmpty(data, item.Major)
-        testEmpty(data, item.University)
+        testEmpty(data, item.EnglishName);
+        testEmpty(data, item.FirstName);
+        testEmpty(data, item.LastName);
+        testEmpty(data, item.Email);
+        testEmpty(data, item.InstagramUsername);
+        testEmpty(data, item.GraduationYear);
+        testEmpty(data, item.Major);
+        testEmpty(data, item.University);
     });
     res.render('login/authUsers', {
         name: req.user.firstName,
@@ -180,10 +180,10 @@ exports.temp = function(req, res) {
 
 exports.addAdmin = async function(req, res) {
     try{
-        await admin.create(req.body)
-        res.redirect('/')
+        await Admin.create(req.body);
+        res.redirect('/');
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
 }
 
@@ -198,9 +198,9 @@ exports.confirmUnAuthUsers = async function(req, res, next) {
                 console.log("1 document deleted from unAuth");
             });
         });
-        res.redirect('/unAuthUsers')
+        res.redirect('/unAuth');
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
 }
 
@@ -215,8 +215,20 @@ exports.alumiRemove = async function(req, res, next) {
                 console.log("1 document deleted from Alumni");
             });
         });
-        res.redirect('/authUsers')
+        res.redirect('/auth')
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
+}
+
+exports.googleAuthetication = passport.authenticate('google', {
+    scope: ['profile', 'https://www.googleapis.com/auth/userinfo.email']
+});
+
+exports.googleAutheticationCallBack = passport.authenticate('google', {
+    failureRedirect: '/login/login'
+});
+
+exports.googleAutheticationRedirect = function(req, res) {
+    res.redirect('/loggedin');
 }

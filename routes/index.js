@@ -25,17 +25,8 @@ router.get('/contact', indexController.showContact);
 router.get('/login', ensureGuest, indexController.showLogin);
 router.get('/logout', usersController.logout)
 
-router.get('/auth/google', passport.authenticate('google', {
-  scope: ['profile', 'https://www.googleapis.com/auth/userinfo.email'] 
-}));
-
-router.get(
-  '/auth/google/callback', 
-  passport.authenticate('google', { failureRedirect: '/login/login' }), 
-  (req, res) => {
-    res.redirect('/loggedin')
-  }
-);
+router.get('/auth/google', usersController.googleAuthetication);
+router.get('/auth/google/callback', usersController.googleAutheticationCallBack, usersController.googleAutheticationRedirect);
 
 router.get('/board', indexController.showBoard)
 router.get('/share', indexController.showShare)
