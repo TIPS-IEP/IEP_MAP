@@ -5,6 +5,7 @@ html(lang='en')
     //- css
     link(rel="stylesheet" href="stylesheets/index.css")
     link(rel="stylesheet" href="stylesheets/nav.css")
+    link(rel="stylesheet" href="stylesheets/footer.css")
 
     //- js
     script(src="javascripts/index.js")
@@ -39,12 +40,12 @@ html(lang='en')
     #vision
     .hero-image2
         .hero-text2
-          h1#big Our Vision:
+          h1.big Our Vision:
           h3.line-height IEP Alumni Association aims to build a bridge between the school, students, and alumni. Through these partnerships, we leverage the resources of the school and the experience of our alumni to elevate our students’ successes in school, university, and beyond.  
     #mission
     .hero-image3
         .hero-text3
-          h1#big Our Mission:
+          h1.big Our Mission:
           h3.line-height IEP Alumni Association utilizes an advisory board, student infographics and distribution maps, experience sharing sessions, and annual events to promote and leverage the value of the International Education Program; assemble current students and alumni from various universities, industries, and countries; and create an international network platform.
     
 
@@ -54,7 +55,7 @@ html(lang='en')
     .about-section
       //- h1 About Us Page
       //- p(style='text-align:left') We are Wego IEP Alums!
-      h1#big(style='text-align:center') Our Features 
+      h1.big(style='text-align:center') Our Features 
       br
       .row
         .column
@@ -67,7 +68,7 @@ html(lang='en')
                 h3 Student Profiles
               p.title Colleges, Countries, Industries
               p
-                a(href="/map")
+                a(href='/map' target='_blank' rel='noopener')
                   button.button Read More 
         .column
           .container.zoom
@@ -79,19 +80,19 @@ html(lang='en')
                 h3 Advisory Board 
               p.title Wego IEP Alumni Board
               p
-                a(href="#")
+                a(href='/board' target='_blank' rel='noopener')
                   button.button Read More 
         .column
           .container.zoom
-            p
+            p 
               br
               img(src='/images/icons/sharing.png' alt='seminar icon' style='width:75%' class='center')
             .container2
               p 
                 h3 Sharing Session
-              p.title Applying, Student Life, Careers
+              p.title Applications, Life, Careers
               p
-                a(href="#")
+                a(href='/share' target='_blank' rel='noopener')
                   button.button Read More 
         .column
           .container.zoom
@@ -103,21 +104,28 @@ html(lang='en')
                 h3 Annual Events
               p.title Event Connecting Alums
               p
-                a(href="#")
+                a(href='/events' target='_blank' rel='noopener')
                   button.button Read More 
 
       //- contact us
     #contactus
     .content
-      div(style='text-align:left')
-        .column3
-        h1#big Contact Us 
+      div(style='text-align:center')
+        h1.big Contact Us 
+        p.paragraph.socials Want to take part in our community of global talents? Feel free to reach out or connect with us on 
+          a(href='https://www.instagram.com/wego.iep/' target='_blank' rel='noopener') Instagram
+          | , 
+          a(href='https://www.facebook.com/groups/266271838471963' target='_blank' rel='noopener') Facebook
+          |  or leave a cute message! okok, it doesn't have to be cute.
+        p 
+          br
       .row
-        .column3
+        .column4
         .column
           img#round(src='/images/hero/letter2.1.jpg' style='width:260%')
         .column
-        .column2
+        .column4
+        .column4
         .column2
           form(action='/action_page.php')
             label(for='fname') First Name
