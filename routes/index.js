@@ -32,13 +32,13 @@ router.get(
   '/auth/google/callback', 
   passport.authenticate('google', { failureRedirect: '/login/login' }), 
   (req, res) => {
-    res.redirect('/user')
+    res.redirect('/loggedin')
   }
 );
 router.get('/logout', usersController.logout)
 
 // show user
-router.get('/user', ensureAuth, usersController.showUser)
+router.get('/loggedin', ensureAuth, usersController.showLoggedInPage)
 router.get('/profile', ensureAuth, usersController.showProfile)
 router.get('/add', ensureAuth, usersController.showAdd)
 router.post('/add', ensureAuth, usersController.add)

@@ -56,8 +56,8 @@ exports.showProfile = async function(req, res) {
     });
 }
 
-exports.showUser = function(req, res) {
-    res.render('login/access', {
+exports.showLoggedInPage = function(req, res) {
+    res.render('login/loggedinpage', {
         name: req.user.firstName,
     });
 }
