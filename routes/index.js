@@ -21,10 +21,8 @@ router.get('/', ensureGuest, indexController.index);
 router.get('/about', indexController.showAbout);
 router.get('/contact', indexController.showContact);
 
-// Login and out
 router.get('/login', ensureGuest, indexController.showLogin);
 router.get('/logout', usersController.logout)
-
 router.get('/auth/google', usersController.googleAuthetication);
 router.get('/auth/google/callback', usersController.googleAutheticationCallBack, usersController.googleAutheticationRedirect);
 
