@@ -32,7 +32,7 @@ body {
     background-color: rgb(255, 255, 255) !important;
     border: none;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    /* height: 350px; */
+    border-radius: 15px;
     font-family: 'Lato', sans-serif;
 }
 
@@ -52,6 +52,7 @@ body {
 }
 
 #profileImageContainer{
+    border-radius: 15px;
     height: 350px;
     border: none;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -65,6 +66,11 @@ body {
     margin-top: 10px;
 }
 
+#phoneLogOut{
+    margin-top: 10px;
+    display: none;
+}
+
 #profileTitle {
     font-family: proxima-nova,Sans-serif;
     font-size: 50px;
@@ -76,4 +82,13 @@ body {
 #profileName {
     font-family: 'Lato', sans-serif;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 1182px) {
+    #profileImageContainer {
+        display: none;
+    }
+    #phoneLogOut {
+        display: block;
+    }
 }
