@@ -43,10 +43,11 @@ input[type=submit]:hover {
 }
 
 .container2 {
+  text-align: center;
   border-radius: 13px;
   background-color: rgb(234, 240, 242);
-  padding: 5px;
-  margin: 5px;
+  padding: 10px;
+  /* margin: 5px; */
 }
 
 /* Create two columns that float next to eachother */

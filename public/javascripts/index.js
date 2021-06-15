@@ -39,12 +39,12 @@ function closeNav() {
 }
 /* Set the card of our features to the same height*/
 window.onload = function() {
-  // if (document.getElementsByClassName("container2")[1].style.height > "166px" ) {
-    (document.getElementsByClassName("container2")[1].style.height = "223px" );
-    (document.getElementsByClassName("container2")[2].style.height = "223px" );
-    (document.getElementsByClassName("container2")[3].style.height = "223px" );
-    (document.getElementsByClassName("container2")[4].style.height = "223px" );
-  // }
+  if (document.getElementsByClassName("container2")[1].style.height > "166px" ) {
+    (document.getElementsByClassName("container2")[1].style.width = "200px" );
+    (document.getElementsByClassName("container2")[2].style.width = "200px" );
+    (document.getElementsByClassName("container2")[3].style.width = "200px" );
+    (document.getElementsByClassName("container2")[4].style.width = "200px" );
+  }
   console.log(document.getElementsByClassName("container2")[2].style.height);
 }
 
