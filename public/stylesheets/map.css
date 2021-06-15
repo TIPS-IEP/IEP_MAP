@@ -9,7 +9,7 @@ body, html {
 }
 
 #map {
-    margin-top: 40px;
+    margin-top: 110px;
     width: 60%;
     height: 70%;
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
@@ -19,11 +19,11 @@ body, html {
 
 /* map side show*/
 .sideShow {
-    height: 540px; /* Specify a height */
+    height: 70%; /* Specify a height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
-    top: 100px;
+    top: 110px;
     left: 0;
     background-color: #111; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
@@ -89,9 +89,9 @@ body, html {
 }
 .wrapper .search-input{
     background: #fff;
-    width: 100%;
+    width: 98%;
     border-radius: 5px;
-    position: relative;
+    margin-left:1%;
     box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
 }
 .search-input input{
@@ -132,4 +132,8 @@ body, html {
 }
 .autocom-box li:hover{
     background: #efefef;
+}
+#universityList{
+    margin-top: 4%;
+    padding:1%;
 }
