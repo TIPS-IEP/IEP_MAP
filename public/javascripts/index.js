@@ -46,6 +46,5 @@ window.onload = function() {
     (document.getElementsByClassName("container2")[4].style.height = "223px" );
   // }
   console.log(document.getElementsByClassName("container2")[2].style.height);
-  console.log("helloooos");
 }
 
