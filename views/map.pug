@@ -2,7 +2,6 @@ doctype html
 html(lang='en')
   head
     //- css
-    link(rel="stylesheet" href="stylesheets/index.css")
     link(rel="stylesheet" href="stylesheets/map.css")
     link(rel="stylesheet" href="stylesheets/nav.css")
     link(rel="stylesheet" href="stylesheets/footer.css")
@@ -60,15 +59,14 @@ html(lang='en')
           alumniUniversity[i] = alumniUniversity[i].slice(0,-1);
         }
       }
+      var features = [];
+          var image = [];
+          var icons = [];
       function initMap(){
           var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: {lat: 42, lng: -96.65625}
           });
-
-          var features = [];
-          var image = [];
-          var icons = [];
           for (let i = 0; i<length; i++){
             features[i]={
               type:universityName[i],
@@ -84,7 +82,6 @@ html(lang='en')
               icon: image[i],
             };
           }
-          
         // Create markers.
         for (let i = 0; i < length; i++) {
           const marker = new google.maps.Marker({
@@ -107,7 +104,7 @@ html(lang='en')
               if(alumniUniversity[j] == universityName[i]){
                 var div = document.createElement("div");
                 div.classList.add("alumniBlock");
-                div.innerHTML = alumniEnglishName[j]+ " "+ alumniEmail[j]+" "+alumniInstagramUsername+" "+alumniGraduationYear+" "+alumniMajor;
+                div.innerHTML = alumniEnglishName[j]+ " "+ alumniEmail[j]+" "+alumniInstagramUsername[j]+" "+alumniGraduationYear[j]+" "+alumniMajor[j];
                 document.getElementById("sideShow").appendChild(div);
               }
             }
@@ -124,10 +121,10 @@ html(lang='en')
             map.setZoom(8);
             map.setCenter(features[i].position);
           });
-          document.getElementById("allUniversity").appendChild(div);
+          document.getElementById("universityList").appendChild(div);
         }      
       }
-      window.onload = function() {
+      window.onload = async function() {
         document.getElementById("z-index").style.display = "none";
         if(!window.location.hash) {
             window.location = window.location + '#loaded';
@@ -144,19 +141,20 @@ html(lang='en')
       include login/usernav
     else
       include common/nav
-    input#pac-input.controls(type='text' placeholder='Search Box')
     #map
     script(async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy8QR6hkmBw9pMJWs2XhY111wiGl5H3Sg&libraries=geometry&callback=initMap")
     #sideShow.sideShow
       a.closebtn(href='javascript:void(0)' onclick='closesideShow()') &times;
       .alumniBlock hello!
     #allUniversity
-     .wrapper
-      .search-input
-        a(href='' target='_blank' hidden='')
-        input(type='text' placeholder='Type to search..')
-        .autocom-box
+      .wrapper
+        .search-input
+          a(href='' target='_blank' hidden='')
+          input(type='text' placeholder='Type to search..')
+          .autocom-box
           //- here list are inserted from javascript
+      #universityList
+    
   
     
     script.
@@ -221,3 +219,4 @@ html(lang='en')
             }
           }
       }
+    include common/footer
