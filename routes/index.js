@@ -36,7 +36,7 @@ router.get('/profile', ensureAuth, usersController.showProfile)
 router.get('/add', ensureAuth, usersController.showAdd)
 router.post('/add', ensureAuth, usersController.add)
 
-router.post('/confirm/:email', ensureAdmin, usersController.confirmUnAuthUsers)
+router.post('/confirm/:email', ensureAdmin, usersController.confirmUnAuthUser)
 router.post('/alumiRemove', ensureAdmin, usersController.alumiRemove)
 router.get('/unAuth', ensureAdmin, usersController.showUnAuthUsers)
 router.get('/auth', ensureAdmin, usersController.showAuthUsers)
