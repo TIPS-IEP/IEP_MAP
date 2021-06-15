@@ -43,10 +43,11 @@ input[type=submit]:hover {
 }
 
 .container2 {
+  text-align: center;
   border-radius: 13px;
   background-color: rgb(234, 240, 242);
-  padding: 5px;
-  margin: 5px;
+  padding: 10px;
+  /* margin: 5px; */
 }
 
 /* Create two columns that float next to eachother */
@@ -99,7 +100,7 @@ html {
 } */
 
 .about-section {
-  padding: 90px 125px;
+  padding: 90px 90px;
   text-align: center;
   background-color:rgb(0, 0, 0);
   background-image: linear-gradient(rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.363) 68%, rgba(0, 0, 0, 0.192) 85%, rgba(0, 0, 0, 0) 100%), url("/images/hero/waves.jpg");
@@ -117,10 +118,10 @@ html {
   display: table;
 }
 
-.title {
+/* .title {
   color: grey;
-  font-size: 15px;
-}
+  font-size: 12px;
+} */
 
 .button {
   border: none;
@@ -132,7 +133,7 @@ html {
   background-color: #000;
   text-align: center;
   cursor: pointer;
-  width: 100%;
+  width: 100% !important;
 }
 
 .button:hover {
@@ -160,7 +161,7 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  /* width: 50%; */
 }
 
 body, html {
@@ -349,6 +350,15 @@ body, html {
 }
 
 .big {
+  font-family: proxima-nova,Sans-serif;
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 1.3em;
+  letter-spacing: 1.4px;
+}
+
+.big2 {
+  font-family: proxima-nova,Sans-serif;
   font-size: 55px;
   font-weight:700;
   line-height: 100px;
@@ -462,6 +472,7 @@ header span{
   -webkit-transform: scale(1.08); /* Safari 3-8 */
   transform: scale(1.08); 
 }
+
 .bold {
   font-family: proxima-nova,Sans-serif;
   font-size: 90px;
@@ -470,11 +481,21 @@ header span{
   letter-spacing: 1.4px;
   text-align: center;
 }
+
 .paragraph {
   margin-left: 15%;
   margin-right: 15%;
   font-family: proxima-nova,Sans-serif;
   font-size: 20px;
+  /* font-weight: 700; */
+  line-height: 1.4em;
+  letter-spacing: 1.4px;
+  text-align: left;
+}
+
+.paragraph2 {
+  font-family: proxima-nova,Sans-serif;
+  font-size: 25px;
   /* font-weight: 700; */
   line-height: 1.4em;
   letter-spacing: 1.4px;
@@ -488,6 +509,15 @@ header span{
   font-size: 50px;
   font-weight: 700;
   line-height: 1.1em;
+  letter-spacing: 1.4px;
+  text-align: left;
+}
+.medium2 {
+  text-align: center;
+  font-family: proxima-nova,Sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.0em;
   letter-spacing: 1.4px;
   text-align: left;
 }
@@ -542,3 +572,14 @@ header span{
   transition: 0.3s;
 }
  
+/* zoom features */
+.zoom a:link, .zoom a:visited {
+  color: inherit;
+}
+
+.zoom a:hover {
+  color: inherit;
+  transition: 0.1s;
+  text-decoration: none;
+
+}
