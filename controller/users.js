@@ -1,11 +1,11 @@
 //database
-var mongoose = require('mongoose');
+const passport = require('passport');
 var Alumni = require('../models/Alumni');
-var Universities = require('../models/Universities')
 var unAuth = require('../models/unAuth')
 var Admin = require('../models/admin')
 
-function testEmpty(d, a) {
+//testEmpty
+function checkIfDataEmpty(d, a) {
     if(!a){
         d.push("empty");
     }else{
@@ -13,87 +13,63 @@ function testEmpty(d, a) {
     }
 }
 
+function importUsersInfo(users){
+    var usersInfo = [];
+    users.forEach(function(user){
+        usersInfo.push(user.EnglishName);
+        usersInfo.push(user.LastName);
+        usersInfo.push(user.FirstName);
+        usersInfo.push(user.Email);
+        usersInfo.push(user.InstagramUsername);
+        usersInfo.push(user.GraduationYear);
+        usersInfo.push(user.Major);
+        usersInfo.push(user.University);
+    });
+    return usersInfo;
+}
+
 exports.logout = function(req, res) {
-    req.logout()
-    res.redirect('/')
+    req.logout();
+    res.redirect('/');
 }
 
 exports.showProfile = async function(req, res) {
-    var authorize = false;
-    if(await Alumni.find({ Email: req.user.email }).lean() != ""){
-        const normalUsers = await Alumni.find({ Email: req.user.email }).lean();
-        authorize = true;
-        var data = []
-        normalUsers.forEach(function(item){
-            data.push(item.EnglishName);
-            data.push(item.LastName);
-            data.push(item.FirstName);
-            data.push(item.Email);
-            data.push(item.InstagramUsername);
-            data.push(item.GraduationYear);
-            data.push(item.Major);
-            data.push(item.University);
-        });
+    var isAuthorized = false;
+    var userInfo = [];
+    if(await Alumni.find({ Email: req.user.email }).lean()!=""){
+        isAuthorized = true;
+        const authUsers = await Alumni.find({ Email: req.user.email }).lean();
+        userInfo = importUsersInfo(authUsers);
     }else{
-        const users = await unAuth.find({ Email: req.user.email }).lean()
-        var data = []
-        users.forEach(function(item){
-            data.push(item.EnglishName);
-            data.push(item.LastName);
-            data.push(item.FirstName);
-            data.push(item.Email);
-            data.push(item.InstagramUsername);
-            data.push(item.GraduationYear);
-            data.push(item.Major);
-            data.push(item.University);
-        });
+        const unAuthUsers = await unAuth.find({ Email: req.user.email }).lean();
+        userInfo = importUsersInfo(unAuthUsers);
     }
     res.render('login/profile', {
         name: req.user.firstName,
-        // picture: req.user.image,
-        data: data,
-        status: authorize,
+        data: userInfo,
+        status: isAuthorized,
     });
 }
 
-exports.showUser = function(req, res) {
-    res.render('login/access', {
+exports.showLoggedInPage = function(req, res) {
+    res.render('login/loggedinpage', {
         name: req.user.firstName,
     });
 }
 
 exports.showAdd = async function(req, res) {
+    var userInfo = [];
     if(await Alumni.find({ Email: req.user.email }).lean() != ""){
-        const normalUsers = await Alumni.find({ Email: req.user.email }).lean()
-        var data = []
-        normalUsers.forEach(function(item){
-            data.push(item.EnglishName);
-            data.push(item.LastName);
-            data.push(item.FirstName);
-            data.push(item.Email);
-            data.push(item.InstagramUsername);
-            data.push(item.GraduationYear);
-            data.push(item.Major);
-            data.push(item.University);
-        });
+        const authUsers = await Alumni.find({ Email: req.user.email }).lean();
+        userInfo = importUsersInfo(authUsers);
     }else{
-        const users = await unAuth.find({ Email: req.user.email }).lean()
-        var data = []
-        users.forEach(function(item){
-            data.push(item.EnglishName);
-            data.push(item.LastName);
-            data.push(item.FirstName);
-            data.push(item.Email);
-            data.push(item.InstagramUsername);
-            data.push(item.GraduationYear);
-            data.push(item.Major);
-            data.push(item.University);
-        });
+        const unAuthUsers = await unAuth.find({ Email: req.user.email }).lean()
+        userInfo = importUsersInfo(unAuthUsers);
     }
     res.render('login/add', {
         name: req.user.firstName,
         picture: req.user.image,
-        data: data
+        data: userInfo
     });
 }
 
@@ -103,11 +79,11 @@ exports.add = async function(req, res, next) {
             await Alumni.deleteOne({Email: req.user.email}, function(err, obj) {
                 if (err) throw err;
             });
-            req.body.Email = req.user.email
-            await Alumni.create(req.body)
-            res.redirect('/profile')
+            req.body.Email = req.user.email;
+            await Alumni.create(req.body);
+            res.redirect('/profile');
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
 
     }else if(await unAuth.find({ Email: req.user.email }).lean() != ""){
@@ -115,24 +91,24 @@ exports.add = async function(req, res, next) {
             await unAuth.deleteOne({Email: req.user.email}, function(err, obj) {
                 if (err) throw err;
             });
-            req.body.Email = req.user.email
-            await unAuth.create(req.body)
-            res.redirect('/profile')
+            req.body.Email = req.user.email;
+            await unAuth.create(req.body);
+            res.redirect('/profile');
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }else{
         try{
             req.body.Email = req.user.email
-            await unAuth.create(req.body)
-            res.redirect('/profile')
+            await unAuth.create(req.body);
+            res.redirect('/profile');
         } catch (error) {
-          console.log(error)
+          console.log(error);
         }
     }
 }
 
-exports.admin = async function(req, res) {
+exports.showUnAuthUsers = async function(req, res) {
     var data = []
     const unAuthUsers = await unAuth.find().lean();
     unAuthUsers.forEach(function(item){
@@ -145,27 +121,27 @@ exports.admin = async function(req, res) {
         data.push(item.Major);
         data.push(item.University);
     });
-    res.render('login/admin', {
+    res.render('login/unAuthUsers', {
         name: req.user.firstName,
         userData: data,
     });
 }
 
-exports.adminA = async function(req, res) {
-    var data = []
+exports.showAuthUsers = async function(req, res) {
+    var data = [];
     const AuthUsers = await Alumni.find().lean();
 
     AuthUsers.forEach(function(item){
-        testEmpty(data, item.EnglishName)
-        testEmpty(data, item.FirstName)
-        testEmpty(data, item.LastName)
-        testEmpty(data, item.Email)
-        testEmpty(data, item.InstagramUsername)
-        testEmpty(data, item.GraduationYear)
-        testEmpty(data, item.Major)
-        testEmpty(data, item.University)
+        checkIfDataEmpty(data, item.EnglishName);
+        checkIfDataEmpty(data, item.FirstName);
+        checkIfDataEmpty(data, item.LastName);
+        checkIfDataEmpty(data, item.Email);
+        checkIfDataEmpty(data, item.InstagramUsername);
+        checkIfDataEmpty(data, item.GraduationYear);
+        checkIfDataEmpty(data, item.Major);
+        checkIfDataEmpty(data, item.University);
     });
-    res.render('login/adminA', {
+    res.render('login/authUsers', {
         name: req.user.firstName,
         userData: data,
     });
@@ -180,26 +156,14 @@ exports.temp = function(req, res) {
 
 exports.addAdmin = async function(req, res) {
     try{
-        await admin.create(req.body)
-        res.redirect('/')
+        await Admin.create(req.body);
+        res.redirect('/');
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
 }
 
-exports.remove = async function(req, res, next) {
-    try{
-        await unAuth.deleteOne({Email: req.params.email}, function(err, obj) {
-            if (err) throw err;
-            console.log("1 document deleted from unAuth");
-        });
-        res.redirect('/admin')
-    } catch (error) {
-      console.log(error)
-    }
-}
-
-exports.confirm = async function(req, res, next) {
+exports.confirmUnAuthUsers = async function(req, res, next) {
     try{
         const newAuthUser = await unAuth.find({Email: req.params.email}).lean();
         await Alumni.create(newAuthUser, async function(err, obj) {
@@ -210,9 +174,9 @@ exports.confirm = async function(req, res, next) {
                 console.log("1 document deleted from unAuth");
             });
         });
-        res.redirect('/admin')
+        res.redirect('/unAuth');
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
 }
 
@@ -227,8 +191,20 @@ exports.alumiRemove = async function(req, res, next) {
                 console.log("1 document deleted from Alumni");
             });
         });
-        res.redirect('/adminA')
+        res.redirect('/auth')
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
+}
+
+exports.googleAuthetication = passport.authenticate('google', {
+    scope: ['profile', 'https://www.googleapis.com/auth/userinfo.email']
+});
+
+exports.googleAutheticationCallBack = passport.authenticate('google', {
+    failureRedirect: '/login/login'
+});
+
+exports.googleAutheticationRedirect = function(req, res) {
+    res.redirect('/loggedin');
 }

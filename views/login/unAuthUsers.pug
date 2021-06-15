@@ -1,0 +1,65 @@
+doctype html
+html(lang='en')
+  head
+    //- css
+    link(rel="stylesheet" href="stylesheets/admin.css")
+    //- bootstrap setup
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+body
+    script.
+      var JumpToNextRowThreshold = 1;
+      var rowNumber = 0;
+
+      var amountOfInfoType = 8;
+      var notSortOutUsersInfo = "#{userData}".split(/\,+(?!\ )/);
+      var unAuthUsers = new Array((notSortOutUsersInfo.length)/amountOfInfoType);
+
+      for (var i = 0; i < unAuthUsers.length; i++){
+        unAuthUsers[i] = new Array();
+      }
+
+      for(var i = 0; i < notSortOutUsersInfo.length; i++){
+        if((i / amountOfInfoType) >= JumpToNextRowThreshold){
+          rowNumber += 1;
+          JumpToNextRowThreshold += 1;
+        }
+        unAuthUsers[rowNumber].push(notSortOutUsersInfo[i]);
+      }
+
+      function generate_table() {
+        var body = document.getElementsByTagName("body")[0];
+        var table = document.createElement("table");
+        var tBody = document.createElement("tbody");
+        var amountOfColumn = 9;
+        var lastColumn = 8;
+
+        for (var i = 0; i < unAuthUsers.length; i++) {
+          var row = document.createElement("tr");
+          for (var j = 0; j < amountOfColumn; j++) {
+            var cell = document.createElement("td");
+            if(j == lastColumn){
+              var confirmForm = document.createElement("form");
+              confirmForm.setAttribute("action", "/confirm/" + unAuthUsers[i][3]);
+              confirmForm.setAttribute("method", "POST");
+              var confirmButton = document.createElement("button");
+              confirmButton.innerHTML = "confirm";
+              confirmButton.setAttribute("id", "confirm");
+              confirmButton.setAttribute("type", "submit");
+              cell.appendChild(confirmForm);
+              confirmForm.appendChild(confirmButton);
+            }else{
+              var cellText = document.createTextNode(unAuthUsers[i][j]);
+              cell.appendChild(cellText);
+            }
+            row.appendChild(cell);
+          }
+          tBody.appendChild(row);
+        }
+        table.appendChild(tBody);
+        body.appendChild(table);
+        table.setAttribute("border", "2");
+      }
+      
+      window.onload = generate_table();
+    
+    .container#table

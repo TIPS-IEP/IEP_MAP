@@ -1,0 +1,54 @@
+doctype html
+html(lang='en')
+  head
+    //- css
+    link(rel="stylesheet" href="stylesheets/admin.css")
+    //- bootstrap setup
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+body
+    script.
+      var JumpToNextRowThreshold = 1;
+      var amountOfInfoType = 8;
+      var rowNumber = 0;
+      var notSortOutUsersInfo = "#{userData}".split(/\,+(?!\ )/);
+      var AuthUsers = new Array((notSortOutUsersInfo.length)/amountOfInfoType)
+
+      for (var i = 0; i < AuthUsers.length; i++){
+        AuthUsers[i] = new Array();
+      }
+
+      for(var i = 0; i < notSortOutUsersInfo.length; i++){
+        if((i / amountOfInfoType) >= JumpToNextRowThreshold){
+          rowNumber += 1;
+          JumpToNextRowThreshold += 1;
+        }
+        AuthUsers[rowNumber].push(notSortOutUsersInfo[i]);
+      }
+
+      function generate_table() {
+        var body = document.getElementsByTagName("body")[0];
+        var table = document.createElement("table");
+        var tBody = document.createElement("tbody");
+        var amountOfColumn = 8;
+
+        for (var i = 0; i < AuthUsers.length; i++) {
+          var row = document.createElement("tr");
+          for (var j = 0; j < amountOfColumn; j++) {
+            var cell = document.createElement("td");
+            var cellText = document.createTextNode(AuthUsers[i][j]);
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+          }
+          tBody.appendChild(row);
+        }
+        table.appendChild(tBody);
+        body.appendChild(table);
+        table.setAttribute("border", "2");
+      }
+      
+      window.onload = generate_table();
+
+    .container#table
+    form(action = "/alumiRemove", method="POST")
+      input.form-control(type="text" id="email" name="email" placeholder="Enter Email You Intend to Delete" required)
+      input.btn(type="submit" Value="Delete")
