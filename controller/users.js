@@ -3,29 +3,33 @@ const passport = require('passport');
 var Alumni = require('../models/Alumni');
 var unAuth = require('../models/unAuth')
 var Admin = require('../models/admin')
+var eachUserInfo = [];
 
-//testEmpty
-function checkIfDataEmpty(d, a) {
-    if(!a){
-        d.push("empty");
-    }else{
-        d.push(a);
+function getEachUserInfo(user) {
+    eachUserInfo = [user.EnglishName, user.LastName, user.FirstName, user.Email, user.InstagramUsername, user.GraduationYear, user.Major, user.University];
+}
+
+function checkIfDataEmpty(userInfo) {
+    var isEmpty = false;
+    if(!userInfo){
+        isEmpty = true;
     }
+    return isEmpty;
 }
 
 function importUsersInfo(users){
-    var usersInfo = [];
+    var usersInfoArray = [];
     users.forEach(function(user){
-        usersInfo.push(user.EnglishName);
-        usersInfo.push(user.LastName);
-        usersInfo.push(user.FirstName);
-        usersInfo.push(user.Email);
-        usersInfo.push(user.InstagramUsername);
-        usersInfo.push(user.GraduationYear);
-        usersInfo.push(user.Major);
-        usersInfo.push(user.University);
+        getEachUserInfo(user);
+        for(var i = 0; i < eachUserInfo.length; i++){
+            if(checkIfDataEmpty(eachUserInfo[i])){
+                usersInfoArray.push("empty");
+            }else{
+                usersInfoArray.push(eachUserInfo[i]);
+            }
+        }
     });
-    return usersInfo;
+    return usersInfoArray;
 }
 
 exports.logout = function(req, res) {
@@ -35,18 +39,18 @@ exports.logout = function(req, res) {
 
 exports.showProfile = async function(req, res) {
     var isAuthorized = false;
-    var userInfo = [];
+    var usersInfoArray = [];
     if(await Alumni.find({ Email: req.user.email }).lean()!=""){
         isAuthorized = true;
         const authUsers = await Alumni.find({ Email: req.user.email }).lean();
-        userInfo = importUsersInfo(authUsers);
+        usersInfoArray = importUsersInfo(authUsers);
     }else{
         const unAuthUsers = await unAuth.find({ Email: req.user.email }).lean();
-        userInfo = importUsersInfo(unAuthUsers);
+        usersInfoArray = importUsersInfo(unAuthUsers);
     }
     res.render('login/profile', {
         name: req.user.firstName,
-        data: userInfo,
+        data: usersInfoArray,
         status: isAuthorized,
     });
 }
