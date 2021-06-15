@@ -49,6 +49,8 @@ body
       window.onload = generate_table();
 
     .container#table
+    a(href="/unAuth")
+      button go to unAuth
     form(action = "/alumiRemove", method="POST")
       input.form-control(type="text" id="email" name="email" placeholder="Enter Email You Intend to Delete" required)
       input.btn(type="submit" Value="Delete")
