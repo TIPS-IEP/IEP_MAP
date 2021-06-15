@@ -34,6 +34,7 @@ function importUsersInfo(users){
 
 exports.logout = function(req, res) {
     req.logout();
+    console.log("logged out");
     res.redirect('/');
 }
 
@@ -62,92 +63,71 @@ exports.showLoggedInPage = function(req, res) {
 }
 
 exports.showAdd = async function(req, res) {
-    var userInfo = [];
+    var usersInfoArray = [];
     if(await Alumni.find({ Email: req.user.email }).lean() != ""){
         const authUsers = await Alumni.find({ Email: req.user.email }).lean();
-        userInfo = importUsersInfo(authUsers);
+        usersInfoArray = importUsersInfo(authUsers);
     }else{
         const unAuthUsers = await unAuth.find({ Email: req.user.email }).lean()
-        userInfo = importUsersInfo(unAuthUsers);
+        usersInfoArray = importUsersInfo(unAuthUsers);
     }
     res.render('login/add', {
         name: req.user.firstName,
         picture: req.user.image,
-        data: userInfo
+        data: usersInfoArray
     });
 }
 
 exports.add = async function(req, res, next) {
     if(await Alumni.find({ Email: req.user.email }).lean() != ""){
-        try{
-            await Alumni.deleteOne({Email: req.user.email}, function(err, obj) {
-                if (err) throw err;
-            });
-            req.body.Email = req.user.email;
-            await Alumni.create(req.body);
-            res.redirect('/profile');
-        } catch (error) {
-            console.log(error);
-        }
-
+        await Alumni.deleteOne({Email: req.user.email}, function(err, obj) {
+            if (err) throw err;
+            console.log("delete " + req.user.email + " from Alumni");
+        });
+        req.body.Email = req.user.email;
+        await Alumni.create(req.body, function(err, obj) {
+            if (err) throw err;
+            console.log("create " + req.user.email + " in Alumni");
+        });
+        res.redirect('/profile');
     }else if(await unAuth.find({ Email: req.user.email }).lean() != ""){
-        try{
-            await unAuth.deleteOne({Email: req.user.email}, function(err, obj) {
-                if (err) throw err;
-            });
-            req.body.Email = req.user.email;
-            await unAuth.create(req.body);
-            res.redirect('/profile');
-        } catch (error) {
-            console.log(error);
-        }
+        await unAuth.deleteOne({Email: req.user.email}, function(err, obj) {
+            if (err) throw err;
+            console.log("delete " + req.user.email + " from unAuth");
+        });
+        req.body.Email = req.user.email;
+        await unAuth.create(req.body, function(err, obj) {
+            if (err) throw err;
+            console.log("create " + req.user.email + " in unAuth");
+        });
+        res.redirect('/profile');
     }else{
-        try{
-            req.body.Email = req.user.email
-            await unAuth.create(req.body);
-            res.redirect('/profile');
-        } catch (error) {
-          console.log(error);
-        }
+        req.body.Email = req.user.email;
+        await unAuth.create(req.body, function(err, obj) {
+            if (err) throw err;
+            console.log("create " + req.user.email + " in unAuth");
+        });
+        res.redirect('/profile');
     }
 }
 
 exports.showUnAuthUsers = async function(req, res) {
-    var data = []
+    var usersInfoArray = []
     const unAuthUsers = await unAuth.find().lean();
-    unAuthUsers.forEach(function(item){
-        data.push(item.EnglishName);
-        data.push(item.FirstName);
-        data.push(item.LastName);
-        data.push(item.Email);
-        data.push(item.InstagramUsername);
-        data.push(item.GraduationYear);
-        data.push(item.Major);
-        data.push(item.University);
-    });
+    usersInfoArray = importUsersInfo(unAuthUsers);
     res.render('login/unAuthUsers', {
         name: req.user.firstName,
-        userData: data,
+        userData: usersInfoArray,
     });
 }
 
 exports.showAuthUsers = async function(req, res) {
-    var data = [];
-    const AuthUsers = await Alumni.find().lean();
-
-    AuthUsers.forEach(function(item){
-        checkIfDataEmpty(data, item.EnglishName);
-        checkIfDataEmpty(data, item.FirstName);
-        checkIfDataEmpty(data, item.LastName);
-        checkIfDataEmpty(data, item.Email);
-        checkIfDataEmpty(data, item.InstagramUsername);
-        checkIfDataEmpty(data, item.GraduationYear);
-        checkIfDataEmpty(data, item.Major);
-        checkIfDataEmpty(data, item.University);
-    });
+    var usersInfoArray = []
+    const unAuthUsers = await Alumni.find().lean();
+    usersInfoArray = importUsersInfo(unAuthUsers);
     res.render('login/authUsers', {
         name: req.user.firstName,
-        userData: data,
+        userData: usersInfoArray,
     });
 }
 
@@ -167,38 +147,30 @@ exports.addAdmin = async function(req, res) {
     }
 }
 
-exports.confirmUnAuthUsers = async function(req, res, next) {
-    try{
-        const newAuthUser = await unAuth.find({Email: req.params.email}).lean();
-        await Alumni.create(newAuthUser, async function(err, obj) {
-            if (err) throw err;
-            console.log("1 document added in Alumni");
-            await unAuth.deleteOne({Email: req.params.email}, function(err, obj) {
-                if (err) throw err;
-                console.log("1 document deleted from unAuth");
-            });
-        });
-        res.redirect('/unAuth');
-    } catch (error) {
-      console.log(error);
-    }
+exports.confirmUnAuthUser = async function(req, res, next) {
+    const newAuthUser = await unAuth.find({Email: req.params.email}).lean();
+    await Alumni.create(newAuthUser, function(err, obj) {
+        if (err) throw err;
+        console.log("create " + req.params.email + " in Alumni");
+    });
+    await unAuth.deleteOne({Email: req.params.email}, function(err, obj) {
+        if (err) throw err;
+        console.log("delete " + req.params.email + " from unAuth");
+    });
+    res.redirect('/unAuth');
 }
 
 exports.alumiRemove = async function(req, res, next) {
-    try{
-        const unAuthUser = await Alumni.find({Email: req.body.email}).lean();
-        await unAuth.create(unAuthUser, async function(err, obj) {
-            if (err) throw err;
-            console.log("1 document added in unAuth");
-            await Alumni.deleteOne({Email: req.body.email}, function(err, obj) {
-                if (err) throw err;
-                console.log("1 document deleted from Alumni");
-            });
-        });
-        res.redirect('/auth')
-    } catch (error) {
-      console.log(error);
-    }
+    const unAuthUser = await Alumni.find({Email: req.body.email}).lean();
+    await unAuth.create(unAuthUser, function(err, obj) {
+        if (err) throw err;
+        console.log("create " + req.body.email + " in unAuth");
+    });
+    await Alumni.deleteOne({Email: req.body.email}, function(err, obj) {
+        if (err) throw err;
+        console.log("delete " + req.body.email + " in Alumni");
+    });
+    res.redirect('/auth')
 }
 
 exports.googleAuthetication = passport.authenticate('google', {
