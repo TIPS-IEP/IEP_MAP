@@ -1,9 +1,63 @@
 //database
 const passport = require('passport');
 var Alumni = require('../models/Alumni');
-var unAuth = require('../models/unAuth')
-var Admin = require('../models/admin')
+var unAuth = require('../models/unAuth');
+var Admin = require('../models/admin');
+var nodemailer = require('nodemailer');
+
 var eachUserInfo = [];
+
+var emailSender = nodemailer.createTransport({
+    service: 'gmail',
+    port: 587,
+    secure: false,
+    requireTLS: true,
+    auth: {
+      user: 'iep.alumni.association@gmail.com',
+      pass: 'IEP1234@',
+    }
+});
+
+
+function createEmailContentToAdmin(user){
+    var mailContent = {
+        from: 'iep.alumni.association@gmail.com',
+        to: 'crashingballoon@gmail.com, andrewchuang0110@gmail.com, alanhou911222@gmail.com',
+        subject: 'A user has submit his or her data to unAuth',
+        text: user.EnglishName + ' has submit their data to unAuth! Please confirm if their is one of us.',
+    };
+    return mailContent
+}
+
+function createEmailContentToUser(userEmail){
+    var mailContent = {
+        from: 'iep.alumni.association@gmail.com',
+        to: userEmail,
+        subject: 'We have authorized your account. You are now one of us',
+        text: 'You now have access to our student profile.',
+    };
+    return mailContent
+}
+
+function sendEmailToAdmin(user){
+    emailSender.sendMail(createEmailContentToAdmin(user), function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+    });
+}
+
+function sendEmailToUser(userEmail){
+    emailSender.sendMail(createEmailContentToUser(userEmail), function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+    });
+}
 
 function getEachUserInfo(user) {
     eachUserInfo = [user.EnglishName, user.LastName, user.FirstName, user.Email, user.InstagramUsername, user.GraduationYear, user.Major, user.University];
@@ -106,6 +160,7 @@ exports.add = async function(req, res, next) {
         await unAuth.create(req.body, function(err, obj) {
             if (err) throw err;
             console.log("create " + req.user.email + " in unAuth");
+            sendEmailToAdmin(req.body);
         });
         res.redirect('/profile');
     }
@@ -152,6 +207,7 @@ exports.confirmUnAuthUser = async function(req, res, next) {
     await Alumni.create(newAuthUser, function(err, obj) {
         if (err) throw err;
         console.log("create " + req.params.email + " in Alumni");
+        sendEmailToUser(req.params.email);
     });
     await unAuth.deleteOne({Email: req.params.email}, function(err, obj) {
         if (err) throw err;
