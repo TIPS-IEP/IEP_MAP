@@ -62,28 +62,29 @@ html(lang='en')
       var features = [];
           var image = [];
           var icons = [];
-      async function initMap(){
+      function initMap(){
         var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 4,
         center: {lat: 42, lng: -96.65625}
         });
-        var j = 0;
+        var f = 0;
         for (let i of universityName){
           var latlng;
-          features[j] = {
+          features[f] = {
             type:i,
-            position: new google.maps.LatLng(universityLat[j],universityLng[j]),
+            position: new google.maps.LatLng(universityLat[f],universityLng[f]),
+            index: f,
           };
           const img = new Image();
-          img.src = 'images/universities/'+universityName[j]+'.png';
-          image[j] = {
-            url: "images/universities/"+universityName[j]+".png",
+          img.src = 'images/universities/'+universityName[f]+'.png';
+          image[f] = {
+            url: "images/universities/"+universityName[f]+".png",
             scaledSize: new google.maps.Size(img.width/Math.sqrt(img.width*img.height/1200),img.height/Math.sqrt(img.width*img.height/1200))
           };
-          icons[j] = {
-            icon: image[j],
+          icons[f] = {
+            icon: image[f],
           };
-          j++;
+          f++;
         }
         // Create markers.
         for (var k = 0; k < length; k++) {
@@ -101,10 +102,11 @@ html(lang='en')
             }
             var div = document.createElement("div");
             div.classList.add("alumniBlock");
-            div.innerHTML = universityName[i];
+            div.innerHTML = universityName[k];
+            console.log(universityName[k]);
             document.getElementById("sideShow").appendChild(div);
             for(let j = 0; j < aLength; j++){
-              if(alumniUniversity[j] == universityName[i]){
+              if(alumniUniversity[j] == universityName[k]){
                 var div = document.createElement("div");
                 div.classList.add("alumniBlock");
                 div.innerHTML = alumniEnglishName[j]+ " "+ alumniEmail[j]+" "+alumniInstagramUsername[j]+" "+alumniGraduationYear[j]+" "+alumniMajor[j];
