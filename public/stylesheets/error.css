@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(234, 240, 242) !important;
+}
+
+.row{
+   padding-top: 120px; 
+}
+
+#errorPic{
+    width: 100%;
+    height: auto;
+}
+
+h1, h3{
+    font-family: proxima-nova,Sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    letter-spacing: 1.4px;
+}
+
+
+

@@ -40,6 +40,8 @@ router.post('/confirm/:email', ensureAdmin, usersController.confirmUnAuthUser)
 router.post('/alumiRemove', ensureAdmin, usersController.alumiRemove)
 router.get('/unAuth', ensureAdmin, usersController.showUnAuthUsers)
 router.get('/auth', ensureAdmin, usersController.showAuthUsers)
+router.get('/error', indexController.showError)
+
 
 module.exports = router;
 
