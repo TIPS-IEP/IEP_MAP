@@ -65,13 +65,7 @@ input[type=submit]:hover {
   clear: both;
 }
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
+
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -94,17 +88,30 @@ html {
   padding: 0 8px;
 }
 
+.column-a {
+  float: left;
+  width: 23%;
+  margin: 0.9%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
 /* .card {
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.267);
   margin: 8px;
 } */
 
 .about-section {
-  padding: 90px 90px;
+  padding: 5% 5%; 
   text-align: center;
   background-color:rgb(0, 0, 0);
   background-image: linear-gradient(rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.363) 68%, rgba(0, 0, 0, 0.192) 85%, rgba(0, 0, 0, 0) 100%), url("/images/hero/waves.jpg");
   color: rgb(255, 255, 255);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 95%;
 }
 
 .container {
@@ -140,12 +147,12 @@ html {
   background-color: rgb(97, 97, 97);
 }
 
-@media screen and (max-width: 650px) {
+/* @media screen and (max-width: 650px) {
   .column {
     width: 100%;
     display: block;
   }
-}
+} */
 
 body {
   background: rgb(234, 240, 242)!important;
@@ -291,11 +298,11 @@ body, html {
 
 
 /* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
-@media screen and (max-width: 580px) {
+/* @media screen and (max-width: 580px) {
   #navbar {
-    padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
-  }
-  #navbar a {
+    padding: 20px 10px !important; Use !important to make sure that JavaScript doesn't override the padding on small screens */
+  /* } */
+  /* #navbar a {
     float: none;
     display: block;
     text-align: left;
@@ -303,7 +310,7 @@ body, html {
   #navbar-right {
     float: none;
   }
-}
+} */
 
 .line-height {
   line-height: 40px;
@@ -581,4 +588,54 @@ header span{
   transition: 0.1s;
   text-decoration: none;
 
+}
+
+@media only screen and (max-width: 1013px) {
+  #navbar-right{
+    display: none;
+  }
+  .contact{
+    display: none;
+  }
+  .hero-image1{
+    width: 100%!important;
+  }
+  
+}
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1094px) {
+  .column-a, input[type=submit] {
+    width: 45%!important;
+    margin-top: 0;
+  }
+  .big, .big2 {
+    font-size: 300%;
+  }
+  .paragraph, .paragraph2{
+    line-height:100%;
+    font-size: 100%;
+  }
+  .about-section {
+    padding: 10%; 
+    height: 140%;
+  }
+  .hero-image1{
+    height: 90%;
+    width: 100%!important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .column-a, input[type=submit] {
+    width: 100%!important;
+    margin-top: 0;
+  }
+  .about-section {
+    height: 280%;
+  }
+  .hero-image1{
+    height: 60%;
+    width: 100%!important;
+  }
 }

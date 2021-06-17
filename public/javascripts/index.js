@@ -49,7 +49,5 @@ window.onload = function() {
     (document.getElementsByClassName("container")[1].style.width = "280px" );
     (document.getElementsByClassName("container")[2].style.width = "280px" );
     (document.getElementsByClassName("container")[3].style.width = "280px" );
-  // }
-  console.log(document.getElementsByClassName("container2")[2].style.height);
 }
 
