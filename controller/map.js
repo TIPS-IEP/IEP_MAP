@@ -17,7 +17,6 @@ exports.showMap = async function(req, res) {
     var alumniInstagramUsername = [];
     var alumniGraduationYear = [];
     var alumniMajor = [];
-    console.log(alumnItem);
     uniItems.forEach(function(item){
         universityName.push(item.university);
         universityLat.push(item.lat);

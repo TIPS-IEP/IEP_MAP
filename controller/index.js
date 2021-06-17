@@ -42,3 +42,15 @@ exports.showShare = function(req, res, next) {
 exports.showEvents = function(req, res, next) {
   res.render('events');
 }
+
+exports.showError = function(req, res, next) {
+  if(req.isAuthenticated()){
+    var firstName = req.user.firstName;
+  }else{
+    var firstName = null
+  }
+  res.render('error', {
+    loggedin: req.isAuthenticated(),
+    name: firstName,
+  });
+}

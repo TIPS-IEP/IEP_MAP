@@ -62,34 +62,31 @@ html(lang='en')
       var features = [];
           var image = [];
           var icons = [];
-      async function initMap(){
-        var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
-        center: {lat: 42, lng: -96.65625}
-        });
-        var j = 0;
-        for (let i of universityName){
-          var latlng;
-          features[j] = {
-            type:i,
-            position: new google.maps.LatLng(universityLat[j],universityLng[j]),
-          };
-          const img = new Image();
-          img.src = 'images/universities/'+universityName[j]+'.png';
-          image[j] = {
-            url: "images/universities/"+universityName[j]+".png",
-            scaledSize: new google.maps.Size(img.width/Math.sqrt(img.width*img.height/1200),img.height/Math.sqrt(img.width*img.height/1200))
-          };
-          icons[j] = {
-            icon: image[j],
-          };
-          j++;
-        }
+      function initMap(){
+          var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: {lat: 42, lng: -96.65625}
+          });
+          for (let i = 0; i<length; i++){
+            features[i]={
+              type:universityName[i],
+              position: new google.maps.LatLng(universityLat[i],universityLng[i]),
+            };
+            const img = new Image();
+            img.src = 'images/universities/'+universityName[i]+'.png';
+            image[i] = {
+              url: "images/universities/"+universityName[i]+".png",
+              scaledSize: new google.maps.Size(img.width/Math.sqrt(img.width*img.height/1200),img.height/Math.sqrt(img.width*img.height/1200))
+            };
+            icons[i] = {
+              icon: image[i],
+            };
+          }
         // Create markers.
-        for (var k = 0; k < length; k++) {
+        for (let i = 0; i < length; i++) {
           const marker = new google.maps.Marker({
-          position: features[k].position,
-          icon: icons[k].icon,
+          position: features[i].position,
+          icon: icons[i].icon,
           map: map,
           });
           marker.addListener("click", () => {
@@ -131,8 +128,13 @@ html(lang='en')
         window.location = window.location + '#loaded';
         window.location.reload();
       }
+
       window.onload = function() {
         document.getElementById("z-index").style.display = "none";
+        if(!window.location.hash) {
+          window.location = window.location + '#loaded';
+          window.location.reload();
+        }
         var biggestImg = new Image();
         biggestImg.src = "images/universities/Carnegie Mellon University.png";
         biggestImg.onload = function(){
@@ -140,8 +142,8 @@ html(lang='en')
             refresh();
           }
         }  
+
       }
-      
       
       
     
@@ -160,11 +162,11 @@ html(lang='en')
     #allUniversity
       .wrapper
         .search-input
+          a(href='' target='_blank' hidden='')
           input(type='text' placeholder='Type to search..')
           .autocom-box
           //- here list are inserted from javascript
       #universityList
-    #refreshMassage If you cannot see universities in the map, please refresh.
     
   
     
@@ -187,6 +189,9 @@ html(lang='en')
                   break;
                 }
               }
+            }
+            for(i in emptyArray){
+              console.log(emptyArray[i]);
             }
             emptyArray = emptyArray.map((data)=>{
                 // passing return data inside li tag
@@ -227,4 +232,4 @@ html(lang='en')
             }
           }
       }
-    //- include common/footer
+    include common/footer
