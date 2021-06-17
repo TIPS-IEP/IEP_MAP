@@ -22,108 +22,91 @@ html(lang='en')
     meta(name='viewport' content='width=device-width, initial-scale=1')
     title Student Profiles
     script.
-      var length = #{length};
-      var aLength = #{aLength};
+      var universityJSONUnorganized = "#{ JSON.stringify(universities)}"
+      universitiesObject = JSON.parse(universityJSONUnorganized.replace(/&quot;/g,'"'))
+      universitiesLength = universitiesObject.universitiesLength
+
+      var alumniJSONUnorganized = "#{ JSON.stringify(alumni)}"
+      alumniObject = JSON.parse(alumniJSONUnorganized.replace(/&quot;/g,'"'))
       var i = 0;
-      var tempName = "#{universityName}".split(/\,+(?!\ )/);
-      var tempLat = "#{universityLat}".split(/\,+(?!\ )/);
-      var tempLng = "#{universityLng}".split(/\,+(?!\ )/);
-      var tempAEN = "#{alumniEnglishName}".split(/\,+(?!\ )/);
-      var tempAU = "#{alumniUniversity}".split(/\,+(?!\ )/);
-      var tempAE = "#{alumniEmail}".split(/\,+(?!\ )/);
-      var tempAIU = "#{alumniInstagramUsername}".split(/\,+(?!\ )/);
-      var tempAGY = "#{alumniGraduationYear}".split(/\,+(?!\ )/);
-      var tempAM = "#{alumniMajor}".split(/\,+(?!\ )/);
-      var universityName = [];
-      var universityLat = [];
-      var universityLng = [];
-      var alumniEnglishName = [];
-      var alumniUniversity = [];
-      var alumniEmail = [];
-      var alumniInstagramUsername = [];
-      var alumniGraduationYear = [];
-      var alumniMajor = [];
-      for(i in tempName){
-        universityName[i] = tempName[i];
-        universityLat[i] = tempLat[i];
-        universityLng[i] = tempLng[i];
-      }
-      for(i in tempAEN){
-        alumniEnglishName[i] = tempAEN[i];
-        alumniUniversity[i] = tempAU[i];
-        alumniEmail[i] = tempAE[i];
-        alumniInstagramUsername[i] = tempAIU[i];
-        alumniGraduationYear[i] = tempAGY[i];
-        alumniMajor[i] = tempAM[i];
-        if(alumniUniversity[i].slice(-1)==" "){
-          alumniUniversity[i] = alumniUniversity[i].slice(0,-1);
-        }
-      }
       var features = [];
-          var image = [];
-          var icons = [];
-      function initMap(){
-          var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: {lat: 42, lng: -96.65625}
-          });
-          for (let i = 0; i<length; i++){
-            features[i]={
-              type:universityName[i],
-              position: new google.maps.LatLng(universityLat[i],universityLng[i]),
-            };
-            const img = new Image();
-            img.src = 'images/universities/'+universityName[i]+'.png';
-            image[i] = {
-              url: "images/universities/"+universityName[i]+".png",
-              scaledSize: new google.maps.Size(img.width/Math.sqrt(img.width*img.height/1200),img.height/Math.sqrt(img.width*img.height/1200))
-            };
-            icons[i] = {
-              icon: image[i],
-            };
-          }
-        // Create markers.
-        for (let i = 0; i < length; i++) {
-          const marker = new google.maps.Marker({
-          position: features[i].position,
-          icon: icons[i].icon,
-          map: map,
-          });
-          marker.addListener("click", () => {
-            map.setZoom(8);
-            map.setCenter(marker.getPosition());
-            const elements = document.getElementsByClassName("alumniBlock");
-            while(elements.length > 0){
-              elements[0].parentNode.removeChild(elements[0]);
-            }
-            var div = document.createElement("div");
-            div.classList.add("alumniBlock");
-            div.innerHTML = universityName[i];
-            document.getElementById("sideShow").appendChild(div);
-            for(let j = 0; j < aLength; j++){
-              if(alumniUniversity[j] == universityName[i]){
-                var div = document.createElement("div");
-                div.classList.add("alumniBlock");
-                div.innerHTML = alumniEnglishName[j]+ " "+ alumniEmail[j]+" "+alumniInstagramUsername[j]+" "+alumniGraduationYear[j]+" "+alumniMajor[j];
-                document.getElementById("sideShow").appendChild(div);
-              }
-            }
-            opensideShow();
-          });
+      var image = [];
+      var icons = [];
+
+      async function importDataToList(){
+        for(var i = 0; i < universitiesLength; i++){
+          features[i] = {
+            type: i,
+            position: new google.maps.LatLng(universitiesObject.universityLat[i], universitiesObject.universityLng[i]),
+          };
+          const img = new Image();
+          img.src = 'images/universities/'+universitiesObject.universityName[i]+'.png';
+          image[i] = {
+            url: "images/universities/"+universitiesObject.universityName[i]+".png",
+            scaledSize: new google.maps.Size(img.width/Math.sqrt(img.width*img.height/1200),img.height/Math.sqrt(img.width*img.height/1200))
+          };
+          icons[i] = {
+            icon: image[i],
+          };
         }
-        //add University List
-        for(let i = 0; i < length; i++){
+      }
+
+      function createUniversitiesSearchList(map){
+        for(var i = 0; i < universitiesLength; i++){
           var div = document.createElement("div");
           div.classList.add("universityBlock");
           div.id = (i);
-          div.innerHTML = universityName[i];
+          div.innerHTML = universitiesObject.universityName[i];
           div.addEventListener('click', function (event) {
             map.setZoom(8);
             map.setCenter(features[i].position);
           });
           document.getElementById("universityList").appendChild(div);
-        }      
+        }
       }
+
+      function createUniversitySidebar(marker, map, order){
+        marker.addListener("click", () => {
+          map.setZoom(8);
+          map.setCenter(marker.getPosition());
+          const elements = document.getElementsByClassName("alumniBlock");
+          while(elements.length > 0){
+            elements[0].parentNode.removeChild(elements[0]);
+          }
+          var div = document.createElement("div");
+          div.classList.add("alumniBlock");
+          div.innerHTML = universitiesObject.universityName[order];
+          document.getElementById("sideShow").appendChild(div);
+          for(let j = 0; j < alumniObject.alumniLength; j++){
+            console.log(alumniObject.alumniUniversity[j]);
+            if(alumniObject.alumniUniversity[j] == universitiesObject.universityName[order]){
+              var div = document.createElement("div");
+              div.classList.add("alumniBlock");
+              div.innerHTML = alumniObject.alumniEnglishName[j] + " " + alumniObject.alumniEmail[j] + " " + alumniObject.alumniInstagramUsername[j] + " " + alumniObject.alumniGraduationYear[j] + " " + alumniObject.alumniMajor[j];
+              document.getElementById("sideShow").appendChild(div);
+            }
+          }
+          opensideShow();
+        });
+      }
+
+      async function initMap(){
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: {lat: 42, lng: -96.65625}
+        });
+        importDataToList();
+        for (var k = 0; k < universitiesLength; k++) {
+          const marker = new google.maps.Marker({
+            position: features[k].position,
+            icon: icons[k].icon,
+            map: map,
+          });
+          createUniversitySidebar(marker, map, k);
+        }
+        createUniversitiesSearchList(map);
+      }
+
       function refresh(){
         window.location = window.location + '#loaded';
         window.location.reload();
@@ -142,11 +125,8 @@ html(lang='en')
             refresh();
           }
         }  
-
       }
       
-      
-    
   body
     script.
         var loggedin = #{loggedin}
@@ -167,9 +147,7 @@ html(lang='en')
           .autocom-box
           //- here list are inserted from javascript
       #universityList
-    
-  
-    
+
     script.
       // getting all required elements
       const searchWrapper = document.querySelector(".search-input");
@@ -179,36 +157,36 @@ html(lang='en')
       let webLink;
       // if user press any key and release
       inputBox.onkeyup = (e)=>{
-          let userData = e.target.value; //user enetered data
-          let emptyArray = [];
-          if(userData){
-            for(i in universityName){
-              for(j = 0; j < universityName[i].length; j++){
-                if(universityName[i].toLocaleLowerCase().startsWith(userData.toLocaleLowerCase(),j)){
-                  emptyArray.push(universityName[i]);
-                  break;
-                }
+        let userData = e.target.value; //user enetered data
+        let emptyArray = [];
+        if(userData){
+          for(var i = 0; i < universitiesLength; i++){
+            for(j = 0; j < universitiesLength; j++){
+              if(universitiesObject.universityName[i].toLocaleLowerCase().startsWith(userData.toLocaleLowerCase(),j)){
+                emptyArray.push(universitiesObject.universityName[i]);
+                break;
               }
             }
-            for(i in emptyArray){
-              console.log(emptyArray[i]);
-            }
-            emptyArray = emptyArray.map((data)=>{
-                // passing return data inside li tag
-                return data = `${data}`;
-            });
-            searchWrapper.classList.add("active"); //show autocomplete box
-            showSuggestions(emptyArray);
-            let allList = suggBox.querySelectorAll("li");
-            for (let i = 0; i < allList.length; i++) {
-                //adding onclick attribute in all li tag
-                allList[i].setAttribute("onclick", "select(this)");
-            }
-          }else{
-              searchWrapper.classList.remove("active"); //hide autocomplete box
           }
+          for(i in emptyArray){
+            console.log(emptyArray[i]);
+          }
+          emptyArray = emptyArray.map((data)=>{
+              // passing return data inside li tag
+              return data = `${data}`;
+          });
+          searchWrapper.classList.add("active"); //show autocomplete box
+          showSuggestions(emptyArray);
+          let allList = suggBox.querySelectorAll("li");
+          for (let i = 0; i < allList.length; i++) {
+              //adding onclick attribute in all li tag
+              allList[i].setAttribute("onclick", "select(this)");
+          }
+        }else{
+            searchWrapper.classList.remove("active"); //hide autocomplete box
+        }
         if(emptyArray==""){
-          for(i=0;i<length;i++){
+          for(i=0;i<universitiesLength;i++){
             document.getElementsByClassName("universityBlock")[i].style.display = "block";
           }
         }
@@ -219,13 +197,12 @@ html(lang='en')
           searchWrapper.classList.remove("active");
       }
       function showSuggestions(list){
-
-          for(j=0;j<length;j++){
+          for(j=0;j<universitiesLength;j++){
             document.getElementsByClassName("universityBlock")[j].style.display = "none";
           }
           for(i in list){
-            for(j=0;j<length;j++){
-              if(universityName[j]==list[i]){
+            for(j=0;j<universitiesLength;j++){
+              if(universitiesObject.universityName[j]==list[i]){
                 document.getElementsByClassName("universityBlock")[j].style.display = "block";
                 continue;
               }
