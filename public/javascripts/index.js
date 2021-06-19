@@ -18,13 +18,21 @@ function scrollFunction() {
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
-  document.getElementById("mySidenav").style.width = "17%";
-  document.getElementById("main").style.marginLeft = "17%";
-  document.getElementById("hide").style.display = "none";
-  document.getElementById("hide1").style.display = "none";
-  document.getElementById("hide2").style.display = "none";
-  document.getElementById("hide3").style.display = "none";
-  document.getElementById("hide4").style.display = "none";
+  if (screen.width < 600) {
+  /* Open the sidenav */
+    document.getElementById("mySidenav").style.width = "100%";
+    document.getElementById("hide").style.display = "none";
+    document.getElementById("hide1").style.display = "none";
+    document.getElementById("hide2").style.display = "none";
+    document.getElementById("hide3").style.display = "none";
+  } else {
+    document.getElementById("mySidenav").style.width = "230px";
+    document.getElementById("main").style.marginLeft = "230px";
+    document.getElementById("hide").style.display = "none";
+    document.getElementById("hide1").style.display = "none";
+    document.getElementById("hide2").style.display = "none";
+    document.getElementById("hide3").style.display = "none";
+  }
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
@@ -35,7 +43,6 @@ function closeNav() {
   document.getElementById("hide1").style.display = "block";
   document.getElementById("hide2").style.display = "block";
   document.getElementById("hide3").style.display = "block";
-  document.getElementById("hide4").style.display = "block";
 }
 /* Set the card of our features to the same height*/
 window.onload = function() {
@@ -50,4 +57,3 @@ window.onload = function() {
     (document.getElementsByClassName("container")[2].style.width = "280px" );
     (document.getElementsByClassName("container")[3].style.width = "280px" );
 }
-

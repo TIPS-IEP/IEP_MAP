@@ -33,11 +33,13 @@ html(lang='en')
     
     #mySidenav.sidenav
       a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
-      a(href='#') Home 
-      a(href='#vision') Vision
-      a(href='#mission') Mission
-      a(href='#about') Features
-      a(href='#contactus') Contact
+      a.pcsidenav(href='#') Home 
+      a.pcsidenav(href='#vision') Vision
+      a.pcsidenav(href='#mission') Mission
+      a.pcsidenav(href='#about') Features
+      a.pcsidenav(href='#contactus') Contact
+      include common/mbsidenav
+
 
     .hero-image1
         .hero-text1
