@@ -6,8 +6,13 @@ html(lang='en')
     link(rel="stylesheet" href="stylesheets/nav.css")
     link(rel="stylesheet" href="stylesheets/footer.css")
 
+    //- google font set up
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
+
     //- js
     script(src="javascripts/map.js")
+    script(src="javascripts/index.js")
 
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
@@ -28,7 +33,6 @@ html(lang='en')
 
       var alumniJSONUnorganized = "#{ JSON.stringify(alumni)}"
       alumniObject = JSON.parse(alumniJSONUnorganized.replace(/&quot;/g,'"'))
-      var i = 0;
       var features = [];
       var image = [];
       var icons = [];
@@ -59,7 +63,7 @@ html(lang='en')
           div.innerHTML = universitiesObject.universityName[i];
           div.addEventListener('click', function (event) {
             map.setZoom(8);
-            map.setCenter(features[i].position);
+            map.setCenter(features[this.id].position);
           });
           document.getElementById("universityList").appendChild(div);
         }
@@ -78,7 +82,6 @@ html(lang='en')
           div.innerHTML = universitiesObject.universityName[order];
           document.getElementById("sideShow").appendChild(div);
           for(let j = 0; j < alumniObject.alumniLength; j++){
-            console.log(alumniObject.alumniUniversity[j]);
             if(alumniObject.alumniUniversity[j] == universitiesObject.universityName[order]){
               var div = document.createElement("div");
               div.classList.add("alumniBlock");
@@ -104,7 +107,7 @@ html(lang='en')
           });
           createUniversitySidebar(marker, map, k);
         }
-        createUniversitiesSearchList(map);
+        createUniversitiesSearchList (map);
       }
 
       function refresh(){
@@ -129,7 +132,7 @@ html(lang='en')
       
   body
     script.
-        var loggedin = #{loggedin}
+      var loggedin = #{loggedin}
     if loggedin
       include login/usernav
     else
@@ -144,7 +147,6 @@ html(lang='en')
         .search-input
           a(href='' target='_blank' hidden='')
           input(type='text' placeholder='Type to search..')
-          .autocom-box
           //- here list are inserted from javascript
       #universityList
 
@@ -152,9 +154,6 @@ html(lang='en')
       // getting all required elements
       const searchWrapper = document.querySelector(".search-input");
       const inputBox = searchWrapper.querySelector("input");
-      const suggBox = searchWrapper.querySelector(".autocom-box");
-      let linkTag = searchWrapper.querySelector("a");
-      let webLink;
       // if user press any key and release
       inputBox.onkeyup = (e)=>{
         let userData = e.target.value; //user enetered data
@@ -168,20 +167,12 @@ html(lang='en')
               }
             }
           }
-          for(i in emptyArray){
-            console.log(emptyArray[i]);
-          }
           emptyArray = emptyArray.map((data)=>{
               // passing return data inside li tag
               return data = `${data}`;
           });
           searchWrapper.classList.add("active"); //show autocomplete box
           showSuggestions(emptyArray);
-          let allList = suggBox.querySelectorAll("li");
-          for (let i = 0; i < allList.length; i++) {
-              //adding onclick attribute in all li tag
-              allList[i].setAttribute("onclick", "select(this)");
-          }
         }else{
             searchWrapper.classList.remove("active"); //hide autocomplete box
         }
