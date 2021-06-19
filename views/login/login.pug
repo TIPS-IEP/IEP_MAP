@@ -27,6 +27,10 @@ html(lang='en')
     link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
   body
     include ../common/nav
+    #mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      include ../common/mbsidenav
+
     .card
       .cardbg
         img(src="/images/login/tran.png").card-img-top(alt="")

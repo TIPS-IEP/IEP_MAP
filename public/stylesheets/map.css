@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    background: rgb(234, 240, 242);
+    background-color: rgb(234, 240, 242) !important;
     font:16px/1.6 Arial,  sans-serif;
 }
 body, html {
@@ -9,6 +9,7 @@ body, html {
 }
 
 #map {
+    margin-left: 10px;
     margin-top: 110px;
     width: 60%;
     height: 70%;
@@ -66,13 +67,19 @@ body, html {
     margin-top: 40px;
     height: 70%;
     overflow: scroll;
-    background: #000000;
-    color: #f1f1f1;
+    background: #ffffff;
+    color: #000000;
     transition: 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif !important;
 }
 .universityBlock{
+    padding: 1%;
     cursor: pointer;
-    
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    background: rgb(245, 245, 245);   
 }
 .universityBlock:hover{
     color: rgb(255, 106, 106);
@@ -105,6 +112,6 @@ body, html {
     border-radius: 5px 5px 0 0;
 }
 #universityList{
-    margin-top: 4%;
+    margin-top: 3%;
     padding:1%;
 }

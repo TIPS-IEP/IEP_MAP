@@ -415,11 +415,6 @@ body, html {
   transition: margin-left .5s;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
 
 #z-index {
   z-index: 100;
@@ -590,17 +585,14 @@ header span{
 
 }
 
-@media only screen and (max-width: 1013px) {
-  #navbar-right{
-    display: none;
-  }
+
+@media only screen and (max-width: 1094px) {
   .contact{
     display: none;
   }
   .hero-image1{
     width: 100%!important;
   }
-  
 }
 
 
@@ -611,11 +603,11 @@ header span{
     margin-top: 0;
   }
   .big, .big2 {
-    font-size: 300%;
+    font-size: 500%;
   }
   .paragraph, .paragraph2{
-    line-height:100%;
-    font-size: 100%;
+    line-height:130%;
+    font-size: 160%;
   }
   .about-section {
     padding: 10%; 
@@ -625,17 +617,79 @@ header span{
     height: 90%;
     width: 100%!important;
   }
+
 }
+
+@media screen and (min-width: 600px) {
+  .pcsidenav {
+    display: block!important;
+  }
+  .mbsidenav{
+    display: none!important;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .column-a, input[type=submit] {
     width: 100%!important;
     margin-top: 0;
   }
+  #navbar-right{
+    display: none;
+  }
   .about-section {
     height: 280%;
+  }
+  .big, .big2 {
+    font-size: 300%;
+  }
+  .paragraph, .paragraph2{
+    line-height:100%;
+    font-size: 100%;
   }
   .hero-image1{
     height: 60%;
     width: 100%!important;
   }
+  .pcsidenav {
+    display: none!important;
+  }
+  .mbsidenav{
+    display: block!important;
+  }
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align:center;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 40px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover{
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
 }
