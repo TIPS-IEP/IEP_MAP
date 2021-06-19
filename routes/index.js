@@ -24,6 +24,7 @@ router.get('/board', indexController.showBoard)
 router.get('/share', indexController.showShare)
 router.get('/events', indexController.showEvents)
 router.get('/error', indexController.showError)
+router.get('/newabout', indexController.showNewabout)
 
 router.post('/add', ensureAuth, usersController.add)
 router.post('/confirm/:email', ensureAdmin, usersController.confirmUnAuthUser)

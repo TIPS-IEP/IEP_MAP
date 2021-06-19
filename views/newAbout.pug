@@ -1,0 +1,91 @@
+doctype html
+html(lang='en') 
+  head
+    //- css
+    link(rel="stylesheet" href="stylesheets/about.css")
+    link(rel="stylesheet" href="stylesheets/nav.css")
+    link(rel="stylesheet" href="stylesheets/footer.css")
+
+    //- js
+    script(src="javascripts/index.js")
+    script(src="javascripts/about.js")
+
+    //- bootstrap setup
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+
+    //- jquery
+    script(src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+
+    //- center website 
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+
+    //- google font set up
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
+
+    title About Us
+  body#main
+    script.
+      var loggedin = #{loggedin}
+    if loggedin
+      include login/usernav
+    else
+      include common/nav
+    .container#title
+      .row
+        .col-md-1
+        .col-md-10
+          h1 ABOUT US
+          p IEP Alumni Association strives to facilitate connections among Wego IEP students with the goal of nurturing and empowering global talents. By doing this, current and former students are able to create opportunities, foster connections, and share resources. 
+        .col-md-1
+      .row#originRow
+        .col-md-1
+        .col-md-5
+          img#originPic(src='/images/hero/IEP.jpg')
+        .col-md-5
+          h3 Origins
+          p As students from Class 2021, we believe that all Wego IEP students set out to fulfill supa BIG dreams while studying or working abroad. Yet, as reality kicks in, sometimes even the very first steps ahead seem extremely intimidating. But you’re not alone. If we can have each other’s backs, we might just scrape by. Or even better, actually accomplish our goals! 
+          p So, that's what we're trying to do. This alumni network is the very first goal we hope to realize 🤩 
+        .col-md-1
+      .row
+        .col-md-1
+        .col-md-10
+          h3 Our Features
+          p IEP Alumni Association utilizes an advisory board, student infographics and distribution maps, experience sharing sessions, and annual events to promote and leverage the value of the International Education Program; assemble current students and alumni from various universities, industries, and countries; and create an international network platform. 
+        .col-md-1
+      .row
+        .col-md-1
+        .col-md-10
+          h5 👨‍🎓 Student Profiles 
+          p Created by students of Class 2021 from mid-May, our website includes functions such as infographics, student distribution maps, guides and suggestions for studying abroad, and login systems that protect the privacy of students. 
+        .col-md-1
+      .row
+        .col-md-1
+        .col-md-10
+          h5 👔 Advisory Board 
+          p Mainly composed of alumni and a small number of student representatives, the advisory board meet regularly every six months and changes Board Members every two years. Based on the alumni's experiences at various universities, research institutes, and workplaces, we hope to reflect upon and enhance the current international program: curriculum, extracurricular activities, application, preparation for exams. We are determined to not only help students apply, but also help students clarify their future aspirations. The selection of Board members will be discerned by year, region, or industry. 
+        .col-md-1
+      .row
+        .col-md-1
+        .col-md-10
+          h5 🙋‍♂️ Experience Sharing 
+          p The experience sharing sessions of alumni, be it in-person or online, provides students with various aspects of study abroad experiences: 
+            |
+            br
+            | • High School (Extracurriculars, projects, grades, preparing for tests, developing interests…)
+            |
+            br
+            | • Applications (Choosing schools, essays, common app (activities, honors), letter of recs…)
+            |
+            br
+            | • University & Career (Student life, clubs, orgs, courses, graduate school, interns, jobs…)
+        .col-md-1
+      .row
+        .col-md-1
+        .col-md-10
+          h5 🥂 Annual Events 
+          p Instructed and sponsored by alumni and the school, a group of current students co-organizes annual events during the summer. The purpose of such an event is to convene alumni, create opportunities for connections, and enable school students to have their own activities from start to finish.
+        .col-md-1
+    include common/footer

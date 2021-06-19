@@ -50,3 +50,7 @@ exports.showError = function(req, res, next) {
     name: firstName,
   });
 }
+
+exports.showNewabout = function(req, res, next) {
+  res.render('newAbout');
+}
