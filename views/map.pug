@@ -9,7 +9,7 @@ html(lang='en')
     //- google font set up
     link(rel="preconnect" href="https://fonts.gstatic.com")
     link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
-    
+
     //- js
     script(src="javascripts/map.js")
 
@@ -32,7 +32,6 @@ html(lang='en')
 
       var alumniJSONUnorganized = "#{ JSON.stringify(alumni)}"
       alumniObject = JSON.parse(alumniJSONUnorganized.replace(/&quot;/g,'"'))
-      var i = 0;
       var features = [];
       var image = [];
       var icons = [];
@@ -82,7 +81,6 @@ html(lang='en')
           div.innerHTML = universitiesObject.universityName[order];
           document.getElementById("sideShow").appendChild(div);
           for(let j = 0; j < alumniObject.alumniLength; j++){
-            console.log(alumniObject.alumniUniversity[j]);
             if(alumniObject.alumniUniversity[j] == universitiesObject.universityName[order]){
               var div = document.createElement("div");
               div.classList.add("alumniBlock");
@@ -170,16 +168,12 @@ html(lang='en')
               }
             }
           }
-          for(i in emptyArray){
-            console.log(emptyArray[i]);
-          }
           emptyArray = emptyArray.map((data)=>{
               // passing return data inside li tag
               return data = `${data}`;
           });
           searchWrapper.classList.add("active"); //show autocomplete box
           showSuggestions(emptyArray);
-          let allList = suggBox.querySelectorAll("li");
         }else{
             searchWrapper.classList.remove("active"); //hide autocomplete box
         }
