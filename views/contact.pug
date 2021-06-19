@@ -34,6 +34,9 @@ html(lang='en')
       include login/usernav
     else
       include common/nav
+    #mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      include common/mbsidenav    
     #contact
     .content
       p 
