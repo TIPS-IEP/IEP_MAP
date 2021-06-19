@@ -19,45 +19,6 @@ var emailSender = nodemailer.createTransport({
 });
 
 
-function createEmailContentToAdmin(user){
-    var mailContent = {
-        from: 'iep.alumni.association@gmail.com',
-        to: 'crashingballoon@gmail.com, andrewchuang0110@gmail.com, alanhou911222@gmail.com',
-        subject: 'A user has submit his or her data to unAuth',
-        text: user.EnglishName + ' has submit their data to unAuth! Please confirm if their is one of us.',
-    };
-    return mailContent
-}
-
-function createEmailContentToUser(userEmail){
-    var mailContent = {
-        from: 'iep.alumni.association@gmail.com',
-        to: userEmail,
-        subject: 'We have authorized your account. You are now one of us',
-        text: 'You now have access to our student profile.',
-    };
-    return mailContent
-}
-
-function sendEmailToAdmin(user){
-    emailSender.sendMail(createEmailContentToAdmin(user), function(error, info){
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-    });
-}
-
-function sendEmailToUser(userEmail){
-    emailSender.sendMail(createEmailContentToUser(userEmail), function(error, info){
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-    });
-}
 
 function getEachUserInfo(user) {
     eachUserInfo = [user.EnglishName, user.LastName, user.FirstName, user.Email, user.InstagramUsername, user.GraduationYear, user.Major, user.University];
@@ -164,6 +125,47 @@ exports.add = async function(req, res, next) {
         });
         res.redirect('/profile');
     }
+}
+
+
+function createEmailContentToAdmin(user){
+    var mailContent = {
+        from: 'iep.alumni.association@gmail.com',
+        to: 'crashingballoon@gmail.com, andrewchuang0110@gmail.com, alanhou911222@gmail.com',
+        subject: 'A user has submit his or her data to unAuth',
+        text: user.EnglishName + ' has submit their data to unAuth! Please confirm if they is one of us.',
+    };
+    return mailContent
+}
+
+function createEmailContentToUser(userEmail){
+    var mailContent = {
+        from: 'iep.alumni.association@gmail.com',
+        to: userEmail,
+        subject: 'We have authorized your account. You are now one of us',
+        text: 'You now have access to our student profile.',
+    };
+    return mailContent
+}
+
+function sendEmailToAdmin(user){
+    emailSender.sendMail(createEmailContentToAdmin(user), function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+    });
+}
+
+function sendEmailToUser(userEmail){
+    emailSender.sendMail(createEmailContentToUser(userEmail), function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+    });
 }
 
 exports.showUnAuthUsers = async function(req, res) {
