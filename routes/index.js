@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-const passport = require('passport');
 
-//controllers
 const indexController = require('../controller/index')
 const usersController = require('../controller/users')
 const mapController = require('../controller/map')
+const loginoutController = require('../controller/loginout')
+const showUsersInfoController = require('../controller/showUsersInfo')
 
 //middleware
 const {ensureAuth, ensureGuest} = require('../middleware/auth')
@@ -20,27 +20,28 @@ var Universities = require('../models/Universities')
 router.get('/', ensureGuest, indexController.index);
 router.get('/about', indexController.showAbout);
 router.get('/contact', indexController.showContact);
-
-router.get('/login', ensureGuest, indexController.showLogin);
-router.get('/logout', usersController.logout)
-router.get('/auth/google', usersController.googleAuthetication);
-router.get('/auth/google/callback', usersController.googleAutheticationCallBack, usersController.googleAutheticationRedirect);
-
 router.get('/board', indexController.showBoard)
 router.get('/share', indexController.showShare)
 router.get('/events', indexController.showEvents)
-router.get('/map', mapController.showMap);
-router.get('/loggedin', ensureAuth, usersController.showLoggedInPage)
-router.get('/profile', ensureAuth, usersController.showProfile)
+router.get('/error', indexController.showError)
 
-router.get('/add', ensureAuth, usersController.showAdd)
 router.post('/add', ensureAuth, usersController.add)
-
 router.post('/confirm/:email', ensureAdmin, usersController.confirmUnAuthUser)
 router.post('/alumiRemove', ensureAdmin, usersController.alumiRemove)
-router.get('/unAuth', ensureAdmin, usersController.showUnAuthUsers)
-router.get('/auth', ensureAdmin, usersController.showAuthUsers)
-router.get('/error', indexController.showError)
+
+router.get('/login', ensureGuest, loginoutController.showLogin);
+router.get('/logout', loginoutController.logout)
+router.get('/loggedin', ensureAuth, loginoutController.showLoggedInPage)
+router.get('/auth/google', loginoutController.googleAuthetication);
+router.get('/auth/google/callback', loginoutController.googleAutheticationCallBack, loginoutController.googleAutheticationRedirect);
+
+router.get('/profile', ensureAuth, showUsersInfoController.showProfile)
+router.get('/add', ensureAuth, showUsersInfoController.showAdd)
+router.get('/unAuth', ensureAdmin, showUsersInfoController.showUnAuthUsers)
+router.get('/auth', ensureAdmin, showUsersInfoController.showAuthUsers)
+
+router.get('/map', mapController.showMap);
+
 
 
 module.exports = router;

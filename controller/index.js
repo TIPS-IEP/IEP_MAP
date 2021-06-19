@@ -28,10 +28,6 @@ exports.showContact = function(req, res) {
     });
 }
 
-exports.showLogin = function(req, res, next) {
-    res.render('login/login');
-}
-
 exports.showBoard = function(req, res, next) {
   res.render('board');
 }
