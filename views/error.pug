@@ -33,13 +33,17 @@ html(lang='en')
       else
         include common/nav
       .row
-        .col-md-2
-        .col-md-4.errorPicContainer
+        .col-md-4
+        .col-md-4.errorContainer
           img(src="images/error/error.png")#errorPic
-        .col-md-4.errorText
           h1 We are sorry
           h3 Something went wrong ;-;
-          a(href="/")
+          a#buttonText(href="/")
             button.btn.btn-primary(type="button") Back to home page
-        .col-md-2
+        .col-md-4.errorText
+        //-   h1 We are sorry
+        //-   h3 Something went wrong ;-;
+        //-   a(href="/")
+        //-     button.btn.btn-primary(type="button") Back to home page
+        //- .col-md-2
         
