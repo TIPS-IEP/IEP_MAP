@@ -12,6 +12,7 @@ html(lang='en')
 
     //- js
     script(src="javascripts/map.js")
+    script(src="javascripts/index.js")
 
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
@@ -131,7 +132,7 @@ html(lang='en')
       
   body
     script.
-        var loggedin = #{loggedin}
+      var loggedin = #{loggedin}
     if loggedin
       include login/usernav
     else
@@ -153,8 +154,6 @@ html(lang='en')
       // getting all required elements
       const searchWrapper = document.querySelector(".search-input");
       const inputBox = searchWrapper.querySelector("input");
-      let linkTag = searchWrapper.querySelector("a");
-      let webLink;
       // if user press any key and release
       inputBox.onkeyup = (e)=>{
         let userData = e.target.value; //user enetered data
