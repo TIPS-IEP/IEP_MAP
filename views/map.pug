@@ -59,7 +59,7 @@ html(lang='en')
           div.innerHTML = universitiesObject.universityName[i];
           div.addEventListener('click', function (event) {
             map.setZoom(8);
-            map.setCenter(features[i].position);
+            map.setCenter(features[this.id].position);
           });
           document.getElementById("universityList").appendChild(div);
         }
@@ -104,7 +104,7 @@ html(lang='en')
           });
           createUniversitySidebar(marker, map, k);
         }
-        createUniversitiesSearchList(map);
+        createUniversitiesSearchList (map);
       }
 
       function refresh(){
@@ -144,7 +144,6 @@ html(lang='en')
         .search-input
           a(href='' target='_blank' hidden='')
           input(type='text' placeholder='Type to search..')
-          .autocom-box
           //- here list are inserted from javascript
       #universityList
 
@@ -152,7 +151,6 @@ html(lang='en')
       // getting all required elements
       const searchWrapper = document.querySelector(".search-input");
       const inputBox = searchWrapper.querySelector("input");
-      const suggBox = searchWrapper.querySelector(".autocom-box");
       let linkTag = searchWrapper.querySelector("a");
       let webLink;
       // if user press any key and release
@@ -178,10 +176,6 @@ html(lang='en')
           searchWrapper.classList.add("active"); //show autocomplete box
           showSuggestions(emptyArray);
           let allList = suggBox.querySelectorAll("li");
-          for (let i = 0; i < allList.length; i++) {
-              //adding onclick attribute in all li tag
-              allList[i].setAttribute("onclick", "select(this)");
-          }
         }else{
             searchWrapper.classList.remove("active"); //hide autocomplete box
         }
