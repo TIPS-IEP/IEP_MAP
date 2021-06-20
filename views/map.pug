@@ -25,6 +25,9 @@ html(lang='en')
     link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css')
     //- center website 
     meta(name='viewport' content='width=device-width, initial-scale=1')
+    //- google map
+    script(async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy8QR6hkmBw9pMJWs2XhY111wiGl5H3Sg&libraries=geometry&callback=initMap")
+
     title Student Profiles
     script.
       var universityJSONUnorganized = "#{ JSON.stringify(universities)}"
@@ -137,18 +140,18 @@ html(lang='en')
       include login/usernav
     else
       include common/nav
-    #map
-    script(async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy8QR6hkmBw9pMJWs2XhY111wiGl5H3Sg&libraries=geometry&callback=initMap")
-    #sideShow.sideShow
-      a.closebtn(href='javascript:void(0)' onclick='closesideShow()') &times;
-      .alumniBlock hello!
-    #allUniversity
-      .wrapper
-        .search-input
-          a(href='' target='_blank' hidden='')
-          input(type='text' placeholder='Type to search..')
-          //- here list are inserted from javascript
-      #universityList
+    .container-fluid
+      .row#mapRow
+        .col-md-3.sideShow#sideShow
+            a.closebtn(href='javascript:void(0)' onclick='closesideShow()') &times;
+        .col-md-9#map
+        .col-md-3#allUniversity
+          .wrapper
+            .search-input
+              a(href='' target='_blank' hidden='')
+              input(type='text' placeholder='Type to search..')
+              //- here list are inserted from javascript
+          #universityList
     div If you do not see university icons in 5 seconds, please refresh...
     script.
       // getting all required elements

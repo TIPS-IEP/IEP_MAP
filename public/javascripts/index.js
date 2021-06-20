@@ -20,7 +20,7 @@ function scrollFunction() {
 function openNav() {
   if (screen.width < 600) {
   /* Open the sidenav */
-    document.getElementById("mySidenav").style.width = "100%";
+    document.getElementById("mySidenav").style.height = "100%";
     document.getElementById("hide").style.display = "none";
     document.getElementById("hide1").style.display = "none";
     document.getElementById("hide2").style.display = "none";
