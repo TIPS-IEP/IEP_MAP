@@ -3,35 +3,37 @@ body {
     margin: 0;
     background-color: rgb(234, 240, 242) !important;
     font:16px/1.6 Arial,  sans-serif;
+    padding:1%;
 }
 body, html {
     height: 100%;
 }
-
+#mapRow{
+    height: 500px;
+    margin-top: 100px;
+}
 #map {
-    margin-left: 10px;
-    margin-top: 110px;
-    width: 60%;
-    height: 70%;
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
-    position: fixed;
     display: inline-block;
+    height: 100%;
+    padding-right: 1%;
+    /* margin-left: 0% !important; */
 }
 
 /* map side show*/
 .sideShow {
-    height: 70%; /* Specify a height */
+    height: 100%;
     width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
-    top: 110px;
     left: 0;
     background-color: #111; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+    display: none;
 }
 /* The sidepanel links */
 .sideShow a {
+    width:20px;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -61,11 +63,8 @@ body, html {
 }
 
 #allUniversity{
-    margin-left: 1%;
+    height: 100%;
     display: inline-block;
-    width: 30%;
-    margin-top: 40px;
-    height: 70%;
     overflow: scroll;
     background: #ffffff;
     color: #000000;
