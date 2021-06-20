@@ -51,6 +51,10 @@ exports.showError = function(req, res, next) {
   });
 }
 
-exports.showNewabout = function(req, res, next) {
+exports.showNewAbout = function(req, res, next) {
   res.render('newAbout');
+}
+
+exports.showNewContact = function(req, res, next) {
+  res.render('newContact');
 }
