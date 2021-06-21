@@ -209,7 +209,7 @@ body, html {
   position: absolute;
   top: 40%;
   left: 50%;
-  width: 90%;
+  width: 70%;
   line-height: 20px;
   transform: translate(-50%, -50%);
   color: white;
@@ -236,7 +236,7 @@ body, html {
   position: absolute;
   top: 35%;
   left: 50%;
-  width: 90%;
+  width: 70%;
   line-height: 1000%;
   transform: translate(-50%, -50%);
   color: white;
@@ -346,14 +346,14 @@ body, html {
 
 .big {
   font-family: proxima-nova,Sans-serif;
-  font-size: 55px;
+  font-size: 70px;
   font-weight:700;
   line-height: 100px;
 }
 
 .big2 {
   font-family: proxima-nova,Sans-serif;
-  font-size: 55px;
+  font-size: 70px;
   font-weight:700;
   line-height: 100px;
   text-align: center;
@@ -685,5 +685,8 @@ header span{
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+  }
+  .hero-text3, .hero-text2 {
+    width: 90%;
   }
 }
