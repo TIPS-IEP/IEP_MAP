@@ -7,28 +7,12 @@ body {
   padding-top: 100px;
 }
 
-#title h1, h3, h5 {
-  font-weight: 700 !important;
-  letter-spacing: 1.4px;
-}
-
 #title h1 {
   font-size: 90px;
   line-height: 1.3em;
   text-align: center;
-}
-
-#title h3 {
-  font-size: 50px;
-  line-height: 1.1em;
-  text-align: left;
-}
-
-#title h5 {
-  font-size: 30px;
-  font-weight: 600;
-  line-height: 1.1em;
-  text-align: left;
+  font-weight: 700 !important;
+  letter-spacing: 1.4px;
 }
 
 #title p {
@@ -81,4 +65,14 @@ input[type=submit]:hover {
 
 #inputForm {
   padding-top: 10px;
+}
+
+#subjectLabel {
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 650px) {
+  #title h1 {
+    font-size: 200%;
+  }
 }

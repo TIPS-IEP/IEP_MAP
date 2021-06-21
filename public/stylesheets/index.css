@@ -5,9 +5,18 @@
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* html {
+  box-sizing: border-box;
+} */
+
 
 /* Style inputs */
-  input[type=text], select, textarea {
+  /* input[type=text], select, textarea {
   border-radius: 15px;
   width: 100%;
   padding: 12px;
@@ -15,9 +24,9 @@
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
-}
+} */
 
-input[type=submit] {
+/* input[type=submit] {
   background-color: #f3c441;
   border-radius: 15px;
   color: white;
@@ -28,52 +37,41 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: #0082fc;
-}
+} */
 
 /* Style the container/contact section */
-.container {
+.customContainer {
   border-radius: 30px;
   background-color: rgb(234, 240, 242);
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.63);
   padding: 10px;
   margin: 10px;
 }
-.container:hover {
+.customContainer:hover {
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.63);
 }
 
-.container2 {
+.innerContainer {
   text-align: center;
   border-radius: 13px;
   background-color: rgb(234, 240, 242);
   padding: 10px;
-  /* margin: 5px; */
+  color:rgb(0, 0, 0);
 }
 
 /* Create two columns that float next to eachother */
-.column {
+/* .column {
   float: left;
   width: 50%;
   margin-top: 6px;
   padding: 20px;
-}
+} */
 
 /* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
-}
-
-
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-html {
-  box-sizing: border-box;
 }
 
 *, *:before, *:after {
@@ -211,7 +209,7 @@ body, html {
   position: absolute;
   top: 40%;
   left: 50%;
-  width: 90%;
+  width: 70%;
   line-height: 20px;
   transform: translate(-50%, -50%);
   color: white;
@@ -238,7 +236,7 @@ body, html {
   position: absolute;
   top: 35%;
   left: 50%;
-  width: 90%;
+  width: 70%;
   line-height: 1000%;
   transform: translate(-50%, -50%);
   color: white;
@@ -305,7 +303,7 @@ body, html {
 .line-height {
   line-height: 40px;
 }
-
+/* 
 .column2 {
   float: left;
   width: 20%;
@@ -344,60 +342,21 @@ body, html {
   margin: 2px;
   margin-bottom: 8px;
   padding: 0 5px;
-}
+} */
 
 .big {
   font-family: proxima-nova,Sans-serif;
-  font-size: 55px;
+  font-size: 70px;
   font-weight:700;
   line-height: 100px;
 }
 
 .big2 {
   font-family: proxima-nova,Sans-serif;
-  font-size: 55px;
+  font-size: 70px;
   font-weight:700;
   line-height: 100px;
   text-align: center;
-}
-
-/* The side navigation menu */
-.sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 100; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: rgb(17, 17, 17); /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-  font-family: 'Lato', sans-serif !important;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -408,10 +367,6 @@ body, html {
 
 #z-index {
   z-index: 100;
-  /* transition: 0.4s; */
-  /* position: absolute;
-  top: 27.5px;
-  left: 50px; */
 }
 
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
@@ -506,9 +461,9 @@ header span{
 }
 .medium2 {
   font-family: proxima-nova,Sans-serif;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 600;
-  line-height: 1.0em;
+  line-height: 1.2em;
   letter-spacing: 1.4px;
   text-align: left;
 }
@@ -576,7 +531,7 @@ header span{
 }
 
 
-@media only screen and (max-width: 1094px) {
+@media screen and (max-width: 1094px) {
   .contact{
     display: none;
   }
@@ -609,7 +564,7 @@ header span{
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 20000px) {
   .pcsidenav {
     display: block!important;
   }
@@ -618,13 +573,10 @@ header span{
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 599px) {
   .column-a, input[type=submit] {
     width: 100%!important;
     margin-top: 0;
-  }
-  #navbar-right{
-    display: none;
   }
   .about-section {
     height: 280%;
@@ -651,45 +603,7 @@ header span{
     height: 60%;
   }
 
-  .pcsidenav {
-    display: none!important;
-  }
-  .mbsidenav{
-    display: block!important;
-  }
-
-  .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    text-align:center;
-  }
-
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 40px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-
-  .sidenav a:hover{
-    color: #f1f1f1;
-  }
-
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+  .hero-text3, .hero-text2 {
+    width: 90%;
   }
 }

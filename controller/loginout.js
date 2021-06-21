@@ -25,5 +25,5 @@ exports.googleAutheticationCallBack = passport.authenticate('google', {
 });
 
 exports.googleAutheticationRedirect = function(req, res) {
-    res.redirect('/loggedin');
+    res.redirect('/');
 }
