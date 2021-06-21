@@ -361,7 +361,6 @@ body, html {
 
 /* The side navigation menu */
 .sidenav {
-  height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 100; /* Stay on top */
@@ -570,7 +569,7 @@ header span{
 }
 
 
-@media only screen and (max-width: 1094px) {
+@media screen and (max-width: 1094px) {
   .contact{
     display: none;
   }
@@ -603,7 +602,7 @@ header span{
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 20000px) {
   .pcsidenav {
     display: block!important;
   }
@@ -612,7 +611,14 @@ header span{
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 599px) {
+  .pcsidenav {
+    display: none!important;
+  }
+  .mbsidenav{
+    display: block!important;
+  }
+
   .column-a, input[type=submit] {
     width: 100%!important;
     margin-top: 0;
@@ -645,16 +651,9 @@ header span{
     height: 60%;
   }
 
-  .pcsidenav {
-    display: none!important;
-  }
-  .mbsidenav{
-    display: block!important;
-  }
-
   .sidenav {
-    height: 100%;
-    width: 0;
+    height: 0;
+    width: 100vw;
     position: fixed;
     z-index: 100;
     top: 0;
@@ -662,16 +661,17 @@ header span{
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 0px;
     text-align:center;
   }
 
   .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 8px 8px;
     text-decoration: none;
     font-size: 40px;
     color: #818181;
     display: block;
+    line-height: 10vh;
     transition: 0.3s;
   }
 
