@@ -16,10 +16,26 @@ body, html {
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
     display: inline-block;
     height: 100%;
-    padding-right: 1%;
-    /* margin-left: 0% !important; */
-}
 
+}
+.universityName{
+    padding-left: 10px !important;
+    padding-right: 0px !important;
+    align-items: center !important;
+}
+.alumniName{
+    padding-left: 10px !important;
+    padding-right: 0px !important;
+    display: flex;
+    align-items: center;
+
+}
+.arrowDown{
+    padding-left: 10px !important;
+    padding-right: 0px !important;
+    align-items: center;
+    display: flex; 
+}
 /* map side show*/
 .sideShow {
     height: 100%;
