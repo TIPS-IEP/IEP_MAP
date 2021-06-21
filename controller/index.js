@@ -1,6 +1,14 @@
 exports.index = function(req, res, next) {
-    res.render('index', { 
-      title: 'Express' 
+    var isAuthenticated = false;
+    if(req.isAuthenticated()){
+      var firstName = req.user.firstName;
+      isAuthenticated = true;
+    }else{
+      var firstName = null
+    }
+    res.render('index', {
+      loggedin: isAuthenticated,
+      name: firstName,
     });
 }
 

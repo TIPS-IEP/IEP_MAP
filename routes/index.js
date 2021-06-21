@@ -6,6 +6,8 @@ const usersController = require('../controller/users')
 const mapController = require('../controller/map')
 const loginoutController = require('../controller/loginout')
 const showUsersInfoController = require('../controller/showUsersInfo')
+const contactController = require('../controller/contactUs')
+
 
 //middleware
 const {ensureAuth, ensureGuest} = require('../middleware/auth')
@@ -17,7 +19,7 @@ var mongoose = require('mongoose');
 var Alumni = require('../models/Alumni');
 var Universities = require('../models/Universities')
 
-router.get('/', ensureGuest, indexController.index);
+router.get('/', indexController.index);
 router.get('/about', indexController.showAbout);
 router.get('/contact', indexController.showContact);
 router.get('/board', indexController.showBoard)
@@ -26,6 +28,8 @@ router.get('/events', indexController.showEvents)
 router.get('/error', indexController.showError)
 router.get('/newAbout', indexController.showNewAbout)
 router.get('/newContact', indexController.showNewContact)
+
+router.post('/contactUs', contactController.sendForm)
 
 router.post('/add', ensureAuth, usersController.add)
 router.post('/confirm/:email', ensureAdmin, usersController.confirmUnAuthUser)
