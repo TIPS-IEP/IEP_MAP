@@ -34,39 +34,5 @@ html(lang='en')
       include login/usernav
     else
       include common/nav
-    .container#title
-      .row
-        .col-md-1
-        .col-md-10
-          h1 CONTACT US
-          p Want to take part in our community of global talents? Feel free to reach out or connect with us on 
-            a(href='https://www.instagram.com/wego.iep/' target='_blank' rel='noopener') Instagram
-            | , 
-            a(href='https://www.facebook.com/groups/266271838471963' target='_blank' rel='noopener') Facebook
-            |  or leave a cute message! okok, it doesn't have to be cute.
-        .col-md-1
-      .row#inputRow
-        .col-md-1
-        .col-md-7
-          img#contactPic(src='/images/hero/letter2.1.jpg')
-        .col-md-3
-          form#inputForm(action = "/contactUs" method="POST")
-            label(for='fname') First Name
-            input(type='text' name='firstname' placeholder='Your name..')
-            label(for='lname') Last Name
-            input(type='text' name='lastname' placeholder='Your last name..')
-            label(for='country') Country
-            select#country(name='country')
-              option(value='taiwan') Taiwan
-              option(value='usa') USA
-              option(value='canada') Canada 
-              option(value='uk') UK
-              option(value='japan') Japan 
-              option(value='singapore') Singapore 
-              option(value='china')  China
-              option(value='thailand') Thailand
-            label#subjectLabel(for='subject') Subject
-            textarea(name='subject' placeholder='Write something..' style='height:110px')
-            input(type='submit' value='Submit')
-        .col-md-1
+    include common/contactUs
     include common/footer

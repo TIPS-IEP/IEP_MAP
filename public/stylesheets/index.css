@@ -5,9 +5,18 @@
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* html {
+  box-sizing: border-box;
+} */
+
 
 /* Style inputs */
-  input[type=text], select, textarea {
+  /* input[type=text], select, textarea {
   border-radius: 15px;
   width: 100%;
   padding: 12px;
@@ -15,9 +24,9 @@
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
-}
+} */
 
-input[type=submit] {
+/* input[type=submit] {
   background-color: #f3c441;
   border-radius: 15px;
   color: white;
@@ -28,52 +37,41 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: #0082fc;
-}
+} */
 
 /* Style the container/contact section */
-.container {
+.customContainer {
   border-radius: 30px;
   background-color: rgb(234, 240, 242);
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.63);
   padding: 10px;
   margin: 10px;
 }
-.container:hover {
+.customContainer:hover {
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.63);
 }
 
-.container2 {
+.innerContainer {
   text-align: center;
   border-radius: 13px;
   background-color: rgb(234, 240, 242);
   padding: 10px;
-  /* margin: 5px; */
+  color:rgb(0, 0, 0);
 }
 
 /* Create two columns that float next to eachother */
-.column {
+/* .column {
   float: left;
   width: 50%;
   margin-top: 6px;
   padding: 20px;
-}
+} */
 
 /* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
-}
-
-
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-html {
-  box-sizing: border-box;
 }
 
 *, *:before, *:after {
@@ -305,7 +303,7 @@ body, html {
 .line-height {
   line-height: 40px;
 }
-
+/* 
 .column2 {
   float: left;
   width: 20%;
@@ -344,7 +342,7 @@ body, html {
   margin: 2px;
   margin-bottom: 8px;
   padding: 0 5px;
-}
+} */
 
 .big {
   font-family: proxima-nova,Sans-serif;
@@ -408,10 +406,6 @@ body, html {
 
 #z-index {
   z-index: 100;
-  /* transition: 0.4s; */
-  /* position: absolute;
-  top: 27.5px;
-  left: 50px; */
 }
 
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');

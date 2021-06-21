@@ -70,3 +70,9 @@ input[type=submit]:hover {
 #subjectLabel {
   padding-top: 20px;
 }
+
+@media screen and (max-width: 650px) {
+  #title h1 {
+    font-size: 200%;
+  }
+}
