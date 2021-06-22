@@ -18,11 +18,6 @@ body, html {
     height: 100%;
 
 }
-.universityName{
-    padding-left: 10px !important;
-    padding-right: 0px !important;
-    align-items: center !important;
-}
 .alumniName{
     padding-left: 10px !important;
     padding-right: 0px !important;
@@ -34,21 +29,21 @@ body, html {
     padding-left: 10px !important;
     padding-right: 0px !important;
     align-items: center;
-    display: flex; 
+    display: flex;
 }
 /* map side show*/
-.sideShow {
+.alumniList {
     height: 100%;
     width: 0; /* 0 width - change this with JavaScript */
     z-index: 1; /* Stay on top */
     left: 0;
-    background-color: #111; /* Black*/
+    background-color: rgb(255, 255, 255); /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
     display: none;
 }
 /* The sidepanel links */
-.sideShow a {
+.alumniList a {
     width:20px;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -58,11 +53,11 @@ body, html {
     transition: 0.3s;
 }
 /* When you mouse over the navigation links, change their color */
-.sideShow a:hover {
+.alumniList a:hover {
     color: #f1f1f1;
 }
 /* Position and style the close button (top right corner) */
-.sideShow .closebtn {
+.alumniList .closebtn {
     position: relative;
     top: 0px;
     left: 230px;
@@ -70,12 +65,12 @@ body, html {
 }
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    .sideShow {padding-top: 15px;}
-    .sideShow a {font-size: 18px;}
+    .alumniList {padding-top: 15px;}
+    .alumniList a {font-size: 18px;}
   }
 
 .alumniBlock{
-    color: #f1f1f1;
+    color: rgb(0, 0, 0);
 }
 
 #allUniversity{

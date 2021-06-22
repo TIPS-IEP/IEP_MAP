@@ -59,44 +59,34 @@ html(lang='en')
       }
 
       function createUniversitiesSearchList(map){
+        var alumniListOpened = [];
         for(var i = 0; i < universitiesLength; i++){
+          alumniListOpened.push(false);
+          var alumniListDiv = document.createElement("div");
+          alumniListDiv.classList.add("container-fluid","alumniList");
+          alumniListDiv.id = i;
           var div = document.createElement("div");
           div.classList.add("universityBlock");
-          div.id = (i);
+          div.id = (1000+i);//1000 is just a space
           div.innerHTML = universitiesObject.universityName[i];
           div.addEventListener('click', function (event) {
-            map.setZoom(8);
-            map.setCenter(features[this.id].position);
+            if(!alumniListOpened[this.id-1000]){
+              document.getElementById(this.id-1000).style.display = "block";
+              map.setZoom(8);
+              map.setCenter(features[this.id-1000].position);
+            }
+            else{
+              document.getElementById(this.id-1000).style.display = "none";
+            }
+            alumniListOpened[this.id-1000] = !alumniListOpened[this.id-1000];
           });
           document.getElementById("universityList").appendChild(div);
-        }
-      }
+          document.getElementById("universityList").appendChild(alumniListDiv);
+          
 
-      function createUniversitySidebar(marker, map, order){
-        var arrowDown = document.createElement('img');
-        arrowDown.src = "images/icons/arrow_right.png";
-        arrowDown.setAttribute("height", "20");
-        arrowDown.setAttribute("width", "20");
-        marker.addListener("click", () => {
-          map.setZoom(8);
-          map.setCenter(marker.getPosition());
-          const elements = document.getElementsByClassName("alumniBlock");
-          while(elements.length > 0){
-            elements[0].parentNode.removeChild(elements[0]);
-          }
-          var div = document.createElement("div");
-          div.classList.add("alumniBlock", "row");
-          var divTextDiv = document.createElement("div");
-          divTextDiv.innerHTML = universitiesObject.universityName[order];
-          divTextDiv.classList.add("col-md-10", "universityName");
-          var divArrowDownDiv = document.createElement("div");
-          divArrowDownDiv.classList.add("col-md-2", "arrowDown");
-          divArrowDownDiv.appendChild(arrowDown);
-          div.appendChild(divTextDiv);
-          div.appendChild(divArrowDownDiv);
-          document.getElementById("sideShow").appendChild(div);
+
           for(let j = 0; j < alumniObject.alumniLength; j++){
-            if(alumniObject.alumniUniversity[j] == universitiesObject.universityName[order]){
+            if(alumniObject.alumniUniversity[j] == universitiesObject.universityName[i]){
               var newDiv = document.createElement("div");
               var arrowDownNew = document.createElement('img');
               var newDivArrowDownDiv = document.createElement("div");
@@ -111,12 +101,19 @@ html(lang='en')
               newDiv.appendChild(newDivTextDiv);
               newDivArrowDownDiv.appendChild(arrowDownNew);
               newDiv.appendChild(newDivArrowDownDiv);
-              document.getElementById("sideShow").appendChild(newDiv);
+              document.getElementById(i).appendChild(newDiv);
             }
           }
-          opensideShow();
-        });
+        }
       }
+
+      //- function createUniversitySidebar(marker, map, order){
+      //-   var arrowDown = document.createElement('img');
+      //-   arrowDown.src = "images/icons/arrow_right.png";
+      //-   arrowDown.setAttribute("height", "20");
+      //-   arrowDown.setAttribute("width", "20");
+        
+      //- }
 
       async function initMap(){
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -130,7 +127,10 @@ html(lang='en')
             icon: icons[k].icon,
             map: map,
           });
-          createUniversitySidebar(marker, map, k);
+          marker.addListener("click", () => {
+            map.setZoom(8);
+            map.setCenter(marker.getPosition());
+          });
         }
         createUniversitiesSearchList (map);
       }
@@ -164,16 +164,15 @@ html(lang='en')
       include common/nav
     .container-fluid
       .row#mapRow
-        .col-md-3.container-fluid.sideShow#sideShow
-            a.closebtn(href='javascript:void(0)' onclick='closesideShow()') &times;
         .col-md-9#map
         .col-md-3#allUniversity
           .wrapper
-            .search-input
-              a(href='' target='_blank' hidden='')
-              input(type='text' placeholder='Type to search..')
-              //- here list are inserted from javascript
+              .search-input
+                a(href='' target='_blank' hidden='')
+                input(type='text' placeholder='Type to search..')
+                //- here list are inserted from javascript
           #universityList
+            //- .container-fluid.alumniList#alumniList
     div If you do not see university icons in 5 seconds, please refresh...
     script.
       // getting all required elements
