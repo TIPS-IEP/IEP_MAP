@@ -58,15 +58,15 @@ function closeNav() {
   }
 }
 /* Set the card of our features to the same height*/
-window.onload = function() {
+// window.onload = function() {
   // if (document.getElementsByClassName("container2")[0].style.height > "199px" ) {
-    (document.getElementsByClassName("container2")[0].style.width = "250px" );
-    (document.getElementsByClassName("container2")[1].style.width = "250px" );
-    (document.getElementsByClassName("container2")[2].style.width = "250px" );
-    (document.getElementsByClassName("container2")[3].style.width = "250px" );
+//     (document.getElementsByClassName("innerContainer")[0].style.width = "100%" );
+//     (document.getElementsByClassName("innerContainer")[1].style.width = "100%" );
+//     (document.getElementsByClassName("innerContainer")[2].style.width = "100%" );
+//     (document.getElementsByClassName("innerContainer")[3].style.width = "100%" );
 
-    (document.getElementsByClassName("container")[0].style.width = "280px" );
-    (document.getElementsByClassName("container")[1].style.width = "280px" );
-    (document.getElementsByClassName("container")[2].style.width = "280px" );
-    (document.getElementsByClassName("container")[3].style.width = "280px" );
-}
+//     (document.getElementsByClassName("customContainer")[0].style.width = "82%" );
+//     (document.getElementsByClassName("customContainer")[1].style.width = "82%" );
+//     (document.getElementsByClassName("customContainer")[2].style.width = "82%" );
+//     (document.getElementsByClassName("customContainer")[3].style.width = "82%" );
+// }
