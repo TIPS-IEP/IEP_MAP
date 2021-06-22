@@ -11,7 +11,7 @@ exports.logout = function(req, res) {
 }
 
 exports.showLoggedInPage = function(req, res) {
-    res.render('login/loggedinpage', {
+    res.render('/', {
         name: req.user.firstName,
     });
 }

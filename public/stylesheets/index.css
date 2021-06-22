@@ -359,44 +359,6 @@ body, html {
   text-align: center;
 }
 
-/* The side navigation menu */
-.sidenav {
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 100; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: rgb(17, 17, 17); /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-  font-family: 'Lato', sans-serif !important;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
   transition: margin-left .5s;
@@ -612,19 +574,9 @@ header span{
 }
 
 @media screen and (max-width: 599px) {
-  .pcsidenav {
-    display: none!important;
-  }
-  .mbsidenav{
-    display: block!important;
-  }
-
   .column-a, input[type=submit] {
     width: 100%!important;
     margin-top: 0;
-  }
-  #navbar-right{
-    display: none;
   }
   .about-section {
     height: 280%;
@@ -651,41 +603,6 @@ header span{
     height: 60%;
   }
 
-  .sidenav {
-    height: 0;
-    width: 100vw;
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 0px;
-    text-align:center;
-  }
-
-  .sidenav a {
-    padding: 8px 8px;
-    text-decoration: none;
-    font-size: 40px;
-    color: #818181;
-    display: block;
-    line-height: 10vh;
-    transition: 0.3s;
-  }
-
-  .sidenav a:hover{
-    color: #f1f1f1;
-  }
-
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
   .hero-text3, .hero-text2 {
     width: 90%;
   }

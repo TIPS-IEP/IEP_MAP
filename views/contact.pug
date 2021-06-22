@@ -3,12 +3,10 @@ html(lang='en')
 
   head
     //- css
-    link(rel="stylesheet" href="stylesheets/index.css")
+    link(rel="stylesheet" href="stylesheets/contact.css")
     link(rel="stylesheet" href="stylesheets/nav.css")
     link(rel="stylesheet" href="stylesheets/footer.css")
-
-    //- js
-    script(src="javascripts/index.js")
+    link(rel="stylesheet" href="stylesheets/sidenav.css")
 
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
@@ -17,6 +15,10 @@ html(lang='en')
     script(src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+
+    //- js
+    script(src="javascripts/index.js")
+    script(src="javascripts/nav.js")
 
     //- center website 
     meta(name='viewport' content='width=device-width, initial-scale=1')
@@ -27,7 +29,7 @@ html(lang='en')
 
     title Contact Us
 
-  body#main
+  body
     script.
       var loggedin = #{loggedin}
     if loggedin
@@ -36,48 +38,11 @@ html(lang='en')
       include common/nav
     #mySidenav.sidenav
       a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
-      include common/mbsidenav    
-    #contact
-    .content
-      p 
-        br
-        br
-      div(style='text-align:left')
-        .column3
-        h1.bold CONTACT US
-        p.paragraph.socials Want to take part in our community of global talents? Feel free to reach out or connect with us on 
-          a(href='https://www.instagram.com/wego.iep/' target='_blank' rel='noopener') Instagram
-          | , 
-          a(href='https://www.facebook.com/groups/266271838471963' target='_blank' rel='noopener') Facebook
-          |  or leave a cute message! okok, it doesn't have to be cute.
-        p 
-          br
-      .row
-        .column4
-        .column
-          img#round(src='/images/hero/letter2.1.jpg' style='width:260%')
-        .column
-        .column4
-        .column4
-        .column2
-          form(action='/action_page.php')
-            label(for='fname') First Name
-            input#fname(type='text' name='firstname' placeholder='Your name..')
-            label(for='lname') Last Name
-            input#lname(type='text' name='lastname' placeholder='Your last name..')
-            label(for='country') Country
-            select#country(name='country')
-              option(value='taiwan') Taiwan
-              option(value='usa') USA
-              option(value='canada') Canada 
-              option(value='uk') UK
-              option(value='japan') Japan 
-              option(value='singapore') Singapore 
-              option(value='china')  China
-              option(value='thailand') Thailand
-            label(for='subject') Subject
-            textarea#subject(name='subject' placeholder='Write something..' style='height:110px')
-            input(type='submit' value='Submit')
-          
-      script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+      a.pcsidenav(href='#') Home 
+      a.pcsidenav(href='#vision') Vision
+      a.pcsidenav(href='#mission') Mission
+      a.pcsidenav(href='#about') Features
+      a.pcsidenav(href='#contactus') Contact
+      include common/mbsidenav
+    include common/contactUs
     include common/footer
