@@ -4,6 +4,15 @@ body {
     font-family: proxima-nova,Sans-serif;
 }
 
+a {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+a:hover {
+  color: rgb(255, 106, 106)!important; 
+}
+
 #title{
     padding-top: 100px;
 }
@@ -27,7 +36,6 @@ body {
 
 #title h5 {
     font-size: 30px;
-    font-weight: 600;
     line-height: 1.1em;
     text-align: left;
 }
@@ -51,4 +59,10 @@ body {
 
 .row {
   padding-top: 20px;
+}
+
+@media screen and (max-width: 650px) {
+  #title h1 {
+    font-size: 200%;
+  }
 }

@@ -26,8 +26,6 @@ router.get('/board', indexController.showBoard)
 router.get('/share', indexController.showShare)
 router.get('/events', indexController.showEvents)
 router.get('/error', indexController.showError)
-router.get('/newAbout', indexController.showNewAbout)
-router.get('/newContact', indexController.showNewContact)
 
 router.post('/contactUs', contactController.sendForm)
 

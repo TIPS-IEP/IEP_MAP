@@ -1,19 +1,11 @@
 doctype html
 html(lang='en') 
-
   head
     //- css
-    link(rel="stylesheet" href="stylesheets/index.css")
-    link(rel="stylesheet" href="stylesheets/about.css")
+    link(rel="stylesheet" href="stylesheets/share.css")
     link(rel="stylesheet" href="stylesheets/nav.css")
     link(rel="stylesheet" href="stylesheets/footer.css")
-
-
-
-    //- js
-    script(src="javascripts/index.js")
-    script(src="javascripts/about.js")
-
+    link(rel="stylesheet" href="stylesheets/sidenav.css")
 
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
@@ -23,6 +15,11 @@ html(lang='en')
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
 
+    //- js
+    script(src="javascripts/index.js")
+    script(src="javascripts/nav.js")
+    script(src="javascripts/about.js")
+    
     //- center website 
     meta(name='viewport' content='width=device-width, initial-scale=1')
 
@@ -30,10 +27,7 @@ html(lang='en')
     link(rel="preconnect" href="https://fonts.gstatic.com")
     link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
 
-    title Advisory Board 
-
-
-
+    title Advisory Board
   body#main
     script.
       var loggedin = #{loggedin}
@@ -43,47 +37,57 @@ html(lang='en')
       include common/nav
     #mySidenav.sidenav
       a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      a.pcsidenav(href='#') Home 
+      a.pcsidenav(href='#vision') Vision
+      a.pcsidenav(href='#mission') Mission
+      a.pcsidenav(href='#about') Features
+      a.pcsidenav(href='#contactus') Contact
       include common/mbsidenav
-    .content
-      p 
-        br
-        br
-      div(style='text-align:left')
-        .column3
-        h1.bold ADVISORY BOARD
-        p.paragraph Mainly composed of alumni and a small number of student representatives, the advisory board meet regularly every six months and changes Board Members every two years. The selection of Board members will be discerned by year, region, or industry.
-        .column3
-        p 
-          br
+    .container#title
       .row
-        .column4
-        .column3
-        .column2
-          img#round.pic_align(src='/images/hero/board1.jpg' style='width:180%')
-        .column4
-        .column4
-        .column3
-        .column5
-            h1.medium About
-            p.paragraph Based on the alumni's experiences at various universities, research institutes, and workplaces, we hope to reflect upon and enhance the current international program: curriculum, extracurricular activities, application, preparation for exams. We are determined to not only help students apply, but also help students clarify their future aspirations. 
-      .row 
-        .column4
-        .column5
-        h1.medium Other Features
-        p.paragraph IEP Alumni Association utilizes an advisory board, student infographics and distribution maps, experience sharing sessions, and annual events to promote and leverage the value of the International Education Program; assemble current students and alumni from various universities, industries, and countries; and create an international network platform. 
-          br
-          br
-        .column3 
-        .column3 
-        .column3
-        .column6
-          h1.medium-small2 
-            a(href='/map' target='_self' rel='noopener') 👨‍🎓 Student Profiles
-        .column6
-          h1.medium-small2 
-            a(href='/share' target='_self' rel='noopener') 🙋‍♂️ Sharing Sessions
-        .column6
-          h1.medium-small2 
-            a(href='/events' target='_self' rel='noopener') 🥂 Annual Events 
+        .col-md-1
+        .col-md-10
+          h1 ADVISORY BOARD
+          p Mainly composed of alumni and a small number of student representatives, the advisory board meet regularly every six months and changes Board Members every two years. The selection of Board members will be discerned by year, region, or industry.
+        .col-md-1
+      .row#shareRow
+        .col-md-1
+        .col-md-5
+          img#sharePic(src='/images/hero/board1.jpg')
+        .col-md-5
+          h3 About
+          p Based on the alumni's experiences at various universities, research institutes, and workplaces, we hope to reflect upon and enhance the current international program: curriculum, extracurricular activities, application, preparation for exams. We are determined to not only help students apply, but also help students clarify their future aspirations. 
+        .col-md-1
       
-    include common/footer
+      .row#featureRow
+        .col-md-1
+        .col-md-10
+          h3 Other Features
+          p IEP Alumni Association utilizes an advisory board, student infographics and distribution maps, experience sharing sessions, and annual events to promote and leverage the value of the International Education Program; assemble current students and alumni from various universities, industries, and countries; and create an international network platform. 
+        .col-md-1
+      .row#linkRow
+        .col-md-4.eachLink
+          a(href='/board' target='_self' rel='noopener') 👔 
+            | 
+            br
+            | Advisory Board 
+        .col-md-4.eachLink
+          a(href='/map' target='_self' rel='noopener') 👨‍🎓 
+            |
+            br
+            | Student Profiles
+        .col-md-4.eachLink
+          a(href='/events' target='_self' rel='noopener') 🥂 
+            |
+            br
+            | Annual Events
+      .row#mbLinkRow
+        .col-md-4.eachLink
+          a(href='/board' target='_self' rel='noopener') 👔 Advisory Board 
+        .col-md-4.eachLink
+          a(href='/map' target='_self' rel='noopener') 👨‍🎓 Student Profiles
+        .col-md-4.eachLink
+          a(href='/events' target='_self' rel='noopener') 🥂 Annual Events
+
+  include common/footer 
+
