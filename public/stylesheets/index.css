@@ -47,6 +47,7 @@ input[type=submit]:hover {
   padding: 10px;
   margin: 10px;
 }
+
 .customContainer:hover {
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.63);
 }
@@ -57,6 +58,7 @@ input[type=submit]:hover {
   background-color: rgb(234, 240, 242);
   padding: 10px;
   color:rgb(0, 0, 0);
+  width: 100%;
 }
 
 /* Create two columns that float next to eachother */
@@ -88,8 +90,8 @@ input[type=submit]:hover {
 
 .column-a {
   float: left;
-  width: 23%;
-  margin: 0.9%;
+  width: 23.4%;
+  margin: 0.8%;
   margin-bottom: 16px;
   padding: 0 8px;
 }
@@ -109,7 +111,7 @@ input[type=submit]:hover {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  height: 95%;
+  height: 100%;
 }
 
 .container {
@@ -538,13 +540,19 @@ header span{
   .hero-image1{
     width: 100%!important;
   }
+  .innerContainer{
+    width: 100%;
+  }
+  .customContainer{
+    width: 82%!important;
+  }
 }
 
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 1094px) {
   .column-a, input[type=submit] {
-    width: 45%!important;
+    width: 48%!important;
     margin-top: 0;
   }
   .big, .big2 {
@@ -556,13 +564,25 @@ header span{
   }
   .about-section {
     padding: 10%; 
-    height: 140%;
+    padding-top: 2%;
+    height: 130vw;
+  }
+  .medium2{
+    font-size: 4.5vw;
   }
   .hero-image1{
     height: 90%;
     width: 100%!important;
   }
+
 }
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+/* @media screen and (min-height: 800px) {
+  .about-section {
+    height: 50%;
+  }
+} */
 
 @media screen and (max-width: 20000px) {
   .pcsidenav {
@@ -574,12 +594,15 @@ header span{
 }
 
 @media screen and (max-width: 599px) {
+  .medium2{
+    font-size: 40px;
+  }
   .column-a, input[type=submit] {
     width: 100%!important;
     margin-top: 0;
   }
   .about-section {
-    height: 280%;
+    height: 500vw;
   }
   .big2 {
     font-size: 200%;
@@ -590,7 +613,7 @@ header span{
     text-align: center;
   }
   .paragraph, .paragraph2{
-    line-height:120%;
+    line-height: 120%;
     font-size: 110%;
     text-align: left;
   }
