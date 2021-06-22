@@ -28,6 +28,9 @@ class alumniClass {
         this.alumniLength = alumni.length;
         for(var i = 0; i < this.alumniLength; i++){
             this.alumniEnglishName.push(alumni[i].EnglishName);
+            if(alumni[i].University.slice(-1)==" "){
+              alumni[i].University = alumni[i].University.slice(0,-1);
+            }
             this.alumniUniversity.push(alumni[i].University);
             this.alumniEmail.push(alumni[i].Email);
             this.alumniInstagramUsername.push(alumni[i].InstagramUsername);
