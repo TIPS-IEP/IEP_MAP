@@ -18,11 +18,6 @@ body, html {
     height: 100%;
 
 }
-.universityName{
-    padding-left: 10px !important;
-    padding-right: 0px !important;
-    align-items: center !important;
-}
 .alumniName{
     padding-left: 10px !important;
     padding-right: 0px !important;
@@ -42,7 +37,7 @@ body, html {
     width: 0; /* 0 width - change this with JavaScript */
     z-index: 1; /* Stay on top */
     left: 0;
-    background-color: rgb(128, 128, 128); /* Black*/
+    background-color: rgb(255, 255, 255); /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
     display: none;
@@ -75,7 +70,7 @@ body, html {
   }
 
 .alumniBlock{
-    color: #f1f1f1;
+    color: rgb(0, 0, 0);
 }
 
 #allUniversity{

@@ -70,10 +70,10 @@ html(lang='en')
           div.id = (1000+i);//1000 is just a space
           div.innerHTML = universitiesObject.universityName[i];
           div.addEventListener('click', function (event) {
-            map.setZoom(8);
-            map.setCenter(features[this.id-1000].position);
             if(!alumniListOpened[this.id-1000]){
               document.getElementById(this.id-1000).style.display = "block";
+              map.setZoom(8);
+              map.setCenter(features[this.id-1000].position);
             }
             else{
               document.getElementById(this.id-1000).style.display = "none";
@@ -84,21 +84,7 @@ html(lang='en')
           document.getElementById("universityList").appendChild(alumniListDiv);
           
 
-          var arrowDown = document.createElement('img');
-          arrowDown.src = "images/icons/arrow_right.png";
-          arrowDown.setAttribute("height", "20");
-          arrowDown.setAttribute("width", "20");
-          var div = document.createElement("div");
-          div.classList.add("alumniBlock", "row");
-          var divTextDiv = document.createElement("div");
-          divTextDiv.innerHTML = universitiesObject.universityName[i];
-          divTextDiv.classList.add("col-md-10", "universityName");
-          var divArrowDownDiv = document.createElement("div");
-          divArrowDownDiv.classList.add("col-md-2", "arrowDown");
-          divArrowDownDiv.appendChild(arrowDown);
-          div.appendChild(divTextDiv);
-          div.appendChild(divArrowDownDiv);
-          document.getElementById(i).appendChild(div);
+
           for(let j = 0; j < alumniObject.alumniLength; j++){
             if(alumniObject.alumniUniversity[j] == universitiesObject.universityName[i]){
               var newDiv = document.createElement("div");
