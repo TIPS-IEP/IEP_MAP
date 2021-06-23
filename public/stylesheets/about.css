@@ -4,12 +4,12 @@ body {
     font-family: proxima-nova,Sans-serif;
 }
 
-a {
+#eachLink {
   text-decoration: none !important;
   color: black !important;
 }
 
-a:hover {
+#eachLink:hover {
   color: rgb(255, 106, 106)!important; 
 }
 
