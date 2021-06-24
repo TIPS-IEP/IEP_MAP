@@ -59,3 +59,8 @@ exports.showError = function(req, res, next) {
   });
 }
 
+
+exports.showWiki = function(req, res, next) {
+  res.render('wiki/wiki');
+}
+
