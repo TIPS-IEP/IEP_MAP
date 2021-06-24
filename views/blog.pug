@@ -1,0 +1,102 @@
+doctype html
+html(lang='en') 
+  head
+    //- css
+    link(rel="stylesheet" href="stylesheets/share.css")
+    link(rel="stylesheet" href="stylesheets/nav.css")
+    link(rel="stylesheet" href="stylesheets/footer.css")
+    link(rel="stylesheet" href="stylesheets/sidenav.css")
+
+    //- bootstrap setup
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    
+    //- jquery
+    script(src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+
+    //- js
+    script(src="javascripts/index.js")
+    script(src="javascripts/nav.js")
+    script(src="javascripts/about.js")
+    script(src='https://cdn.tiny.cloud/1/nda8paljag6qmrws041pc75kikjb5zuqz5du9x5ix1edjl77/tinymce/5/tinymce.min.js' referrerpolicy='origin')
+    script.
+      tinymce.init({
+        selector: 'textarea',  // change this value according to your HTML
+        plugins: 'lists advlist link image lists'
+      });
+
+    //- center website 
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+
+    //- google font set up
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
+
+    title Blog Posts
+  body#main
+    script.
+      var loggedin = #{loggedin}
+    if loggedin
+      include login/usernav
+    else
+      include common/nav
+    #mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      a.pcsidenav(href='#') Home 
+      a.pcsidenav(href='#vision') Vision
+      a.pcsidenav(href='#mission') Mission
+      a.pcsidenav(href='#about') Features
+      a.pcsidenav(href='#contactus') Contact
+      include common/mbsidenav
+    .container#title
+      .row
+        .col-md-1
+        .col-md-10
+          h1 BLOG POSTS
+          p Mainly composed of alumni and a small number of student representatives, the advisory board meet regularly every six months and changes Board Members every two years. The selection of Board members will be discerned by year, region, or industry.
+        .col-md-1
+      .row#shareRow
+        .col-md-1
+        .col-md-5
+          img#sharePic(src='/images/hero/board1.jpg')
+        .col-md-5
+          h3 About
+          p Based on the alumni's experiences at various universities, research institutes, and workplaces, we hope to reflect upon and enhance the current international program: curriculum, extracurricular activities, application, preparation for exams. We are determined to not only help students apply, but also help students clarify their future aspirations. 
+        .col-md-1
+      
+      .row#featureRow
+        .col-md-1
+        .col-md-10
+          h3 Other Features
+          p IEP Alumni Association utilizes an advisory board, student infographics and distribution maps, experience sharing sessions, and annual events to promote and leverage the value of the International Education Program; assemble current students and alumni from various universities, industries, and countries; and create an international network platform. 
+        .col-md-1
+      .row#linkRow
+        .col-md-4.eachLink
+          a(href='/board' target='_self' rel='noopener') 👔 
+            | 
+            br
+            | Advisory Board 
+        .col-md-4.eachLink
+          a(href='/map' target='_self' rel='noopener') 👨‍🎓 
+            |
+            br
+            | Student Profiles
+        .col-md-4.eachLink
+          a(href='/events' target='_self' rel='noopener') 🥂 
+            |
+            br
+            | Annual Events
+      .row#mbLinkRow
+        .col-md-4.eachLink
+          a(href='/board' target='_self' rel='noopener') 👔 Advisory Board 
+        .col-md-4.eachLink
+          a(href='/map' target='_self' rel='noopener') 👨‍🎓 Student Profiles
+        .col-md-4.eachLink
+          a(href='/events' target='_self' rel='noopener') 🥂 Annual Events
+    h1 Write Your post here
+    form(method='post')
+      textarea#mytextarea 
+    
+  include common/footer 
+

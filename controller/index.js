@@ -59,3 +59,6 @@ exports.showError = function(req, res, next) {
   });
 }
 
+exports.showBlog = function(req, res, next) {
+  res.render('blog');
+}
