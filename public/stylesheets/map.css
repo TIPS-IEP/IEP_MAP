@@ -33,15 +33,17 @@ body, html {
 }
 /* map side show*/
 .alumniList {
-    height: 100%;
+    height: auto;
     width: 0; /* 0 width - change this with JavaScript */
     z-index: 1; /* Stay on top */
     left: 0;
     background-color: rgb(255, 255, 255); /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
     display: none;
+    animation: growDown 300ms ease-in-out forwards;
+    transform-origin: top center;
 }
+
 /* The sidepanel links */
 .alumniList a {
     width:20px;
@@ -72,6 +74,20 @@ body, html {
 .alumniBlock{
     color: rgb(0, 0, 0);
 }
+
+@keyframes growDown {
+    0% {
+      transform: scaleY(0)
+    }
+    100% {
+      transform: scaleY(1)
+    }
+  }
+
+/* .universityBlock:hover .alumniList--animated{
+    display: block;
+} */
+  
 
 #allUniversity{
     height: 100%;
