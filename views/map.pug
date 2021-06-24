@@ -59,9 +59,7 @@ html(lang='en')
       }
 
       function createUniversitiesSearchList(map){
-        var alumniListOpened = [];
         for(var i = 0; i < universitiesLength; i++){
-          alumniListOpened.push(false);
           var alumniListDiv = document.createElement("div");
           alumniListDiv.classList.add("container-fluid","alumniList");
           alumniListDiv.id = i;
@@ -70,7 +68,7 @@ html(lang='en')
           div.id = (1000+i);//1000 is just a space
           div.innerHTML = universitiesObject.universityName[i];
           div.addEventListener('click', function (event) {
-            if(!alumniListOpened[this.id-1000]){
+            if(document.getElementById(this.id-1000).style.display!="block"){
               document.getElementById(this.id-1000).style.display = "block";
               map.setZoom(8);
               map.setCenter(features[this.id-1000].position);
@@ -78,7 +76,6 @@ html(lang='en')
             else{
               document.getElementById(this.id-1000).style.display = "none";
             }
-            alumniListOpened[this.id-1000] = !alumniListOpened[this.id-1000];
           });
           document.getElementById("universityList").appendChild(div);
           document.getElementById("universityList").appendChild(alumniListDiv);
@@ -109,14 +106,6 @@ html(lang='en')
           }
         }
       }
-
-      //- function createUniversitySidebar(marker, map, order){
-      //-   var arrowDown = document.createElement('img');
-      //-   arrowDown.src = "images/icons/arrow_right.png";
-      //-   arrowDown.setAttribute("height", "20");
-      //-   arrowDown.setAttribute("width", "20");
-        
-      //- }
 
       async function initMap(){
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -158,7 +147,7 @@ html(lang='en')
         }  
       }
       
-  body
+  body#body
     script.
       var loggedin = #{loggedin}
     if loggedin
@@ -174,16 +163,19 @@ html(lang='en')
                 a(href='' target='_blank' hidden='')
                 input(type='text' placeholder='Type to search..')
                 //- here list are inserted from javascript
+          #universityNotFound Sorry, there are no matching results...
           #universityList
             //- .container-fluid.alumniList#alumniList
-    div If you do not see university icons in 5 seconds, please refresh...
+        div If you do not see university icons in 5 seconds, please refresh...
+    
     script.
       // getting all required elements
       const searchWrapper = document.querySelector(".search-input");
       const inputBox = searchWrapper.querySelector("input");
       // if user press any key and release
+      var userData = "";
       inputBox.onkeyup = (e)=>{
-        let userData = e.target.value; //user enetered data
+        userData = e.target.value; //user enetered data
         let emptyArray = [];
         if(userData){
           for(var i = 0; i < universitiesLength; i++){
@@ -204,10 +196,21 @@ html(lang='en')
             searchWrapper.classList.remove("active"); //hide autocomplete box
         }
         if(emptyArray==""){
+          //display not found
           for(i=0;i<universitiesLength;i++){
             document.getElementsByClassName("universityBlock")[i].style.display = "block";
           }
+          if(userData != ""){
+            document.getElementById("universityNotFound").style.display = "block";
+          }
+          else{
+            document.getElementById("universityNotFound").style.display = "none";
+          }
         }
+        else{
+            document.getElementById("universityNotFound").style.display = "none";
+        }
+        
       }
       function select(element){
           let selectData = element.textContent;
@@ -215,16 +218,26 @@ html(lang='en')
           searchWrapper.classList.remove("active");
       }
       function showSuggestions(list){
+        var showTrue = [];
+        for(j=0;j<universitiesLength;j++){
+          showTrue.push(false);
+        }
+        for(i in list){
           for(j=0;j<universitiesLength;j++){
-            document.getElementsByClassName("universityBlock")[j].style.display = "none";
-          }
-          for(i in list){
-            for(j=0;j<universitiesLength;j++){
-              if(universitiesObject.universityName[j]==list[i]){
-                document.getElementsByClassName("universityBlock")[j].style.display = "block";
-                continue;
-              }
+            if(universitiesObject.universityName[j]==list[i]){
+              showTrue[j] = true;
+              continue;
             }
           }
+        }
+        for(j=0;j<universitiesLength;j++){
+          if(showTrue[j]){
+            document.getElementsByClassName("universityBlock")[j].style.display = "true";
+          }
+          else{
+            document.getElementsByClassName("universityBlock")[j].style.display = "none";
+            document.getElementsByClassName("alumniList")[j].style.display = "none";
+          }
+        }
       }
     include common/footer

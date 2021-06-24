@@ -3,10 +3,12 @@ body {
     margin: 0;
     background-color: rgb(234, 240, 242) !important;
     font:16px/1.6 Arial,  sans-serif;
-    padding:1%;
 }
 body, html {
     height: 100%;
+}
+#mapRow{
+    padding: 1% !important;
 }
 #mapRow{
     height: 500px;
@@ -40,8 +42,6 @@ body, html {
     background-color: rgb(255, 255, 255); /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     display: none;
-    /* animation: growDown 300ms ease-in-out forwards;
-    transform-origin: top center; */
 }
 
 /* The sidepanel links */
@@ -75,6 +75,7 @@ body, html {
     color: rgb(0, 0, 0);
     opacity:0;
     transform-origin: top center;
+    display:none;
 }
 
 @keyframes rotateX {
@@ -90,19 +91,6 @@ body, html {
       transform: rotateX(0deg);
     }
 }
-/* @keyframes growDown {
-    0% {
-      transform: scaleY(0)
-    }
-    100% {
-      transform: scaleY(1)
-    }
-} */
-
-/* .universityBlock:hover .alumniList--animated{
-    display: block;
-} */
-  
 
 #allUniversity{
     height: 100%;
@@ -151,6 +139,10 @@ body, html {
 }
 .search-input.active input{
     border-radius: 5px 5px 0 0;
+}
+
+#universityNotFound{
+    display: none;
 }
 #universityList{
     margin-top: 3%;
