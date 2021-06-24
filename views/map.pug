@@ -84,7 +84,7 @@ html(lang='en')
           document.getElementById("universityList").appendChild(alumniListDiv);
           
 
-
+          var alumniCount = 0;
           for(let j = 0; j < alumniObject.alumniLength; j++){
             if(alumniObject.alumniUniversity[j] == universitiesObject.universityName[i]){
               var newDiv = document.createElement("div");
@@ -98,10 +98,13 @@ html(lang='en')
               newDivTextDiv.innerHTML = alumniObject.alumniEnglishName[j];
               newDivTextDiv.classList.add("col-md-10", "alumniName");
               newDiv.classList.add("alumniBlock", "row");
+              var time = (300+alumniCount*60)+"ms";
+              newDiv.style.animation = "rotateX "+time+" ease-in-out forwards";
               newDiv.appendChild(newDivTextDiv);
               newDivArrowDownDiv.appendChild(arrowDownNew);
               newDiv.appendChild(newDivArrowDownDiv);
               document.getElementById(i).appendChild(newDiv);
+              alumniCount++;
             }
           }
         }
