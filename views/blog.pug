@@ -19,11 +19,14 @@ html(lang='en')
     script(src="javascripts/index.js")
     script(src="javascripts/nav.js")
     script(src="javascripts/about.js")
+    script(src="javascripts/blog.js")
     script(src='https://cdn.tiny.cloud/1/nda8paljag6qmrws041pc75kikjb5zuqz5du9x5ix1edjl77/tinymce/5/tinymce.min.js' referrerpolicy='origin')
     script.
       tinymce.init({
         selector: 'textarea',  // change this value according to your HTML
-        plugins: 'lists advlist link image lists'
+        plugins: 'lists advlist link image emoticons media autolink autoresize autosave charmap fullpage fullscreen hr imagetools insertdatetime preview searchreplace table toc visualblocks visualchars wordcount',
+        toolbar: ['undo redo | styleselect | bold italic | link image| alignleft aligncenter alignright | numlist bullist | restoredraft'],
+
       });
 
     //- center website 
@@ -95,8 +98,10 @@ html(lang='en')
         .col-md-4.eachLink
           a(href='/events' target='_self' rel='noopener') 🥂 Annual Events
     h1 Write Your post here
-    form(method='post')
-      textarea#mytextarea 
-    
+    form#get-data-form(method='post')
+      textarea#text-editor.tinymce
+      input(type='submit' value='get data')
+    #data-container    
+
   include common/footer 
 
