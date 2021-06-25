@@ -36,116 +36,6 @@ html(lang='en')
 
       var alumniJSONUnorganized = "#{ JSON.stringify(alumni)}"
       alumniObject = JSON.parse(alumniJSONUnorganized.replace(/&quot;/g,'"'))
-      var features = [];
-      var image = [];
-      var icons = [];
-
-      async function importDataToList(){
-        for(var i = 0; i < universitiesLength; i++){
-          features[i] = {
-            type: i,
-            position: new google.maps.LatLng(universitiesObject.universityLat[i], universitiesObject.universityLng[i]),
-          };
-          const img = new Image();
-          img.src = 'images/universities/'+universitiesObject.universityName[i]+'.png';
-          image[i] = {
-            url: "images/universities/"+universitiesObject.universityName[i]+".png",
-            scaledSize: new google.maps.Size(img.width/Math.sqrt(img.width*img.height/1200),img.height/Math.sqrt(img.width*img.height/1200))
-          };
-          icons[i] = {
-            icon: image[i],
-          };
-        }
-      }
-
-      function createUniversitiesSearchList(map){
-        for(var i = 0; i < universitiesLength; i++){
-          var alumniListDiv = document.createElement("div");
-          alumniListDiv.classList.add("container-fluid","alumniList");
-          alumniListDiv.id = i;
-          var div = document.createElement("div");
-          div.classList.add("universityBlock");
-          div.id = (1000+i);//1000 is just a space
-          div.innerHTML = universitiesObject.universityName[i];
-          div.addEventListener('click', function (event) {
-            if(document.getElementById(this.id-1000).style.display!="block"){
-              document.getElementById(this.id-1000).style.display = "block";
-              map.setZoom(8);
-              map.setCenter(features[this.id-1000].position);
-            }
-            else{
-              document.getElementById(this.id-1000).style.display = "none";
-            }
-          });
-          document.getElementById("universityList").appendChild(div);
-          document.getElementById("universityList").appendChild(alumniListDiv);
-          
-
-          var alumniCount = 0;
-          for(let j = 0; j < alumniObject.alumniLength; j++){
-            if(alumniObject.alumniUniversity[j] == universitiesObject.universityName[i]){
-              var newDiv = document.createElement("div");
-              var arrowDownNew = document.createElement('img');
-              var newDivArrowDownDiv = document.createElement("div");
-              arrowDownNew.src = "images/icons/arrow_right.png";
-              arrowDownNew.setAttribute("height", "20");
-              arrowDownNew.setAttribute("width", "20");
-              newDivArrowDownDiv.classList.add("col-md-2", "arrowDown");
-              var newDivTextDiv = document.createElement("div");
-              newDivTextDiv.innerHTML = alumniObject.alumniEnglishName[j];
-              newDivTextDiv.classList.add("col-md-10", "alumniName");
-              newDiv.classList.add("alumniBlock", "row");
-              var time = (300+alumniCount*60)+"ms";
-              newDiv.style.animation = "rotateX "+time+" ease-in-out forwards";
-              newDiv.appendChild(newDivTextDiv);
-              newDivArrowDownDiv.appendChild(arrowDownNew);
-              newDiv.appendChild(newDivArrowDownDiv);
-              document.getElementById(i).appendChild(newDiv);
-              alumniCount++;
-            }
-          }
-        }
-      }
-
-      async function initMap(){
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: {lat: 42, lng: -96.65625}
-        });
-        importDataToList();
-        for (var k = 0; k < universitiesLength; k++) {
-          const marker = new google.maps.Marker({
-            position: features[k].position,
-            icon: icons[k].icon,
-            map: map,
-          });
-          marker.addListener("click", () => {
-            map.setZoom(8);
-            map.setCenter(marker.getPosition());
-          });
-        }
-        createUniversitiesSearchList (map);
-      }
-
-      function refresh(){
-        window.location = window.location + '#loaded';
-        window.location.reload();
-      }
-
-      window.onload = function() {
-        document.getElementById("z-index").style.display = "none";
-        if(!window.location.hash) {
-          window.location = window.location + '#loaded';
-          window.location.reload();
-        }
-        var biggestImg = new Image();
-        biggestImg.src = "images/universities/Carnegie Mellon University.png";
-        biggestImg.onload = function(){
-          if(!window.location.hash) {
-            refresh();
-          }
-        }  
-      }
       
   body#body
     script.
@@ -158,7 +48,7 @@ html(lang='en')
       .row#mapRow
         .col-md-9#map
         .col-md-3#allUniversity
-          //- #alumniProfile
+          #alumniProfile
           .wrapper
               .search-input
                 a(href='' target='_blank' hidden='')
@@ -168,77 +58,6 @@ html(lang='en')
           #universityList
             //- .container-fluid.alumniList#alumniList
         div If you do not see university icons in 5 seconds, please refresh...
-    
-    script.
-      // getting all required elements
-      const searchWrapper = document.querySelector(".search-input");
-      const inputBox = searchWrapper.querySelector("input");
-      // if user press any key and release
-      var userData = "";
-      inputBox.onkeyup = (e)=>{
-        userData = e.target.value; //user enetered data
-        let emptyArray = [];
-        if(userData){
-          for(var i = 0; i < universitiesLength; i++){
-            for(j = 0; j < universitiesLength; j++){
-              if(universitiesObject.universityName[i].toLocaleLowerCase().startsWith(userData.toLocaleLowerCase(),j)){
-                emptyArray.push(universitiesObject.universityName[i]);
-                break;
-              }
-            }
-          }
-          emptyArray = emptyArray.map((data)=>{
-              // passing return data inside li tag
-              return data = `${data}`;
-          });
-          searchWrapper.classList.add("active"); //show autocomplete box
-          showSuggestions(emptyArray);
-        }else{
-            searchWrapper.classList.remove("active"); //hide autocomplete box
-        }
-        if(emptyArray==""){
-          //display not found
-          for(i=0;i<universitiesLength;i++){
-            document.getElementsByClassName("universityBlock")[i].style.display = "block";
-          }
-          if(userData != ""){
-            document.getElementById("universityNotFound").style.display = "block";
-          }
-          else{
-            document.getElementById("universityNotFound").style.display = "none";
-          }
-        }
-        else{
-            document.getElementById("universityNotFound").style.display = "none";
-        }
-        
-      }
-      function select(element){
-          let selectData = element.textContent;
-          inputBox.value = selectData;
-          searchWrapper.classList.remove("active");
-      }
-      function showSuggestions(list){
-        var showTrue = [];
-        for(j=0;j<universitiesLength;j++){
-          showTrue.push(false);
-        }
-        for(i in list){
-          for(j=0;j<universitiesLength;j++){
-            if(universitiesObject.universityName[j]==list[i]){
-              showTrue[j] = true;
-              continue;
-            }
-          }
-        }
-        for(j=0;j<universitiesLength;j++){
-          if(showTrue[j]){
-            document.getElementsByClassName("universityBlock")[j].style.display = "true";
-          }
-          else{
-            document.getElementsByClassName("universityBlock")[j].style.display = "none";
-            document.getElementsByClassName("alumniList")[j].style.display = "none";
-          }
-        }
-      }
+
+    script(src="javascripts/mapSearch.js")
     include common/footer

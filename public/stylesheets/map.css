@@ -121,7 +121,7 @@ body, html {
     transition: 0.5s;
 }
 
-/* #alumniProfile{
+#alumniProfile{
     position: absolute;
     top: 0;
     left: 0;
@@ -129,7 +129,17 @@ body, html {
     height: 100%;
     width: 100%;
     background-color: #000000;
-} */
+    animation: onloadSlideIn 500ms;
+    display:none;
+}
+@keyframes onloadSlideIn{
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 0%;
+    }
+}
 
 /*Search Bar */
 .wrapper{
