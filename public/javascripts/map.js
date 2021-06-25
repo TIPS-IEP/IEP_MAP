@@ -75,6 +75,7 @@ function createUniversitiesSearchList(map){
         arrowDownNew.setAttribute("width", "20");
         newDivArrowDownDiv.classList.add("col-md-2", "arrowDown");
         var newDivTextDiv = document.createElement("div");
+        newDiv.id = alumniObject.alumniEnglishName[j];
         newDivTextDiv.innerHTML = alumniObject.alumniEnglishName[j];
         newDivTextDiv.classList.add("col-md-10", "alumniName");
         newDiv.classList.add("alumniBlock", "row");
@@ -83,13 +84,25 @@ function createUniversitiesSearchList(map){
         newDiv.appendChild(newDivTextDiv);
         newDivArrowDownDiv.appendChild(arrowDownNew);
         newDiv.appendChild(newDivArrowDownDiv);
+        newDiv.addEventListener('click', function(event){
+          alumniProfileOpen(this.id);
+        })
         document.getElementById(i).appendChild(newDiv);
         alumniCount++;
       }
     }
   }
 }
-
+function alumniProfileOpen(alumniName){
+  var nameDiv = document.createElement("div");
+  nameDiv.innerHTML = alumniName;
+  document.getElementById("alumniProfile").appendChild(nameDiv);
+  document.getElementById("alumniProfile").style.display = "block";
+  document.getElementById("alumniProfile").style.left = "0%";
+}
+function alumniProfileClose(){
+  document.getElementById("alumniProfile").style.display = "none";
+}
 function refresh(){
   window.location = window.location + '#loaded';
   window.location.reload();
