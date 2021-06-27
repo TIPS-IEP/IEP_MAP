@@ -1,0 +1,52 @@
+body {
+  background: rgb(234, 240, 242)!important;
+  font-family: proxima-nova,Sans-serif;
+}
+
+#title{
+  padding-top: 100px;
+}
+
+#title h1, h3, h5 {
+  font-weight: 700 !important;
+  letter-spacing: 1.4px;
+}
+
+#title h1 {
+  font-size: 90px;
+  line-height: 1.3em;
+  text-align: center;
+}
+
+#title p {
+  font-size: 20px;
+  line-height: 1.4em;
+  letter-spacing: 1.4px;
+  text-align: left;
+}
+
+.toggle {
+  display: none;
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+@keyframes growDown {
+  0% {
+    transform: scaleY(0)
+  }
+  80% {
+    transform: scaleY(1.1)
+  }
+  100% {
+    transform: scaleY(1)
+  }
+}
+
+.link {
+  list-style: square outside url("/images/icons/caret-right-fill.svg");
+}
+
+.notLink {
+  list-style: disc outside none;
+}
