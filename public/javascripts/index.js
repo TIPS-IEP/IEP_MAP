@@ -27,6 +27,7 @@ function openNav() {
     document.getElementById("hide1").style.display = "none";
     document.getElementById("hide2").style.display = "none";
     document.getElementById("hide3").style.display = "none";
+    document.getElementById("hide4").style.display = "none";
   } else {
     document.getElementById("mySidenav").style.height = "100vh";
     document.getElementById("mySidenav").style.width = "230px";
@@ -35,6 +36,7 @@ function openNav() {
     document.getElementById("hide1").style.display = "none";
     document.getElementById("hide2").style.display = "none";
     document.getElementById("hide3").style.display = "none";
+    document.getElementById("hide4").style.display = "none";
   }
 }
 
@@ -47,7 +49,8 @@ function closeNav() {
     document.getElementById("hide").style.display = "block";
     document.getElementById("hide1").style.display = "block";
     document.getElementById("hide2").style.display = "block";
-    document.getElementById("hide3").style.display = "block";  
+    document.getElementById("hide3").style.display = "block";
+    document.getElementById("hide4").style.display = "block";
   } else {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
@@ -55,6 +58,7 @@ function closeNav() {
     document.getElementById("hide1").style.display = "block";
     document.getElementById("hide2").style.display = "block";
     document.getElementById("hide3").style.display = "block";
+    document.getElementById("hide4").style.display = "block";  
   }
 }
 /* Set the card of our features to the same height*/

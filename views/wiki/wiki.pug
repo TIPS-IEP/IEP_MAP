@@ -36,6 +36,14 @@ html(lang='en')
       include ../login/usernav
     else
       include ../common/nav
+    #mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      a.pcsidenav(href='#') Home 
+      a.pcsidenav(href='#vision') Vision
+      a.pcsidenav(href='#mission') Mission
+      a.pcsidenav(href='#about') Features
+      a.pcsidenav(href='#contactus') Contact
+      include ../common/mbsidenav
     .container#title
       .row
         .col-md-1
@@ -54,7 +62,7 @@ html(lang='en')
                   li hello
               li item2
               li item3 
-            li hellp
+            li hello
         .col-md-1
   head
     script(src="javascripts/wiki/wiki.js")

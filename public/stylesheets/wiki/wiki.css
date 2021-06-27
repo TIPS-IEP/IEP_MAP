@@ -45,8 +45,10 @@ body {
 
 .link {
   list-style: square outside url("/images/icons/caret-right-fill.svg");
+  font-size: 20px;
 }
 
 .notLink {
   list-style: disc outside none;
+  font-size: 20px;
 }

@@ -61,7 +61,17 @@ exports.showError = function(req, res, next) {
 
 
 exports.showWiki = function(req, res, next) {
-  res.render('wiki/wiki');
+  var isAuthenticated = false;
+  if(req.isAuthenticated()){
+    var firstName = req.user.firstName;
+    isAuthenticated = true;
+  }else{
+    var firstName = null
+  }
+  res.render('wiki/wiki', {
+    loggedin: isAuthenticated,
+    name: firstName,
+  });
 }
 
 exports.showBlog = function(req, res, next) {
