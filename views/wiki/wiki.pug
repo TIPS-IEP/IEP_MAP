@@ -19,6 +19,7 @@ html(lang='en')
     script(src="javascripts/index.js")
     script(src="javascripts/nav.js")
     script(src="javascripts/about.js")
+
     
     //- center website 
     meta(name='viewport' content='width=device-width, initial-scale=1')
@@ -41,5 +42,19 @@ html(lang='en')
         .col-md-10
           h1 Wiki
           p This is the wiki page
+          ul
+            li.link
+              .listener hello
+            ul.toggle.notLink
+              li.link
+                .listener item1
+                ul.toggle.notLink
+                  li hello
+                  li hello
+                  li hello
+              li item2
+              li item3 
+            li hellp
         .col-md-1
-
+  head
+    script(src="javascripts/wiki/wiki.js")
