@@ -6,6 +6,13 @@ var unAuth = require('../models/unAuth');
 exports.showProfile = async function(req, res) {
     var isAuthorized = false;
     var usersInfoArray = [];
+    var isAuthenticated = false;
+    if(req.isAuthenticated()){
+      var firstName = req.user.firstName;
+      isAuthenticated = true;
+    }else{
+      var firstName = null
+    }
     if(await Alumni.find({ Email: req.user.email }).lean()!=""){
         isAuthorized = true;
         const authUsers = await Alumni.find({ Email: req.user.email }).lean();
@@ -18,6 +25,7 @@ exports.showProfile = async function(req, res) {
         name: req.user.firstName,
         data: usersInfoArray,
         status: isAuthorized,
+        loggedin: isAuthenticated,
     });
 }
 
