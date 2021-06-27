@@ -75,7 +75,7 @@ function createUniversitiesSearchList(map){
         arrowDownNew.setAttribute("width", "20");
         newDivArrowDownDiv.classList.add("col-md-2", "arrowDown");
         var newDivTextDiv = document.createElement("div");
-        newDiv.id = alumniObject.alumniEnglishName[j];
+        newDiv.id = "alumni"+j;
         newDivTextDiv.innerHTML = alumniObject.alumniEnglishName[j];
         newDivTextDiv.classList.add("col-md-10", "alumniName");
         newDiv.classList.add("alumniBlock", "row");
@@ -93,15 +93,21 @@ function createUniversitiesSearchList(map){
     }
   }
 }
-function alumniProfileOpen(alumniName){
-  var nameDiv = document.createElement("div");
-  nameDiv.innerHTML = alumniName;
-  document.getElementById("alumniProfile").appendChild(nameDiv);
+function alumniProfileOpen(alumniIndex){
+  var index = parseInt(alumniIndex.slice(6));
+  document.getElementsByClassName("card-text")[0].innerHTML = "👤&nbsp English Name: " + alumniObject.alumniEnglishName[index];
+  document.getElementsByClassName("card-text")[1].innerHTML = "📫&nbsp Email: " + alumniObject.alumniEmail[index];
+  document.getElementsByClassName("card-text")[2].innerHTML = "📷&nbsp Instagram Account: " + alumniObject.alumniInstagramUsername[index];
+  document.getElementsByClassName("card-text")[3].innerHTML = "👩‍🎓&nbsp Graduation Year: " + alumniObject.alumniGraduationYear[index];
+  document.getElementsByClassName("card-text")[4].innerHTML = "📚&nbsp Major: " + alumniObject.alumniMajor[index];
+  document.getElementsByClassName("card-text")[5].innerHTML = "🏫&nbsp University: " + alumniObject.alumniUniversity[index];
   document.getElementById("alumniProfile").style.display = "block";
   document.getElementById("alumniProfile").style.left = "0%";
+  document.getElementById("universityList").style.display = "none";
 }
 function alumniProfileClose(){
   document.getElementById("alumniProfile").style.display = "none";
+  document.getElementById("universityList").style.display = "block";
 }
 function refresh(){
   window.location = window.location + '#loaded';
