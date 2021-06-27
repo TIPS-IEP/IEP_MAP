@@ -3,10 +3,12 @@ body {
     margin: 0;
     background-color: rgb(234, 240, 242) !important;
     font:16px/1.6 Arial,  sans-serif;
-    padding:1%;
 }
 body, html {
     height: 100%;
+}
+#mapRow{
+    padding: 1% !important;
 }
 #mapRow{
     height: 500px;
@@ -23,13 +25,19 @@ body, html {
     padding-right: 0px !important;
     display: flex;
     align-items: center;
-
 }
 .arrowDown{
     padding-left: 10px !important;
     padding-right: 0px !important;
     align-items: center;
     display: flex;
+}
+.alumniBlock:hover .alumniName{
+    font-size: 18px;
+}
+.alumniBlock:hover .arrowDown{
+    padding-left: 14px !important;
+
 }
 /* map side show*/
 .alumniList {
@@ -40,8 +48,6 @@ body, html {
     background-color: rgb(255, 255, 255); /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     display: none;
-    /* animation: growDown 300ms ease-in-out forwards;
-    transform-origin: top center; */
 }
 
 /* The sidepanel links */
@@ -75,6 +81,7 @@ body, html {
     color: rgb(0, 0, 0);
     opacity:0;
     transform-origin: top center;
+    display:none;
 }
 
 @keyframes rotateX {
@@ -90,19 +97,6 @@ body, html {
       transform: rotateX(0deg);
     }
 }
-/* @keyframes growDown {
-    0% {
-      transform: scaleY(0)
-    }
-    100% {
-      transform: scaleY(1)
-    }
-} */
-
-/* .universityBlock:hover .alumniList--animated{
-    display: block;
-} */
-  
 
 #allUniversity{
     height: 100%;
@@ -127,6 +121,30 @@ body, html {
     transition: 0.5s;
 }
 
+#alumniProfile{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    animation: onloadSlideIn 500ms;
+    display:none;
+}
+@keyframes onloadSlideIn{
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+#closeProfile{
+    width: 40px;
+    height: 40px;
+}
 /*Search Bar */
 .wrapper{
     max-width: 450px;
@@ -151,6 +169,10 @@ body, html {
 }
 .search-input.active input{
     border-radius: 5px 5px 0 0;
+}
+
+#universityNotFound{
+    display: none;
 }
 #universityList{
     margin-top: 3%;
