@@ -21,7 +21,7 @@ body, html {
 
 }
 .alumniName{
-    padding-left: 10px !important;
+    padding-left: 20px !important;
     padding-right: 0px !important;
     display: flex;
     align-items: center;
@@ -34,10 +34,10 @@ body, html {
 }
 .alumniBlock:hover{
     cursor: pointer;
-    background-color: rgb(250, 250, 250);    
+    background-color: rgb(251, 251, 251);    
 }
 .alumniBlock:hover .alumniName{
-    font-weight: 900;
+    font-weight: bold;
 }
 .alumniBlock:hover .arrowDown{
     padding-left: 14px !important;
@@ -148,8 +148,12 @@ body, html {
 
 #closeProfile{
     margin-top:1%;
+    margin-left:0%;
     width: 30px;
     height: 30px;
+}
+#closeProfile:hover{
+    cursor: pointer;
 }
 .card-body{
     padding: 1% !important;

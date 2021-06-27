@@ -49,7 +49,7 @@ function createUniversitiesSearchList(map){
     var div = document.createElement("div");
     div.classList.add("universityBlock");
     div.id = (1000+i);//1000 is just a space
-    div.innerHTML = universitiesObject.universityName[i];
+    div.innerHTML = "&nbsp"+universitiesObject.universityName[i];
     div.addEventListener('click', function (event) {
       if(document.getElementById(this.id-1000).style.display!="block"){
         document.getElementById(this.id-1000).style.display = "block";
