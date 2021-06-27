@@ -154,6 +154,8 @@ body, html {
 }
 #closeProfile:hover{
     cursor: pointer;
+    background-color: #dddddd;
+    border-radius: 15px;
 }
 .card-body{
     padding: 1% !important;
