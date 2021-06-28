@@ -34,10 +34,9 @@ body, html {
 }
 .alumniBlock:hover{
     cursor: pointer;
-    background-color: rgb(251, 251, 251);    
 }
 .alumniBlock:hover .alumniName{
-    font-weight: bold;
+    color: #fa6565;
 }
 .alumniBlock:hover .arrowDown{
     padding-left: 14px !important;
@@ -121,8 +120,8 @@ body, html {
     background: rgb(245, 245, 245);   
 }
 .universityBlock:hover{
-    color: rgb(255, 106, 106);
-    transition: 0.5s;
+    /* background-color: rgb(224, 224, 224); */
+    color: rgb(255,106,106);
 }
 
 #alumniProfile{
@@ -130,10 +129,9 @@ body, html {
     top: 0;
     left: 0;
     z-index: 1;
-    height: auto;
+    min-height: 100%;
     width: 100%;
     background-color: #ffffff;
-    animation: onloadSlideIn 500ms;
     display:none;
     padding:2%;
 }
@@ -147,14 +145,15 @@ body, html {
 }
 
 #closeProfile{
-    margin-top:1%;
-    margin-left:0%;
+    position: absolute;
+    margin-top:30px;
+    margin-left:1%;
     width: 30px;
     height: 30px;
 }
 #closeProfile:hover{
     cursor: pointer;
-    background-color: #dddddd;
+    background-color: #f0f0f0;
     border-radius: 15px;
 }
 .card-body{
@@ -168,18 +167,21 @@ body, html {
 
 .mini{
     border: none !important;
-    margin-top: 10px;
+    margin-top: 11px;
 }
 
 .card-title {
     text-align: center;
 }
 #profileTitle {
+    margin-top: 25px !important;
     font-family: proxima-nova,Sans-serif;
-    font-size: 28px;
+    font-size: 40px;
     font-weight: 700;
     line-height: 1.1em;
     letter-spacing: 1.4px;
+    margin-bottom: 25px;
+    margin-left: 5px;
 }
 /*Search Bar */
 .wrapper{
