@@ -23,6 +23,17 @@ async function importDataToList(){
 }
 
 async function initMap(){
+  for(var alumniNumber=0; alumniNumber<alumniObject.alumniUniversity.length; alumniNumber++){
+    var found = false;
+    for(universityNumber=0;universityNumber<universitiesLength; universityNumber++){
+      if(alumniObject.alumniUniversity[alumniNumber]==universitiesObject.universityName[universityNumber]){
+        found = true;
+      }
+    }
+    if(!found){
+      console.log("Can't find \"" + alumniObject.alumniUniversity[alumniNumber]+"\" in university collection!!!");
+    }
+  }
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
     center: {lat: 42, lng: -96.65625}
@@ -72,8 +83,8 @@ function createUniversitiesSearchList(map){
         var arrowDownNew = document.createElement('img');
         var newDivArrowDownDiv = document.createElement("div");
         arrowDownNew.src = "images/icons/arrow_right.png";
-        arrowDownNew.setAttribute("height", "20");
-        arrowDownNew.setAttribute("width", "20");
+        arrowDownNew.setAttribute("height", "0");
+        arrowDownNew.setAttribute("width", "0");
         newDivArrowDownDiv.classList.add("col-md-2", "arrowDown");
         var newDivTextDiv = document.createElement("div");
         newDiv.id = "alumni"+j;
@@ -96,12 +107,14 @@ function createUniversitiesSearchList(map){
 }
 function alumniProfileOpen(alumniIndex){
   var index = parseInt(alumniIndex.slice(6));
-  document.getElementsByClassName("card-text")[0].innerHTML = "👤&nbsp English Name: " + alumniObject.alumniEnglishName[index];
-  document.getElementsByClassName("card-text")[1].innerHTML = "📫&nbsp Email: " + alumniObject.alumniEmail[index];
-  document.getElementsByClassName("card-text")[2].innerHTML = "📷&nbsp Instagram Account: " + alumniObject.alumniInstagramUsername[index];
-  document.getElementsByClassName("card-text")[3].innerHTML = "👩‍🎓&nbsp Graduation Year: " + alumniObject.alumniGraduationYear[index];
-  document.getElementsByClassName("card-text")[4].innerHTML = "📚&nbsp Major: " + alumniObject.alumniMajor[index];
-  document.getElementsByClassName("card-text")[5].innerHTML = "🏫&nbsp University: " + alumniObject.alumniUniversity[index];
+  document.getElementById("profileTitle").innerHTML = alumniObject.alumniEnglishName[index];
+  // document.getElementsByClassName("card-text")[0].innerHTML = " ";
+  // "👤&nbsp English Name: " + alumniObject.alumniEnglishName[index];
+  document.getElementsByClassName("card-text")[0].innerHTML = "📫&nbsp Email: " + alumniObject.alumniEmail[index];
+  document.getElementsByClassName("card-text")[1].innerHTML = "📷&nbsp Instagram Account: " + alumniObject.alumniInstagramUsername[index];
+  document.getElementsByClassName("card-text")[2].innerHTML = "👩‍🎓&nbsp Graduation Year: " + alumniObject.alumniGraduationYear[index];
+  document.getElementsByClassName("card-text")[3].innerHTML = "📚&nbsp Major: " + alumniObject.alumniMajor[index];
+  document.getElementsByClassName("card-text")[4].innerHTML = "🏫&nbsp University: " + alumniObject.alumniUniversity[index];
   document.getElementById("alumniProfile").style.display = "block";
   document.getElementById("alumniProfile").style.left = "0%";
   document.getElementById("universityList").style.display = "none";
