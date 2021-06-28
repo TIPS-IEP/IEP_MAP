@@ -22,6 +22,17 @@ async function importDataToList(){
 }
 
 async function initMap(){
+  for(var alumniNumber=0; alumniNumber<alumniObject.alumniUniversity.length; alumniNumber++){
+    var found = false;
+    for(universityNumber=0;universityNumber<universitiesLength; universityNumber++){
+      if(alumniObject.alumniUniversity[alumniNumber]==universitiesObject.universityName[universityNumber]){
+        found = true;
+      }
+    }
+    if(!found){
+      console.log("Can't find \"" + alumniObject.alumniUniversity[alumniNumber]+"\" in university collection!!!");
+    }
+  }
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
     center: {lat: 42, lng: -96.65625}
