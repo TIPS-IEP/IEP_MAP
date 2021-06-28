@@ -6,29 +6,23 @@ const BlogSchema = new mongoose.Schema({
         requre: true,
         trim: true,
     },
-    displayName: {
+    body: {
         type: String,
-        requre: true
+        requre: true,
     },
-    firstName: {
+    status: {
         type: String,
-        requre: true
+        default: "public",
+        enum: ["public", "private"]
     },
-    lastName: {
-        type: String,
-        requre: true
-    },
-    email: {
-        type: String,
-        requre: true
-    },
-    image: {
-        type: String
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     },
     createdAt: {
         type: Date,
-        default: Date.now
+        default: Date.now,
     }
 })
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('Blog', BlogSchema);
