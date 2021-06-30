@@ -49,7 +49,7 @@ router.get('/auth', ensureAdmin, showUsersInfoController.showAuthUsers)
 
 router.get('/map', mapController.showMap);
 
-router.post('/blog', blogController.addBlog);
+router.post('/blog', ensureAuth, blogController.addBlog);
 
 
 module.exports = router;
