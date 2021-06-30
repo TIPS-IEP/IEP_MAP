@@ -62,6 +62,7 @@ exports.showError = function(req, res, next) {
 
 exports.showWiki = function(req, res, next) {
   var isAuthenticated = false;
+  console.log(req.user.id)
   if(req.isAuthenticated()){
     var firstName = req.user.firstName;
     isAuthenticated = true;
