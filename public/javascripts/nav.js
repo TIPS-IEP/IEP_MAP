@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var path = window.location.pathname.toString();
   if (screen.width > 600) {
-    if(path == "/contact" || path == "/about" || path == "/board" || path == "/events" || path == "/share" || path == "/blog" || path == "/login" || path == "/wiki" || path == "/profile"){
+    if(path == "/contact" || path == "/about" || path == "/board" || path == "/events" || path == "/share" || path == "/blog" || path == "/login" || path == "/wiki" || path == "/profile" || path == "/blog"){
       document.getElementById("z-index").style.display = "none";
     }
     else{
