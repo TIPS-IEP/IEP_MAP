@@ -43,6 +43,10 @@ body {
   }
 }
 
+.listener {
+  cursor: pointer;
+}
+
 .link {
   list-style: square outside url("/images/icons/caret-right-fill.svg");
   font-size: 20px;
