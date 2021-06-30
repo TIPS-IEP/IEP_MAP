@@ -7,7 +7,7 @@ const mapController = require('../controller/map')
 const loginoutController = require('../controller/loginout')
 const showUsersInfoController = require('../controller/showUsersInfo')
 const contactController = require('../controller/contactUs')
-
+const blogController = require("../controller/blog")
 
 //middleware
 const {ensureAuth, ensureGuest} = require('../middleware/auth')
@@ -49,6 +49,7 @@ router.get('/auth', ensureAdmin, showUsersInfoController.showAuthUsers)
 
 router.get('/map', mapController.showMap);
 
+router.post('/blog', blogController.addBlog);
 
 
 module.exports = router;
