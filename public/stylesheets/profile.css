@@ -91,4 +91,7 @@ body {
     #phoneLogOut {
         display: block;
     }
+    #storyboard {
+      margin-left: 30px;
+    }
 }

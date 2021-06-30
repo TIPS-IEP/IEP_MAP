@@ -34,12 +34,12 @@ html(lang='en')
     .row
         .col-md-2
         .col-md-2
-            .card(style="margin-top: 200px; width: 200px")
+            .card#profileImageContainer(style="margin-top: 200px; width: 200px")
                 .bg
-                    img#image.card-img-top
+                    img.card-img-top(src="/images/login/user.jpeg")
                 .card-body
-                    .card-title Hi #{name}
-                    .card-title
+                    .card-title#profileName Hi, &nbsp #{name}
+                    .card-title#profileName
                         a.btn.btn-primary(href="/logout") Logout
         .col-md-6
             .card(style="margin-top: 200px;")#storyboard
@@ -67,7 +67,7 @@ html(lang='en')
                         .form-group
                             label University:
                             input.form-control(type="text" id="University" name="University" aria-describedby="University" placeholder="Enter Your University" required, value = data[7])
-                        input.btn(type="submit" Value="Save")
+                        input.btn.btn-primary(type="submit" Value="Save")
         .col-md-2
     script.
         var image_url = "#{picture}";
