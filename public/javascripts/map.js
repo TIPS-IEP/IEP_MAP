@@ -130,6 +130,10 @@ function refresh(){
 
 
 window.onload = function() {
+  if(window.screen.width<600){
+    var containerHeight = 1050;
+    document.getElementById("bodyContainer").style.height = containerHeight+"px";
+  }
   document.getElementById("z-index").style.display = "none";
   if(!window.location.hash) {
     window.location = window.location + '#loaded';

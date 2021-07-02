@@ -44,7 +44,7 @@ html(lang='en')
       include login/usernav
     else
       include common/nav
-    .container-fluid
+    .container-fluid#bodyContainer
       .row#mapRow
         .col-md-9#map
         .col-md-3#allUniversity
@@ -67,9 +67,6 @@ html(lang='en')
               .card.mini
                   .card-body.miniCard
                       .card-text
-              //- .card.mini
-              //-     .card-body.miniCard
-              //-         .card-text
           .wrapper
               .search-input
                 a(href='' target='_blank' hidden='')
