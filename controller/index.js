@@ -62,7 +62,6 @@ exports.showError = function(req, res, next) {
 
 exports.showWiki = function(req, res, next) {
   var isAuthenticated = false;
-  console.log(req.user.id)
   if(req.isAuthenticated()){
     var firstName = req.user.firstName;
     isAuthenticated = true;
@@ -76,5 +75,32 @@ exports.showWiki = function(req, res, next) {
 }
 
 exports.showBlog = function(req, res, next) {
-  res.render('blog');
+  var isAuthenticated = false;
+  if(req.isAuthenticated()){
+    var firstName = req.user.firstName;
+    isAuthenticated = true;
+  }else{
+    var firstName = null
+  }
+  res.render('blog/blog', {
+    loggedin: isAuthenticated,
+    name: firstName,
+  });
 }
+
+
+exports.showWriteBlog = function(req, res, next) {
+  var isAuthenticated = false;
+  if(req.isAuthenticated()){
+    var firstName = req.user.firstName;
+    isAuthenticated = true;
+  }else{
+    var firstName = null
+  }
+  res.render('blog/writeBlog', {
+    loggedin: isAuthenticated,
+    name: firstName,
+  });
+}
+
+
