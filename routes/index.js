@@ -51,6 +51,7 @@ router.get('/auth', ensureAdmin, showUsersInfoController.showAuthUsers)
 router.get('/map', mapController.showMap);
 
 router.post('/blog', blogController.addBlog);
+router.get('/dashboard', blogController.showDashboard);
 
 
 module.exports = router;
