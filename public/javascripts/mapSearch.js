@@ -3,8 +3,7 @@ const searchWrapper = document.querySelector(".search-input");
 const inputBox = searchWrapper.querySelector("input");
 // if user press any key and release
 var userData = "";
-inputBox.onkeyup = (e)=>{
-  userData = e.target.value; //user enetered data
+function universityListUpdate(){
   let emptyArray = [];
   if(userData){
     for(var i = 0; i < universitiesLength; i++){
@@ -39,7 +38,15 @@ inputBox.onkeyup = (e)=>{
   else{
       document.getElementById("universityNotFound").style.display = "none";
   }
-  
+}
+x.registerListener(function(val) {
+  userData = x.a;
+  universityListUpdate();
+});
+
+inputBox.onkeyup = (e)=>{
+  userData = e.target.value; //user enetered data
+  universityListUpdate();
 }
 function select(element){
     let selectData = element.textContent;
@@ -61,7 +68,7 @@ function showSuggestions(list){
   }
   for(j=0;j<universitiesLength;j++){
     if(showTrue[j]){
-      document.getElementsByClassName("universityBlock")[j].style.display = "true";
+      document.getElementsByClassName("universityBlock")[j].style.display = "block";
     }
     else{
       document.getElementsByClassName("universityBlock")[j].style.display = "none";
