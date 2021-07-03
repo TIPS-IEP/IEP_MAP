@@ -50,6 +50,7 @@ router.get('/auth', ensureAdmin, showUsersInfoController.showAuthUsers)
 
 router.get('/map', mapController.showMap);
 
+router.get('/dashboard', blogController.showDashboard);
 router.post('/blog', ensureAuth, blogController.addBlog);
 
 

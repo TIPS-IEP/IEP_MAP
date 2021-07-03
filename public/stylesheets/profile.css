@@ -33,7 +33,12 @@ body {
     border: none;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 15px;
-    font-family: 'Lato', sans-serif;
+}
+
+.profileButton{
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 900;
 }
 
 .miniCard {
@@ -58,16 +63,37 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#profileImageContainer h4{
+    font-weight: 700;
+    text-align: center;
+}
+
+#blogContainer{
+    height: 150px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#blogContainer h4{
+    font-weight: 700;
+    text-align: center;
+}
+
 #status {
     margin-top: 10px;
 }
 
-#update {
+/* #update {
     margin-top: 10px;
-}
+} */
 
 #phoneLogOut{
     margin-top: 10px;
+    display: none;
+}
+
+#phoneBlog {
     display: none;
 }
 
@@ -79,19 +105,25 @@ body {
     letter-spacing: 1.4px;
 }
 
-#profileName {
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
-}
 
 @media only screen and (max-width: 1182px) {
     #profileImageContainer {
         display: none;
     }
+
+    #blogContainer {
+        display: none;
+    }
+
     #phoneLogOut {
         display: block;
     }
+
     #storyboard {
-      margin-left: 30px;
+        margin-left: 30px;
+    }
+
+    #phoneBlog {
+        display: block;
     }
 }
