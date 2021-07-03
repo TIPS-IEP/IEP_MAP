@@ -50,12 +50,8 @@ router.get('/auth', ensureAdmin, showUsersInfoController.showAuthUsers)
 
 router.get('/map', mapController.showMap);
 
-<<<<<<< HEAD
-router.post('/blog', blogController.addBlog);
 router.get('/dashboard', blogController.showDashboard);
-=======
 router.post('/blog', ensureAuth, blogController.addBlog);
->>>>>>> 396de4c95d709db72856d758fcb352698f22a8bf
 
 
 module.exports = router;
