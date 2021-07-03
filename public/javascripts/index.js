@@ -51,6 +51,7 @@ function closeNav() {
     document.getElementById("hide2").style.display = "block";
     document.getElementById("hide3").style.display = "block";
     document.getElementById("hide4").style.display = "block";
+    document.getElementById("hide5").style.display = "block";
   } else {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
@@ -58,7 +59,8 @@ function closeNav() {
     document.getElementById("hide1").style.display = "block";
     document.getElementById("hide2").style.display = "block";
     document.getElementById("hide3").style.display = "block";
-    document.getElementById("hide4").style.display = "block";  
+    document.getElementById("hide4").style.display = "block";
+    document.getElementById("hide5").style.display = "block";  
   }
 }
 /* Set the card of our features to the same height*/

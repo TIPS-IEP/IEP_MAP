@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 
 const BlogSchema = new mongoose.Schema({
-    title: {
+    blogTitle: {
         type: String,
-        // require: true,
-        trim: true,
+        require: true,
+        // trim: true,
     },
     content: {
         type: String,
@@ -12,8 +12,8 @@ const BlogSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        default: "public",
-        enum: ["public", "private"]
+        default: "not verified",
+        enum: ["verified", "not verified"]
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,

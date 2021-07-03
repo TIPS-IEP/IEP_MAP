@@ -28,6 +28,7 @@ router.get('/events', indexController.showEvents)
 router.get('/error', indexController.showError)
 router.get('/wiki', indexController.showWiki)
 router.get('/blog', indexController.showBlog)
+router.get('/writeblog', indexController.showWriteBlog)
 
 
 router.post('/contactUs', contactController.sendForm)
