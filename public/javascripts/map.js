@@ -1,7 +1,21 @@
 var features = [];
 var image = [];
 var icons = [];
-
+//detect imput change
+x = {
+  aInternal: "",
+  aListener: function(val) {},
+  set a(val) {
+    this.aInternal = val;
+    this.aListener(val);
+  },
+  get a() {
+    return this.aInternal;
+  },
+  registerListener: function(listener) {
+    this.aListener = listener;
+  }
+}
 
 async function importDataToList(){
   for(var i = 0; i < universitiesLength; i++){
@@ -39,15 +53,21 @@ async function initMap(){
     center: {lat: 42, lng: -96.65625}
   });
   importDataToList();
+  const inputBox = searchWrapper.querySelector("input");
+  
   for (var k = 0; k < universitiesLength; k++) {
     const marker = new google.maps.Marker({
       position: features[k].position,
       icon: icons[k].icon,
       map: map,
+      name: universitiesObject.universityName[k]
     });
     marker.addListener("click", () => {
       map.setZoom(8);
       map.setCenter(marker.getPosition());
+      x.a = marker.get('name');
+      inputBox.value = x.a;
+      
     });
   }
   createUniversitiesSearchList (map);
