@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const MUUID = require('uuid-mongodb');
 
 const BlogSchema = new mongoose.Schema({
     blogTitle: {
@@ -19,10 +20,16 @@ const BlogSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
+    blogID: {
+        // allowNull: false,
+        // primaryKey: true,
+        type: String,
+        default: MUUID.v4().toString(),
+    },
     createdAt: {
         type: Date,
         default: Date.now,
-    }
+    },
 })
 
 module.exports = mongoose.model('Blog', BlogSchema);

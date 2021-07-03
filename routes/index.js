@@ -29,6 +29,7 @@ router.get('/error', indexController.showError)
 router.get('/wiki', indexController.showWiki)
 router.get('/blog', indexController.showBlog)
 router.get('/writeblog', indexController.showWriteBlog)
+// router.get('/blog/:blog_id', blogController.showEachBlog)
 
 
 router.post('/contactUs', contactController.sendForm)
@@ -48,7 +49,7 @@ router.get('/add', ensureAuth, showUsersInfoController.showAdd)
 router.get('/unAuth', ensureAdmin, showUsersInfoController.showUnAuthUsers)
 router.get('/auth', ensureAdmin, showUsersInfoController.showAuthUsers)
 
-router.get('/map', mapController.showMap);
+router.get('/map', ensureAuth, mapController.showMap);
 
 router.get('/dashboard', blogController.showDashboard);
 router.post('/blog', ensureAuth, blogController.addBlog);

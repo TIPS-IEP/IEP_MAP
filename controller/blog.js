@@ -26,3 +26,8 @@ exports.showDashboard = async function(req, res, next) {
     blogs: blogs,
   });
 }
+
+
+// exports.showEachBlog = async function(req, res, next) {
+  
+// }
