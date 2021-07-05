@@ -12,6 +12,20 @@ exports.index = function(req, res, next) {
     });
 }
 
+exports.newIndex = function(req, res, next) {
+  var isAuthenticated = false;
+  if(req.isAuthenticated()){
+    var firstName = req.user.firstName;
+    isAuthenticated = true;
+  }else{
+    var firstName = null
+  }
+  res.render('newIndex', {
+    loggedin: isAuthenticated,
+    name: firstName,
+  });
+}
+
 exports.showAbout = function(req, res) {
     if(req.isAuthenticated()){
       var firstName = req.user.firstName;

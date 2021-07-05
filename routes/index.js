@@ -19,7 +19,8 @@ var mongoose = require('mongoose');
 var Alumni = require('../models/Alumni');
 var Universities = require('../models/Universities')
 
-router.get('/', indexController.index);
+router.get('/', indexController.newIndex);
+router.get('/iep', indexController.index);
 router.get('/about', indexController.showAbout);
 router.get('/contact', indexController.showContact);
 router.get('/board', indexController.showBoard)
