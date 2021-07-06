@@ -16,11 +16,16 @@
   float: left;
   color: black;
   text-align: center;
-  padding: 15px;
   text-decoration: none;
   font-size: 18px;
   line-height: 22px;
   border-radius: 8px;
+}
+
+#logo{
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-right: 10px;
 }
 
 /* Style the logo */
@@ -44,6 +49,10 @@
   transition: 0.2s;
 }
 
+/* Links on mouse-over */
+#navbar-right a {
+  padding: 15px;
+}
 
 /* Style the active/current link */
 #navbar a.active {
