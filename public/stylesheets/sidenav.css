@@ -1,4 +1,12 @@
-
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  background-color: rgba(20, 20, 20, 0.5);
+  display: none;
+}
 /* The side navigation menu */
 .sidenav {
   width: 250px;
@@ -27,6 +35,10 @@
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: rgb(255, 106, 106);
+}
+#spanLogoContainer{
+  padding: 0px;
+  width: 230px;
 }
 #spanLogo{
   margin-left: 0px !important;
