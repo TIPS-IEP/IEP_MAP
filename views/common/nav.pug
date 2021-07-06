@@ -6,10 +6,9 @@ script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.m
 script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
 script(src="javascripts/nav.js")
 #navbar
-    span#z-index(style='font-size:33px;cursor:pointer' onclick='openNav()') ☰
     a#logo
         span#z-index(style='font-size:33px;cursor:pointer' onclick='openNav()') ☰              
-        img(src='/images/TIPS-logo4/cover.png' alt='LOGO' style='height:44px' href='/' )
+        img#logo-image(src='/images/TIPS-logo4/cover.png' alt='LOGO' style='height:44px' href='/' )
     #navbar-right
         a#hide3(href='/') Home
         a#hide(href='/about') About
