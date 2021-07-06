@@ -24,7 +24,6 @@ function openNav() {
   } else {
     document.getElementById("mySidenav").style.height = "100vh";
     document.getElementById("mySidenav").style.width = "230px";
-    
   }
 }
 
@@ -43,6 +42,14 @@ function closeNav() {
   } else {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
-    
   }
+}
+function mouseDown() {
+  document.getElementById("nav-div").style.backgroundColor = "#ddd";
+  // document.getElementById("nav-logo").style.borderRadius = "20px";
+}
+
+function mouseUp() {
+  document.getElementById("nav-div").style.backgroundColor = "";
+  // document.getElementById("nav-logo").style.borderRadius = "0px";
 }

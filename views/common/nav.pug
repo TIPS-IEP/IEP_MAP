@@ -8,7 +8,8 @@ script(src="javascripts/nav.js")
 #navbar
     a#logo
         //- span(style='font-size:33px;cursor:pointer;margin-left: 20px;' onclick='openNav()') ☰   
-        img#nav-logo(src='/images/hero/nav.png' alt='LOGO' onclick='openNav()')
+        #nav-div
+            img#nav-logo(src='/images/hero/nav.png' alt='nav-logo' onclick='openNav()' onmousedown="mouseDown()" onmouseup="mouseUp()")
         img#logo-image(src='/images/TIPS-logo4/cover.png' alt='LOGO' style='height:50px' href='/' )
     #navbar-right
         a#hide3(href='/') Home
