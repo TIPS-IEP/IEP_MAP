@@ -87,4 +87,12 @@ function enableScroll() {
   window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
   window.removeEventListener('touchmove', preventDefault, wheelOpt);
   window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+function mouseDown() {
+  document.getElementById("nav-div").style.backgroundColor = "#ddd";
+  // document.getElementById("nav-logo").style.borderRadius = "20px";
+}
+
+function mouseUp() {
+  document.getElementById("nav-div").style.backgroundColor = "";
+  // document.getElementById("nav-logo").style.borderRadius = "0px";
 }

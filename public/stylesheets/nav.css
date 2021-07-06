@@ -81,10 +81,19 @@
 }
 
 #nav-logo{
-  cursor:pointer;
+  display: flex;
+  cursor: pointer;
+  height: 24px;
+  align-self: center;
+}
+
+#nav-div{
+  display:inline-block;
   margin-left: 20px;
   margin-right: 10px;
-  height:23px;
+  border-radius: 30px;
+  padding: 12px;  
+  height: 48px;
 }
 
 @media screen and (max-width: 599px) {
