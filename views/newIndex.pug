@@ -38,8 +38,9 @@ html(lang='en')
     else
       include common/nav
     #mySidenav.sidenav
-      span(style='font-size:33px;cursor:pointer;margin-left: 20px;' onclick='openNav()') ☰              
-      img#logo-image(src='/images/TIPS-logo4/cover.png' alt='LOGO' style='height:50px' href='/' )
+      #spanLogo.row
+        img#nav-logo(src='/images/hero/nav.png' alt='LOGO' onclick='closeNav()')     
+        img#logo-image(src='/images/TIPS-logo4/cover.png' alt='LOGO' style='height:50px' href='/' )
       a.pcsidenav(href='#') Hi 
       a.pcsidenav(href='#vision') Vision
       a.pcsidenav(href='#mission') Mission

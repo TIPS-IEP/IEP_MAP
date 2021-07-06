@@ -22,8 +22,7 @@ function openNav() {
     document.getElementById("hide3").style.display = "none";
     document.getElementById("hide4").style.display = "none";
   } else {
-    document.getElementById("mySidenav").style.height = "100vh";
-    document.getElementById("mySidenav").style.width = "230px";
+    document.getElementById("mySidenav").style.left = "0px";
   }
 }
 
@@ -40,8 +39,8 @@ function closeNav() {
     document.getElementById("hide4").style.display = "block";
     document.getElementById("hide5").style.display = "block";
   } else {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("mySidenav").style.left = "-250px";
+
   }
 }
 function mouseDown() {
