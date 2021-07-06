@@ -9,3 +9,40 @@ $(document).ready(function() {
     }
   }
 });
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+  if (screen.width < 600) {
+  /* Open the sidenav */
+    document.getElementById("mySidenav").style.height = "100vh";
+    document.getElementById("mySidenav").style.paddingTop = "20vh";
+    document.getElementById("mySidenav").style.width = "100vw";
+    document.getElementById("hide").style.display = "none";
+    document.getElementById("hide1").style.display = "none";
+    document.getElementById("hide2").style.display = "none";
+    document.getElementById("hide3").style.display = "none";
+    document.getElementById("hide4").style.display = "none";
+  } else {
+    document.getElementById("mySidenav").style.height = "100vh";
+    document.getElementById("mySidenav").style.width = "230px";
+    
+  }
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  if (screen.width < 600) {
+    document.getElementById("mySidenav").style.height = "0";
+    document.getElementById("mySidenav").style.padding = "0px";
+    document.getElementById("mySidenav").style.width = "100vw";
+    document.getElementById("hide").style.display = "block";
+    document.getElementById("hide1").style.display = "block";
+    document.getElementById("hide2").style.display = "block";
+    document.getElementById("hide3").style.display = "block";
+    document.getElementById("hide4").style.display = "block";
+    document.getElementById("hide5").style.display = "block";
+  } else {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    
+  }
+}
