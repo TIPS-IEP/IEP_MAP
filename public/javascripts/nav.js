@@ -24,6 +24,7 @@ function openNav() {
   } else {
     document.getElementById("mySidenav").style.left = "0px";
     disableScroll();
+    document.getElementById("overlay").style.display = "block";
   }
 }
 
@@ -42,6 +43,7 @@ function closeNav() {
   } else {
     document.getElementById("mySidenav").style.left = "-250px";
     enableScroll();
+    document.getElementById("overlay").style.display = "none";
   }
 }
 
@@ -87,6 +89,8 @@ function enableScroll() {
   window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
   window.removeEventListener('touchmove', preventDefault, wheelOpt);
   window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+
 function mouseDown() {
   document.getElementById("nav-div").style.backgroundColor = "#ddd";
   // document.getElementById("nav-logo").style.borderRadius = "20px";
