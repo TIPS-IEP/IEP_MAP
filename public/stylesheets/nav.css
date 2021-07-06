@@ -23,8 +23,14 @@
 }
 
 #logo-image{
-  padding: 0px 10px;
+  padding: 0px 8px;
   cursor: pointer;
+}
+#logo-image a.active{
+  background-color: #ddd;
+  color: rgb(0, 0, 0); 
+  border-radius: 10px;
+  transition: 0.2s;
 }
 
 /* Style the logo */
@@ -74,6 +80,12 @@
   font-weight: bold;
 }
 
+#nav-logo{
+  cursor:pointer;
+  margin-left: 20px;
+  margin-right: 10px;
+  height:23px;
+}
 
 @media screen and (max-width: 599px) {
   #navbar-right{
