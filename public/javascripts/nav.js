@@ -19,12 +19,12 @@ function scrollFunction() {
     document.getElementById("logo").style.fontSize = "25px";
     document.getElementById("mySidenav").style.padding = "7px 10px";
     document.getElementById("sidenavSeperateLine").style.marginTop = "8px";
-    document.getElementById("navbar").style.opacity = "87%";
+    document.getElementById("navbar").style.opacity = "85%";
   } else {
-    document.getElementById("navbar").style.padding = "25px 10px";
+    document.getElementById("navbar").style.padding = "20px 10px";
     document.getElementById("logo").style.fontSize = "35px";
-    document.getElementById("mySidenav").style.padding = "25px 10px";
-    document.getElementById("sidenavSeperateLine").style.marginTop = "25px";
+    document.getElementById("mySidenav").style.padding = "20px 10px";
+    document.getElementById("sidenavSeperateLine").style.marginTop = "20px";
     document.getElementById("navbar").style.opacity = "100%";
   }
 }
