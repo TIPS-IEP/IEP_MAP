@@ -16,11 +16,11 @@ const BlogSchema = new mongoose.Schema({
         default: "not verified",
         enum: ["verified", "not verified"]
     },
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
-    },
-    blogID: {
+    // user: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "User"
+    // },
+    blogId: {
         // allowNull: false,
         // primaryKey: true,
         type: String,
@@ -30,6 +30,10 @@ const BlogSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    email: {
+        type: String,
+        required: true,
+    }
 })
 
 module.exports = mongoose.model('Blog', BlogSchema);

@@ -38,19 +38,13 @@ html(lang='en')
       a.pcsidenav(href='#about') Features
       a.pcsidenav(href='#contactus') Contact
       include ../common/mbsidenav
-    script.
-        var user = "#{data}";
-        var data = user.split(/\,+(?!\ )/);
-        var status = "#{status}";
-        //- var blogs = "#{blogs}";
-        //- console.log(blogs)
     .container
       .row
         .col-md-1 
         .col-md-10(style="margin-top: 100px")
           if blogs
             for blog in blogs
-              a(href="#").link
+              a(href = "blog/" + blog.blogId + "/edit").link
                 .card.path.eachBlog
                   .card-body
                     h5.card-title(style="font-size: 30px") #{blog.blogTitle}
