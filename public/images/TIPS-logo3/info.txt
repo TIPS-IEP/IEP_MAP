@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Montserrat-ExtraBold
+font link: https://fonts.google.com/specimen/Montserrat
+font author: Julieta Ulanovsky
+font author site: http://www.zkysky.com.ar/
+
+
+icon designer: P Thanga Vignesh
+icon designer link: /amoghdesign
+        
+{"bg":"transparent","icon-gradient-0":"#51A4FB","icon-gradient-1":"#51A4FB","font":"#000000","slogan":"#141414"}
+      

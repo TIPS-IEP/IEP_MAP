@@ -1,15 +1,31 @@
-
+#overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 51;
+  top: 0;
+  background-color: rgba(20, 20, 20, 0.5);
+  display: none;
+}
 /* The side navigation menu */
 .sidenav {
-  width: 0; /* 0 width - change this with JavaScript */
+  width: 250px;
+  height: 100vh;
   position: fixed; /* Stay in place */
   z-index: 100; /* Stay on top */
   top: 0; /* Stay at the top */
-  left: 0;
-  background-color: rgb(17, 17, 17); /* Black*/
+  left: -300px;
+  background-color: rgb(234, 240, 242); /* Black*/
+  box-shadow: 0 0.125rem 0.25rem rgb(83 88 93 / 95%) !important;
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
+  padding: 25px 10px; 
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+#sidenavSeperateLine{
+  margin-top: 26px;
+}
+#sidenavOptionList{
+  margin-top: 35px;
 }
 
 /* The navigation menu links */
@@ -17,7 +33,7 @@
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #050505;
   display: block;
   transition: 0.3s;
   font-family: 'Lato', sans-serif !important;
@@ -25,7 +41,7 @@
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: rgb(255, 106, 106);
 }
 
 /* Position and style the close button (top right corner) */

@@ -6,8 +6,15 @@ script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.m
 script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
 script(src="javascripts/nav.js")
 #navbar
-    span#z-index(style='font-size:33px;cursor:pointer' onclick='openNav()') ☰
-    a#logo(href='/' ) IEP Alumni 
+  a#logo
+    #spanLogoContainer.container
+      #spanLogo.row
+        .col-md-3#navContainer
+          #nav-div
+            img#nav-logo(src='/images/hero/nav.png' alt='LOGO' onclick='openNav()' onmousedown = "mouseDown()" onmouseup = "mouseUp()")     
+        .col-md-9#logoDiv
+          img#logo-image(src='/images/TIPS-logo4/cover.png' alt='LOGO' href='/')
+        
     #navbar-right
         a#hide3(href='/') Home
         a#hide(href='/about') About
