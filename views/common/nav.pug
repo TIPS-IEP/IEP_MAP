@@ -6,11 +6,13 @@ script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.m
 script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
 script(src="javascripts/nav.js")
 #navbar
-    a#logo
-        //- span(style='font-size:33px;cursor:pointer;margin-left: 20px;' onclick='openNav()') ☰   
-        #nav-div
-            img#nav-logo(src='/images/hero/nav.png' alt='nav-logo' onclick='openNav()' onmousedown="mouseDown()" onmouseup="mouseUp()")
-        img#logo-image(src='/images/TIPS-logo4/cover.png' alt='LOGO' style='height:50px' href='/' )
+  a#logo
+    #spanLogoContainer.container
+      #spanLogo.row
+        .col-md-3#nav-div
+          img#nav-logo(src='/images/hero/nav.png' alt='LOGO' onclick='openNav()' onmousedown = "mouseDown()" onmouseup = "mouseUp()")     
+        img.col-md-9#logo-image(src='/images/TIPS-logo4/cover.png' alt='LOGO' href='/' )
+        
     #navbar-right
         a#hide3(href='/') Home
         a#hide(href='/about') About
