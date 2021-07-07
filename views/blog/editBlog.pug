@@ -1,0 +1,66 @@
+doctype html
+html(lang='en') 
+  head
+    //- css
+    link(rel="stylesheet" href="/stylesheets/blog/writeBlog.css")
+    link(rel="stylesheet" href="/stylesheets/nav.css")
+    link(rel="stylesheet" href="/stylesheets/footer.css")
+    link(rel="stylesheet" href="/stylesheets/sidenav.css")
+
+    //- bootstrap setup
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    
+    //- jquery
+    script(src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+
+    //- js
+    script(src="/javascripts/index.js")
+    script(src="/javascripts/nav.js")
+    script(src='https://cdn.tiny.cloud/1/nda8paljag6qmrws041pc75kikjb5zuqz5du9x5ix1edjl77/tinymce/5/tinymce.min.js' referrerpolicy='origin')
+    script.
+      tinymce.init({
+        height: '400',
+        selector: '#content',  // change this value according to your HTML
+        plugins: 'lists advlist link image emoticons media autolink autoresize autosave charmap fullpage fullscreen hr imagetools insertdatetime preview searchreplace table toc visualblocks visualchars wordcount',
+        toolbar: ['undo redo | styleselect | bold italic | link image| alignleft aligncenter alignright | numlist bullist | restoredraft'],
+      });
+
+    //- center website 
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+
+    //- google font set up
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
+
+    title Edit Blog Posts      
+  body#main
+    script.
+        var loggedin = #{loggedin}
+
+    if loggedin
+      include ../login/usernav
+    else
+      include ../common/nav
+    #mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      a.pcsidenav(href='#') Home 
+      a.pcsidenav(href='#vision') Vision
+      a.pcsidenav(href='#mission') Mission
+      a.pcsidenav(href='#about') Features
+      a.pcsidenav(href='#contactus') Contact
+      include ../common/mbsidenav
+    .container#title
+      .row
+        .col-md-1
+        .col-md-10
+          for ablog in blog
+            h1 Edit Your Blog Post Here
+            form#get-data-form(action="/blog/" + ablog.blogId + "/save" method='POST')
+              .form-group
+                label Title
+                input(type="text", class="form-control", id="blogTitle", name="blogTitle", placeholder="Enter the title ", value=ablog.blogTitle)
+              textarea.tinymce#content(name="content") #{ablog.content}
+              input(type='submit' value='Save')
+        .col-md-1
