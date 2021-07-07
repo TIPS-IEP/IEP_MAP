@@ -1,14 +1,35 @@
-$(document).ready(function() {
-  var path = window.location.pathname.toString();
-  if (screen.width > 600) {
-    if(path == "/contact" || path == "/about" || path == "/board" || path == "/events" || path == "/share" || path == "/blog" || path == "/login" || path == "/wiki" || path == "/profile" || path == "/blog" || path == "/dashboard"){
-      document.getElementById("z-index").style.display = "none";
-    }
-    else{
-      document.getElementById("z-index").style.display= "contents";
-    }
+// $(document).ready(function() {
+//   var path = window.location.pathname.toString();
+//   if (screen.width > 600) {
+//     if(path == "/contact" || path == "/about" || path == "/board" || path == "/events" || path == "/share" || path == "/blog" || path == "/login" || path == "/wiki" || path == "/profile" || path == "/blog" || path == "/dashboard"){
+//       document.getElementById("z-index").style.display = "none";
+//     }
+//     else{
+//       document.getElementById("z-index").style.display= "contents";
+//     }
+//   }
+// });
+
+// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 35 || document.documentElement.scrollTop > 35) {
+    document.getElementById("navbar").style.padding = "7px 10px";
+    document.getElementById("logo").style.fontSize = "25px";
+    document.getElementById("mySidenav").style.padding = "7px 10px";
+    document.getElementById("sidenavSeperateLine").style.marginTop = "8px";
+    document.getElementById("navbar").style.opacity = "87%";
+  } else {
+    document.getElementById("navbar").style.padding = "25px 10px";
+    document.getElementById("logo").style.fontSize = "35px";
+    document.getElementById("mySidenav").style.padding = "25px 10px";
+    document.getElementById("sidenavSeperateLine").style.marginTop = "25px";
+    document.getElementById("navbar").style.opacity = "100%";
   }
-});
+}
+
+
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
   if (screen.width < 600) {
@@ -41,12 +62,13 @@ function closeNav() {
     document.getElementById("hide4").style.display = "block";
     document.getElementById("hide5").style.display = "block";
   } else {
-    document.getElementById("mySidenav").style.left = "-250px";
+    document.getElementById("mySidenav").style.left = "-260px";
     enableScroll();
     document.getElementById("overlay").style.display = "none";
   }
 }
 
+//sideNav Controls Start
 
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
@@ -62,6 +84,7 @@ function preventDefaultForScrollKeys(e) {
     return false;
   }
 }
+//sideNav Controls End
 
 // modern Chrome requires { passive: false } when adding event
 var supportsPassive = false;

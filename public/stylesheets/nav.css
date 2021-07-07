@@ -2,6 +2,7 @@
 #navbar {
   overflow: hidden;
   background: rgb(234, 240, 242);
+  box-shadow: 0 0.125rem 0.25rem rgb(83 88 93 / 35%) !important;
   padding: 25px 10px; /* Large padding which will shrink on scroll (using JS) */
   transition: 0.4s; /* Adds a transition effect when the padding is decreased */
   position: fixed; /* Sticky/fixed navbar */
@@ -86,6 +87,16 @@
   color: #000 !important;
   font-weight: bold;
 }
+#spanLogoContainer{
+  padding: 0px;
+  width: 200px;
+  margin-left: 0px;
+}
+#spanLogo{
+  margin-left: 0px !important;
+  align-items: center;
+}
+
 
 #nav-logo{
   cursor: pointer;

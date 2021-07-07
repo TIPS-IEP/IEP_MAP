@@ -40,14 +40,19 @@ html(lang='en')
     #mySidenav.sidenav
       #spanLogoContainer.container
         #spanLogo.row
-          img#nav-logo(src='/images/hero/nav.png' alt='LOGO' onclick='closeNav()')     
-          img#logo-image(src='/images/TIPS-logo4/cover.png' alt='LOGO' style='height:50px' href='/' )
-      a.pcsidenav(href='#') Hi 
-      a.pcsidenav(href='#vision') Vision
-      a.pcsidenav(href='#mission') Mission
-      a.pcsidenav(href='#about') Features
-      a.pcsidenav(href='#contactus') Contact
-      include common/mbsidenav
+          .col-md-3#navContainer
+            #nav-div
+              img#nav-logo(src='/images/hero/nav.png' alt='LOGO' onclick='closeNav()' onmousedown = "mouseDown()" onmouseup = "mouseUp()")     
+          .col-md-9#logoDiv
+            img#logo-image(src='/images/TIPS-logo4/cover.png' alt='LOGO' href='/')
+      hr#sidenavSeperateLine
+      #sidenavOptionList
+        a.pcsidenav(href='#') Hi
+        a.pcsidenav(href='#vision') Vision
+        a.pcsidenav(href='#mission') Mission
+        a.pcsidenav(href='#about') Features
+        a.pcsidenav(href='#contactus') Contact
+        include common/mbsidenav
     #overlay
 
     .hero-image1
