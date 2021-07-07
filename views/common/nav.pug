@@ -9,9 +9,11 @@ script(src="javascripts/nav.js")
   a#logo
     #spanLogoContainer.container
       #spanLogo.row
-        .col-md-3#nav-div
-          img#nav-logo(src='/images/hero/nav.png' alt='LOGO' onclick='openNav()' onmousedown = "mouseDown()" onmouseup = "mouseUp()")     
-        img.col-md-9#logo-image(src='/images/TIPS-logo4/cover.png' alt='LOGO' href='/' )
+        .col-md-3#navContainer
+          #nav-div
+           img#nav-logo(src='/images/hero/nav.png' alt='LOGO' onclick='openNav()' onmousedown = "mouseDown()" onmouseup = "mouseUp()")     
+        .col-md-9#logoDiv
+          img#logo-image(src='/images/TIPS-logo4/cover.png' alt='LOGO' href='/' )
         
     #navbar-right
         a#hide3(href='/') Home
