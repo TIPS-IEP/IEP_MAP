@@ -2,7 +2,7 @@
 #navbar {
   overflow: hidden;
   background: rgb(234, 240, 242);
-  box-shadow: 0 0.125rem 0.25rem rgb(83 88 93 / 35%) !important;
+  box-shadow: 0 0.1rem 0.2rem rgb(83 88 93 / 30%) !important;
   padding: 20px 10px; /* Large padding which will shrink on scroll (using JS) */
   transition: 0.4s; /* Adds a transition effect when the padding is decreased */
   position: fixed; /* Sticky/fixed navbar */
@@ -13,7 +13,7 @@
 }
 
 /* Style the navbar links */
-#navbar a {
+.navOption {
   float: left;
   color: black;
   text-align: center;
@@ -23,6 +23,10 @@
   border-radius: 8px;
 }
 
+#logoLink{
+  height: inherit;
+  width: inherit;
+}
 #logoDiv{
   padding-left: 0px !important;
   padding-right: 12px !important;
@@ -41,8 +45,7 @@
   transition: 0.2s;
 }
 
-/* Style the logo */
-#navbar #logo {
+#navbar-right {
   font-size: 35px;
   font-weight: bold;
   transition: 0.4s;
@@ -87,9 +90,10 @@
   font-weight: bold;
 }
 #spanLogoContainer{
+  display: inline-block;
   padding: 0px;
   width: 200px;
-  margin-left: 0px;
+  margin: 0px !important;
 }
 #spanLogo{
   margin-left: 0px !important;

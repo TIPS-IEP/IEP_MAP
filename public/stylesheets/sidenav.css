@@ -29,7 +29,7 @@
 }
 
 /* The navigation menu links */
-.sidenav a {
+.sideOption {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -40,7 +40,7 @@
 }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
+.sideOption:hover {
   color: rgb(255, 106, 106);
 }
 

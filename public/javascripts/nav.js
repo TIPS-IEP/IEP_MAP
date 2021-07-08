@@ -1,14 +1,14 @@
-// $(document).ready(function() {
-//   var path = window.location.pathname.toString();
-//   if (screen.width > 600) {
-//     if(path == "/contact" || path == "/about" || path == "/board" || path == "/events" || path == "/share" || path == "/blog" || path == "/login" || path == "/wiki" || path == "/profile" || path == "/blog" || path == "/dashboard"){
-//       document.getElementById("z-index").style.display = "none";
-//     }
-//     else{
-//       document.getElementById("z-index").style.display= "contents";
-//     }
-//   }
-// });
+$(document).ready(function() {
+  var path = window.location.pathname.toString();
+  if (screen.width > 600) {
+    if(path == "/" || path == "/about" || path == "/wiki" || path == "/iep"){
+      document.getElementById("navContainer").style.display = "block";
+    }
+    else{
+      document.getElementById("navContainer").style.display= "none";
+    }
+  }
+});
 
 // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
 window.onscroll = function() {scrollFunction()};
@@ -16,11 +16,11 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 35 || document.documentElement.scrollTop > 35) {
     document.getElementById("navbar").style.padding = "7px 10px";
-    document.getElementById("logo").style.fontSize = "25px";
+    document.getElementById("navbar-right").style.fontSize = "25px";
     document.getElementById("navbar").style.opacity = "85%";
   } else {
     document.getElementById("navbar").style.padding = "20px 10px";
-    document.getElementById("logo").style.fontSize = "35px";
+    document.getElementById("navbar-right").style.fontSize = "35px";
     document.getElementById("navbar").style.opacity = "100%";
   }
 }
@@ -30,9 +30,9 @@ function scrollFunction() {
 function openNav() {
   if (screen.width < 600) {
   /* Open the sidenav */
-    document.getElementById("mbSidenav").style.height = "100vh";
-    document.getElementById("mbSidenav").style.paddingTop = "20vh";
-    document.getElementById("mbSidenav").style.width = "100vw";
+    document.getElementById("mySidenav").style.height = "100vh";
+    document.getElementById("mySidenav").style.paddingTop = "20vh";
+    document.getElementById("mySidenav").style.width = "100vw";
     document.getElementById("hide").style.display = "none";
     document.getElementById("hide1").style.display = "none";
     document.getElementById("hide2").style.display = "none";
@@ -44,9 +44,9 @@ function openNav() {
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 function closeNav() {
   if (screen.width < 600) {
-    document.getElementById("mbSidenav").style.height = "0";
-    document.getElementById("mbSidenav").style.padding = "0px";
-    document.getElementById("mbSidenav").style.width = "100vw";
+    document.getElementById("mySidenav").style.height = "0";
+    document.getElementById("mySidenav").style.padding = "0px";
+    document.getElementById("mySidenav").style.width = "100vw";
     document.getElementById("hide").style.display = "block";
     document.getElementById("hide1").style.display = "block";
     document.getElementById("hide2").style.display = "block";
