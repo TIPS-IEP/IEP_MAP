@@ -54,10 +54,12 @@ html(lang='en')
                         h5.card-title(style="font-size: 30px") #{blog.blogTitle}
                         if(blog.status == "not verified")
                           h6.card-subtitle.mb-2.notVerified Status: #{blog.status}
+                        else
+                          h6.card-subtitle.mb-2.verified Status: #{blog.status}. We would post your blog as soon as possible.
                         p.card-text Written in #{blog.createdAt}
                       .col-md-1
                         form(action="/blog/" + blog.blogId + "/delete" method='POST')
-                          button.trashcan(type="submit") Delete
+                          button.deleteButton(type="submit") Delete
 
                     
         .col-md-1

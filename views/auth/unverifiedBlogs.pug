@@ -52,12 +52,16 @@ html(lang='en')
                         h5.card-title(style="font-size: 30px") #{blog.blogTitle}
                         if(blog.status == "not verified")
                           h6.card-subtitle.mb-2.notVerified Status: #{blog.status}
+                        else
+                          h6.card-subtitle.mb-2.verified Status: #{blog.status}
                         p.card-text Written in #{blog.createdAt}
                         p.card-text Written by #{blog.email}
                         p.card-text id #{blog.blogId}
                       .col-md-1
                         form(action="/blog/" + blog.blogId + "/authDeleteBlog" method='POST')
-                          button.trashcan(type="submit") Delete
+                          button.deleteButton(type="submit") Delete
+                        form(action="/blog/" + blog.blogId + "/verify" method='POST')
+                          button.verifyButton(type="submit") Verify
 
                     
         .col-md-1
