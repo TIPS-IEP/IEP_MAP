@@ -18,11 +18,18 @@
   color: black;
   text-align: center;
   text-decoration: none;
+  padding: 15px;
   font-size: 18px;
   line-height: 22px;
   border-radius: 8px;
 }
 
+.navOption:hover{
+  background-color: rgb(234, 240, 242);
+  color: rgb(255, 106, 106); 
+  transition: 0.2s;
+  text-decoration: none !important;
+}
 #logoLink{
   height: inherit;
   width: inherit;
@@ -47,7 +54,6 @@
 
 #navbar-right {
   font-size: 35px;
-  font-weight: bold;
   transition: 0.4s;
   text-align:center;
 }
@@ -57,18 +63,6 @@
   background-color: #ddd;
   color: rgb(0, 0, 0); 
   transition: 0.2s;
-}
-
-/* Links on mouse-over */
-#navbar-right a:hover {
-  background-color: rgb(234, 240, 242);
-  color: rgb(255, 106, 106); 
-  transition: 0.2s;
-}
-
-/* Links on mouse-over */
-#navbar-right a {
-  padding: 15px;
 }
 
 /* Style the active/current link */
