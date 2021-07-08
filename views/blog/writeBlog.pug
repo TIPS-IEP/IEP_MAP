@@ -37,12 +37,7 @@ html(lang='en')
 
     title Blog Posts
   body#main
-    script.
-      var loggedin = #{loggedin}
-    if loggedin
-      include ../login/usernav
-    else
-      include ../common/nav
+    include common/nav
     #mySidenav.sidenav
       a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
       a.pcsidenav(href='#') Home 
