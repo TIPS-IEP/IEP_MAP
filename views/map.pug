@@ -38,12 +38,7 @@ html(lang='en')
       alumniObject = JSON.parse(alumniJSONUnorganized.replace(/&quot;/g,'"'))
       
   body#body
-    script.
-      var loggedin = #{loggedin}
-    if loggedin
-      include login/usernav
-    else
-      include common/nav
+    include common/nav
     .container-fluid#bodyContainer
       .row#mapRow
         .col-md-9#map
