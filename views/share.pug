@@ -29,11 +29,6 @@ html(lang='en')
 
     title Experience Sharing
   body#main
-    script.
-      var loggedin = #{loggedin}
-    if loggedin
-      include login/usernav
-    else
       include common/nav
     #mySidenav.sidenav
       a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;

@@ -26,15 +26,7 @@ html(lang='en')
     link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
     
     body
-      #mySidenav.sidenav
-        a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
-        include common/mbsidenav
-      script.
-          var loggedin = #{loggedin}
-      if loggedin
-        include login/usernav
-      else
-        include common/nav
+      include common/nav
       .row
         .col-md-4
         .col-md-4.errorContainer
