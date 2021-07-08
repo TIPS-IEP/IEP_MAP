@@ -80,3 +80,11 @@ exports.deleteBlog = async function(req, res, next) {
   });
   res.redirect("/dashboard")
 }
+
+exports.authDelete = async function(req, res, next) {
+  await Blog.deleteOne({blogId: req.params.blog_id}, function(err, obj) {
+    if (err) throw err;
+    console.log("delete blog " + req.params.blog_id + " from blog");
+  });
+  res.redirect("/verifyblogs")
+}

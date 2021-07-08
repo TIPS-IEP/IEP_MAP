@@ -67,8 +67,17 @@ exports.showAuthUsers = async function(req, res) {
 }
 
 exports.showUnverifiedBlogs = async function(req, res) {
+  var isAuthenticated = false;
   const blogs = await Blog.find().lean();
+  if(req.isAuthenticated()){
+    var firstName = req.user.firstName;
+    isAuthenticated = true;
+  }else{
+    var firstName = null
+  }
   res.render('auth/unverifiedBlogs', {
+    loggedin: isAuthenticated,
+    name: firstName,
     blogs: blogs,
   });
 }

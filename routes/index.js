@@ -46,7 +46,8 @@ router.get('/profile', ensureAuth, showUsersInfoController.showProfile)
 router.get('/add', ensureAuth, showUsersInfoController.showAdd)
 router.get('/unAuth', ensureAdmin, showUsersInfoController.showUnAuthUsers)
 router.get('/auth', ensureAdmin, showUsersInfoController.showAuthUsers)
-router.get('/verifyblog', ensureAdmin, showUsersInfoController.showUnverifiedBlogs)
+router.get('/verifyblogs', ensureAdmin, showUsersInfoController.showUnverifiedBlogs)
+router.post('/blog/:blog_id/authDeleteBlog', ensureAuth, blogController.authDelete);
 
 router.get('/map', mapController.showMap);
 
