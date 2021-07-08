@@ -29,7 +29,6 @@ router.get('/events', indexController.showEvents)
 router.get('/error', indexController.showError)
 router.get('/wiki', indexController.showWiki)
 router.get('/blog', indexController.showBlog)
-router.get('/writeblog', indexController.showWriteBlog)
 
 router.post('/contactUs', contactController.sendForm)
 
@@ -47,13 +46,17 @@ router.get('/profile', ensureAuth, showUsersInfoController.showProfile)
 router.get('/add', ensureAuth, showUsersInfoController.showAdd)
 router.get('/unAuth', ensureAdmin, showUsersInfoController.showUnAuthUsers)
 router.get('/auth', ensureAdmin, showUsersInfoController.showAuthUsers)
+router.get('/verifyblog', ensureAdmin, showUsersInfoController.showUnverifiedBlogs)
 
 router.get('/map', mapController.showMap);
 
+
 router.get('/dashboard', blogController.showDashboard);
 router.post('/blog', ensureAuth, blogController.addBlog);
-router.get('/blog/:blog_id/edit', blogController.editBlog)
-router.post('/blog/:blog_id/save', blogController.saveBlog)
+router.get('/writeblog', blogController.showWriteBlog);
+router.get('/blog/:blog_id/edit', ensureAuth, blogController.editBlog);
+router.post('/blog/:blog_id/save', ensureAuth, blogController.saveBlog);
+router.post('/blog/:blog_id/delete', ensureAuth, blogController.deleteBlog);
 
 
 module.exports = router;

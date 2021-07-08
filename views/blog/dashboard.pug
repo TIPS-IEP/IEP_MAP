@@ -40,15 +40,24 @@ html(lang='en')
       include ../common/mbsidenav
     .container
       .row
-        .col-md-1 
-        .col-md-10(style="margin-top: 100px")
+        .col-md-1
+        .col-md-10(style="margin-top: 120px")
+          a(href="/writeblog")
+            button.btn.btn-primary(type="button") ✏️ write
           if blogs
             for blog in blogs
               a(href = "blog/" + blog.blogId + "/edit").link
                 .card.path.eachBlog
                   .card-body
-                    h5.card-title(style="font-size: 30px") #{blog.blogTitle}
-                    if(blog.status == "not verified")
-                      h6.card-subtitle.mb-2.notVerified Status: #{blog.status}
-                    p.card-text Written in #{blog.createdAt}
+                    .row
+                      .col-md-11
+                        h5.card-title(style="font-size: 30px") #{blog.blogTitle}
+                        if(blog.status == "not verified")
+                          h6.card-subtitle.mb-2.notVerified Status: #{blog.status}
+                        p.card-text Written in #{blog.createdAt}
+                      .col-md-1
+                        form(action="/blog/" + blog.blogId + "/delete" method='POST')
+                          button.trashcan(type="submit") Delete
+
+                    
         .col-md-1

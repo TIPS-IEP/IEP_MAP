@@ -2,6 +2,7 @@ var eachUserInfo = [];
 
 var Alumni = require('../models/Alumni');
 var unAuth = require('../models/unAuth');
+var Blog = require('../models/blog');
 
 exports.showProfile = async function(req, res) {
     var isAuthorized = false;
@@ -49,7 +50,7 @@ exports.showUnAuthUsers = async function(req, res) {
     var usersInfoArray = []
     const unAuthUsers = await unAuth.find().lean();
     usersInfoArray = importUsersInfo(unAuthUsers);
-    res.render('login/unAuthUsers', {
+    res.render('auth/unAuthUsers', {
         name: req.user.firstName,
         userData: usersInfoArray,
     });
@@ -59,10 +60,17 @@ exports.showAuthUsers = async function(req, res) {
     var usersInfoArray = []
     const unAuthUsers = await Alumni.find().lean();
     usersInfoArray = importUsersInfo(unAuthUsers);
-    res.render('login/authUsers', {
+    res.render('auth/authUsers', {
         name: req.user.firstName,
         userData: usersInfoArray,
     });
+}
+
+exports.showUnverifiedBlogs = async function(req, res) {
+  const blogs = await Blog.find().lean();
+  res.render('auth/unverifiedBlogs', {
+    blogs: blogs,
+  });
 }
 
 function importUsersInfo(users){

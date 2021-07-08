@@ -103,18 +103,6 @@ exports.showBlog = function(req, res, next) {
 }
 
 
-exports.showWriteBlog = function(req, res, next) {
-  var isAuthenticated = false;
-  if(req.isAuthenticated()){
-    var firstName = req.user.firstName;
-    isAuthenticated = true;
-  }else{
-    var firstName = null
-  }
-  res.render('blog/writeBlog', {
-    loggedin: isAuthenticated,
-    name: firstName,
-  });
-}
+
 
 

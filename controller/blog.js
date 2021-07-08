@@ -2,14 +2,12 @@
 var Blog = require("../models/blog")
 
 exports.addBlog = async function(req, res, next) {
-  try {
-    req.body.email = req.user.email
-    await Blog.create(req.body)
-    res.redirect("/blog")
-  } catch (error) {
-    console.log(error)
-    res.redirect("/error")
-  }
+  req.body.email = req.user.email
+  await Blog.create(req.body, function(err, obj) {
+    if (err) throw err;
+    console.log("create new blog in blog");
+    res.redirect("/dashboard")
+  });
 }
 
 exports.showDashboard = async function(req, res, next) {
@@ -50,7 +48,6 @@ exports.editBlog = async function(req, res, next) {
 
 exports.saveBlog = async function(req, res, next) {
   req.body.email = req.user.email;
-  console.log(req.params.blog_id)
   await Blog.deleteOne({blogId: req.params.blog_id}, function(err, obj) {
     if (err) throw err;
     console.log("delete blog " + req.params.blog_id + " from blog");
@@ -58,6 +55,28 @@ exports.saveBlog = async function(req, res, next) {
   await Blog.create(req.body, function(err, obj) {
       if (err) throw err;
       console.log("create blog " + req.params.blog_id + " in blog");
+  });
+  res.redirect("/dashboard")
+}
+
+exports.showWriteBlog = function(req, res, next) {
+  var isAuthenticated = false;
+  if(req.isAuthenticated()){
+    var firstName = req.user.firstName;
+    isAuthenticated = true;
+  }else{
+    var firstName = null
+  }
+  res.render('blog/writeBlog', {
+    loggedin: isAuthenticated,
+    name: firstName,
+  });
+}
+
+exports.deleteBlog = async function(req, res, next) {
+  await Blog.deleteOne({blogId: req.params.blog_id}, function(err, obj) {
+    if (err) throw err;
+    console.log("delete blog " + req.params.blog_id + " from blog");
   });
   res.redirect("/dashboard")
 }
