@@ -57,15 +57,15 @@ html(lang='en')
                           h6.card-subtitle.mb-2.verified Status: #{blog.status}
                         p.card-text Written in #{blog.createdAt}
                         p.card-text Written by #{blog.email}
-                        p.card-text id #{blog.blogId}
+                        p.card-text id: #{blog._id}
                       .col-md-1
-                        form(action="/blog/" + blog.blogId + "/authDeleteBlog" method='POST' onSubmit="return confirm('Are you sure you wish to delete?')")
+                        form(action="/blog/" + blog._id + "/authDeleteBlog" method='POST' onSubmit="return confirm('Are you sure you wish to delete?')")
                           button.deleteButton(type="submit") Delete
                         if blog.status=="verified"
-                          form(action="/blog/" + blog.blogId + "/unverify" method='POST')
+                          form(action="/blog/" + blog._id + "/unverify" method='POST')
                             button.unverifyButton(type="submit") Unverify
                         else
-                          form(action="/blog/" + blog.blogId + "/verify" method='POST')
+                          form(action="/blog/" + blog._id + "/verify" method='POST')
                             button.verifyButton(type="submit") Verify
 
                     
