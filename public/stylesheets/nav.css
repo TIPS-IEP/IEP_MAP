@@ -1,7 +1,7 @@
 /* Create a sticky/fixed navbar */
 #navbar {
   overflow: hidden;
-  background: rgb(234, 240, 242);
+  background: none;
   box-shadow: 0 0.1rem 0.2rem rgb(83 88 93 / 30%) !important;
   padding: 20px 10px; /* Large padding which will shrink on scroll (using JS) */
   transition: 0.4s; /* Adds a transition effect when the padding is decreased */
@@ -106,7 +106,7 @@
   justify-items: right;
   padding: 0px !important;
 }
-.nav-div{
+#nav-div{
   margin-left: 5px !important;
   display:flex;
   align-content: center;

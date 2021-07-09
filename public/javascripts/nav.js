@@ -10,40 +10,48 @@ $(document).ready(function() {
   }
 });
 
-$(document).ready(function() {
-  var path = window.location.pathname.toString();
-  if(path == "/"){
-    document.getElementById("navbar").style.background = "none";
-  }
-});
+// $(document).ready(function() {
+//   var path = window.location.pathname.toString();
+//   if(path == "/"){
+//     document.getElementById("navbar").style.background = "none";
+//   }
+// });
 
 window.addEventListener('scroll', function () {
-  var path = window.location.pathname.toString();
-  if(path == "/"){
-    if (window.pageYOffset > 40) {
-      document.getElementById("navbar").classList.add('bg-light', 'shadow');
-    } 
-    else {
-      document.getElementById("navbar").classList.remove('bg-light', 'shadow');
-    }
-  } 
-});
-
-// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 35 || document.documentElement.scrollTop > 35) {
+  if (window.pageYOffset > 40) {
+    // document.getElementById("navbar").classList.add('bg-light', 'shadow');
+    document.getElementById("navbar").style.background = "rgb(234, 240, 242)";
     document.getElementById("navbar").style.padding = "7px 10px";
     document.getElementById("navbar-right").style.fontSize = "25px";
     document.getElementById("navbar").style.opacity = "85%";
   } 
   else {
+    // document.getElementById("navbar").classList.remove('bg-light', 'shadow');
+    document.getElementById("navbar").style.background = "none";
     document.getElementById("navbar").style.padding = "20px 10px";
     document.getElementById("navbar-right").style.fontSize = "35px";
     document.getElementById("navbar").style.opacity = "100%";
+    document.getElementById("navbar").style.background = "none";
   }
-}
+});
+
+// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+// window.onscroll = function() {scrollFunction()};
+
+// function scrollFunction() {
+//   if (document.body.scrollTop > 35 || document.documentElement.scrollTop > 35) {
+//     document.getElementById("navbar").style.padding = "7px 10px";
+//     document.getElementById("navbar-right").style.fontSize = "25px";
+//     document.getElementById("navbar").style.opacity = "85%";
+//     // document.getElementById("navbar").style.background = "rgb(234, 240, 242)";
+//   } 
+//   else {
+//     document.getElementById("navbar").style.padding = "20px 10px";
+//     document.getElementById("navbar-right").style.fontSize = "35px";
+//     document.getElementById("navbar").style.opacity = "100%";
+//     document.getElementById("navbar").style.background = "none";
+//   }
+// }
 
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
@@ -78,12 +86,9 @@ function closeNav() {
 
 
 function mouseDown() {
-  document.getElementsByClassName("nav-div")[0].style.backgroundColor = "#ddd";
-  document.getElementsByClassName("nav-div")[1].style.backgroundColor = "#ddd";
+  document.getElementById("nav-div").style.backgroundColor = "#ddd";
 }
 
 function mouseUp() {
-  document.getElementsByClassName("nav-div")[0].style.backgroundColor = "";
-  document.getElementsByClassName("nav-div")[1].style.backgroundColor = "";
-
+  document.getElementById("nav-div").style.backgroundColor = "";
 }
