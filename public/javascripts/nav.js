@@ -58,9 +58,12 @@ function closeNav() {
 
 
 function mouseDown() {
-  document.getElementById("nav-div").style.backgroundColor = "#ddd";
+  document.getElementsByClassName("nav-div")[0].style.backgroundColor = "#ddd";
+  document.getElementsByClassName("nav-div")[1].style.backgroundColor = "#ddd";
 }
 
 function mouseUp() {
-  document.getElementById("nav-div").style.backgroundColor = "";
+  document.getElementsByClassName("nav-div")[0].style.backgroundColor = "";
+  document.getElementsByClassName("nav-div")[1].style.backgroundColor = "";
+
 }
