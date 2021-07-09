@@ -102,3 +102,17 @@ exports.verifyBlog = async function(req, res, next) {
   });
   res.redirect("/verifyblogs")
 }
+
+exports.unverifyBlog = async function(req, res, next) {
+  const blog = await Blog.find({ blogId: req.params.blog_id }).lean();
+  blog[0].status = "not verified"
+  await Blog.deleteOne({blogId: req.params.blog_id}, function(err, obj) {
+    if (err) throw err;
+    console.log("delete blog " + req.params.blog_id + " from blog");
+  });
+  await Blog.create(blog, function(err, obj) {
+    if (err) throw err;
+    console.log("create blog " + req.params.blog_id + " in blog");
+  });
+  res.redirect("/verifyblogs")
+}
