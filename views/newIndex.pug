@@ -33,6 +33,7 @@ html(lang='en')
 
   body#main
     include common/nav
+
     #mySidenav.sidenav
       #spanLogoContainer.container
         #spanLogo.row
@@ -53,8 +54,8 @@ html(lang='en')
     script(src="javascripts/sidenav.js")
     #overlay
 
-    .hero-image1
-        .hero-text1
+    .hero-image1.w-100.vh-100.d-flex.justify-content-center.align-items-center
+      .hero-text1
     #vision
     .hero-image2
         .hero-text2
@@ -68,7 +69,7 @@ html(lang='en')
 
     #about  
     .about-section
-      h1.big2(style='text-align:center') OUR FEATURES  
+      h1.big2(style='text-align:center') OUR FEATURES 
       br
       .row
         .column-a
@@ -79,7 +80,7 @@ html(lang='en')
               img(src='/images/icons/profiles.png' alt='person icon' style='width:75%' class='center')
               p                  
               .innerContainer
-                h1.medium2(style='text-align:center') Student Profiles
+                h1.medium2(style='text-align:center') Student Profiles 
               p
         .column-a
           .container.customContainer.zoom
@@ -89,7 +90,7 @@ html(lang='en')
               img(src='/images/icons/board.png' alt='3 ppl icon' style='width:75%' class='center')
               p            
               .innerContainer
-                h1.medium2(style='text-align:center') Advisory Board              
+                h1.medium2(style='text-align:center') Advisory Board 
               p
         .column-a
           .container.customContainer.zoom
@@ -99,7 +100,7 @@ html(lang='en')
               img(src='/images/icons/sharing.png' alt='seminar icon' style='width:75%' class='center')         
               p
               .innerContainer
-                h1.medium2(style='text-align:center') Experience Sharing  
+                h1.medium2(style='text-align:center') Experience Sharing 
               p 
         .column-a
           .container.customContainer.zoom
@@ -109,7 +110,7 @@ html(lang='en')
               img(src='/images/icons/events.png' alt='10 ppl icon' style='width:75%' class='center')
               p               
               .innerContainer
-                h1.medium2(style='text-align:center') Annual Events       
+                h1.medium2(style='text-align:center') Annual Events 
               p
     #contactus
     include common/contactUs

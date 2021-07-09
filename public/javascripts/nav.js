@@ -10,6 +10,25 @@ $(document).ready(function() {
   }
 });
 
+$(document).ready(function() {
+  var path = window.location.pathname.toString();
+  if(path == "/"){
+    document.getElementById("navbar").style.background = "none";
+  }
+});
+
+window.addEventListener('scroll', function () {
+  var path = window.location.pathname.toString();
+  if(path == "/"){
+    if (window.pageYOffset > 40) {
+      document.getElementById("navbar").classList.add('bg-light', 'shadow');
+    } 
+    else {
+      document.getElementById("navbar").classList.remove('bg-light', 'shadow');
+    }
+  } 
+});
+
 // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
 window.onscroll = function() {scrollFunction()};
 
@@ -18,7 +37,8 @@ function scrollFunction() {
     document.getElementById("navbar").style.padding = "7px 10px";
     document.getElementById("navbar-right").style.fontSize = "25px";
     document.getElementById("navbar").style.opacity = "85%";
-  } else {
+  } 
+  else {
     document.getElementById("navbar").style.padding = "20px 10px";
     document.getElementById("navbar-right").style.fontSize = "35px";
     document.getElementById("navbar").style.opacity = "100%";
