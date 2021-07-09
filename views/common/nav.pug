@@ -1,5 +1,4 @@
 //- Header and navigation bar
-
 //- jquery
 script(src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous")
 script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
@@ -7,22 +6,22 @@ script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.
 script(src="/javascripts/nav.js")
     
 #navbar
-  a#logo
-    #spanLogoContainer.container
-      #spanLogo.row
-        .col-md-3#navContainer
-          #nav-div
-            img#nav-logo(src='/images/hero/nav.png' alt='LOGO' onclick='openNav()' onmousedown = "mouseDown()" onmouseup = "mouseUp()")     
-        .col-md-9#logoDiv
-          img#logo-image(src='/images/TIPS-logo4/cover.png' alt='LOGO' href='/')
-        
-    #navbar-right
-        a#hide3(href='/') Home
-        a#hide(href='/about') About
-        a#hide5(href='/blog') Blog
-        a#hide4(href='/wiki') Wiki
-        a#hide1(href='/contact') Contact
-        a#hide2(href='/login') Login
+  #spanLogoContainer.container
+    #spanLogo.row
+      .col-md-3#navContainer
+        .nav-div
+          img#nav-logo(src='/images/hero/nav.png' alt='LOGO' onclick='openNav()' onmousedown = "mouseDown()" onmouseup = "mouseUp()")     
+      .col-md-9#logoDiv
+        a#logoLink(href='/')
+          img#logo-image(src='/images/TIPS-logo4/cover.png' alt='LOGO')
+      
+  #navbar-right
+    a.navOption#hide3(href='/') Home
+    a.navOption#hide(href='/about') About
+    a.navOption#hide5(href='/blog') Blog
+    a.navOption#hide4(href='/wiki') Wiki
+    a.navOption#hide1(href='/contact') Contact
+    a.navOption#hide2(href='/login') Login
 
 script.
   var loggedin = #{loggedin}
