@@ -44,11 +44,16 @@ html(lang='en')
               img#logo-image(src='/images/TIPS-logo4/cover.png' alt='LOGO')
       hr#sidenavSeperateLine
       #sidenavOptionList
-        .sideOption.pcsidenav(href='#') Hi
-        .sideOption.pcsidenav(href='#vision') Vision
-        .sideOption.pcsidenav(href='#mission') Mission
-        .sideOption.pcsidenav(href='#about') Features
-        .sideOption.pcsidenav(href='#contactus') Contact
+        a.sidenavOptionLink(href='#')
+          .sideOption.pcsidenav Hi
+        a.sidenavOptionLink(href='#vision')
+          .sideOption.pcsidenav Vision
+        a.sidenavOptionLink(href="#mission") 
+          .sideOption.pcsidenav Mission
+        a.sidenavOptionLink(href='#about')
+          .sideOption.pcsidenav Features
+        a.sidenavOptionLink(href='#contactus')
+          .sideOption.pcsidenav Contact
         include common/mbsidenav
     script(src="javascripts/sidenav.js")
     #overlay
