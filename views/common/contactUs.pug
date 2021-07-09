@@ -16,9 +16,9 @@
     .col-md-3
       form#inputForm(action = "/contactUs" method="POST" onSubmit="return confirm('You have sent a message to us. We would reply you as soon as possible.')")
         label(for='fname') First Name
-        input(type='text' name='firstname' placeholder='Your name..')
+        input(type='text' name='firstname' placeholder='Your name..' required)
         label(for='lname') Last Name
-        input(type='text' name='lastname' placeholder='Your last name..')
+        input(type='text' name='lastname' placeholder='Your last name..' required)
         label(for='country') Country
         select#country(name='country')
           option(value='taiwan') Taiwan
@@ -30,6 +30,6 @@
           option(value='china')  China
           option(value='thailand') Thailand
         label#subjectLabel(for='subject') Subject
-        textarea(name='subject' placeholder='Write something..' style='height:110px')
+        textarea(name='subject' placeholder='Write something..' style='height:110px' required)
         input(type='submit' value='Submit')
     .col-md-1
