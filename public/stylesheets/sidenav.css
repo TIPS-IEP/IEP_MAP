@@ -27,6 +27,9 @@
 #sidenavOptionList{
   margin-top: 35px;
 }
+.sidenavOptionLink:hover{
+  text-decoration: none;
+}
 
 /* The navigation menu links */
 .sideOption {
@@ -42,15 +45,6 @@
 /* When you mouse over the navigation links, change their color */
 .sideOption:hover {
   color: rgb(255, 106, 106);
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
 }
 
 
