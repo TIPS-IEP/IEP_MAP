@@ -12,7 +12,7 @@ var emailSender = nodemailer.createTransport({
 });
 
 exports.sendForm = function(req, res, next) {
-  res.redirect('/newContact');
+  res.redirect('/');
   sendEmailToAdmin(req.body);
 }
 
