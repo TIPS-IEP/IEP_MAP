@@ -34,7 +34,7 @@ exports.editBlog = async function(req, res, next) {
   }else{
     var firstName = null
   }
-  var blog = await Blog.find({blogId: req.params.blog_id, email: req.user.email }).lean();
+  var blog = await Blog.find({_id: req.params.blog_id, email: req.user.email }).lean();
   if(!blog){
     res.render('error')
   }else{
@@ -48,7 +48,7 @@ exports.editBlog = async function(req, res, next) {
 
 exports.saveBlog = async function(req, res, next) {
   req.body.email = req.user.email;
-  await Blog.deleteOne({blogId: req.params.blog_id}, function(err, obj) {
+  await Blog.deleteOne({_id: req.params.blog_id}, function(err, obj) {
     if (err) throw err;
     console.log("delete blog " + req.params.blog_id + " from blog");
   });
@@ -74,7 +74,7 @@ exports.showWriteBlog = function(req, res, next) {
 }
 
 exports.deleteBlog = async function(req, res, next) {
-  await Blog.deleteOne({blogId: req.params.blog_id}, function(err, obj) {
+  await Blog.deleteOne({_id: req.params.blog_id}, function(err, obj) {
     if (err) throw err;
     console.log("delete blog " + req.params.blog_id + " from blog");
   });
@@ -82,7 +82,7 @@ exports.deleteBlog = async function(req, res, next) {
 }
 
 exports.authDelete = async function(req, res, next) {
-  await Blog.deleteOne({blogId: req.params.blog_id}, function(err, obj) {
+  await Blog.deleteOne({_id: req.params.blog_id}, function(err, obj) {
     if (err) throw err;
     console.log("delete blog " + req.params.blog_id + " from blog");
   });
@@ -90,9 +90,9 @@ exports.authDelete = async function(req, res, next) {
 }
 
 exports.verifyBlog = async function(req, res, next) {
-  const blog = await Blog.find({ blogId: req.params.blog_id }).lean();
+  const blog = await Blog.find({ _id: req.params.blog_id }).lean();
   blog[0].status = "verified"
-  await Blog.deleteOne({blogId: req.params.blog_id}, function(err, obj) {
+  await Blog.deleteOne({_id: req.params.blog_id}, function(err, obj) {
     if (err) throw err;
     console.log("delete blog " + req.params.blog_id + " from blog");
   });
@@ -104,9 +104,9 @@ exports.verifyBlog = async function(req, res, next) {
 }
 
 exports.unverifyBlog = async function(req, res, next) {
-  const blog = await Blog.find({ blogId: req.params.blog_id }).lean();
+  const blog = await Blog.find({ _id: req.params.blog_id }).lean();
   blog[0].status = "not verified"
-  await Blog.deleteOne({blogId: req.params.blog_id}, function(err, obj) {
+  await Blog.deleteOne({_id: req.params.blog_id}, function(err, obj) {
     if (err) throw err;
     console.log("delete blog " + req.params.blog_id + " from blog");
   });
