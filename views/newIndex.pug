@@ -28,6 +28,7 @@ html(lang='en')
     link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
 
     title Wego IEP Alumni 
+    //-favicon
     link(rel="icon" type="image/png" href="/images/icons/favicon.png")
 
 
@@ -38,18 +39,23 @@ html(lang='en')
       #spanLogoContainer.container
         #spanLogo.row
           .col-md-3#navContainer
-            #nav-div
+            .nav-div
               img#nav-logo(src='/images/hero/nav.png' alt='LOGO' onclick='closeNav()' onmousedown = "mouseDown()" onmouseup = "mouseUp()")     
           .col-md-9#logoDiv
             a#logoLink(href='/')
               img#logo-image(src='/images/TIPS-logo4/cover.png' alt='LOGO')
       hr#sidenavSeperateLine
       #sidenavOptionList
-        .sideOption.pcsidenav(href='#') Hi
-        .sideOption.pcsidenav(href='#vision') Vision
-        .sideOption.pcsidenav(href='#mission') Mission
-        .sideOption.pcsidenav(href='#about') Features
-        .sideOption.pcsidenav(href='#contactus') Contact
+        a.sidenavOptionLink(href='#')
+          .sideOption.pcsidenav Hi
+        a.sidenavOptionLink(href='#vision')
+          .sideOption.pcsidenav Vision
+        a.sidenavOptionLink(href="#mission") 
+          .sideOption.pcsidenav Mission
+        a.sidenavOptionLink(href='#about')
+          .sideOption.pcsidenav Features
+        a.sidenavOptionLink(href='#contactus')
+          .sideOption.pcsidenav Contact
         include common/mbsidenav
     script(src="javascripts/sidenav.js")
     #overlay

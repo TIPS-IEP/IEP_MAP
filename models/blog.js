@@ -21,8 +21,8 @@ const BlogSchema = new mongoose.Schema({
     //     ref: "User"
     // },
     blogId: {
-        // allowNull: false,
-        // primaryKey: true,
+        allowNull: false,
+        primaryKey: true,
         type: String,
         default: MUUID.v4().toString(),
     },

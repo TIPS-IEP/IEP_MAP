@@ -53,7 +53,7 @@ async function initMap(){
     center: {lat: 42, lng: -96.65625}
   });
   importDataToList();
-  const inputBox = searchWrapper.querySelector("input");
+  const inputBox = document.getElementById("input");
   
   for (var k = 0; k < universitiesLength; k++) {
     const marker = new google.maps.Marker({
@@ -154,7 +154,6 @@ window.onload = function() {
     var containerHeight = 1050;
     document.getElementById("bodyContainer").style.height = containerHeight+"px";
   }
-  document.getElementById("z-index").style.display = "none";
   if(!window.location.hash) {
     window.location = window.location + '#loaded';
     window.location.reload();
@@ -165,5 +164,5 @@ window.onload = function() {
     if(!window.location.hash) {
       refresh();
     }
-  }  
+  }
 }
