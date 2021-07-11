@@ -106,7 +106,7 @@
   justify-items: right;
   padding: 0px !important;
 }
-#nav-div{
+.nav-div{
   margin-left: 5px !important;
   display:flex;
   align-content: center;
