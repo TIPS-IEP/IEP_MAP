@@ -6,7 +6,7 @@ function scrollFunction() {
     document.getElementById("sidenavSeperateLine").style.marginTop = "8px";
     document.getElementById("navbar").style.padding = "7px 10px";
     document.getElementById("navbar-right").style.fontSize = "25px";
-    document.getElementById("navbar").style.opacity = "85%";
+    document.getElementById("navbar").style.opacity = "100%";
   } else {
     document.getElementById("mySidenav").style.padding = "20px 10px";
     document.getElementById("sidenavSeperateLine").style.marginTop = "20px";
@@ -15,6 +15,27 @@ function scrollFunction() {
     document.getElementById("navbar").style.opacity = "100%";
   }
 }
+
+// window.addEventListener('scroll', function () {
+//   if (window.pageYOffset > 40) {
+//     // document.getElementById("navbar").classList.add('bg-light', 'shadow');
+//     document.getElementById("mySidenav").style.padding = "7px 10px";
+//     document.getElementById("sidenavSeperateLine").style.marginTop = "8px";
+//     document.getElementById("navbar").style.background = "rgb(234, 240, 242)";
+//     document.getElementById("navbar").style.padding = "7px 10px";
+//     document.getElementById("navbar-right").style.fontSize = "25px";
+//     document.getElementById("navbar").style.opacity = "100%";
+//   } 
+//   else {
+//     // document.getElementById("navbar").classList.remove('bg-light', 'shadow');
+//     document.getElementById("mySidenav").style.padding = "7px 10px";
+//     document.getElementById("sidenavSeperateLine").style.marginTop = "8px";
+//     document.getElementById("navbar").style.background = "none";
+//     document.getElementById("navbar").style.padding = "20px 10px";
+//     document.getElementById("navbar-right").style.fontSize = "35px";
+//     document.getElementById("navbar").style.opacity = "100%";
+//   }
+// });
 
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
