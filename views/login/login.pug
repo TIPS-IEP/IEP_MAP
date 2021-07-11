@@ -2,8 +2,8 @@ doctype html
 html(lang='en')
   head
     //- css
-    link(rel="stylesheet" href="stylesheets/index.css")
-    link(rel="stylesheet" href="stylesheets/login.css")
+    link(rel="stylesheet" href="stylesheets/newIndex.css")
+    link(rel="stylesheet" href="stylesheets/newLogin.css")
     link(rel="stylesheet" href="stylesheets/nav.css")
     link(rel="stylesheet" href="stylesheets/footer.css")
 
@@ -31,38 +31,50 @@ html(lang='en')
     
   body
     include ../common/nav
-    #mySidenav.sidenav
-      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
-      include ../common/mbsidenav
-
-    .card
-      .cardbg
-        img(src="/images/login/tran.png").card-img-top(alt="")
-      .card-body
-        h5.card-title IEP Alumni
-        .container
-          .row
-            .col-md-2
-            .col-md-8
-              .box
-                .input-container
-                  input(type="text" required="" disabled)
-                  label Username
-                .input-container
-                  input(type="password" required="" disabled)
-                  label Password
-                p#warn we currently do not offer username login
-                button.btn(type="button") Log In
-                .section
-                  a(href="/auth/google")
-                    button.btn#google(type="button") Log In With Google
-        
-
-//- #username.feild(type="input" placeholder="Username")
-        //- label.label(for="name") Name
-        //- p.card-text HEllo
-        //- a(href="#").btn.btn-primary Go somewhere
-        //- .section
-        //-   a.btn.red.darken-1(href="/auth/google")
-        //-     i.fab.fa-google.left Log In With Google
-
+    #overlay
+    .hero-image1.w-100.vh-100.d-flex.justify-content-center.align-items-center
+      .container
+        .row
+          .col-md-3 
+          .col-md-6 
+            .card.loginCard(style="width: 100 %")
+              .card-body
+                .car-title Google Login
+                .container
+                  .row
+                    .col-md-2
+                    .col-md-8
+                      .box
+                        .input-container
+                          input(type="text" required="" disabled)
+                          label Username
+                        .input-container
+                          input(type="password" required="" disabled)
+                          label Password
+                        p#warn we currently do not offer username login
+                        .section
+                          a(href="/auth/google")
+                            button.btn#google(type="button") Log In With Google
+          .col-md-3 
+    //- .card
+    //-   .cardbg
+    //-     img(src="/images/login/tran.png").card-img-top(alt="")
+    //-   .card-body
+    //-     h5.card-title IEP Alumni
+    //-     .container
+    //-       .row
+    //-         .col-md-2
+    //-         .col-md-8
+    //-           .box
+    //-             .input-container
+    //-               input(type="text" required="" disabled)
+    //-               label Username
+    //-             .input-container
+    //-               input(type="password" required="" disabled)
+    //-               label Password
+    //-             p#warn we currently do not offer username login
+    //-             button.btn(type="button") Log In
+    //-             .section
+    //-               a(href="/auth/google")
+    //-                 button.btn#google(type="button") Log In With Google
+      
