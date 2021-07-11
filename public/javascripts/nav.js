@@ -23,7 +23,7 @@ window.addEventListener('scroll', function () {
     document.getElementById("navbar").style.background = "rgb(234, 240, 242)";
     document.getElementById("navbar").style.padding = "7px 10px";
     document.getElementById("navbar-right").style.fontSize = "25px";
-    document.getElementById("navbar").style.opacity = "85%";
+    document.getElementById("navbar").style.opacity = "100%";
   } 
   else {
     // document.getElementById("navbar").classList.remove('bg-light', 'shadow');
@@ -31,7 +31,6 @@ window.addEventListener('scroll', function () {
     document.getElementById("navbar").style.padding = "20px 10px";
     document.getElementById("navbar-right").style.fontSize = "35px";
     document.getElementById("navbar").style.opacity = "100%";
-    document.getElementById("navbar").style.background = "none";
   }
 });
 
