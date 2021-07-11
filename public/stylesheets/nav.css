@@ -15,7 +15,7 @@
 /* Style the navbar links */
 .navOption {
   float: left;
-  color: black;
+  color: rgb(41, 41, 41); 
   text-align: center;
   text-decoration: none;
   padding: 15px;
