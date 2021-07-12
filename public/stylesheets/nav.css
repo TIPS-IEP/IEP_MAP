@@ -3,7 +3,10 @@
   overflow: hidden;
   box-shadow: 0 0.1rem 0.2rem rgb(83 88 93 / 30%) !important;
   padding: 20px 10px; /* Large padding which will shrink on scroll (using JS) */
-  transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+  /* transition: 0.4s;  */
+  /* transition: opacity 4s ease-in; */
+  transition-property: padding;
+  transition-duration: 0.4s;
   position: fixed; /* Sticky/fixed navbar */
   width: 100%;
   top: 0; /* At the top */
