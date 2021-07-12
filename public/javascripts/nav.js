@@ -28,7 +28,6 @@ window.addEventListener('scroll', function () {
     document.getElementById("navbar").style.padding = "20px 10px";
     document.getElementById("navbar-right").style.fontSize = "35px";
     document.getElementById("navbar").style.opacity = "100%";
-    // document.getElementById("navbar").style.transitionDuration = "0.4s";
     if(document.getElementById("sidenavSeperateLine")){
       document.getElementById("mySidenav").style.padding = "20px 10px";
       document.getElementById("sidenavSeperateLine").style.marginTop = "20px";
