@@ -12,7 +12,6 @@ $(document).ready(function() {
 
 window.addEventListener('scroll', function () {
   if (window.pageYOffset > 40) {
-    // document.getElementById("navbar").classList.add('bg-light', 'shadow');
     document.getElementById("navbar").style.background = "rgb(29, 29, 29)";
     document.getElementById("navbar").style.padding = "7px 10px";
     document.getElementById("navbar-right").style.fontSize = "25px";
@@ -23,8 +22,7 @@ window.addEventListener('scroll', function () {
     }
   } 
   else {
-    // document.getElementById("navbar").classList.remove('bg-light', 'shadow');
-    // document.getElementById("navbar").style.background = "none";
+    document.getElementById("navbar").style.background = "none";
     document.getElementById("navbar").style.padding = "20px 10px";
     document.getElementById("navbar-right").style.fontSize = "35px";
     document.getElementById("navbar").style.opacity = "100%";
@@ -35,10 +33,8 @@ window.addEventListener('scroll', function () {
   }
 });
 
-/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
   if (screen.width < 600) {
-  /* Open the sidenav */
     document.getElementById("mySidenav").style.height = "100vh";
     document.getElementById("mySidenav").style.paddingTop = "20vh";
     document.getElementById("mySidenav").style.width = "100vw";
@@ -57,7 +53,6 @@ function openNav() {
   }
 }
 
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 function closeNav() {
   if (screen.width < 600) {
     document.getElementById("mySidenav").style.height = "0";
@@ -79,10 +74,6 @@ function closeNav() {
   }
 }
 
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-
-// left: 37, up: 38, right: 39, down: 40,
-// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
 function preventDefault(e) {
@@ -96,7 +87,6 @@ function preventDefaultForScrollKeys(e) {
   }
 }
 
-// modern Chrome requires { passive: false } when adding event
 var supportsPassive = false;
 try {
   window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
