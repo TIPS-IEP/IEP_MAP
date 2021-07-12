@@ -155,7 +155,7 @@ input[type=submit]:hover {
 } */
 
 body {
-  background: rgb(234, 240, 242)!important;
+  background: rgb(255, 255, 255)!important;
 }
 .content {
   width: auto;
@@ -180,10 +180,11 @@ body, html {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   /* background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.486) 68%, rgba(0, 0, 0, 0.555) 75%, rgba(0, 0, 0, 0.705) 85%, rgb(0, 0, 0) 100%), url("/images/hero/cover.jpg"); */
   background-image: url("/images/hero/cover1.jpg");
+  opacity: 0;
   /* Set a specific height */
   height: 150%;
   background-size: cover;
-  /* Position and center the image to scale nicely on all screens */ 
+  transition: 0.7s;
 }
 
 
