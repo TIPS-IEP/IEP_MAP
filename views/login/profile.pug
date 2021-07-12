@@ -34,22 +34,16 @@ html(lang='en')
 
   body#main
     include ../common/nav
-    #mySidenav.sidenav
-      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
-      a.pcsidenav(href='#') Home 
-      a.pcsidenav(href='#vision') Vision
-      a.pcsidenav(href='#mission') Mission
-      a.pcsidenav(href='#about') Features
-      a.pcsidenav(href='#contactus') Contact
-      include ../common/mbsidenav
     script.
         var user = "#{data}";
         var data = user.split(/\,+(?!\ )/);
         var status = "#{status}";
-    .row
+    #overlay
+    .hero-image1.w-100.vh-100.d-flex.justify-content-center.align-items-center
+      .row
         .col-md-2
         .col-md-2
-            .card#profileImageContainer(style="margin-top: 150px; width: 100%")
+            .card#profileImageContainer(style="margin-top: 100px; width: 100%")
                 .bg
                     img.card-img-top(src="/images/login/user.jpeg")
                 .card-body
@@ -62,7 +56,7 @@ html(lang='en')
                     .card-title
                         a.btn.btn-primary.profileButton(href="/dashboard") Dashboard
         .col-md-6
-            .card(style="margin-top: 150px;")#storyboard
+            .card(style="margin-top: 100px;")#storyboard
                 .card-body
                     .card-title#profileTitle Profile Page
                     .card.mini
@@ -90,7 +84,6 @@ html(lang='en')
                         .card-body.miniCard
                             .card-text 🏫&nbsp University: #{data[7]}
                     
-                    
                     if status
                         .card-text#status(style="color: green") Status: Authorized (We have authorized your account. You are one of us)
                     else
@@ -103,7 +96,6 @@ html(lang='en')
                     .card-title#phoneBlog
                         a.btn.btn-primary.profileButton(href="/dashboard") Blog Post Dashboard
         .col-md-2
-    include ../common/footer
     //- script.
     //-     var image_url = "#{picture}";
     //-     const doc = document.getElementById("image");
