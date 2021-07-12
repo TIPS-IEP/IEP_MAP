@@ -15,7 +15,7 @@ window.addEventListener('scroll', function () {
     document.getElementById("navbar").style.background = "rgb(29, 29, 29)";
     document.getElementById("navbar").style.padding = "7px 10px";
     document.getElementById("navbar-right").style.fontSize = "25px";
-    document.getElementById("navbar").style.opacity = "100%";
+    document.getElementById("navbar").style.opacity = "80%";
     if(document.getElementById("sidenavSeperateLine")){
       document.getElementById("mySidenav").style.padding = "7px 10px";
       document.getElementById("sidenavSeperateLine").style.marginTop = "8px";
