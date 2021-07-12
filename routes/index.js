@@ -37,7 +37,6 @@ router.post('/confirm/:email', ensureAdmin, usersController.confirmUnAuthUser)
 router.post('/alumiRemove', ensureAdmin, usersController.alumiRemove)
 
 router.get('/login', ensureGuest, loginoutController.showLogin);
-router.get('/newlogin', ensureGuest, loginoutController.showNewLogin);
 
 
 router.get('/logout', loginoutController.logout)
