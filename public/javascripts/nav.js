@@ -17,7 +17,10 @@ window.addEventListener('scroll', function () {
     document.getElementById("navbar").style.background = "rgb(29, 29, 29)";
     document.getElementById("navbar").style.padding = "7px 10px";
     document.getElementById("navbar-right").style.fontSize = "25px";
-    document.getElementById("navbar").style.opacity = "80%";
+    document.getElementById("navbar").style.opacity = "85%";
+    for (let i = 0; i < 6; i++) {
+      document.getElementsByClassName("navOption")[i].setAttribute("style", "color: rgb(255, 255, 255)!important;");
+    }    
     if(document.getElementById("sidenavSeperateLine")){
       document.getElementById("mySidenav").style.padding = "7px 10px";
       document.getElementById("sidenavSeperateLine").style.marginTop = "8px";
@@ -26,6 +29,12 @@ window.addEventListener('scroll', function () {
   else {
     if(path == "/"){
       document.getElementById("navbar").style.background = "none";
+      // for (let i = 0; i < 6; i++) {
+      //   document.getElementsByClassName("navOption")[i].style.color = "rgb(0, 0, 0)";
+      // }
+      for (let i = 0; i < 6; i++) {
+        document.getElementsByClassName("navOption")[i].setAttribute("style", "color: rgb(0, 0, 0)!important;");
+      }
     }
     document.getElementById("navbar").style.padding = "20px 10px";
     document.getElementById("navbar-right").style.fontSize = "35px";

@@ -720,3 +720,6 @@ header span{
   font-size: 16px;
 }
 
+.navOption {
+  color: rgb(0, 0, 0)!important; 
+}
