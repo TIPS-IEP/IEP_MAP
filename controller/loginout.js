@@ -4,10 +4,6 @@ exports.showLogin = function(req, res, next) {
     res.render('login/login');
 }
 
-exports.showNewLogin = function(req, res, next) {
-  res.render('login/newLogin');
-}
-
 exports.logout = function(req, res) {
     req.logout();
     console.log("logged out");

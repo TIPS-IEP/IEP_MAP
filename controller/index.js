@@ -32,7 +32,7 @@ exports.showAbout = function(req, res) {
     }else{
       var firstName = null
     }
-    res.render('about', {
+    res.render('about/about', {
       loggedin: req.isAuthenticated(),
       name: firstName,
     });
