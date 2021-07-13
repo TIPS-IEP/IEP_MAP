@@ -18,9 +18,15 @@ window.addEventListener('scroll', function () {
     document.getElementById("navbar").style.padding = "7px 10px";
     document.getElementById("navbar-right").style.fontSize = "25px";
     document.getElementById("navbar").style.opacity = "85%";
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < $('.navOption').length; i++) {
       document.getElementsByClassName("navOption")[i].setAttribute("style", "color: rgb(255, 255, 255)!important;");
-    }    
+    } 
+    for (let i = 0; i < $('.logo-image').length; i++) {
+      document.getElementsByClassName("logo-image")[i].setAttribute("style", "content: url('/images/TIPS-logo6/cover.png')!important;");
+    }
+    for (let i = 0; i < $('.nav-logo').length; i++) {
+      document.getElementsByClassName("nav-logo")[i].setAttribute("style", "content: url('/images/hero/nav-white.png')!important;");
+    }
     if(document.getElementById("sidenavSeperateLine")){
       document.getElementById("mySidenav").style.padding = "7px 10px";
       document.getElementById("sidenavSeperateLine").style.marginTop = "8px";
@@ -29,11 +35,14 @@ window.addEventListener('scroll', function () {
   else {
     if(path == "/"){
       document.getElementById("navbar").style.background = "none";
-      // for (let i = 0; i < 6; i++) {
-      //   document.getElementsByClassName("navOption")[i].style.color = "rgb(0, 0, 0)";
-      // }
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < $('.navOption').length; i++) {
         document.getElementsByClassName("navOption")[i].setAttribute("style", "color: rgb(0, 0, 0)!important;");
+      }
+      for (let i = 0; i < $('.logo-image').length; i++) {
+        document.getElementsByClassName("logo-image")[i].setAttribute("style", "content: url('/images/TIPS-logo7/cover.png')!important;");
+      }
+      for (let i = 0; i < $('.nav-logo').length; i++) {
+        document.getElementsByClassName("nav-logo")[i].setAttribute("style", "content: url('/images/hero/nav.png')!important;");
       }
     }
     document.getElementById("navbar").style.padding = "20px 10px";
@@ -64,6 +73,8 @@ function openNav() {
       document.getElementById("mySidenav").style.left = "0px";
       disableScroll();
       document.getElementById("overlay").style.display = "block";
+      document.getElementsByClassName("logo-image")[1].setAttribute("style", "content: url('/images/TIPS-logo4/cover.png')!important;");
+      document.getElementsByClassName("nav-logo")[1].setAttribute("style", "content: url('/images/hero/nav.png')!important;");
     }
   }
 }

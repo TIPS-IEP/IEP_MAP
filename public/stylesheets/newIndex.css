@@ -724,3 +724,18 @@ header span{
 .navOption {
   color: rgb(0, 0, 0)!important; 
 }
+
+.logo-image {
+  content: url('/images/TIPS-logo7/cover.png');
+}
+/* #logo-image:hover {
+  content: url('/images/TIPS-logo6/cover.png');
+} */
+
+.nav-logo {
+  content: url('/images/hero/nav.png')!important;
+}
+/* 
+#nav-logo:hover{
+  content: url('/images/hero/nav-white.png');
+} */
