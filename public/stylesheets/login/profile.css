@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 body {
-    background-color: rgb(234, 240, 242) !important;
+    background-color: rgb(255, 255, 255) !important;
 }
 
 .bg {
     width: 100%;
-    background-color: #ddd;
+    background-color: rgb(255, 255, 255)
 }
 
 .row {

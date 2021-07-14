@@ -3,7 +3,7 @@ html(lang='en')
 
   head
     //- css
-    link(rel="stylesheet" href="stylesheets/index.css")
+    //- link(rel="stylesheet" href="stylesheets/index.css")
     link(rel="stylesheet" href="stylesheets/login/profile.css")
     link(rel="stylesheet" href="stylesheets/nav.css")
     link(rel="stylesheet" href="stylesheets/footer.css")
@@ -38,67 +38,66 @@ html(lang='en')
         var user = "#{data}";
         var data = user.split(/\,+(?!\ )/);
         var status = "#{status}";
-    #overlay
-    .hero-image1.w-100.vh-100.d-flex.justify-content-center.align-items-center
-      .row
-        .col-md-2
-        .col-md-2
-            .card#profileImageContainer(style="margin-top: 100px; width: 100%")
-                .bg
-                    img.card-img-top(src="/images/login/user.jpeg")
-                .card-body
-                    h4 Hi, #{name}
-                    .card-title
-                        a.btn.btn-primary.profileButton(href="/logout") Logout
-            .card#blogContainer(style="margin-top: 20px; width: 100%")
-                .card-body
-                    h4 Blog Posts
-                    .card-title
-                        a.btn.btn-primary.profileButton(href="/dashboard") Dashboard
-        .col-md-6
-            .card(style="margin-top: 100px;")#storyboard
-                .card-body
-                    .card-title#profileTitle Profile Page
-                    .card.mini
-                        .card-body.miniCard
-                            .card-text 👤&nbsp English Name: #{data[0]}
-                    .card.mini
-                        .card-body.miniCard
-                            .card-text 😛&nbsp Last Name: #{data[1]}
-                    .card.mini
-                        .card-body.miniCard
-                            .card-text 😙&nbsp First Name: #{data[2]}
-                    .card.mini
-                        .card-body.miniCard
-                            .card-text 📫&nbsp Email: #{data[3]}
-                    .card.mini
-                        .card-body.miniCard
-                            .card-text 📷&nbsp Instagram Account: #{data[4]}
-                    .card.mini
-                        .card-body.miniCard
-                            .card-text 👩‍🎓&nbsp Graduation Year: #{data[5]}
-                    .card.mini
-                        .card-body.miniCard
-                            .card-text 📚&nbsp Major: #{data[6]}
-                    .card.mini
-                        .card-body.miniCard
-                            .card-text 🏫&nbsp University: #{data[7]}
-                    
-                    if status
-                        .card-text#status(style="color: green") Status: Authorized (We have authorized your account. You are one of us)
-                    else
-                        .card-text#status(style="color: red") Status: Unauthorized: (we haven't authorized your account yet.)
-                    
-                    .card-title#update
-                        a.btn.btn-primary.profileButton(href="/add") Edit Profile
-                    .card-title#phoneLogOut
-                        a.btn.btn-primary.profileButton(href="/logout") log out
-                    .card-title#phoneBlog
-                        a.btn.btn-primary.profileButton(href="/dashboard") Blog Post Dashboard
-        .col-md-2
-    //- script.
-    //-     var image_url = "#{picture}";
-    //-     const doc = document.getElementById("image");
-    //-     doc.style.content = "url(#{picture})";
-    
+
+    .row(style="margin-top: 17vh")
+      .col-md-2
+      .col-md-2
+          .card#profileImageContainer(style="width: 100%; height: 60%")
+              .bg
+                  img.card-img-top(src="/images/login/user.jpeg")
+              .card-body
+                  h4 Hi, #{name}
+                  .card-title
+                      a.btn.btn-primary.profileButton(href="/logout") Logout
+          .card#blogContainer(style="margin-top: 5%; width: 100%; height: 20%")
+              .card-body
+                  h4 Blog Posts
+                  .card-title
+                      a.btn.btn-primary.profileButton(href="/dashboard") Dashboard
+      .col-md-6
+          .card#storyboard(style="height: 100%")
+              .card-body
+                  .card-title#profileTitle Profile Page
+                  .card.mini
+                      .card-body.miniCard
+                          .card-text 👤&nbsp English Name: #{data[0]}
+                  .card.mini
+                      .card-body.miniCard
+                          .card-text 😛&nbsp Last Name: #{data[1]}
+                  .card.mini
+                      .card-body.miniCard
+                          .card-text 😙&nbsp First Name: #{data[2]}
+                  .card.mini
+                      .card-body.miniCard
+                          .card-text 📫&nbsp Email: #{data[3]}
+                  .card.mini
+                      .card-body.miniCard
+                          .card-text 📷&nbsp Instagram Account: #{data[4]}
+                  .card.mini
+                      .card-body.miniCard
+                          .card-text 👩‍🎓&nbsp Graduation Year: #{data[5]}
+                  .card.mini
+                      .card-body.miniCard
+                          .card-text 📚&nbsp Major: #{data[6]}
+                  .card.mini
+                      .card-body.miniCard
+                          .card-text 🏫&nbsp University: #{data[7]}
+                  
+                  if status
+                      .card-text#status(style="color: green") Status: Authorized (We have authorized your account. You are one of us)
+                  else
+                      .card-text#status(style="color: red") Status: Unauthorized: (we haven't authorized your account yet.)
+                  
+                  .card-title#update
+                      a.btn.btn-primary.profileButton(href="/add") Edit Profile
+                  .card-title#phoneLogOut
+                      a.btn.btn-primary.profileButton(href="/logout") log out
+                  .card-title#phoneBlog
+                      a.btn.btn-primary.profileButton(href="/dashboard") Blog Post Dashboard
+      .col-md-2
+  //- script.
+  //-     var image_url = "#{picture}";
+  //-     const doc = document.getElementById("image");
+  //-     doc.style.content = "url(#{picture})";
+  
 

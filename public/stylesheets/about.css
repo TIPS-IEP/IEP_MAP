@@ -4,10 +4,6 @@ body {
     font-family: proxima-nova,Sans-serif;
 }
 
-#navbar {
-  background: rgb(29, 29, 29);
-}
-
 #eachLink {
   text-decoration: none !important;
   color: black !important;

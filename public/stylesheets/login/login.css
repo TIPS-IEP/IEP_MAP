@@ -11,10 +11,6 @@ body {
   animation-iteration-count: 1;
 }
 
-#navbar {
-  background: rgb(29, 29, 29);
-}
-
 .hero-image1 {
   /* background-image: url("/images/hero/cover.jpg"); */
   background-size: cover;
