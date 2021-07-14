@@ -123,7 +123,7 @@ body {
     #phoneLogOut {
         display: block;
     }
-
+    
     #storyboard {
         margin-left: 30px;
     }
@@ -131,4 +131,9 @@ body {
     #phoneBlog {
         display: block;
     }
+
+    #profileCol{
+        display: none;
+    }
 }
+
