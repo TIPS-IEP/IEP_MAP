@@ -41,7 +41,7 @@ html(lang='en')
 
     .row(style="margin-top: 17vh")
       .col-md-2
-      .col-md-2
+      .col-md-2#profileCol
           .card#profileImageContainer(style="width: 100%; height: 60%")
               .bg
                   img.card-img-top(src="/images/login/user.jpeg")
@@ -54,7 +54,7 @@ html(lang='en')
                   h4 Blog Posts
                   .card-title
                       a.btn.btn-primary.profileButton(href="/dashboard") Dashboard
-      .col-md-6
+      .col-md-6#storyboardCol
           .card#storyboard(style="height: 100%")
               .card-body
                   .card-title#profileTitle Profile Page
@@ -95,6 +95,7 @@ html(lang='en')
                   .card-title#phoneBlog
                       a.btn.btn-primary.profileButton(href="/dashboard") Blog Post Dashboard
       .col-md-2
+  script(src="javascripts/login/profile.js")
   //- script.
   //-     var image_url = "#{picture}";
   //-     const doc = document.getElementById("image");
