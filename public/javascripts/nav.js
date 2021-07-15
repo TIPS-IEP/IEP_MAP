@@ -38,7 +38,7 @@ window.addEventListener('scroll', function () {
       }, false);
     }
     for (let i = 0; i < $('.logo-image').length; i++) {
-      logoImage[i].setAttribute("style", "content: url('/images/TIPS-logo6/cover.png')!important;");
+      logoImage[i].setAttribute("style", "content: url('/images/logos/TIPS-logo6/cover.png')!important;");
     }
     for (let i = 0; i < $('.nav-logo').length; i++) {
       navLogo[i].setAttribute("style", "content: url('/images/hero/nav-white.png')!important;");
@@ -66,7 +66,7 @@ window.addEventListener('scroll', function () {
         }, false);
       }
       for (let i = 0; i < $('.logo-image').length; i++) {
-        logoImage[i].setAttribute("style", "content: url('/images/TIPS-logo7/cover.png')!important;");
+        logoImage[i].setAttribute("style", "content: url('/images/logos/TIPS-logo7/cover.png')!important;");
       }
       for (let i = 0; i < $('.nav-logo').length; i++) {
         navLogo[i].setAttribute("style", "content: url('/images/hero/nav.png')!important;");
@@ -100,7 +100,7 @@ function openNav() {
       document.getElementById("mySidenav").style.left = "0px";
       disableScroll();
       document.getElementById("overlay").style.display = "block";
-      document.getElementsByClassName("logo-image")[1].setAttribute("style", "content: url('/images/TIPS-logo4/cover.png')!important;");
+      document.getElementsByClassName("logo-image")[1].setAttribute("style", "content: url('/images/logos/TIPS-logo4/cover.png')!important;");
       document.getElementsByClassName("nav-logo")[1].setAttribute("style", "content: url('/images/hero/nav.png')!important;");
     }
   }
