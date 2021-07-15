@@ -3,8 +3,7 @@ html(lang='en')
 
   head
     //- css
-    link(rel="stylesheet" href="stylesheets/index.css")
-    link(rel="stylesheet" href="stylesheets/profile.css")
+    link(rel="stylesheet" href="stylesheets/login/profile.css")
     link(rel="stylesheet" href="stylesheets/nav.css")
     link(rel="stylesheet" href="stylesheets/footer.css")
 
@@ -35,43 +34,35 @@ html(lang='en')
         var user = "#{data}"
         var data = user.split(/\,+(?!\ )/);
     .row
-        .col-md-2
-        .col-md-2
-            .card#profileImageContainer(style="margin-top: 200px; width: 200px")
-                .bg
-                    img.card-img-top(src="/images/login/user.jpeg")
-                .card-body
-                    .card-title#profileName Hi, &nbsp #{name}
-                    .card-title#profileName
-                        a.btn.btn-primary(href="/logout") Logout
+        .col-md-3
         .col-md-6
             .card(style="margin-top: 200px;")#storyboard
                 .card-body
-                    .card-title#main-title Profile Page
+                    .card-title#profileTitle Profile Page
                     form(action = "/add" method="POST")
                         .form-group
-                            label English Name:
+                            label 👤&nbsp English Name:
                             input.form-control(type="text" id="EnglishName" name="EnglishName" placeholder="Enter English Name" required, value = data[0])
                         .form-group
-                            label Last Name:
+                            label 😛&nbsp Last Name:
                             input.form-control(type="text" id="LastName" name="LastName" placeholder="Enter Last Name" required, value = data[1])
                         .form-group
-                            label First Name:
+                            label 😙&nbsp First Name:
                             input.form-control(type="text" id="FirstName" name="FirstName" aria-describedby="emailHelp" placeholder="Enter First Name" required, value = data[2])
                         .form-group
-                            label Instagram Account:
+                            label 📷&nbsp Instagram Account:
                             input.form-control(type="text" id="InstagramUsername" name="InstagramUsername" aria-describedby="emailHelp" placeholder="Enter Your Instagram Account Name" required, value = data[4])
                         .form-group
-                            label GraduationYear:
+                            label 👩‍🎓&nbsp Graduation Year:
                             input.form-control(type="text" id="GraduationYear" name="GraduationYear" aria-describedby="emailHelp" placeholder="Enter Your Graduation Year" required, value = data[5])
                         .form-group
-                            label Major:
+                            label 📚&nbsp Major:
                             input.form-control(type="text" id="Major" name="Major" aria-describedby="Major" placeholder="Enter Your Major" required, value = data[6])
                         .form-group
-                            label University:
+                            label 🏫&nbsp University:
                             input.form-control(type="text" id="University" name="University" aria-describedby="University" placeholder="Enter Your University" required, value = data[7])
                         input.btn.btn-primary(type="submit" Value="Save")
-        .col-md-2
+        .col-md-3
     script.
         var image_url = "#{picture}";
         const doc = document.getElementById("image");
