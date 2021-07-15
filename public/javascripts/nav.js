@@ -49,7 +49,7 @@ window.addEventListener('scroll', function () {
     }
     } 
   else {
-    if(path == "/"){
+    if(path == "/" ){
       document.getElementById("navbar").style.background = "none";
       for (let i = 0; i < $('.navOption').length; i++) {
         navOption[i].setAttribute("style", "color: rgb(0, 0, 0)!important;");
