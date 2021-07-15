@@ -1,1 +1,0 @@
-document.getElementsByClassName("coverHero")[0].style.backgroundImage = "url('/images/hero/cover1.jpg')";
