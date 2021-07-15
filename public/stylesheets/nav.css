@@ -27,12 +27,6 @@
   border-radius: 8px;
 }
 
-.navOption:hover{
-  /* background-color: rgb(234, 240, 242); */
-  color: rgb(255, 255, 255)!important; 
-  transition: 0.2s;
-  text-decoration: none !important;
-}
 
 #logoLink{
   height: inherit;

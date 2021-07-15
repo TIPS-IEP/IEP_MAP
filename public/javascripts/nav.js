@@ -12,6 +12,9 @@ $(document).ready(function() {
 
 window.addEventListener('scroll', function () {
   var path = window.location.pathname.toString();
+  let logoImage = document.getElementsByClassName("logo-image")
+  let navLogo = document.getElementsByClassName("nav-logo")
+  let navOption = document.getElementsByClassName("navOption")
   if (window.pageYOffset > 40) {
     // document.getElementById("navbar").classList.add('bg-light', 'shadow');
     document.getElementById("navbar").style.background = "rgb(29, 29, 29)";
@@ -19,30 +22,54 @@ window.addEventListener('scroll', function () {
     document.getElementById("navbar-right").style.fontSize = "25px";
     document.getElementById("navbar").style.opacity = "85%";
     for (let i = 0; i < $('.navOption').length; i++) {
-      document.getElementsByClassName("navOption")[i].setAttribute("style", "color: rgb(255, 255, 255)!important;");
+      navOption[i].setAttribute("style", "color: rgb(255, 255, 255)!important;");
+        // highlight the mouseover target
+        // navOption[i].setAttribute("style", "color: rgb(0, 0, 0)!important;");
+        // event.target.style.color = "black";
     } 
+    for (let i = 0; i < $('.navOption').length; i++) {
+      navOption[i].addEventListener("mouseover", function( event ) {
+        // highlight the mouseover target
+        navOption[i].setAttribute("style", "color: orange !important;");
+      }, false);
+      navOption[i].addEventListener("mouseout", function( event ) {
+        // highlight the mouseover target
+        navOption[i].setAttribute("style", "color: white !important;");
+      }, false);
+    }
     for (let i = 0; i < $('.logo-image').length; i++) {
-      document.getElementsByClassName("logo-image")[i].setAttribute("style", "content: url('/images/TIPS-logo6/cover.png')!important;");
+      logoImage[i].setAttribute("style", "content: url('/images/TIPS-logo6/cover.png')!important;");
     }
     for (let i = 0; i < $('.nav-logo').length; i++) {
-      document.getElementsByClassName("nav-logo")[i].setAttribute("style", "content: url('/images/hero/nav-white.png')!important;");
+      navLogo[i].setAttribute("style", "content: url('/images/hero/nav-white.png')!important;");
     }
     if(document.getElementById("sidenavSeperateLine")){
       document.getElementById("mySidenav").style.padding = "7px 10px";
       document.getElementById("sidenavSeperateLine").style.marginTop = "8px";
     }
-  } 
+    } 
   else {
     if(path == "/"){
       document.getElementById("navbar").style.background = "none";
       for (let i = 0; i < $('.navOption').length; i++) {
-        document.getElementsByClassName("navOption")[i].setAttribute("style", "color: rgb(0, 0, 0)!important;");
+        navOption[i].setAttribute("style", "color: rgb(0, 0, 0)!important;");
+          // highlight the mouseover target
+          // navOption[i].setAttribute("style", "color: rgb(255, 255, 255)!important;");
+          // event.target.style.color = "white";
+        navOption[i].addEventListener("mouseover", function( event ) {
+          // highlight the mouseover target
+          event.target.style.color = "white";
+        }, false);
+        navOption[i].addEventListener("mouseout", function( event ) {
+          // highlight the mouseover target
+          event.target.style.color = "";
+        }, false);
       }
       for (let i = 0; i < $('.logo-image').length; i++) {
-        document.getElementsByClassName("logo-image")[i].setAttribute("style", "content: url('/images/TIPS-logo7/cover.png')!important;");
+        logoImage[i].setAttribute("style", "content: url('/images/TIPS-logo7/cover.png')!important;");
       }
       for (let i = 0; i < $('.nav-logo').length; i++) {
-        document.getElementsByClassName("nav-logo")[i].setAttribute("style", "content: url('/images/hero/nav.png')!important;");
+        navLogo[i].setAttribute("style", "content: url('/images/hero/nav.png')!important;");
       }
     }
     document.getElementById("navbar").style.padding = "20px 10px";
