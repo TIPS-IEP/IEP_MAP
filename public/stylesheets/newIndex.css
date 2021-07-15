@@ -321,3 +321,14 @@ body {
 .nav-logo {
   content: url('/images/hero/nav.png')!important;
 }
+
+.navOption:hover{
+  color: rgb(255, 255, 255)!important; 
+  transition: 0.2s;
+  text-decoration: none !important;
+}
+
+/* 
+#nav-logo:hover{
+  content: url('/images/hero/nav-white.png');
+} */

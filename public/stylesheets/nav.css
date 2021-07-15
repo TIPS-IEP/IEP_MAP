@@ -22,11 +22,14 @@
   border-radius: 8px;
 }
 
+<<<<<<< HEAD
 .navOption:hover{
   color: rgb(255, 255, 255)!important; 
   transition: 0.2s;
   text-decoration: none !important;
 }
+=======
+>>>>>>> 8c2aaf2c158727d82320635501564ad3e89b2269
 
 #logoLink{
   height: inherit;
