@@ -22,7 +22,7 @@ window.addEventListener('scroll', function () {
       document.getElementsByClassName("navOption")[i].setAttribute("style", "color: rgb(255, 255, 255)!important;");
     } 
     for (let i = 0; i < $('.logo-image').length; i++) {
-      document.getElementsByClassName("logo-image")[i].setAttribute("style", "content: url('/images/TIPS-logo6/cover.png')!important;");
+      document.getElementsByClassName("logo-image")[i].setAttribute("style", "content: url('/images/logos/TIPS-logo6/cover.png')!important;");
     }
     for (let i = 0; i < $('.nav-logo').length; i++) {
       document.getElementsByClassName("nav-logo")[i].setAttribute("style", "content: url('/images/hero/nav-white.png')!important;");
@@ -39,7 +39,7 @@ window.addEventListener('scroll', function () {
         document.getElementsByClassName("navOption")[i].setAttribute("style", "color: rgb(0, 0, 0)!important;");
       }
       for (let i = 0; i < $('.logo-image').length; i++) {
-        document.getElementsByClassName("logo-image")[i].setAttribute("style", "content: url('/images/TIPS-logo7/cover.png')!important;");
+        document.getElementsByClassName("logo-image")[i].setAttribute("style", "content: url('/images/logos/TIPS-logo7/cover.png')!important;");
       }
       for (let i = 0; i < $('.nav-logo').length; i++) {
         document.getElementsByClassName("nav-logo")[i].setAttribute("style", "content: url('/images/hero/nav.png')!important;");
@@ -73,7 +73,7 @@ function openNav() {
       document.getElementById("mySidenav").style.left = "0px";
       disableScroll();
       document.getElementById("overlay").style.display = "block";
-      document.getElementsByClassName("logo-image")[1].setAttribute("style", "content: url('/images/TIPS-logo4/cover.png')!important;");
+      document.getElementsByClassName("logo-image")[1].setAttribute("style", "content: url('/images/logos/TIPS-logo4/cover.png')!important;");
       document.getElementsByClassName("nav-logo")[1].setAttribute("style", "content: url('/images/hero/nav.png')!important;");
     }
   }
