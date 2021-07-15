@@ -31,17 +31,6 @@ function createToggle(){
 }
 
 window.onload = function() {
-  createToggle()
+  createToggle();
 }
 
-
-
-// function extendToggle() {
-//   if(opened == false){
-//     document.getElementById("toggle").style.display = "block";
-//     opened = true;
-//   }else{
-//     document.getElementById("toggle").style.display = "none";
-//     opened = false;
-//   }
-// }
