@@ -36,7 +36,7 @@ html(lang='en')
     .row
         .col-md-3
         .col-md-6
-            .card(style="margin-top: 200px;")#storyboard
+            .card(style="margin-top: 17vh;")#storyboard
                 .card-body
                     .card-title#profileTitle Profile Page
                     form(action = "/add" method="POST")
@@ -61,7 +61,8 @@ html(lang='en')
                         .form-group
                             label 🏫&nbsp University:
                             input.form-control(type="text" id="University" name="University" aria-describedby="University" placeholder="Enter Your University" required, value = data[7])
-                        input.btn.btn-primary(type="submit" Value="Save")
+                        .card-title
+                          input.btn.btn-primary(type="submit" Value="Save" style="margin-left: auto;margin-right: auto;")
         .col-md-3
     script.
         var image_url = "#{picture}";
