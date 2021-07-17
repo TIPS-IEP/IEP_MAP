@@ -30,7 +30,7 @@ window.addEventListener('scroll', function () {
     for (let i = 0; i < $('.navOption').length; i++) {
       navOption[i].addEventListener("mouseover", function( event ) {
         // highlight the mouseover target
-        navOption[i].setAttribute("style", "color: orange !important;");
+        navOption[i].setAttribute("style", "color: rgb(255, 179, 37) !important;");
       }, false);
       navOption[i].addEventListener("mouseout", function( event ) {
         // highlight the mouseover target
