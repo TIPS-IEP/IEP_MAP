@@ -10,10 +10,12 @@ html(lang='en')
     link(rel="stylesheet" href="stylesheets/sidenav.css")
     link(rel="stylesheet" href="stylesheets/common/appleAnimation.css")
     link(rel="stylesheet" href="stylesheets/common/loadingDots.css")
+    link(rel="stylesheet" href="stylesheets/common/fadeIn.css")
 
     //- js
     script(src="javascripts/newIndex.js")
-    
+
+
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
     
@@ -78,8 +80,8 @@ html(lang='en')
     #vision
     .hero-image2
         .hero-text2
-          h1.big2 OUR VISION
-          h3.paragraph2.line-height IEP Alumni Association aims to build a bridge between the school, students, and alumni. Through these partnerships, we leverage the resources of the school and the experience of our alumni to elevate our students’ successes in school, university, and beyond.  
+          h1.big2.fadeInUpward OUR VISION
+          h3.paragraph2.line-height.fadeInUpward IEP Alumni Association aims to build a bridge between the school, students, and alumni. Through these partnerships, we leverage the resources of the school and the experience of our alumni to elevate our students’ successes in school, university, and beyond.  
     #mission
     .hero-image3
         .hero-text3
@@ -134,3 +136,5 @@ html(lang='en')
     #contactus
     include common/contactUs
     include common/footer
+    
+    script(src="javascripts/fadeIn.js")
