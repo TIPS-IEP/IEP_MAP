@@ -41,6 +41,7 @@ html(lang='en')
     
   body#main
     include ../common/nav
+    include ../common/cover
 
     #mySidenav.sidenav
       a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
@@ -59,7 +60,7 @@ html(lang='en')
           form#get-data-form(action="/blog" method='POST')
             .form-group
               label Title
-              input(type="text" class="form-control" id="blogTitle" name="blogTitle" placeholder="Enter the title")
+              input(type="text" class="form-control" id="blogTitle" name="blogTitle" placeholder="Enter the title" required)
             textarea.tinymce#content(name="content")
             input(type='submit' value='Save')
         .col-md-1

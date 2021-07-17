@@ -39,7 +39,8 @@ html(lang='en')
     link(rel="icon" type="image/png" href="/images/icons/favicon.png")     
   body#main
     include ../common/nav
-
+    include ../common/cover
+    
     #mySidenav.sidenav
       a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
       a.pcsidenav(href='#') Home 
@@ -54,10 +55,10 @@ html(lang='en')
         .col-md-10
           for ablog in blog
             h1 Edit Your Blog Post Here
-            form#get-data-form(action="/blog/" + ablog.blogId + "/save" method='POST')
+            form#get-data-form(action="/blog/" + ablog._id + "/save" method='POST')
               .form-group
                 label Title
-                input(type="text", class="form-control", id="blogTitle", name="blogTitle", placeholder="Enter the title ", value=ablog.blogTitle)
+                input(type="text", class="form-control", id="blogTitle", name="blogTitle", placeholder="Enter the title ", value=ablog.blogTitle, required)
               textarea.tinymce#content(name="content") #{ablog.content}
               input(type='submit' value='Save')
         .col-md-1
