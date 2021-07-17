@@ -159,13 +159,16 @@ var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewh
 
 
 function mouseDown() {
-  document.getElementsByClassName("nav-div")[0].style.backgroundColor = "#ddd";
+  // document.getElementsByClassName("nav-div")[0].style.backgroundColor = "white";
+  document.getElementsByClassName("nav-div")[0].setAttribute("style", "box-shadow: 0.1rem 0.15rem 0.3rem rgb(83 88 93 / 80%) !important;");
+
   if(document.getElementById("sidenavSeperateLine")){
     document.getElementsByClassName("nav-div")[1].style.backgroundColor = "#ddd";
   }
 }
 
 function mouseUp() {
+  document.getElementsByClassName("nav-div")[0].removeAttribute("style", "box-shadow;");
   document.getElementsByClassName("nav-div")[0].style.backgroundColor = "";
   if(document.getElementById("sidenavSeperateLine")){
     document.getElementsByClassName("nav-div")[1].style.backgroundColor = "";
