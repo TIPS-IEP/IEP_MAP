@@ -77,7 +77,7 @@ window.addEventListener('scroll', function () {
     document.getElementById("navbar").style.opacity = "100%";
     if(document.getElementById("sidenavSeperateLine")){
       document.getElementById("mySidenav").style.padding = "20px 10px";
-      document.getElementById("sidenavSeperateLine").style.marginTop = "20px";
+      document.getElementById("sidenavSeperateLine").style.marginTop = "22px";
     }  
   }
 });

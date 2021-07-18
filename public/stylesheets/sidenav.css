@@ -21,8 +21,14 @@
   padding: 20px 10px; 
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
+
+#mySidenav{
+  transition: 0.4s;
+}
+
 #sidenavSeperateLine{
-  margin-top: 21px;
+  margin-top: 22px;
+  transition: 0.4s;
 }
 #sidenavOptionList{
   margin-top: 35px;
