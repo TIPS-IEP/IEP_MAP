@@ -18,7 +18,9 @@ window.onload = function() {
     else{
       document.getElementsByClassName("loadingContainer")[0].style.display = "none";
       document.getElementsByClassName("hero-image1")[0].style.opacity = "1";
-      document.getElementsByClassName("animated-title")[0].setAttribute("style", "display:block;");
+      if(document.getElementsByClassName("hero-image1")[0].style.opacity == "1"){
+        document.getElementsByClassName("animated-title")[0].setAttribute("style", "display:block;");
+      }
     }
     
   }
