@@ -5,7 +5,11 @@ script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.m
 script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
 script(src="/javascripts/nav.js")
 //- link(rel="stylesheet" href="stylesheets/nav.css")
-    
+
+script.
+  var loggedin = #{loggedin}
+  var name = "#{name}"
+
 #navbar
   #spanLogoContainer.container
     #spanLogo.row
@@ -22,12 +26,17 @@ script(src="/javascripts/nav.js")
     a.navOption#hide5(href='/blog') Blog
     a.navOption#hide4(href='/wiki') Wiki
     a.navOption#hide1(href='/contact') Contact
-    a.navOption#hide2(href='/login') Login
+    if loggedin
+      .dropdown#hide2
+        a.dropbtn.navOption(href='/profile') Hi&nbsp; #{name}
+        .dropdown-content
+          #googleImageContainer
+            //img(src="/images/login/test.png")
+            img#googleImage(src = image)
+          a(href='/profile') profile
+          a(href='/logout') Logout
+          a(href='/dashbaord') Blog Posts
+    else
+      a.navOption#hide2(href='/login') Login
 
-script.
-  var loggedin = #{loggedin}
-  var name = "#{name}"
-  if(loggedin){
-    document.getElementById("hide2").innerHTML = "Hi&nbsp;" + name;
-    document.getElementById("hide2").href = "/profile";
-  }
+

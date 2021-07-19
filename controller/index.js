@@ -23,6 +23,7 @@ exports.newIndex = function(req, res, next) {
   res.render('newIndex', {
     loggedin: isAuthenticated,
     name: firstName,
+    image: req.user.image,
   });
 }
 
