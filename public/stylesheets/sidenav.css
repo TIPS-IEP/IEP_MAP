@@ -21,8 +21,14 @@
   padding: 20px 10px; 
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
+
+#mySidenav{
+  transition: 0.4s;
+}
+
 #sidenavSeperateLine{
-  margin-top: 21px;
+  margin-top: 22px;
+  transition: 0.4s;
 }
 #sidenavOptionList{
   margin-top: 35px;
@@ -33,18 +39,18 @@
 
 /* The navigation menu links */
 .sideOption {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 24px;
   text-decoration: none;
   font-size: 25px;
   color: #050505;
   display: block;
-  transition: 0.3s;
+  transition: 0.2s;
   font-family: 'Lato', sans-serif !important;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sideOption:hover {
-  color: rgb(255, 106, 106);
+  color: rgb(255, 179, 37);
 }
 
 
@@ -86,7 +92,7 @@
     color: #818181;
     display: block;
     line-height: 10vh;
-    transition: 0.3s;
+    transition: 0.2s;
   }
 
   .sidenav a:hover{

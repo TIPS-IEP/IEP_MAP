@@ -2,8 +2,8 @@
   .row
     .col-md-1
     .col-md-10
-      h1 CONTACT US
-      p Want to take part in our community of global talents? Feel free to reach out or connect with us on 
+      h1.fadeInUpward CONTACT US
+      p.fadeInUpward Want to take part in our community of global talents? Feel free to reach out or connect with us on 
         a(href='https://www.instagram.com/wego.iep/' target='_blank' rel='noopener') Instagram
         | , 
         a(href='https://www.facebook.com/groups/266271838471963' target='_blank' rel='noopener') Facebook
@@ -12,9 +12,9 @@
   .row#inputRow
     .col-md-1
     .col-md-7
-      img#contactPic(src='/images/hero/letter2.1.jpg')
+      img.fadeInLeftward#contactPic(src='/images/hero/letter2.1.jpg')
     .col-md-3
-      form#inputForm(action = "/contactUs" method="POST" onSubmit="return confirm('You have sent a message to us. We would reply you as soon as possible.')")
+      form#inputForm.fadeInUpward(action = "/contactUs" method="POST" onSubmit="return confirm('You have sent a message to us. We would reply you as soon as possible.')")
         label(for='fname') First Name
         input(type='text' name='firstname' placeholder='Your name..' required)
         label(for='lname') Last Name
@@ -33,3 +33,4 @@
         textarea(name='subject' placeholder='Write something..' style='height:110px' required)
         input(type='submit' value='Submit')
     .col-md-1
+

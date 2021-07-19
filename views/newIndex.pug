@@ -10,10 +10,12 @@ html(lang='en')
     link(rel="stylesheet" href="stylesheets/sidenav.css")
     link(rel="stylesheet" href="stylesheets/common/appleAnimation.css")
     link(rel="stylesheet" href="stylesheets/common/loadingDots.css")
+    link(rel="stylesheet" href="stylesheets/common/fadeIn.css")
 
     //- js
     script(src="javascripts/newIndex.js")
-    
+
+
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
     
@@ -42,22 +44,22 @@ html(lang='en')
         #spanLogo.row
           .col-md-3#navContainer
             .nav-div
-              img.nav-logo(src='/images/hero/nav.png' alt='LOGO' onclick='closeNav()' onmousedown = "mouseDown()" onmouseup = "mouseUp()")     
+              img.nav-logo2(src='/images/hero/nav.png' alt='LOGO' onclick='closeNav()' onmousedown = "mouseDown()" onmouseup = "mouseUp()")     
           .col-md-9#logoDiv
             a#logoLink(href='/')
-              img.logo-image(src='/images/logos/TIPS-logo4/cover.png' alt='LOGO')
+              img.logo-image2(src='/images/logos/TIPS-logo4/cover.png' alt='LOGO')
       hr#sidenavSeperateLine
       #sidenavOptionList
         a.sidenavOptionLink(href='#')
-          .sideOption.pcsidenav Hi
+          .sideOption.pcsidenav – Welcome!
         a.sidenavOptionLink(href='#vision')
-          .sideOption.pcsidenav Vision
+          .sideOption.pcsidenav – Our Vision 
         a.sidenavOptionLink(href="#mission") 
-          .sideOption.pcsidenav Mission
+          .sideOption.pcsidenav – Our Mission
         a.sidenavOptionLink(href='#about')
-          .sideOption.pcsidenav Features
+          .sideOption.pcsidenav – Our Features
         a.sidenavOptionLink(href='#contactus')
-          .sideOption.pcsidenav Contact
+          .sideOption.pcsidenav – Contacts Us
         include common/mbsidenav
     #overlay
     .container.loadingContainer
@@ -71,27 +73,27 @@ html(lang='en')
       .animated-title
         .text-top
           div
-            span mimicking
-            span apple's design
+            span Taiwanese
+            span Intl Programs
         .text-bottom
-          div for the win!
+          div & Students!
     #vision
     .hero-image2
         .hero-text2
-          h1.big2 OUR VISION
-          h3.paragraph2.line-height IEP Alumni Association aims to build a bridge between the school, students, and alumni. Through these partnerships, we leverage the resources of the school and the experience of our alumni to elevate our students’ successes in school, university, and beyond.  
+          h1.big2.fadeInUpward OUR VISION
+          h3.paragraph2.line-height.fadeInUpward IEP Alumni Association aims to build a bridge between the school, students, and alumni. Through these partnerships, we leverage the resources of the school and the experience of our alumni to elevate our students’ successes in school, university, and beyond.  
     #mission
     .hero-image3
         .hero-text3
-          h1.big2 OUR MISSION
-          h3.paragraph2.line-height IEP Alumni Association utilizes an advisory board, student infographics and distribution maps, experience sharing sessions, and annual events to promote and leverage the value of the International Education Program; assemble current students and alumni from various universities, industries, and countries; and create an international network platform.
+          h1.big2.fadeInUpward OUR MISSION
+          h3.paragraph2.line-height.fadeInUpward IEP Alumni Association utilizes an advisory board, student infographics and distribution maps, experience sharing sessions, and annual events to promote and leverage the value of the International Education Program; assemble current students and alumni from various universities, industries, and countries; and create an international network platform.
 
     #about  
     .about-section
-      h1.big2(style='text-align:center') OUR FEATURES 
+      h1.big2.fadeInUpward(style='text-align:center') OUR FEATURES 
       br
-      .row
-        .column-a
+      .row.overflowHidden
+        .column-a.fadeInUpward
           .container.customContainer.zoom
             a(href='/map')
               p 
@@ -101,7 +103,7 @@ html(lang='en')
               .innerContainer
                 h1.medium2(style='text-align:center') Student Profiles 
               p
-        .column-a
+        .column-a.fadeInUpward
           .container.customContainer.zoom
             a(href='/board' target='_blank' rel='noopener')
               p  
@@ -111,7 +113,7 @@ html(lang='en')
               .innerContainer
                 h1.medium2(style='text-align:center') Advisory Board 
               p
-        .column-a
+        .column-a.fadeInUpward
           .container.customContainer.zoom
             a(href='/share' target='_blank' rel='noopener')
               p 
@@ -121,7 +123,7 @@ html(lang='en')
               .innerContainer
                 h1.medium2(style='text-align:center') Experience Sharing 
               p 
-        .column-a
+        .column-a.fadeInUpward
           .container.customContainer.zoom
             a(href='/events' target='_blank' rel='noopener')
               p 
@@ -134,3 +136,5 @@ html(lang='en')
     #contactus
     include common/contactUs
     include common/footer
+    
+    script(src="javascripts/fadeIn.js")
