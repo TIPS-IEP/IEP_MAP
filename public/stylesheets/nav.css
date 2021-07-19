@@ -166,7 +166,7 @@
   display: block;
 }
 
-#profileImageContainer{
+#googleImageContainer{
   border-radius: 15px;
   height: 100px;
   width: 100px;
@@ -174,7 +174,7 @@
   align-items: center;
 }
 
-#profileImageContainer img{
+#googleImageContainer img{
   width: 100%;
   height: auto;
   margin-left: 50px;
