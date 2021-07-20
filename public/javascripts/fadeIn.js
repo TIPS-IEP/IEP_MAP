@@ -1,8 +1,8 @@
 const fadeInUpwarders = document.querySelectorAll(".fadeInUpward");
 const fadeInLeftwarders = document.querySelectorAll(".fadeInLeftward");
 const appearOptions = {
-  threshold: 0,
-  rootMargin: "0px 0px -30% 0px"
+  threshold: 0.4,
+  rootMargin: "0px 0px 0px 0px"
 };
 const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
   entries.forEach(entry => {
