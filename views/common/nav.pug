@@ -11,6 +11,9 @@ script.
   console.log(loggedin)
   var name = "#{name}"
 
+if loggedin
+  script(src="/javascripts/loginNav.js")
+
 #navbar
   #spanLogoContainer.container
     #spanLogo.row
@@ -28,8 +31,8 @@ script.
     a.navOption#hide4(href='/wiki') Wiki
     a.navOption#hide1(href='/contact') Contact
     if loggedin
-      .dropdown#hide2
-        a.dropbtn.navOption(href='/profile') Hi&nbsp; #{name}
+      .dropdown
+        a.dropbtn.navOption#hide2(href='/profile') Hi&nbsp; #{name}
         .dropdown-content
           #googleImageContainer
             //img(src="/images/login/test.png")

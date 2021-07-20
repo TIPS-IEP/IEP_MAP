@@ -130,8 +130,9 @@
 }
 
 .dropdown {
-  position: relative;
+  /* position: relative; */
   display: inline-block;
+  padding: 0px;
 }
 
 .dropdown-content {
