@@ -8,11 +8,13 @@ exports.showProfile = async function(req, res) {
     var isAuthorized = false;
     var usersInfoArray = [];
     var isAuthenticated = false;
+    var image = null;
     if(req.isAuthenticated()){
       var firstName = req.user.firstName;
       isAuthenticated = true;
+      image = req.user.image;
     }else{
-      var firstName = null
+      var firstName = null;
     }
     if(await Alumni.find({ Email: req.user.email }).lean()!=""){
         isAuthorized = true;
@@ -27,6 +29,7 @@ exports.showProfile = async function(req, res) {
         data: usersInfoArray,
         status: isAuthorized,
         loggedin: isAuthenticated,
+        image: image,
     });
 }
 

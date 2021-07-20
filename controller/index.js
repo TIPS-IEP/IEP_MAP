@@ -2,21 +2,6 @@ var isAuthenticated = false;
 var image = null;
 var firstName = null;
 
-function importData(){
-  if(req.isAuthenticated()){
-    firstName = req.user.firstName;
-    isAuthenticated = true;
-    image = req.user.image;
-  }else{
-    firstName = null;
-    isAuthenticated = false;
-    image = null;
-  }
-  console.log(firstName);
-  console.log(isAuthenticated);
-  console.log(image);
-}
-
 exports.index = function(req, res, next) {
   if(req.isAuthenticated()){
     firstName = req.user.firstName;
@@ -53,26 +38,36 @@ exports.newIndex = function(req, res, next) {
 
 exports.showAbout = function(req, res) {
   if(req.isAuthenticated()){
-    var firstName = req.user.firstName;
+    firstName = req.user.firstName;
+    isAuthenticated = true;
+    image = req.user.image;
   }else{
-    var firstName = null
+    firstName = null;
+    isAuthenticated = false;
+    image = null;
   }
   res.render('about/about', {
     loggedin: req.isAuthenticated(),
     name: firstName,
+    image: image,
   });
 }
 
 exports.showContact = function(req, res) {
-    if(req.isAuthenticated()){
-      var firstName = req.user.firstName;
-    }else{
-      var firstName = null
-    }
-    res.render('contact', {
-      loggedin: req.isAuthenticated(),
-      name: firstName,
-    });
+  if(req.isAuthenticated()){
+    firstName = req.user.firstName;
+    isAuthenticated = true;
+    image = req.user.image;
+  }else{
+    firstName = null;
+    isAuthenticated = false;
+    image = null;
+  }
+  res.render('contact', {
+    loggedin: req.isAuthenticated(),
+    name: firstName,
+    image: image,
+  });
 }
 
 exports.showBoard = function(req, res, next) {
@@ -88,42 +83,53 @@ exports.showEvents = function(req, res, next) {
 
 exports.showError = function(req, res, next) {
   if(req.isAuthenticated()){
-    var firstName = req.user.firstName;
+    firstName = req.user.firstName;
+    isAuthenticated = true;
+    image = req.user.image;
   }else{
-    var firstName = null
+    firstName = null;
+    isAuthenticated = false;
+    image = null;
   }
   res.render('error', {
     loggedin: req.isAuthenticated(),
     name: firstName,
+    image: image,
   });
 }
 
 
 exports.showWiki = function(req, res, next) {
-  var isAuthenticated = false;
   if(req.isAuthenticated()){
-    var firstName = req.user.firstName;
+    firstName = req.user.firstName;
     isAuthenticated = true;
+    image = req.user.image;
   }else{
-    var firstName = null
+    firstName = null;
+    isAuthenticated = false;
+    image = null;
   }
   res.render('wiki/wiki', {
     loggedin: isAuthenticated,
     name: firstName,
+    image: image,
   });
 }
 
 exports.showBlog = function(req, res, next) {
-  var isAuthenticated = false;
   if(req.isAuthenticated()){
-    var firstName = req.user.firstName;
+    firstName = req.user.firstName;
     isAuthenticated = true;
+    image = req.user.image;
   }else{
-    var firstName = null
+    firstName = null;
+    isAuthenticated = false;
+    image = null;
   }
   res.render('blog/blog', {
     loggedin: isAuthenticated,
     name: firstName,
+    image: image,
   });
 }
 
