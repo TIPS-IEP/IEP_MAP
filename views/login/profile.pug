@@ -3,11 +3,12 @@ html(lang='en')
 
   head
     //- css
-    //- link(rel="stylesheet" href="stylesheets/index.css")
     link(rel="stylesheet" href="stylesheets/login/profile.css")
     link(rel="stylesheet" href="stylesheets/nav.css")
     link(rel="stylesheet" href="stylesheets/footer.css")
     link(rel="stylesheet" href="stylesheets/sidenav.css")
+    link(rel="stylesheet" href="stylesheets/common/fadeIn.css")
+
 
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
@@ -41,7 +42,7 @@ html(lang='en')
 
     .row(style="margin-top: 17vh")
       .col-md-2
-      .col-md-2#profileCol
+      .col-md-2#profileCol.fadeInUpward
           .card#profileImageContainer(style="width: 100%; height: 60%")
               .bg
                   img.card-img-top(src="/images/login/user.jpeg")
@@ -55,7 +56,7 @@ html(lang='en')
                   .card-title
                       a.btn.btn-primary.profileButton(href="/dashboard") Dashboard
       .col-md-6#storyboardCol
-          .card#storyboard(style="height: 100%")
+          .card#storyboard.fadeInUpward(style="height: 100%")
               .card-body
                   .card-title#profileTitle Profile Page
                   .card.mini
@@ -95,10 +96,6 @@ html(lang='en')
                   .card-title#phoneBlog
                       a.btn.btn-primary.profileButton(href="/dashboard") Blog Post Dashboard
       .col-md-2
-  script(src="javascripts/login/profile.js")
-  //- script.
-  //-     var image_url = "#{picture}";
-  //-     const doc = document.getElementById("image");
-  //-     doc.style.content = "url(#{picture})";
-  
+    script(src="javascripts/login/profile.js")
+    script(src="javascripts/fadeIn.js")
 
