@@ -12,7 +12,7 @@ script.
   var name = "#{name}"
 
 if loggedin
-  script(src="/javascripts/loginNav.js")
+  //- script(src="/javascripts/loginNav.js")
 
 #navbar
   #spanLogoContainer.container
@@ -24,22 +24,25 @@ if loggedin
         a#logoLink(href='/')
           img.logo-image(src='/images/logos/TIPS-logo6/cover.png' alt='LOGO')
       
-  #navbar-right
+  #navbar-right(style = "height: 52px !important;")
     a.navOption#hide3(href='/') Home
     a.navOption#hide(href='/about') About
-    a.navOption#hide5(href='/blog') Blog
-    a.navOption#hide4(href='/wiki') Wiki
-    a.navOption#hide1(href='/contact') Contact
+    .dropdown
+      a.dropbtn.navOption#hide4(href='#') Guide
+      .dropdown-content
+        a(href='/wiki') wiki
+        a(href='/blog') blog
+    a.navOption#hide1(href='/contact') Join us
+
     if loggedin
-      .dropdown
-        a.dropbtn.navOption#hide2(href='/profile') Hi&nbsp; #{name}
-        .dropdown-content
+      .loginDropdown
+        a.loginDropbtn.navOption#hide2(href='/profile') Hi&nbsp; #{name}
+        .login-dropdown-content
           #googleImageContainer
-            //img(src="/images/login/test.png")
             img#googleImage(src = image)
-          a(href='/profile') profile
+          a(href='/profile')#dropdownFirstElement profile
           a(href='/logout') Logout
-          a(href='/dashbaord') Blog Posts
+          a(href='/dashbaord') Blog &nbsp; Posts
     else
       a.navOption#hide2(href='/login') Login
 
