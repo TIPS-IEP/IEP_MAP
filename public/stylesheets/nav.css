@@ -155,7 +155,17 @@
   text-decoration: none !important;
   display: block;
   text-align: center;
-  margin-top: 3px;
+  /* margin-top: 3px; */
+  border-bottom: rgb(41, 41, 41) ;
+  border-bottom-width:1px;
+  border-bottom-style:solid;
+}
+
+#dropdownFirstElement {
+  margin-top: 20px;
+  border-top: rgb(41, 41, 41) ;
+  border-top-width:1px;
+  border-top-style:solid;
 }
 
 .dropdown-content a:hover {
@@ -169,7 +179,7 @@
 }
 
 #googleImageContainer{
-  margin-top: 3vh;
+  margin-top: 20px;
   height: 100px;
   width: 100px;
   border: none;

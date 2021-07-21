@@ -32,9 +32,8 @@ script.
         a.dropbtn.navOption#hide2(href='/profile') Hi&nbsp; #{name}
         .dropdown-content
           #googleImageContainer
-            //img(src="/images/login/test.png")
             img#googleImage(src = image)
-          a(href='/profile') profile
+          a(href='/profile')#dropdownFirstElement profile
           a(href='/logout') Logout
           a(href='/dashbaord') Blog Posts
     else
