@@ -184,9 +184,20 @@ body {
   }
   
 .hero-text3 {
-  text-align: left;
+  text-align: center;
   position: absolute;
   top: 35%;
+  left: 50%;
+  width: 70%;
+  line-height: 1000%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-button {
+  text-align: center;
+  position: absolute;
+  top: 70%;
   left: 50%;
   width: 70%;
   line-height: 1000%;
