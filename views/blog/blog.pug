@@ -7,6 +7,7 @@ html(lang='en')
     link(rel="stylesheet" href="stylesheets/nav.css")
     link(rel="stylesheet" href="stylesheets/footer.css")
     link(rel="stylesheet" href="stylesheets/sidenav.css")
+    link(rel="stylesheet" href="stylesheets/common/fadeIn.css")
 
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
@@ -99,24 +100,43 @@ html(lang='en')
           a(href='/events' target='_self' rel='noopener') 🥂 Annual Events
       .container
         .row.blogOptions(style = "height: 100px")
-        .row
-          .col-md-4(style = "height: 400px")
-          .col-md-4(style = "height: 400px")
-          .col-md-4(style = "height: 400px")
+          .col-md-2
+          .col-md-8.blogTypes
+            .BLink(onclick = "showBlogType(0)") type0
+            .BLink(onclick = "showBlogType(1)") type1
+            .BLink(onclick = "showBlogType(2)") type2
+          .col-md-2
+        .row.typeB.fadeInUpward
+          .col-md-4.blogDiv
+            img.blogImage(src='/images/blog/cover1.jpg')
+          .col-md-4.blogDiv
+            img.blogImage(src='/images/blog/cover4.jpg')
+          .col-md-4.blogDiv
+            img.blogImage(src='/images/blog/cover3.jpg')
+        .row.typeB.displayN.fadeInUpward
+          .col-md-4.blogDiv
+            img.blogImage(src='/images/blog/cover5.jpg')
+          .col-md-4.blogDiv
+            img.blogImage(src='/images/blog/cover6.jpg')
+          .col-md-4.blogDiv
+            img.blogImage(src='/images/blog/cover7.jpg')
+        .row.typeB.displayN.fadeInUpward
+          .col-md-4.blogDiv
+            img.blogImage(src='/images/blog/cover8.jpg')
+          .col-md-4.blogDiv
+            img.blogImage(src='/images/blog/cover9.jpg')
+          .col-md-4.blogDiv
+            img.blogImage(src='/images/blog/cover10.jpg')
+        
     if loggedin
       .container
         .row 
-          .col-md-4 
+          .col-md-4
           .col-md-4
             a(href="/writeblog")
               button#startBlog.btn(type="button") Start Writing Your Own Blog
           .col-md-4 
 
-        
-      //- h1 Write Your post here
-      //- form#get-data-form(action="/blog" method='POST')
-      //-   textarea.tinymce#content(name="content")
-      //-   input(type='submit' value='get data')
-
   include ../common/footer 
+  script(src="javascripts/fadeIn.js")
 
