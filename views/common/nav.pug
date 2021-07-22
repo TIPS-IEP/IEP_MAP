@@ -24,17 +24,17 @@ script.
   #navbar-right(style = "height: 52px !important;")
     a.navOption#hide3(href='/') Home
     a.navOption#hide(href='/about') About
-    .dropdown(style="")
+    .dropdown.allDropdown(style="")
       a.dropbtn.navOption#hide4(href='#') Guide
-      .dropdown-content
+      .dropdown-content.all-dropdown-content
         a(href='/wiki') wiki
         a(href='/blog') blog
     a.navOption#hide1(href='/contact') Join us
 
     if loggedin
-      .loginDropdown(style="")
+      .loginDropdown.allDropdown(style="")
         a.loginDropbtn.navOption#hide2(href='/profile') Hi&nbsp; #{name}
-        .login-dropdown-content
+        .login-dropdown-content.all-dropdown-content
           #googleImageContainer
             img#googleImage(src = image)
           a(href='/profile')#dropdownFirstElement profile
