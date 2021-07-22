@@ -7,10 +7,12 @@ body {
 #eachLink {
   text-decoration: none !important;
   color: black !important;
+
 }
 
 #eachLink:hover {
   color: rgb(255, 106, 106)!important; 
+  transition: 0s;
 }
 
 #title{
@@ -38,6 +40,10 @@ body {
     font-size: 30px;
     line-height: 1.1em;
     text-align: left;
+}
+
+#title h5:hover {
+  transition: none;
 }
 
 #title p {

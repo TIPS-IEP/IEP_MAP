@@ -17,7 +17,7 @@
   text-align: center;
   text-decoration: none;
   padding: 15px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 22px;
   border-radius: 8px;
 }
@@ -131,12 +131,18 @@
 
 .dropdown {
   padding-bottom: 20px;
+  border-bottom: 0px;
   display: inline-block;
+  margin-bottom: 0px;
+}
+
+.all-dropdown-content{
+  margin-top: 72px;
 }
 
 .dropdown-content {
   display: none;
-  margin-top: 72px;
+  /* margin-top: 59px; */
   position: absolute;
   background-color: rgb(0, 0, 0) !important;
   opacity: 100%;
@@ -167,8 +173,10 @@
 }
 
 .dropdown:hover{
+  margin-bottom: 0px;
   padding-bottom: 16px;
   border-bottom: 4px solid rgb(255, 179, 37);
+  /* margin-bottom: 13px; */
 }
 
 .dropdown:hover .dropdown-content {
