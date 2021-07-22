@@ -62,6 +62,18 @@ window.addEventListener('scroll', function () {
     }
     } 
   else {
+    for (let i = 0; i < $('.allDropdown').length; i++) {
+      allDropdown[i].addEventListener("mouseover", function( event ) {
+        allDropdown[i].setAttribute("style", "margin-bottom: 0px; padding-bottom: 16px; border-bottom: 4px solid rgb(255, 179, 37);");
+      }, false);
+      allDropdown[i].addEventListener("mouseout", function( event ) {
+        allDropdown[i].setAttribute("style", "margin-bottom: 0px; padding-bottom: 20px;");
+      }, false);
+    }
+
+    for (let i = 0; i < $('.all-dropdown-content').length; i++) {
+      allDropdownContent[i].setAttribute("style", "margin-top: 72px;");
+    }
     if(path == "/"){
       document.getElementById("navbar").style.background = "none";
       for (let i = 0; i < $('.navOption').length; i++) {
@@ -72,18 +84,6 @@ window.addEventListener('scroll', function () {
         navOption[i].addEventListener("mouseout", function( event ) {
           event.target.style.color = "";
         }, false);
-      }
-      for (let i = 0; i < $('.allDropdown').length; i++) {
-        allDropdown[i].addEventListener("mouseover", function( event ) {
-          allDropdown[i].setAttribute("style", "margin-bottom: 0px; padding-bottom: 16px; border-bottom: 4px solid rgb(255, 179, 37);");
-        }, false);
-        allDropdown[i].addEventListener("mouseout", function( event ) {
-          allDropdown[i].setAttribute("style", "margin-bottom: 0px; padding-bottom: 20px;");
-        }, false);
-      }
-
-      for (let i = 0; i < $('.all-dropdown-content').length; i++) {
-        allDropdownContent[i].setAttribute("style", "margin-top: 72px;");
       }
 
       for (let i = 0; i < $('.logo-image').length; i++) {
