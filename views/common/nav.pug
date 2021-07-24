@@ -22,9 +22,11 @@ script.
           img.logo-image(src='/images/logos/TIPS-logo6/cover.png' alt='LOGO')
       
   #navbar-right(style = "height: 52px !important;")
-    //- a.navOption#hide3(href='/') Home
     .dropdown.allDropdown(style="")
-        a.dropbtn.navOption#hide4(href='about') About
+        a.dropbtn.navOption#hide4(href='/') Home
+        .dropdown-content.all-dropdown-content
+    .dropdown.allDropdown(style="")
+        a.dropbtn.navOption#hide4(href='/about') About
         .dropdown-content.all-dropdown-content
     .dropdown.allDropdown(style="")
       a.dropbtn.navOption#hide4(href='#') Guide
@@ -32,7 +34,7 @@ script.
         a(href='/wiki') wiki
         a(href='/blog') blog
     .dropdown.allDropdown(style="")
-        a.dropbtn.navOption#hide4(href='contact') Join us
+        a.dropbtn.navOption#hide4(href='/contact') Join us
         .dropdown-content.all-dropdown-content
 
     if loggedin
