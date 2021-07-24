@@ -28,6 +28,7 @@
 .blogImage{
   height: 50%;
   display: block;
+  border-radius: 10px;
 }
 
 .blogText {
