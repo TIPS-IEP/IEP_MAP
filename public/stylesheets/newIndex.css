@@ -70,8 +70,8 @@ body {
 }
 
 .newFeatures{
-  color:rgb(255, 255, 255);
-  background-color:rgb(0, 0, 0);
+  color:rgb(0, 0, 0);
+  background-color:rgb(255, 255, 255);
 }
 
 .about-section {
@@ -146,11 +146,15 @@ body {
 }
 
 .hero-image1 {
-  background-image: url("/images/hero/cover1.jpg");
-  height: 150%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0) 10%), url("/images/hero/newcover2.png");
+  height: 118%;
   background-size: cover;
   transition: 1.5s;
   opacity: 0;
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 
@@ -374,3 +378,38 @@ body {
 #nav-logo:hover{
   content: url('/images/hero/nav-white.png');
 } */
+
+
+#title{
+  padding-top: 10px;
+}
+
+#title h1, h3, h4, h5{
+  font-weight: 700 !important;
+  letter-spacing: 1.4px;
+}
+
+#title h1 {
+  font-size: 90px;
+  line-height: 1.3em;
+  text-align: center;
+}
+
+#title h3 {
+  font-size: 50px;
+  line-height: 1.1em;
+  text-align: left;
+}
+
+#title h4 {
+  font-size: 35px;
+  line-height: 1.1em;
+  text-align: left;
+}
+
+#title h5 {
+  font-size: 30px;
+  line-height: 1.1em;
+  text-align: left;
+}
+
