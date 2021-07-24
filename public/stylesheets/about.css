@@ -7,12 +7,11 @@ body {
 #eachLink {
   text-decoration: none !important;
   color: black !important;
-
 }
 
 #eachLink:hover {
-  color: rgb(255, 106, 106)!important; 
-  transition: 0s;
+  color: rgb(255, 106, 106)!important;
+  transition: 0.2s;
 }
 
 #title{

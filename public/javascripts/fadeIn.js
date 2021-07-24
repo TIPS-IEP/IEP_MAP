@@ -1,5 +1,6 @@
 const fadeInUpwarders = document.querySelectorAll(".fadeInUpward");
 const fadeInLeftwarders = document.querySelectorAll(".fadeInLeftward");
+var path = window.location.pathname.toString();
 const appearOptions = {
   threshold: 0.4,
   rootMargin: "0px 0px 0px 0px"
@@ -12,6 +13,9 @@ const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll
     else{
       entry.target.classList.add('appear');
       appearOnScroll.unobserve(entry.target);
+      if(path=="/about"){
+        setTimeout(function(){entry.target.classList.remove('fadeInUpward');}, 750);
+      }
     }
   });
   },appearOptions);
