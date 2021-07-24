@@ -48,15 +48,20 @@ exports.showMap = async function(req, res) {
     const universitiesArranged = new universitiesClass(universities);
     const alumniArranged = new alumniClass(alumni);
 
+    var isAuthenticated = false;
+    var image = null;
     if(req.isAuthenticated()){
-        var firstName = req.user.firstName;
+      var firstName = req.user.firstName;
+      isAuthenticated = true;
+      image = req.user.image;
     }else{
-        var firstName = null
+      var firstName = null;
     }
     res.render('map',{
         universities: universitiesArranged,
         alumni: alumniArranged,
         loggedin: req.isAuthenticated(),
         name: firstName,
+        image: image,
     });
 }
