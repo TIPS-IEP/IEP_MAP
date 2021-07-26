@@ -23,15 +23,15 @@ script.
       
   #navbar-right(style = "height: 52px !important;")
     a.navOption#hide3(href='/') Home
-    .dropdown.allDropdown(style="")
+    .myDropdown.allDropdown(style="")
         a.dropbtn.navOption#hide4(href='/about') About
         .dropdown-content.all-dropdown-content
-    .dropdown.allDropdown(style="")
+    .myDropdown.allDropdown(style="")
       a.dropbtn.navOption#hide4(href='#') Guide
       .dropdown-content.all-dropdown-content
         a(href='/wiki') wiki
         a(href='/blog') blog
-    .dropdown.allDropdown(style="")
+    .myDropdown.allDropdown(style="")
         a.dropbtn.navOption#hide4(href='/contact') Join us
         .dropdown-content.all-dropdown-content
 
@@ -45,7 +45,7 @@ script.
           a(href='/dashbaord') Blog &nbsp; Posts
           a(href='/logout') Logout
     else
-      .dropdown.allDropdown(style="")
+      .myDropdown.allDropdown(style="")
         a.dropbtn.navOption#hide4(href='login') Login
         .dropdown-content.all-dropdown-content
 
