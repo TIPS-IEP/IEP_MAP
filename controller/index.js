@@ -1,6 +1,7 @@
 var isAuthenticated = false;
 var image = null;
 var firstName = null;
+var Blog = require('../models/blog');
 
 exports.index = function(req, res, next) {
   if(req.isAuthenticated()){
@@ -116,9 +117,10 @@ exports.showWiki = function(req, res, next) {
   });
 }
 
-exports.showBlog = function(req, res, next) {
-  const collegeBlogs = await Blog.find({ tag: "college" }).lean();
+exports.showBlog = async function(req, res, next) {
+  const collegeBlogs = await Blog.find({ tag: "college", status: "verified" }).lean();
   const adviceBlogs = await Blog.find({ tag: "advice" }).lean();
+  const applyingBlogs = await Blog.find({ tag: "applying" }).lean();
   const activitiesBlogs = await Blog.find({ tag: "activities" }).lean();
   if(req.isAuthenticated()){
     firstName = req.user.firstName;
@@ -133,6 +135,10 @@ exports.showBlog = function(req, res, next) {
     loggedin: isAuthenticated,
     name: firstName,
     image: image,
+    collegeBlogs,
+    adviceBlogs,
+    applyingBlogs,
+    activitiesBlogs,
   });
 }
 

@@ -404,7 +404,9 @@ body {
 
 #title h4 {
   font-size: 42px;
-  line-height: 1.8em;
+  line-height: 1em;
+  margin-top: 0.5%;
+  margin-bottom: 2%;
   text-align: left;
 }
 
@@ -412,5 +414,17 @@ body {
   font-size: 30px;
   line-height: 1.2em;
   text-align: left;
+}
+
+.hero-link {
+  margin-top: 3%;
+  text-align: left;
+  position: absolute;
+  top: 100%;
+  left: 2.5%;
+  width: 100%;
+  /* transform: translate(-50%, -50%); */
+  /* text-decoration: dashed; */
+  color: rgb(201, 106, 106) !important;
 }
 
