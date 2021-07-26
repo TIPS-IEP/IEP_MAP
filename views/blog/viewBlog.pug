@@ -1,0 +1,68 @@
+doctype html
+html(lang='en') 
+
+  head
+    //- css
+    link(rel="stylesheet" href="stylesheets/blog/dashboard.css")
+    link(rel="stylesheet" href="stylesheets/nav.css")
+    link(rel="stylesheet" href="stylesheets/footer.css")
+    link(rel="stylesheet" href="stylesheets/sidenav.css")
+
+    //- bootstrap setup
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    
+    //- jquery
+    script(src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+
+    //- js
+    script(src="javascripts/index.js")
+    script(src="javascripts/nav.js")
+
+    
+    //- center website 
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    
+    //- google font set up
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
+
+    //-favicon
+    link(rel="icon" type="image/png" href="/images/icons/favicon.png")
+  body#main
+    include ../common/nav
+    include ../common/cover
+    #mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      a.pcsidenav(href='#') Home 
+      a.pcsidenav(href='#vision') Vision
+      a.pcsidenav(href='#mission') Mission
+      a.pcsidenav(href='#about') Features
+      a.pcsidenav(href='#contactus') Contact
+      include ../common/mbsidenav
+    .container
+      .row
+        .col-md-1
+        .col-md-10(style="margin-top: 10vh")
+          a(href="/writeblog")
+            button.btn.btn-primary(type="button") ✏️ write
+          if blogs
+            for blog in blogs
+              a(href = "blog/" + blog._id + "/edit").link
+                .card.path.eachBlog
+                  .card-body
+                    .row
+                      .col-md-11
+                        h5.card-title(style="font-size: 30px") #{blog.blogTitle}
+                        if(blog.status == "not verified")
+                          h6.card-subtitle.mb-2.notVerified Status: #{blog.status}
+                        else
+                          h6.card-subtitle.mb-2.verified Status: #{blog.status}. We would post your blog as soon as possible.
+                        p.card-text Written in #{blog.createdAt}
+                      .col-md-1
+                        form(action="/blog/" + blog._id + "/delete" method='POST' onSubmit="return confirm('Are you sure you want to permantly delete this blog post?')")
+                          button.deleteButton(type="submit") Delete
+
+                    
+        .col-md-1

@@ -102,31 +102,27 @@ html(lang='en')
         .row.blogOptions(style = "height: 100px")
           .col-md-2
           .col-md-8.blogTypes
-            .BLink(onclick = "showBlogType(0)") type0
-            .BLink(onclick = "showBlogType(1)") type1
-            .BLink(onclick = "showBlogType(2)") type2
+            .BLink(onclick = "showBlogType(0)") #college
+            .BLink(onclick = "showBlogType(1)") #advice
+            .BLink(onclick = "showBlogType(2)") #applying
+            .BLink(onclick = "showBlogType(3)") #activities
           .col-md-2
         .row.typeB.fadeInUpward
-          .col-md-4.blogDiv
-            img.blogImage(src='/images/blog/cover1.jpg')
-          .col-md-4.blogDiv
-            img.blogImage(src='/images/blog/cover4.jpg')
-          .col-md-4.blogDiv
-            img.blogImage(src='/images/blog/cover3.jpg')
+          for collegeBlog in collegeBlogs
+            .col-md-4.blogDiv
+              img.blogImage(src='/images/blog/cover1.jpg')
         .row.typeB.displayN.fadeInUpward
-          .col-md-4.blogDiv
-            img.blogImage(src='/images/blog/cover5.jpg')
-          .col-md-4.blogDiv
-            img.blogImage(src='/images/blog/cover6.jpg')
-          .col-md-4.blogDiv
-            img.blogImage(src='/images/blog/cover7.jpg')
+          for adviceBlog in adviceBlogs
+            .col-md-4.blogDiv
+              img.blogImage(src='/images/blog/cover1.jpg')
+        .row.typeB.displayN.applyingBlogs
+          for applyingBlog in applyingBlogs
+            .col-md-4.blogDiv
+              img.blogImage(src='/images/blog/cover1.jpg')
         .row.typeB.displayN.fadeInUpward
-          .col-md-4.blogDiv
-            img.blogImage(src='/images/blog/cover8.jpg')
-          .col-md-4.blogDiv
-            img.blogImage(src='/images/blog/cover9.jpg')
-          .col-md-4.blogDiv
-            img.blogImage(src='/images/blog/cover10.jpg')
+          for activitiesBlog in activitiesBlogs
+            .col-md-4.blogDiv
+              img.blogImage(src='/images/blog/cover1.jpg')
         
     if loggedin
       .container
@@ -138,5 +134,6 @@ html(lang='en')
           .col-md-4 
 
   include ../common/footer 
+  
   script(src="javascripts/fadeIn.js")
-
+  

@@ -16,10 +16,11 @@ const BlogSchema = new mongoose.Schema({
         default: "not verified",
         enum: ["verified", "not verified"]
     },
-    // user: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "User"
-    // },
+    status: {
+        type: String,
+        require: true,
+        enum: ["College", "Advice", "Applying", "Activities"]
+    },
     blogId: {
         allowNull: false,
         primaryKey: true,
