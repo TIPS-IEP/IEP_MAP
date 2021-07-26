@@ -26,6 +26,26 @@ exports.showDashboard = async function(req, res, next) {
   });
 }
 
+exports.viewBlog = async function(req, res, next) {
+  var isAuthenticated = false;
+  if(req.isAuthenticated()){
+    var firstName = req.user.firstName;
+    isAuthenticated = true;
+  }else{
+    var firstName = null
+  }
+  var blog = await Blog.find({_id: req.params.blog_id}).lean();
+  if(!blog){
+    res.render('error')
+  }else{
+    res.render('blog/viewBlog', {
+      loggedin: isAuthenticated,
+      name: firstName,
+      blog: blog,
+    });
+  }
+}
+
 exports.editBlog = async function(req, res, next) {
   var isAuthenticated = false;
   if(req.isAuthenticated()){
