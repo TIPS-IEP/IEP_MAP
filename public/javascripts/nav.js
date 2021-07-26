@@ -1,6 +1,3 @@
-var hover = '.dropdown:hover{ margin-bottom: 13px; padding-bottom: 3px; border-bottom: 4px solid rgb(255, 179, 37);}';
-
-
 $(document).ready(function() {
   var path = window.location.pathname.toString();
   if (screen.width > 600) {
