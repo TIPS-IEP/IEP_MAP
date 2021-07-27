@@ -15,10 +15,6 @@ html(lang='en')
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
 
-    //- js
-    script(src="javascripts/index.js")
-    script(src="javascripts/nav.js")
-    script(src="javascripts/writeBlog.js")
     script(src='https://cdn.tiny.cloud/1/nda8paljag6qmrws041pc75kikjb5zuqz5du9x5ix1edjl77/tinymce/5/tinymce.min.js' referrerpolicy='origin')
     script.
       tinymce.init({
@@ -58,12 +54,26 @@ html(lang='en')
       .row
         .col-md-1
         .col-md-10
-          h1 Write Your Blog Post Here
-          p We would publish your blog post after verifying it.
-          form#get-data-form(action="/blog" method='POST')
+          //- h1 Write Your Blog Post Here
+          //- p We would publish your blog post after verifying it.
+          form#get-data-form(action="/blog" method='POST' autocomplete="off")
             .form-group
-              label Title
+              h5 Title
               input(type="text" class="form-control" id="blogTitle" name="blogTitle" placeholder="Enter the title" required)
+              h5 Tags
+              .input-container
+                input(type="text" class="form-control" id="input" placeholder="Enter tags . . .")
+              .tag-container
+              
+              
+                //- input(type="text" id="input" placeholder="Enter tags . . .")
+            h5 Content
             textarea.tinymce#content(name="content")
-            input(type='submit' value='Save')
+            input#saveButton(type='submit' value='Save')
         .col-md-1
+
+  //- js
+  script(src="javascripts/index.js")
+  script(src="javascripts/nav.js")
+  script(src="javascripts/blog/writeBlog.js")
+

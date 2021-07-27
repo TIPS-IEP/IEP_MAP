@@ -1,3 +1,13 @@
+:root {
+  --xs: 0.2rem;
+  --sm: 0.5rem;
+  --md: 0.8rem;
+  --lg: 1rem;
+  --xlg: 1.5rem;
+  --xxlg: 2rem;
+  --transition: 0.3s linear all;
+}
+
 body {
   background: rgb(255, 255, 255)!important;
   font-family: proxima-nova,Sans-serif;
@@ -13,10 +23,18 @@ body {
 }
 
 #title h1 {
-  font-size: 70px;
+  font-size: 50px;
   line-height: 1em;
   text-align: center;
   letter-spacing: 1.4px;
+}
+#title h3 {
+  text-align: center;
+}
+
+#title h5{
+  color:rgb(102, 102, 102);
+  margin-top: 20px;
 }
 
 #title p {
@@ -24,4 +42,45 @@ body {
   line-height: 1.4em;
   letter-spacing: 1.4px;
   text-align: left;
+}
+
+#saveButton {
+  width: 100%;
+  background-color: #f0ad4e;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin-top: 15px;
+  font-size: 20px;
+  margin-bottom:50px;
+}
+
+.input-container {
+    /* display: grid;
+    grid-template-columns: 1fr 0.3fr;
+    column-gap: var(--lg);
+    row-gap: var(--sm); */
+    width: 100%;
+}
+
+.tag-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.tag {
+    background-color: #f0ad4e;
+    border-radius: 10px;
+    color: var(--off-white);
+    font-size: var(--md);
+    margin-bottom: var(--sm);
+    margin-right: var(--sm);
+    padding: var(--xs) var(--sm);
+}
+
+.remove-tag {
+    cursor: pointer;
+    margin-left: 5px;
 }
