@@ -1,12 +1,7 @@
 $(document).ready(function() {
   var path = window.location.pathname.toString();
-  if (screen.width > 600) {
-    if(path == "/" || path == "/about" || path == "/wiki" || path == "/iep"){
-      document.getElementById("navContainer").style.display = "block";
-    }
-    else{
-      document.getElementById("navContainer").style.display= "none";
-    }
+  if (screen.width < 600) {
+    document.getElementById("navContainer").style.display= "block";
   }
 });
 
@@ -116,8 +111,6 @@ function openNav() {
       document.getElementById("mySidenav").style.left = "0px";
       disableScroll();
       document.getElementById("overlay").style.display = "block";
-      document.getElementsByClassName("logo-image")[1].setAttribute("style", "content: url('/images/logos/TIPS-logo4/cover.png')!important;");
-      document.getElementsByClassName("nav-logo")[1].setAttribute("style", "content: url('/images/hero/nav.png')!important;");
     }
   }
 }
