@@ -4,6 +4,18 @@ const tagInput = document.querySelector('#input');
 const form = document.forms[0];
 const tagContainer = document.querySelector('.tag-container');
 const tags = [];
+var verifiedTags = ["advice", "college", "applying", "activities"]
+
+function detectTags(value){
+  var verified = false;
+  for(var i = 0; i < verifiedTags.length; i++){
+    if(value == verifiedTags[i]){
+      verified = true;
+    }
+  }
+  console.log(verified)
+  return verified;
+}
 
 const createTag = (tagValue) => {
     const value = tagValue.trim();
@@ -12,7 +24,12 @@ const createTag = (tagValue) => {
 
     const tag = document.createElement('span');
     const tagContent = document.createTextNode(value);
-    tag.setAttribute('class', 'tag');
+    console.log(value);
+    if(detectTags(value)){
+      tag.setAttribute('class', 'verifiedTag');
+    }else{
+      tag.setAttribute('class', 'tag');
+    }
     tag.appendChild(tagContent);
 
     const close = document.createElement('span');
