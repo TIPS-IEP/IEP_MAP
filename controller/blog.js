@@ -1,4 +1,6 @@
-
+var isAuthenticated = false;
+var image = null;
+var firstName = null;
 var Blog = require("../models/blog")
 
 exports.addBlog = async function(req, res, next) {
@@ -11,18 +13,21 @@ exports.addBlog = async function(req, res, next) {
 }
 
 exports.showDashboard = async function(req, res, next) {
-  var isAuthenticated = false;
   const blogs = await Blog.find({ email: req.user.email }).lean();
   if(req.isAuthenticated()){
-    var firstName = req.user.firstName;
+    firstName = req.user.firstName;
     isAuthenticated = true;
+    image = req.user.image;
   }else{
-    var firstName = null
+    firstName = null;
+    isAuthenticated = false;
+    image = null;
   }
   res.render('blog/dashboard', {
     loggedin: isAuthenticated,
     name: firstName,
     blogs: blogs,
+    image,
   });
 }
 
