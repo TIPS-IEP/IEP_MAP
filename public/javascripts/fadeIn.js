@@ -1,5 +1,7 @@
 const fadeInUpwarders = document.querySelectorAll(".fadeInUpward");
 const fadeInLeftwarders = document.querySelectorAll(".fadeInLeftward");
+const fadeInRightwarders = document.querySelectorAll(".fadeInRightward");
+
 var path = window.location.pathname.toString();
 const appearOptions = {
   threshold: 0.4,
@@ -26,4 +28,8 @@ fadeInUpwarders.forEach(fadeInUpwarder => {
 
 fadeInLeftwarders.forEach(fadeInLeftwarder => {
   appearOnScroll.observe(fadeInLeftwarder);
+});
+
+fadeInRightwarders.forEach(fadeInRightwarder => {
+  appearOnScroll.observe(fadeInRightwarder);
 });
