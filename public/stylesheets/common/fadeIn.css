@@ -17,10 +17,22 @@
   opacity: 0;
   transition: 0.7s ease-in;
   position: relative;
-  right:60%;
+  right:30%;
 }
 
 .fadeInLeftward.appear{
   opacity: 1;
   right:0px;
+}
+
+.fadeInRightward{
+  opacity: 0;
+  transition: 0.7s ease-in;
+  position: relative;
+  left:30%;
+}
+
+.fadeInRightward.appear{
+  opacity: 1;
+  left:0px;
 }
