@@ -1,5 +1,6 @@
 const button = document.querySelector('#add-button');
-const tagInput = document.querySelector('#input');
+const tagInput = document.querySelector('#tag');
+const hiddenInputContainer = document.querySelector('#hiddenInputContainer')
 
 const form = document.forms[0];
 const tagContainer = document.querySelector('.tag-container');
@@ -13,7 +14,6 @@ function detectTags(value){
       verified = true;
     }
   }
-  console.log(verified)
   return verified;
 }
 
@@ -23,13 +23,17 @@ const createTag = (tagValue) => {
     if (value === '' || tags.includes(value)) return;
 
     const tag = document.createElement('span');
+    const hiddenInput = document.createElement('input');
     const tagContent = document.createTextNode(value);
-    console.log(value);
     if(detectTags(value)){
       tag.setAttribute('class', 'verifiedTag');
     }else{
       tag.setAttribute('class', 'tag');
     }
+    hiddenInput.setAttribute('class','hiddenInput');
+    hiddenInput.setAttribute('name','tag');
+    hiddenInput.value = value;
+    hiddenInputContainer.appendChild(hiddenInput);
     tag.appendChild(tagContent);
 
     const close = document.createElement('span');
@@ -48,6 +52,7 @@ const createTag = (tagValue) => {
 const handleRemoveTag = (e) => {
     const item = e.target.textContent;
     e.target.parentElement.remove();
+    console.log(e);
     tags.splice(tags.indexOf(item), 1);
 };
 
@@ -63,4 +68,4 @@ tagInput.addEventListener('keyup', (e) => {
     }
 });
 
-form.addEventListener('submit', handleFormSubmit);
+// form.addEventListener('submit', handleFormSubmit);
