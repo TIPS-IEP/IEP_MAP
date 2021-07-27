@@ -406,7 +406,7 @@ body {
   font-size: 43px;
   line-height: 1em;
   margin-top: 1vh;
-  margin-bottom: 3vh;
+  margin-bottom: 2vh;
   text-align: left;
 }
 
@@ -417,7 +417,7 @@ body {
 }
 
 .hero-link {
-  margin-top: 1.5vh;
+  margin-top: 2vh;
   text-align: left;
   position: absolute;
   /* top: 100%; */
