@@ -22,18 +22,24 @@ script.
           img.logo-image(src='/images/logos/TIPS-logo6/cover.png' alt='LOGO')
       
   #navbar-right(style = "height: 52px !important;")
-    a.navOption#hide3(href='/') Home
+    //- a.navOption#hide3(href='/') Home
     .myDropdown.allDropdown(style="")
-        a.dropbtn.navOption#hide4(href='/about') About
+        a.dropbtn.navOption#hide4(href='/') About 
         .dropdown-content.all-dropdown-content
+          a(href='/') About&nbsp; TIPS
+          a(href='/contact') Join&nbsp; In! 
     .myDropdown.allDropdown(style="")
-      a.dropbtn.navOption#hide4(href='#') Guide
+      a.dropbtn.navOption#hide4(href='#') Guides
       .dropdown-content.all-dropdown-content
-        a(href='/wiki') wiki
-        a(href='/blog') blog
+        a(href='/wiki') Wiki&nbsp; Index
+        a(href='/blog') Blog&nbsp; Entries
     .myDropdown.allDropdown(style="")
-        a.dropbtn.navOption#hide4(href='/contact') Join us
+        a.dropbtn.navOption#hide4(href='/iep') Wego&nbsp; IEP
         .dropdown-content.all-dropdown-content
+          a(href='/about') About&nbsp; IEP
+          a(href='/map') Student&nbsp; Maps
+          a(href='/events') Events
+
 
     if loggedin
       .loginDropdown.allDropdown(style="")
@@ -42,7 +48,7 @@ script.
           #googleImageContainer
             img#googleImage(src = image)
           a(href='/profile')#dropdownFirstElement profile
-          a(href='/dashboard') Blog &nbsp; Posts
+          a(href='/dashboard') Blog&nbsp; Posts
           a(href='/logout') Logout
     else
       .myDropdown.allDropdown(style="")
