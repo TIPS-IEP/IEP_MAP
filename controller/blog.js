@@ -66,7 +66,7 @@ exports.editBlog = async function(req, res, next) {
     res.render('blog/editBlog', {
       loggedin: isAuthenticated,
       name: firstName,
-      blog: blog[0],
+      blog: blog,
     });
   }
 }

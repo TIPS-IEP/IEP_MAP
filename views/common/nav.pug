@@ -3,6 +3,7 @@
 script(src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous")
 script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
 script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+script(src="/javascripts/nav.js")
 //- link(rel="stylesheet" href="stylesheets/nav.css")
 
 script.
@@ -19,39 +20,38 @@ script.
       .col-md-9#logoDiv
         a#logoLink(href='/')
           img.logo-image(src='/images/logos/TIPS-logo6/cover.png' alt='LOGO')
-  .mbLogo
-    .mbSpanLogoDiv.nav-div
-      img.nav-logo(src='/images/hero/nav-white.png' alt='LOGO' onclick='openNav()' onmousedown = "mouseDown()" onmouseup = "mouseUp()")
-    .mbLogoDiv
-      a#logoLink(href='/')
-        img.logo-image(src='/images/logos/TIPS-logo6/cover.png' alt='LOGO')
+      
   #navbar-right(style = "height: 52px !important;")
+    //- a.navOption#hide3(href='/') Home
     .myDropdown.allDropdown(style="")
-        a.dropbtn.navOption#hide4(href='/about') About
+        a.dropbtn.navOption#hide4(href='/') About 
         .dropdown-content.all-dropdown-content
+          a(href='/') About&nbsp; TIPS
+          a(href='/contact') Join&nbsp; In! 
     .myDropdown.allDropdown(style="")
-      a.dropbtn.navOption#hide4(href='#') Guide
+      a.dropbtn.navOption#hide4(href='#') Guides
       .dropdown-content.all-dropdown-content
-        a(href='/wiki') wiki
-        a(href='/blog') blog
+        a(href='/wiki') Wiki&nbsp; Index
+        a(href='/blog') Blog&nbsp; Entries
     .myDropdown.allDropdown(style="")
-        a.dropbtn.navOption#hide4(href='/contact') Join us
+        a.dropbtn.navOption#hide4(href='/iep') Wego&nbsp; IEP
         .dropdown-content.all-dropdown-content
+          a(href='/about') About&nbsp; IEP
+          a(href='/map') Student&nbsp; Maps
+          a(href='/events') Events
+
 
     if loggedin
-      .loginDropdown.myDropdown.allDropdown(style="")
+      .loginDropdown.allDropdown(style="")
         a.loginDropbtn.navOption#hide2(href='/profile') Hi&nbsp; #{name}
         .login-dropdown-content.all-dropdown-content
           #googleImageContainer
             img#googleImage(src = image)
           a(href='/profile')#dropdownFirstElement profile
-          a(href='/dashboard') Blog &nbsp; Posts
+          a(href='/dashboard') Blog&nbsp; Posts
           a(href='/logout') Logout
     else
       .myDropdown.allDropdown(style="")
         a.dropbtn.navOption#hide4(href='login') Login
         .dropdown-content.all-dropdown-content
-
-
-script(src="/javascripts/nav.js")
 

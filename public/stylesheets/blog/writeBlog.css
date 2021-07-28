@@ -35,7 +35,6 @@ body {
 #title h5{
   color:rgb(102, 102, 102);
   margin-top: 20px;
-  display: inline-block;
 }
 
 #title p {
@@ -72,41 +71,16 @@ body {
 }
 
 .tag {
-    background-color: rgb(119, 119, 119);
+    background-color: #f0ad4e;
     border-radius: 10px;
-    color: white;
+    color: var(--off-white);
     font-size: var(--md);
     margin-bottom: var(--sm);
     margin-right: var(--sm);
     padding: var(--xs) var(--sm);
 }
 
-.verifiedTag {
-  background-color: #f0ad4e;
-  border-radius: 10px;
-  color: var(--off-white);
-  font-size: var(--md);
-  margin-bottom: var(--sm);
-  margin-right: var(--sm);
-  padding: var(--xs) var(--sm);
-}
-
 .remove-tag {
     cursor: pointer;
     margin-left: 5px;
-}
-
-.warning{
-  color: #f0ad4e;
-  display: inline-block;
-  padding-left: 5px;
-  font-weight: 700;
-}
-
-.hiddenInput{
-  display: none;
-}
-
-.previousTags{
-  display: none;
 }

@@ -53,20 +53,12 @@ html(lang='en')
       .row
         .col-md-1
         .col-md-10
-          form#get-data-form(action="/blog/" + blog._id + "/save" method='POST' autocomplete="off")
-            .form-group
-              h5 Title
-              input(type="text" class="form-control" id="blogTitle" name="blogTitle" placeholder="Enter the title",value=blog.blogTitle, required)
-              h5 Tags
-              .warning (We currently only verrify the following tags: advice, college, activities, applying.)              
-              .input-container
-                input(type="text" class="form-control" id="tag" placeholder="Enter tags . . .")
-              .tag-container
-                for i in blog.tag 
-                  span.previousTags #{i}
-              #hiddenInputContainer
-              h5 Content
-              textarea.tinymce#content(name="content") #{blog.content}
-              input#saveButton(type='submit' value='Save')
+          for ablog in blog
+            h1 Edit Your Blog Post Here
+            form#get-data-form(action="/blog/" + ablog._id + "/save" method='POST')
+              .form-group
+                label Title
+                input(type="text", class="form-control", id="blogTitle", name="blogTitle", placeholder="Enter the title ", value=ablog.blogTitle, required)
+              textarea.tinymce#content(name="content") #{ablog.content}
+              input(type='submit' value='Save')
         .col-md-1
-  script(src="/javascripts/blog/writeBlog.js")

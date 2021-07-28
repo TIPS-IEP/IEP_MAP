@@ -53,11 +53,11 @@ body {
   border-radius: 15px;
 }
 
-#linkRow{
+.linkRow{
   text-align: center;
 }
 
-#linkRow a {
+.linkRow a {
   font-size: 30px;
   line-height: 1.1em;
   /* text-align: left; */
@@ -67,7 +67,7 @@ body {
   letter-spacing: 1.4px;
 }
 
-#linkRow a:hover {
+.linkRow a:hover {
   color: rgb(255, 106, 106)!important; 
 }
 
@@ -75,7 +75,7 @@ body {
   padding-top: 25px;
 }
 
-#linkRow {
+.linkRow {
   padding-top: 50px;
 }
 
@@ -110,7 +110,7 @@ body {
     margin-top: 30px;
   }
 
-  #linkRow{
+  .linkRow{
     display: none;
   }
 
@@ -129,4 +129,17 @@ body {
   }
 
   
+}
+
+.normalLinkRow a{
+  font-size: 30px;
+  line-height: 1.1em;
+  /* text-align: left; */
+  text-decoration: none !important;
+  color: black;
+  font-weight: 700 !important;
+  letter-spacing: 1.4px;
+}
+.normalLinkRow a:hover {
+  color: rgb(255, 106, 106)!important; 
 }
