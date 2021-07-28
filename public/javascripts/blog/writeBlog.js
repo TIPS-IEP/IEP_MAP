@@ -7,6 +7,8 @@ const tagContainer = document.querySelector('.tag-container');
 const tags = [];
 var verifiedTags = ["advice", "college", "applying", "activities"]
 
+window.onload = loadPreviousTags;
+
 function detectTags(value){
   var verified = false;
   for(var i = 0; i < verifiedTags.length; i++){
@@ -15,6 +17,15 @@ function detectTags(value){
     }
   }
   return verified;
+}
+
+function loadPreviousTags(){
+  var previousTags = document.getElementsByClassName("previousTags");
+  
+  for(var i = 0; i < previousTags.length; i++){
+    createTag(previousTags[i].innerHTML);
+    console.log("previous:" + previousTags[i].innerHTML);
+  }
 }
 
 const createTag = (tagValue) => {
@@ -67,5 +78,7 @@ tagInput.addEventListener('keyup', (e) => {
         createTag(tagInput.value.substring(0, tagInput.value.length - 1));
     }
 });
+
+
 
 // form.addEventListener('submit', handleFormSubmit);

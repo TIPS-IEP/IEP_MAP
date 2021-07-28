@@ -54,17 +54,12 @@ html(lang='en')
       .row
         .col-md-1
         .col-md-10
-          //- h1 Write Your Blog Post Here
-          //- p We would publish your blog post after verifying it.
           form#get-data-form(action="/blog" method='POST' autocomplete="off")
             .form-group
               h5 Title
               input(type="text" class="form-control" id="blogTitle" name="blogTitle" placeholder="Enter the title" required)
-              //- .labelContainer
               h5 Tags
-              .warning (We currently only verrify the following tags: advice, college, activities, applying.)
-              //use js to create an input element and enter value as the user type thing in the input below. one value to one element. and the input would have 0 opacity or display none
-              
+              .warning (We currently only verrify the following tags: advice, college, activities, applying.)              
               .input-container
                 input(type="text" class="form-control" id="tag" placeholder="Enter tags . . .")
               .tag-container

@@ -106,3 +106,7 @@ body {
 .hiddenInput{
   display: none;
 }
+
+.previousTags{
+  display: none;
+}
