@@ -22,11 +22,13 @@
   border-radius: 8px;
 }
 
-.navOption:hover{
-  color: rgb(255, 255, 255)!important; 
+/* .navOption:hover{
+  color: rgb(255, 179, 37);
   transition: 0.2s;
   text-decoration: none !important;
-}
+} */
+
+
 
 #logoLink{
   height: inherit;
@@ -121,11 +123,11 @@
   width: 45px;
 }
 
-.navOption:hover{
+/* .navOption:hover{
   color: rgb(255, 179, 37)!important; 
   transition: 0.2s;
   text-decoration: none !important;
-}
+} */
 
 .dropbtn{
   cursor: pointer;
@@ -136,6 +138,12 @@
   border-bottom: 0px;
   display: inline-block;
   margin-bottom: 0px;
+}
+
+.myDropdown:hover .navOption{
+  color: rgb(255, 179, 37); 
+  transition: 0.2s;
+  text-decoration: none !important;
 }
 
 .all-dropdown-content{
