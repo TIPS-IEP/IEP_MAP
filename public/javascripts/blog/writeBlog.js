@@ -33,7 +33,7 @@ const createTag = (tagValue) => {
     hiddenInput.setAttribute('class','hiddenInput');
     hiddenInput.setAttribute('name','tag');
     hiddenInput.value = value;
-    hiddenInputContainer.appendChild(hiddenInput);
+    tag.appendChild(hiddenInput);
     tag.appendChild(tagContent);
 
     const close = document.createElement('span');
