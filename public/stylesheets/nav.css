@@ -22,13 +22,11 @@
   border-radius: 8px;
 }
 
-/* .navOption:hover{
-  color: rgb(255, 179, 37);
+.navOption:hover{
+  color: rgb(255, 255, 255)!important; 
   transition: 0.2s;
   text-decoration: none !important;
-} */
-
-
+}
 
 #logoLink{
   height: inherit;
@@ -114,6 +112,7 @@
   display:none;
 }
 .nav-div{
+  margin-left: 5px !important;
   display:flex;
   align-content: center;
   justify-content: center;
@@ -122,11 +121,11 @@
   width: 45px;
 }
 
-/* .navOption:hover{
+.navOption:hover{
   color: rgb(255, 179, 37)!important; 
   transition: 0.2s;
   text-decoration: none !important;
-} */
+}
 
 .dropbtn{
   cursor: pointer;
@@ -139,12 +138,6 @@
   margin-bottom: 0px;
 }
 
-.myDropdown:hover .navOption{
-  color: rgb(255, 179, 37); 
-  transition: 0.2s;
-  text-decoration: none !important;
-}
-
 .all-dropdown-content{
   margin-top: 72px;
 }
@@ -155,7 +148,7 @@
   position: absolute;
   background-color: rgb(0, 0, 0) !important;
   opacity: 100%;
-  min-width: 150px;
+  min-width: 170px;
   /* height: 300px; */
   /* right: 0px; */
   z-index: 100 !important;
@@ -269,40 +262,8 @@
   border-radius: 50%;
 }
 
-.mbLogo{
-  display:none;
-}
-
-
 @media screen and (max-width: 599px) {
   #navbar-right{
     display: none;
-  }
-  #spanLogoContainer{
-    display:none;
-  }
-  .mbLogo{
-    display:flex;
-    align-items: center;
-  }
-  .mbSpanLogoDiv{
-    width: 7vw;
-    height: 40px;
-    display: flex;
-    align-content: center;
-    margin-left:5px;
-  }
-  .mbLogoDiv{
-    width:30vw;
-    height: 40px;
-    display: flex;
-  }
-  .logo-image{
-    margin-left: 10px;
-    width: auto;
-  }
-  #logoLink{
-    display: flex;
-    align-content: center;
   }
 }

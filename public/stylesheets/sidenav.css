@@ -81,7 +81,7 @@
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
-    padding: 0px;
+    padding-top: 0px;
     text-align:center;
   }
 
