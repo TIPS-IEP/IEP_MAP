@@ -41,10 +41,13 @@ window.addEventListener('scroll', function () {
     for (let i = 0; i < $('.nav-logo').length; i++) {
       navLogo[i].setAttribute("style", "content: url('/images/hero/nav-white.png')!important;");
     }
-    if(document.getElementById("sidenavSeperateLine")){
-      document.getElementById("mySidenav").style.padding = "7px 10px";
-      document.getElementById("sidenavSeperateLine").style.marginTop = "8px";
+    if(screen.width>600){
+      if(document.getElementById("sidenavSeperateLine")){
+        document.getElementById("mySidenav").style.padding = "7px 10px";
+        document.getElementById("sidenavSeperateLine").style.marginTop = "8px";
+      }
     }
+    
     } 
   else {
     for (let i = 0; i < $('.allDropdown').length; i++) {
@@ -82,8 +85,10 @@ window.addEventListener('scroll', function () {
     document.getElementById("navbar-right").style.fontSize = "25px";
     document.getElementById("navbar").style.opacity = "100%";
     if(document.getElementById("sidenavSeperateLine")){
-      document.getElementById("mySidenav").style.padding = "20px 10px";
-      document.getElementById("sidenavSeperateLine").style.marginTop = "22px";
+      if(screen.width > 600){
+        document.getElementById("mySidenav").style.padding = "20px 10px";
+        document.getElementById("sidenavSeperateLine").style.marginTop = "22px";
+      }
     }  
   }
 });
