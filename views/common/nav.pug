@@ -20,7 +20,12 @@ script.
       .col-md-9#logoDiv
         a#logoLink(href='/')
           img.logo-image(src='/images/logos/TIPS-logo6/cover.png' alt='LOGO')
-      
+  .mbLogo
+    .mbSpanLogoDiv.nav-div
+      img.nav-logo(src='/images/hero/nav-white.png' alt='LOGO' onclick='openNav()' onmousedown = "mouseDown()" onmouseup = "mouseUp()")
+    .mbLogoDiv
+      a#logoLink(href='/')
+        img.logo-image(src='/images/logos/TIPS-logo6/cover.png' alt='LOGO')
   #navbar-right(style = "height: 52px !important;")
     a.navOption#hide3(href='/') Home
     .myDropdown.allDropdown(style="")

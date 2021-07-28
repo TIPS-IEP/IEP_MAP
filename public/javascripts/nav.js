@@ -1,10 +1,3 @@
-$(document).ready(function() {
-  var path = window.location.pathname.toString();
-  if (screen.width < 600) {
-    document.getElementById("navContainer").style.display= "block";
-  }
-});
-
 window.addEventListener('scroll', function () {
   var path = window.location.pathname.toString();
   let logoImage = document.getElementsByClassName("logo-image")
@@ -96,41 +89,30 @@ window.addEventListener('scroll', function () {
 });
 
 function openNav() {
+  disableScroll();
   if (screen.width < 600) {
     document.getElementById("mySidenav").style.height = "100vh";
-    document.getElementById("mySidenav").style.paddingTop = "20vh";
+    document.getElementById("mySidenav").style.paddingTop = "10vh";
     document.getElementById("mySidenav").style.width = "100vw";
-    document.getElementById("hide").style.display = "none";
-    document.getElementById("hide1").style.display = "none";
-    document.getElementById("hide2").style.display = "none";
-    document.getElementById("hide3").style.display = "none";
-    document.getElementById("hide4").style.display = "none";
   }
   else {
     if(document.getElementById("mySidenav")){
       document.getElementById("mySidenav").style.left = "0px";
-      disableScroll();
       document.getElementById("overlay").style.display = "block";
     }
   }
 }
 
 function closeNav() {
+  enableScroll();
   if (screen.width < 600) {
     document.getElementById("mySidenav").style.height = "0";
     document.getElementById("mySidenav").style.padding = "0px";
     document.getElementById("mySidenav").style.width = "100vw";
-    document.getElementById("hide").style.display = "block";
-    document.getElementById("hide1").style.display = "block";
-    document.getElementById("hide2").style.display = "block";
-    document.getElementById("hide3").style.display = "block";
-    document.getElementById("hide4").style.display = "block";
-    document.getElementById("hide5").style.display = "block";
   }
   else {
     if(document.getElementById("sidenavSeperateLine")){
       document.getElementById("mySidenav").style.left = "-260px";
-      enableScroll();
       document.getElementById("overlay").style.display = "none";
     }
   }
