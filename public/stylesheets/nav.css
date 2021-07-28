@@ -114,7 +114,6 @@
   display:none;
 }
 .nav-div{
-  margin-left: 5px !important;
   display:flex;
   align-content: center;
   justify-content: center;
@@ -270,8 +269,40 @@
   border-radius: 50%;
 }
 
+.mbLogo{
+  display:none;
+}
+
+
 @media screen and (max-width: 599px) {
   #navbar-right{
     display: none;
+  }
+  #spanLogoContainer{
+    display:none;
+  }
+  .mbLogo{
+    display:flex;
+    align-items: center;
+  }
+  .mbSpanLogoDiv{
+    width: 7vw;
+    height: 40px;
+    display: flex;
+    align-content: center;
+    margin-left:5px;
+  }
+  .mbLogoDiv{
+    width:30vw;
+    height: 40px;
+    display: flex;
+  }
+  .logo-image{
+    margin-left: 10px;
+    width: auto;
+  }
+  #logoLink{
+    display: flex;
+    align-content: center;
   }
 }

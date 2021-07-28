@@ -33,7 +33,6 @@ window.addEventListener('scroll', function () {
       homeNavOptionScrollUp();
       homeNavOptionScrollUpHover();
       homelogoScrollUp();
-      
     }
   }
 });
