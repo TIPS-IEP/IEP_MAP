@@ -146,3 +146,66 @@ function dropContentScrollDown(){
     allDropdownContent[i].setAttribute("style", "margin-top: 59px;");
   }
 }
+
+//mbsidenav
+function openNav() {
+  if (screen.width < 600) {
+    document.getElementById("mySidenav").style.height = "100vh";
+    document.getElementById("mySidenav").style.paddingTop = "20vh";
+    document.getElementById("mySidenav").style.width = "100vw";
+    disableScroll();
+  }
+}
+
+function closeNav() {
+  if (screen.width < 600) {
+    document.getElementById("mySidenav").style.height = "0";
+    document.getElementById("mySidenav").style.padding = "0px";
+    document.getElementById("mySidenav").style.width = "100vw";
+    enableScroll();
+  }
+}
+function mouseDown() {
+  document.getElementsByClassName("nav-div")[0].setAttribute("style", "box-shadow: 0.1rem 0.15rem 0.3rem rgb(83 88 93 / 80%) !important;");
+}
+function mouseUp() {
+  document.getElementsByClassName("nav-div")[0].removeAttribute("style", "box-shadow;");
+  document.getElementsByClassName("nav-div")[0].style.backgroundColor = "";
+}
+
+function disableScroll() {
+  window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+  window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+  window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+  window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+
+function preventDefaultForScrollKeys(e) {
+  if (keys[e.keyCode]) {
+    preventDefault(e);
+    return false;
+  }
+}
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+function preventDefault(e) {
+  e.preventDefault();
+}
+
+  var supportsPassive = false;
+try {
+  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+    get: function () { supportsPassive = true; } 
+  }));
+} catch(e) {}
+
+var wheelOpt = supportsPassive ? { passive: false } : false;
+var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+
+function enableScroll() {
+  window.removeEventListener('DOMMouseScroll', preventDefault, false);
+  window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+  window.removeEventListener('touchmove', preventDefault, wheelOpt);
+  window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+}
