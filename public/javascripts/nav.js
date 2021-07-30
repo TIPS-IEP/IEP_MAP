@@ -192,7 +192,7 @@ function preventDefault(e) {
   e.preventDefault();
 }
 
-  var supportsPassive = false;
+var supportsPassive = false;
 try {
   window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
     get: function () { supportsPassive = true; } 
