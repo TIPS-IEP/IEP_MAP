@@ -1,9 +1,32 @@
 const button = document.querySelector('#add-button');
-const tagInput = document.querySelector('#input');
+const tagInput = document.querySelector('#tag');
+const hiddenInputContainer = document.querySelector('#hiddenInputContainer')
 
 const form = document.forms[0];
 const tagContainer = document.querySelector('.tag-container');
 const tags = [];
+var verifiedTags = ["advice", "college", "applying", "activities"]
+
+window.onload = loadPreviousTags;
+
+function detectTags(value){
+  var verified = false;
+  for(var i = 0; i < verifiedTags.length; i++){
+    if(value == verifiedTags[i]){
+      verified = true;
+    }
+  }
+  return verified;
+}
+
+function loadPreviousTags(){
+  var previousTags = document.getElementsByClassName("previousTags");
+  
+  for(var i = 0; i < previousTags.length; i++){
+    createTag(previousTags[i].innerHTML);
+    console.log("previous:" + previousTags[i].innerHTML);
+  }
+}
 
 const createTag = (tagValue) => {
     const value = tagValue.trim();

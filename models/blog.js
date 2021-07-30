@@ -16,10 +16,8 @@ const BlogSchema = new mongoose.Schema({
         default: "not verified",
         enum: ["verified", "not verified"]
     },
-    status: {
-        type: String,
-        require: true,
-        enum: ["College", "Advice", "Applying", "Activities"]
+    tag: {
+        type: Array,
     },
     blogId: {
         allowNull: false,

@@ -54,22 +54,19 @@ html(lang='en')
       .row
         .col-md-1
         .col-md-10
-          //- h1 Write Your Blog Post Here
-          //- p We would publish your blog post after verifying it.
           form#get-data-form(action="/blog" method='POST' autocomplete="off")
             .form-group
               h5 Title
               input(type="text" class="form-control" id="blogTitle" name="blogTitle" placeholder="Enter the title" required)
               h5 Tags
+              .warning (We currently only verrify the following tags: advice, college, activities, applying.)              
               .input-container
-                input(type="text" class="form-control" id="input" placeholder="Enter tags . . .")
+                input(type="text" class="form-control" id="tag" placeholder="Enter tags . . .")
               .tag-container
-              
-              
-                //- input(type="text" id="input" placeholder="Enter tags . . .")
-            h5 Content
-            textarea.tinymce#content(name="content")
-            input#saveButton(type='submit' value='Save')
+              #hiddenInputContainer
+              h5 Content
+              textarea.tinymce#content(name="content")
+              input#saveButton(type='submit' value='Save')
         .col-md-1
 
   //- js
