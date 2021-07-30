@@ -172,8 +172,7 @@ footer{
 		margin-bottom: 40px;
 		text-align: center;
 	}
-
-	.footer-distributed .footer-center i{
-		margin-left: 0;
+	.fa-phone{
+		margin-left: 0 !important;
 	}
 }

@@ -22,11 +22,13 @@
   border-radius: 8px;
 }
 
-.navOption:hover{
-  color: rgb(255, 255, 255)!important; 
+/* .navOption:hover{
+  color: rgb(255, 179, 37);
   transition: 0.2s;
   text-decoration: none !important;
-}
+} */
+
+
 
 #logoLink{
   height: inherit;
@@ -136,6 +138,12 @@
   border-bottom: 0px;
   display: inline-block;
   margin-bottom: 0px;
+}
+
+.myDropdown:hover .navOption{
+  color: rgb(255, 179, 37); 
+  transition: 0.2s;
+  text-decoration: none !important;
 }
 
 .all-dropdown-content{
@@ -259,8 +267,40 @@
   border-radius: 50%;
 }
 
+.mbLogo{
+  display:none;
+}
+
+
 @media screen and (max-width: 599px) {
   #navbar-right{
     display: none;
+  }
+  #spanLogoContainer{
+    display:none;
+  }
+  .mbLogo{
+    display:flex;
+    align-items: center;
+  }
+  .mbSpanLogoDiv{
+    width: 7vw;
+    height: 40px;
+    display: flex;
+    align-content: center;
+    margin-left:5px;
+  }
+  .mbLogoDiv{
+    width:30vw;
+    height: 40px;
+    display: flex;
+  }
+  .logo-image{
+    margin-left: 10px;
+    width: auto;
+  }
+  #logoLink{
+    display: flex;
+    align-content: center;
   }
 }
