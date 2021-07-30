@@ -35,6 +35,7 @@ html(lang='en')
     include ../common/nav
     include ../common/cover
     #mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
       a.pcsidenav(href='#') Home 
       a.pcsidenav(href='#vision') Vision
       a.pcsidenav(href='#mission') Mission
@@ -67,7 +68,7 @@ html(lang='en')
         .col-md-1
         .col-md-10
           a#eachLink(href='/map' target='_blank' rel='noopener')
-            h5.fadeInUpward 👨‍🎓 Student Profiles 
+            h5.fadeInUpward 👨‍🎓 Student Maps 
           p.fadeInUpward Created by students of Class 2021 from mid-May, our website includes functions such as infographics, student distribution maps, guides and suggestions for studying abroad, and login systems that protect the privacy of students. 
         .col-md-1
       .row
