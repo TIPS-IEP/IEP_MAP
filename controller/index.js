@@ -82,6 +82,23 @@ exports.showEvents = function(req, res, next) {
   res.render('events');
 }
 
+exports.showJoin = function(req, res) {
+  if(req.isAuthenticated()){
+    firstName = req.user.firstName;
+    isAuthenticated = true;
+    image = req.user.image;
+  }else{
+    firstName = null;
+    isAuthenticated = false;
+    image = null;
+  }
+  res.render('join', {
+    loggedin: req.isAuthenticated(),
+    name: firstName,
+    image: image,
+  });
+}
+
 exports.showError = function(req, res, next) {
   if(req.isAuthenticated()){
     firstName = req.user.firstName;
