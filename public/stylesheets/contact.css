@@ -76,3 +76,89 @@ input[type=submit]:hover {
     font-size: 200%;
   }
 }
+
+.container {
+  padding: 0 16px;
+  color: rgb(0, 0, 0);
+}
+
+.featuresContainer {
+  text-align: center;
+}
+
+.featuresContainer .container-fluid{
+  margin-top: 100px;
+}
+
+.featuresContainer h3 {
+  margin-top: 30px;
+}
+
+.imageContainer{
+  /* margin-top: 100px; */
+  height: 300px;
+  width: 300px;
+  border: none;
+  align-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.imageContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#title{
+  margin-top: 50px;
+  padding-top: 30px;
+}
+
+#title h1, h3, h4, h5{
+  font-weight: 700 !important;
+  letter-spacing: 1.4px;
+}
+
+#title h1 {
+  font-size: 90px;
+  line-height: 1.3em;
+  text-align: center;
+}
+
+#title h3 {
+  font-size: 50px;
+  line-height: 1.1em;
+  text-align: left;
+}
+
+#title h4 {
+  font-size: 43px;
+  line-height: 1em;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+  text-align: left;
+}
+
+#title h5 {
+  font-size: 30px;
+  line-height: 1.2em;
+  text-align: left;
+}
+
+.hero-link {
+  margin-top: 2vh;
+  text-align: left;
+  position: absolute;
+  /* top: 100%; */
+  left: 0%;
+  width: 100%;
+  /* transform: translate(-50%, -50%); */
+  /* text-decoration: dashed; */
+  color: rgb(201, 106, 106) !important;
+}
