@@ -28,25 +28,25 @@ script.
   #navbar-right(style = "height: 52px !important;")
     //- a.navOption#hide3(href='/') Home
     .myDropdown.allDropdown(style="")
-        a.dropbtn.navOption#hide4(href='/') About 
-        .dropdown-content.all-dropdown-content
-          a(href='/join') Join&nbsp; In!
-          a(href='/contact') Contact&nbsp; Us
+      a.dropbtn.navOption#hide4(href='/') About 
+      .dropdown-content.all-dropdown-content
+        a(href='/join') Join&nbsp; In!
+        a(href='/contact') Contact&nbsp; Us
     .myDropdown.allDropdown(style="")
       a.dropbtn.navOption#hide4(href='#') Guides
       .dropdown-content.all-dropdown-content
         a(href='/wiki') Wiki&nbsp; Index
         a(href='/blog') Blog&nbsp; Entries
     .myDropdown.allDropdown(style="")
-        a.dropbtn.navOption#hide4(href='/iep') Wego&nbsp; IEP
-        .dropdown-content.all-dropdown-content
-          a(href='/about') About&nbsp; IEP
-          a(href='/map') Student&nbsp; Maps
-          a(href='/events') Events
+      a.dropbtn.navOption#hide4(href='/iep') Wego&nbsp; IEP
+      .dropdown-content.all-dropdown-content
+        a(href='/about') About&nbsp; IEP
+        a(href='/map') Student&nbsp; Maps
+        a(href='/events') Events
 
 
     if loggedin
-      .loginDropdown.allDropdown(style="")
+      .loginDropdown.allDropdown.myDropdown(style="")
         a.loginDropbtn.navOption#hide2(href='/profile') Hi&nbsp; #{name}
         .login-dropdown-content.all-dropdown-content
           #googleImageContainer
