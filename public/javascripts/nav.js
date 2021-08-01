@@ -5,9 +5,9 @@ let allDropdown = document.getElementsByClassName("allDropdown");
 let myDropdown = document.getElementsByClassName("myDropdown");
 let allDropdownContent = document.getElementsByClassName("all-dropdown-content");
 let nav = document.getElementById("navbar");
+var path = window.location.pathname.toString();
 
 $(document).ready(function() {
-  var path = window.location.pathname.toString();
   scrollUpSetUp();
   if (screen.width < 600) {
     document.getElementById("navContainer").style.display= "block";
@@ -15,7 +15,6 @@ $(document).ready(function() {
 });
 
 window.addEventListener('scroll', function () {
-  var path = window.location.pathname.toString();
   if (window.pageYOffset > 40) {
     navbarScrollDown();
     navOptionScrollDown();
