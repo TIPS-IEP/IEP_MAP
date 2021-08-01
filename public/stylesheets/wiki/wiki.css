@@ -3,6 +3,10 @@ body {
   font-family: proxima-nova,Sans-serif;
 }
 
+strong {
+  color: red;
+}
+
 #navbar {
   background: rgb(29, 29, 29);
 }
