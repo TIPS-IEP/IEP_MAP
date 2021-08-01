@@ -28,10 +28,10 @@ script.
   #navbar-right(style = "height: 52px !important;")
     //- a.navOption#hide3(href='/') Home
     .myDropdown.allDropdown(style="")
-        a.dropbtn.navOption#hide4(href='/') About 
-        .dropdown-content.all-dropdown-content
-          a(href='/') About&nbsp; TIPS
-          a(href='/contact') Join&nbsp; In! 
+      a.dropbtn.navOption#hide4(href='#') About
+      .dropdown-content.all-dropdown-content
+        a(href='/') About&nbsp; TIPS
+        a(href='/contact') Join&nbsp; In! 
     .myDropdown.allDropdown(style="")
       a.dropbtn.navOption#hide4(href='#') Guides
       .dropdown-content.all-dropdown-content
@@ -46,7 +46,7 @@ script.
 
 
     if loggedin
-      .loginDropdown.allDropdown(style="")
+      .loginDropdown.allDropdown.myDropdown(style="")
         a.loginDropbtn.navOption#hide2(href='/profile') Hi&nbsp; #{name}
         .login-dropdown-content.all-dropdown-content
           #googleImageContainer

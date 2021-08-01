@@ -8,6 +8,7 @@ let nav = document.getElementById("navbar");
 
 $(document).ready(function() {
   var path = window.location.pathname.toString();
+  scrollUpSetUp();
   if (screen.width < 600) {
     document.getElementById("navContainer").style.display= "block";
   }
@@ -23,19 +24,23 @@ window.addEventListener('scroll', function () {
     dropContentScrollDown();
     logoScrollDown();
   } else {
-    dropScrollUp();
-    dropContentScrollUp();
-    navbarScrollUp();
-    navOptionScrollUpHover();
-
-    if(path == "/"){
-      document.getElementById("navbar").style.background = "none";
-      homeNavOptionScrollUp();
-      homeNavOptionScrollUpHover();
-      homelogoScrollUp();
-    }
+    scrollUpSetUp();
   }
 });
+
+function scrollUpSetUp(){
+  dropScrollUp();
+  dropContentScrollUp();
+  navbarScrollUp();
+  navOptionScrollUpHover();
+
+  if(path == "/"){
+    document.getElementById("navbar").style.background = "none";
+    homeNavOptionScrollUp();
+    homeNavOptionScrollUpHover();
+    homelogoScrollUp();
+  }
+}
 
 function homelogoScrollUp(){
   for (let i = 0; i < $('.logo-image').length; i++) {
