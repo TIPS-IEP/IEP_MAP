@@ -36,7 +36,7 @@ async function importDataToList(){
   }
 }
 
-async function initMap(){
+function initMap(){
   for(var alumniNumber=0; alumniNumber<alumniObject.alumniUniversity.length; alumniNumber++){
     var found = false;
     for(universityNumber=0;universityNumber<universitiesLength; universityNumber++){
