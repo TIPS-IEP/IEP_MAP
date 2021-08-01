@@ -159,6 +159,22 @@ exports.showBlog = async function(req, res, next) {
   });
 }
 
+exports.guide = function(req, res, next) {
+  if(req.isAuthenticated()){
+    firstName = req.user.firstName;
+    isAuthenticated = true;
+    image = req.user.image;
+  }else{
+    firstName = null;
+    isAuthenticated = false;
+    image = null;
+  }
+  res.render('guide', {
+    loggedin: isAuthenticated,
+    name: firstName,
+    image: image,
+  });
+}
 
 
 

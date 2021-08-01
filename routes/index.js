@@ -32,6 +32,7 @@ router.get('/blog', indexController.showBlog)
 router.get('/join', indexController.showJoin);
 
 
+
 router.post('/contactUs', contactController.sendForm)
 
 router.post('/add', ensureAuth, usersController.add)
