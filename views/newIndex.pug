@@ -42,13 +42,13 @@ html(lang='en')
     #overlay
     .hero-image1
       .hero-text1     
-    .animated-title
-      .text-top
-        div
-          span Taiwanese
-          span Intl Programs
-      .text-bottom
-        div & Students!
+      .animated-title
+        .text-top
+          div
+            span Taiwanese
+            span Intl Programs
+        .text-bottom
+          div & Students!
     #title
       #Wiki
       .newFeatures
@@ -76,6 +76,9 @@ html(lang='en')
         .container-fluid
           .row
             .col-md-2
+            .col-md-4.mbBlogImageCol
+              .imageContainer.fadeInRightward
+                img(src="/images/blog/blog.png")
             .col-md-5
               h4.paragraph2.line-height.fadeInUpward(style="text-align: left") Explore blogs on all topics
               h5.paragraph2.line-height.fadeInUpward(style="text-align: left; color: DimGrey;") Write & save your own articles
@@ -89,8 +92,8 @@ html(lang='en')
                 .fadeInUpward
                   a.hero-link(href='/blog') → Read Our Blogs
 
-            .col-md-4
-              .imageContainer.fadeInRightward
+            .col-md-4.pcBlogImageCol
+              .imageContainer.fadeInRightward.blogImageContainer
                 img(src="/images/blog/blog.png")
             .col-md-1
       .featuresContainer

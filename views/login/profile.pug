@@ -35,6 +35,8 @@ html(lang='en')
 
   body#main
     include ../common/nav
+    #mySidenav.sidenav
+      include ../common/mbsidenav
     script.
         var user = "#{data}";
         var data = user.split(/\,+(?!\ )/);

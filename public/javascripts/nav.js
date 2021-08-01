@@ -156,7 +156,7 @@ function dropContentScrollDown(){
 function openNav() {
   if (screen.width < 600) {
     document.getElementById("mySidenav").style.height = "100vh";
-    document.getElementById("mySidenav").style.paddingTop = "20vh";
+    document.getElementById("mySidenav").style.paddingTop = "15vh";
     document.getElementById("mySidenav").style.width = "100vw";
     disableScroll();
   }
@@ -197,7 +197,7 @@ function preventDefault(e) {
   e.preventDefault();
 }
 
-  var supportsPassive = false;
+var supportsPassive = false;
 try {
   window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
     get: function () { supportsPassive = true; } 
