@@ -1,0 +1,77 @@
+doctype html
+html(lang='en') 
+
+  head
+    //- css
+    link(rel="stylesheet" href="stylesheets/nav.css")
+    link(rel="stylesheet" href="stylesheets/footer.css")
+    link(rel="stylesheet" href="stylesheets/sidenav.css")
+    link(rel="stylesheet" href="stylesheets/guides.css")
+
+
+    //- js
+
+    //- bootstrap setup
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    
+    //- jquery
+    script(src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+
+    //- center website 
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    
+    //- google font set up
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
+
+    title Guide 
+    //-favicon
+    link(rel="icon" type="image/png" href="/images/icons/favicon.png")
+
+  body
+    include common/nav
+    #mySidenav.sidenav
+      include common/mbsidenav
+    include common/cover
+    .container.guideContainer
+      .row.guideTitleContainer
+        .guideTitle.fadeInUpward GUIDES 
+      .row.entranceContainer
+        .wikiEntrance.Entrance
+          img.entranceImg(src="images/blog/wiki.png")
+          h4.paragraph2.fadeInUpward Learn essential life skills
+          h5.paragraph2.fadeInUpward(style="color: DimGrey;") Comprehensive guides updated every month
+          .row
+            .col-md-2
+            .list.col-md-8
+              h5.listText.paragraph2.fadeInUpward(style="color: BurlyWood;") • Applying to college
+                | 
+                br 
+                | • Ideas to live by
+                |
+                br 
+                | • and lots more to come!
+          .fadeInUpward
+            a.paragraph2.hero-link(href='/wiki') → Read Our Wiki
+            .col-md-2
+        .blogEntrance.Entrance
+          img.entranceImg(src="images/blog/blog.png")
+          h4.paragraph2.line-height.fadeInUpward Explore blogs on all topics
+          h5.paragraph2.fadeInUpward(style="color: DimGrey;") Write & save your own articles
+          .row
+            .col-md-2
+            .list.col-md-8
+              h5.listText.paragraph2.fadeInUpward(style="color: BurlyWood;") #college #applications
+                | 
+                br
+                | #activities #advice
+                |
+                br
+                | PS. get featured on our site
+          .fadeInUpward
+            a.paragraph2.hero-link(href='/blog') → Read Our Blogs
+            .col-md-2
+    include common/footer
+    script(src="javascripts/fadeIn.js")

@@ -36,7 +36,7 @@ async function importDataToList(){
   }
 }
 
-function initMap(){
+async function initMap(){
   for(var alumniNumber=0; alumniNumber<alumniObject.alumniUniversity.length; alumniNumber++){
     var found = false;
     for(universityNumber=0;universityNumber<universitiesLength; universityNumber++){
@@ -70,7 +70,7 @@ function initMap(){
       
     });
   }
-  createUniversitiesSearchList (map);
+  createUniversitiesSearchList(map);
 }
 
 function createUniversitiesSearchList(map){

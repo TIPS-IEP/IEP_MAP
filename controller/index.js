@@ -159,7 +159,7 @@ exports.showBlog = async function(req, res, next) {
   });
 }
 
-exports.guide = function(req, res, next) {
+exports.showGuides = function(req, res, next) {
   if(req.isAuthenticated()){
     firstName = req.user.firstName;
     isAuthenticated = true;
@@ -169,7 +169,7 @@ exports.guide = function(req, res, next) {
     isAuthenticated = false;
     image = null;
   }
-  res.render('guide', {
+  res.render('guides', {
     loggedin: isAuthenticated,
     name: firstName,
     image: image,
