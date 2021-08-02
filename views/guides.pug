@@ -39,9 +39,39 @@ html(lang='en')
       .row.guideTitleContainer
         .guideTitle.fadeInUpward GUIDES 
       .row.entranceContainer
-        .col-md-1
-        .col-md-5.wikiEntrance
-        .col-md-5.blogEntrance
-        .col-md-1
+        .wikiEntrance.Entrance
+          img.entranceImg(src="images/blog/wiki.png")
+          h4.paragraph2.fadeInUpward Learn essential life skills
+          h5.paragraph2.fadeInUpward(style="color: DimGrey;") Comprehensive guides updated every month
+          .row
+            .col-md-2
+            .list.col-md-8
+              h5.listText.paragraph2.fadeInUpward(style="color: BurlyWood;") • Applying to college
+                | 
+                br 
+                | • Ideas to live by
+                |
+                br 
+                | • and lots more to come!
+          .fadeInUpward
+            a.paragraph2.hero-link(href='/wiki') → Read Our Wiki
+            .col-md-2
+        .blogEntrance.Entrance
+          img.entranceImg(src="images/blog/blog.png")
+          h4.paragraph2.line-height.fadeInUpward Explore blogs on all topics
+          h5.paragraph2.fadeInUpward(style="color: DimGrey;") Write & save your own articles
+          .row
+            .col-md-2
+            .list.col-md-8
+              h5.listText.paragraph2.fadeInUpward(style="color: BurlyWood;") #college #applications
+                | 
+                br
+                | #activities #advice
+                |
+                br
+                | PS. get featured on our site
+          .fadeInUpward
+            a.paragraph2.hero-link(href='/blog') → Read Our Blogs
+            .col-md-2
     include common/footer
     script(src="javascripts/fadeIn.js")
