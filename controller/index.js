@@ -135,10 +135,14 @@ exports.showWiki = function(req, res, next) {
 }
 
 exports.showBlog = async function(req, res, next) {
-  const collegeBlogs = await Blog.find({ tag: "college", status: "verified" }).lean();
-  const adviceBlogs = await Blog.find({ tag: "advice" }).lean();
-  const applyingBlogs = await Blog.find({ tag: "applying" }).lean();
-  const activitiesBlogs = await Blog.find({ tag: "activities" }).lean();
+  const collegeBlogs = await Blog.find({ tag: "college", status: "verified"}).lean();
+  const adviceBlogs = await Blog.find({ tag: "advice", status: "verified" }).lean();
+  const applyingBlogs = await Blog.find({ tag: "applying", status: "verified" }).lean();
+  const activitiesBlogs = await Blog.find({ tag: "activities", status: "verified" }).lean();
+  // if(collegeBlogs[0]){
+  //   console.log("value")
+  // }
+  
   if(req.isAuthenticated()){
     firstName = req.user.firstName;
     isAuthenticated = true;

@@ -111,21 +111,40 @@ html(lang='en')
           .col-md-2
         .row.typeB.fadeInUpward
           for collegeBlog in collegeBlogs
-            .col-md-4.blogDiv
-              img.blogImage(src='/images/blog/cover1.jpg')
+            .col-md-4.blogDiv(style="margin-top: 15vh")
+              .card(style="width: 25rem;")
+                img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
+                .card-body
+                  h5.card-title #{collegeBlog.blogTitle}
+                  p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+                  a.btn.btn-primary(href="#") Go somewhere
         .row.typeB.displayN.fadeInUpward
           for adviceBlog in adviceBlogs
-            .col-md-4.blogDiv
-              img.blogImage(src='/images/blog/cover1.jpg')
+            .col-md-4.blogDiv(style="margin-top: 15vh")
+              .card(style="width: 25rem;")
+                img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
+                .card-body
+                  h5.card-title #{adviceBlog.blogTitle}
+                  p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+                  a.btn.btn-primary(href="#") Go somewhere
         .row.typeB.displayN.applyingBlogs
           for applyingBlog in applyingBlogs
-            .col-md-4.blogDiv
-              img.blogImage(src='/images/blog/cover1.jpg')
+            .col-md-4.blogDiv(style="margin-top: 15vh")
+              .card(style="width: 25rem;")
+                img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
+                .card-body
+                  h5.card-title #{applyingBlog.blogTitle}
+                  p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+                  a.btn.btn-primary(href="#") Go somewhere
         .row.typeB.displayN.fadeInUpward
           for activitiesBlog in activitiesBlogs
-            .col-md-4.blogDiv
-              img.blogImage(src='/images/blog/cover1.jpg')
-        
+            .col-md-4.blogDiv(style="margin-top: 15vh")
+              .card(style="width: 25rem;")
+                img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
+                .card-body
+                  h5.card-title #{activitiesBlog.blogTitle}
+                  p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+                  a.btn.btn-primary(href="#") Go somewhere
     if loggedin
       .container
         .row 

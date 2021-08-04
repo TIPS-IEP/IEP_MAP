@@ -64,6 +64,7 @@ router.get('/writeblog', blogController.showWriteBlog);
 router.get('/blog/:tag', ensureAuth, blogController.viewBlog);
 router.get('/blog/:blog_id/view', ensureAuth, blogController.viewBlog);
 router.get('/blog/:blog_id/edit', ensureAuth, blogController.editBlog);
+router.get('/blog/:blog_id/authedit', ensureAdmin, blogController.authEditBlog);
 router.post('/blog/:blog_id/save', ensureAuth, blogController.saveBlog);
 router.post('/blog/:blog_id/delete', ensureAuth, blogController.deleteBlog);
 router.post('/blog/:blog_id/verify', ensureAuth, blogController.verifyBlog);

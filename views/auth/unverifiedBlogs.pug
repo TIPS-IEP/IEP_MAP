@@ -45,7 +45,7 @@ html(lang='en')
         .col-md-10(style="margin-top: 120px")
           if blogs
             for blog in blogs
-              a(href = "blog/" + blog.blogId + "/edit").link
+              a(href = "/blog/" + blog._id + "/authedit").link
                 .card.path.eachBlog
                   .card-body
                     .row
