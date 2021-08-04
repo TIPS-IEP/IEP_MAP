@@ -4,7 +4,16 @@ body {
 }
 
 strong {
-  color: red;
+  color: rgb(255, 179, 37)!important;
+  font-weight: 400 !important;
+}
+
+.url{
+  color: rgb(255, 179, 37)!important; 
+}
+
+.emphasize{
+  font-weight: 700;
 }
 
 #navbar {
