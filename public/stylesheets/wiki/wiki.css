@@ -10,6 +10,11 @@ strong {
 
 .url{
   color: rgb(255, 179, 37)!important; 
+  font-size: 20px;
+}
+
+.paragraph{
+  font-size: 20px;
 }
 
 .emphasize{
