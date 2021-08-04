@@ -34,8 +34,17 @@ const createTag = (tagValue) => {
     if (value === '' || tags.includes(value)) return;
 
     const tag = document.createElement('span');
+    const hiddenInput = document.createElement('input');
     const tagContent = document.createTextNode(value);
-    tag.setAttribute('class', 'tag');
+    if(detectTags(value)){
+      tag.setAttribute('class', 'verifiedTag');
+    }else{
+      tag.setAttribute('class', 'tag');
+    }
+    hiddenInput.setAttribute('class','hiddenInput');
+    hiddenInput.setAttribute('name','tag');
+    hiddenInput.value = value;
+    tag.appendChild(hiddenInput);
     tag.appendChild(tagContent);
 
     const close = document.createElement('span');
@@ -54,6 +63,7 @@ const createTag = (tagValue) => {
 const handleRemoveTag = (e) => {
     const item = e.target.textContent;
     e.target.parentElement.remove();
+    console.log(e);
     tags.splice(tags.indexOf(item), 1);
 };
 
@@ -69,4 +79,6 @@ tagInput.addEventListener('keyup', (e) => {
     }
 });
 
-form.addEventListener('submit', handleFormSubmit);
+
+
+// form.addEventListener('submit', handleFormSubmit);

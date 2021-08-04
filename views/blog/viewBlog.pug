@@ -30,39 +30,5 @@ html(lang='en')
 
     //-favicon
     link(rel="icon" type="image/png" href="/images/icons/favicon.png")
-  body#main
-    include ../common/nav
-    include ../common/cover
-    #mySidenav.sidenav
-      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
-      a.pcsidenav(href='#') Home 
-      a.pcsidenav(href='#vision') Vision
-      a.pcsidenav(href='#mission') Mission
-      a.pcsidenav(href='#about') Features
-      a.pcsidenav(href='#contactus') Contact
-      include ../common/mbsidenav
-    .container
-      .row
-        .col-md-1
-        .col-md-10(style="margin-top: 10vh")
-          a(href="/writeblog")
-            button.btn.btn-primary(type="button") ✏️ write
-          if blogs
-            for blog in blogs
-              a(href = "blog/" + blog._id + "/edit").link
-                .card.path.eachBlog
-                  .card-body
-                    .row
-                      .col-md-11
-                        h5.card-title(style="font-size: 30px") #{blog.blogTitle}
-                        if(blog.status == "not verified")
-                          h6.card-subtitle.mb-2.notVerified Status: #{blog.status}
-                        else
-                          h6.card-subtitle.mb-2.verified Status: #{blog.status}. We would post your blog as soon as possible.
-                        p.card-text Written in #{blog.createdAt}
-                      .col-md-1
-                        form(action="/blog/" + blog._id + "/delete" method='POST' onSubmit="return confirm('Are you sure you want to permantly delete this blog post?')")
-                          button.deleteButton(type="submit") Delete
-
-                    
-        .col-md-1
+  body
+    #{blog.content}
