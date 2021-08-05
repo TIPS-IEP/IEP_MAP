@@ -111,8 +111,8 @@ html(lang='en')
           .col-md-2
         .row.typeB.fadeInUpward
           for collegeBlog in collegeBlogs
-            .col-md-4.blogDiv(style="margin-top: 15vh")
-              .card(style="width: 25rem;")
+            .col-md-4.blogDiv
+              .card
                 img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
                 .card-body
                   h5.card-title #{collegeBlog.blogTitle}
@@ -120,8 +120,8 @@ html(lang='en')
                   a.btn.btn-primary(href="#") Go somewhere
         .row.typeB.displayN.fadeInUpward
           for adviceBlog in adviceBlogs
-            .col-md-4.blogDiv(style="margin-top: 15vh")
-              .card(style="width: 25rem;")
+            .col-md-4.blogDiv
+              .card
                 img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
                 .card-body
                   h5.card-title #{adviceBlog.blogTitle}
@@ -129,8 +129,8 @@ html(lang='en')
                   a.btn.btn-primary(href="#") Go somewhere
         .row.typeB.displayN.applyingBlogs
           for applyingBlog in applyingBlogs
-            .col-md-4.blogDiv(style="margin-top: 15vh")
-              .card(style="width: 25rem;")
+            .col-md-4.blogDiv
+              .card
                 img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
                 .card-body
                   h5.card-title #{applyingBlog.blogTitle}
@@ -138,21 +138,20 @@ html(lang='en')
                   a.btn.btn-primary(href="#") Go somewhere
         .row.typeB.displayN.fadeInUpward
           for activitiesBlog in activitiesBlogs
-            .col-md-4.blogDiv(style="margin-top: 15vh")
-              .card(style="width: 25rem;")
+            .col-md-4.blogDiv
+              .card
                 img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
                 .card-body
                   h5.card-title #{activitiesBlog.blogTitle}
                   p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
                   a.btn.btn-primary(href="#") Go somewhere
-    if loggedin
-      .container
-        .row 
-          .col-md-4
-          .col-md-4
-            a(href="/writeblog")
-              button#startBlog.btn(type="button") Start Writing Your Own Blog
-          .col-md-4 
+    .container(style="margin-top: 10rem")
+      .row 
+        .col-md-4
+        .col-md-4
+          a(href="/writeblog")
+            button#startBlog.btn(type="button") Start Writing Your Own Blog
+        .col-md-4 
 
   include ../common/footer 
   
