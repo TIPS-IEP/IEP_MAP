@@ -18,7 +18,7 @@
   margin:20px 40px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   border-radius:15px;
-  transition:0.5s !important;
+  transition:0.3s !important;
 }
 .Entrance:hover{
   cursor: pointer;
