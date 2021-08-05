@@ -20,7 +20,6 @@ html(lang='en')
     //- js
     script(src="javascripts/index.js")
     script(src="javascripts/about.js")
-    script(src="javascripts/blog.js")
     script(src='https://cdn.tiny.cloud/1/nda8paljag6qmrws041pc75kikjb5zuqz5du9x5ix1edjl77/tinymce/5/tinymce.min.js' referrerpolicy='origin')
     script.
       tinyMCE.init({
@@ -29,7 +28,10 @@ html(lang='en')
         toolbar: ['undo redo | styleselect | bold italic | link image| alignleft aligncenter alignright | numlist bullist | restoredraft'],
         height: '500',
       });
+      var hello = "#{collegeBlogs[0].blogTitle}"
+      //- console.log(hello);
 
+    script(src="javascripts/blog/blog.js")
     //- center website 
     meta(name='viewport' content='width=device-width, initial-scale=1')
 
@@ -111,40 +113,40 @@ html(lang='en')
           .col-md-2
         .row.typeB.fadeInUpward
           for collegeBlog in collegeBlogs
-            .col-md-4.blogDiv
+            .col-md-4.blogDiv(id=collegeBlog._id)
               .card
                 img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
                 .card-body
                   h5.card-title #{collegeBlog.blogTitle}
                   p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
-                  a.btn.btn-primary(href="#") Go somewhere
+                  a.btn.btn-primary(href='/blog/' + collegeBlog._id+ '/view') Read More
         .row.typeB.displayN.fadeInUpward
           for adviceBlog in adviceBlogs
-            .col-md-4.blogDiv
+            .col-md-4.blogDiv(id=adviceBlog._id)
               .card
                 img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
                 .card-body
                   h5.card-title #{adviceBlog.blogTitle}
                   p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
-                  a.btn.btn-primary(href="#") Go somewhere
+                  a.btn.btn-primary(href='/blog/' + adviceBlog._id+ '/view') Read More
         .row.typeB.displayN.applyingBlogs
           for applyingBlog in applyingBlogs
-            .col-md-4.blogDiv
+            .col-md-4.blogDiv(id=applyingBlog._id)
               .card
                 img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
                 .card-body
                   h5.card-title #{applyingBlog.blogTitle}
                   p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
-                  a.btn.btn-primary(href="#") Go somewhere
+                  a.btn.btn-primary(href='/blog/' + applyingBlog._id+ '/view') Read More
         .row.typeB.displayN.fadeInUpward
           for activitiesBlog in activitiesBlogs
-            .col-md-4.blogDiv
+            .col-md-4.blogDiv(id=activitiesBlog._id)
               .card
                 img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
                 .card-body
                   h5.card-title #{activitiesBlog.blogTitle}
                   p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
-                  a.btn.btn-primary(href="#") Go somewhere
+                  a.btn.btn-primary(href='/blog/' + activitiesBlog._id+ '/view') Read More
     .container(style="margin-top: 10rem")
       .row 
         .col-md-4

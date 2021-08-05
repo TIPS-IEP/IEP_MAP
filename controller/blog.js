@@ -46,7 +46,7 @@ exports.viewBlog = async function(req, res, next) {
     res.render('blog/viewBlog', {
       loggedin: isAuthenticated,
       name: firstName,
-      blog: blog,
+      blog: blog[0],
     });
   }
 }
