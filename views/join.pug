@@ -2,10 +2,10 @@ doctype html
 html(lang='en') 
   head
     //- css
-    link(rel="stylesheet" href="stylesheets/share.css")
     link(rel="stylesheet" href="stylesheets/nav.css")
     link(rel="stylesheet" href="stylesheets/footer.css")
-    link(rel="stylesheet" href="stylesheets/sidenav.css")
+    link(rel="stylesheet" href="stylesheets/join.css")
+    link(rel="stylesheet" href="stylesheets/common/fadeIn.css")
 
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
@@ -32,23 +32,61 @@ html(lang='en')
     link(rel="icon" type="image/png" href="/images/icons/favicon.png")
       
   body#main
-  include common/nav
-  .featuresContainer
-    .container-fluid
+    include common/nav
+    .container#title
       .row
         .col-md-1
-        .col-md-4
-          .imageContainer.fadeInLeftward
-            img(src="/images/blog/wiki.png")
+        .col-md-10
+          h1.fadeInUpward Join In!
+          h5.alignCenter.fadeInUpward Reach out to us on 
+            a(href='https://www.instagram.com/wego.iep/' target='_blank' rel='noopener') Instagram
+            | , 
+            a(href='https://www.facebook.com/groups/266271838471963' target='_blank' rel='noopener') Email
+            |  to add your own school's "Student Distribution Map" & other features. 
+        .col-md-1
+    .featuresContainer
+      .container-fluid
+        .row
+          .col-md-1
+          .col-md-4
+            .imageContainer.fadeInLeftward
+              img(src="/images/blog/wego.png")
+          .col-md-7
+            h4.fadeInUpward(style="text-align: left") Student Distrubution Maps 
+            h5.fadeInUpward(style="text-align: left; color: DimGrey;") Connect with other Taiwanese students abroad
+            h5.fadeInUpward(style="text-align: left; color: BurlyWood;") 150+ student profiles 
+              | 
+              br 
+              | • Ideas to live by
+              |
+              br 
+              | • and lots more to come!
+              .fadeInUpward
+                a.hero-link(href='/about') → Read Our Guides 
+    .container#title
+      .row#inputRow
+        .col-md-1
         .col-md-7
-          h4.paragraph2.line-height.fadeInUpward(style="text-align: left") Learn essential life skills
-          h5.paragraph2.line-height.fadeInUpward(style="text-align: left; color: DimGrey;") Comprehensive guides updated every month 
-          h5.paragraph2.line-height.fadeInUpward(style="text-align: left; color: BurlyWood;") • Applying to college
-            | 
-            br 
-            | • Ideas to live by
-            |
-            br 
-            | • and lots more to come!
-            .fadeInUpward
-              a.hero-link(href='/about') → Read Our Guides 
+          img.fadeInLeftward#contactPic(src='/images/hero/letter2.1.jpg')
+        .col-md-3
+          form#inputForm.fadeInUpward(action = "/contactUs" method="POST" onSubmit="return confirm('You have sent a message to us. We would reply you as soon as possible.')")
+            label(for='fname') First Name
+            input(type='text' name='firstname' placeholder='Your name..' required)
+            label(for='lname') Last Name
+            input(type='text' name='lastname' placeholder='Your last name..' required)
+            label(for='country') Country
+            select#country(name='country')
+              option(value='taiwan') Taiwan
+              option(value='usa') USA
+              option(value='canada') Canada 
+              option(value='uk') UK
+              option(value='japan') Japan 
+              option(value='singapore') Singapore 
+              option(value='china')  China
+              option(value='thailand') Thailand
+            label#subjectLabel(for='subject') Subject
+            textarea(name='subject' placeholder='Write something..' style='height:110px' required)
+            input(type='submit' value='Submit')
+        .col-md-1
+    include common/footer
+    script(src="javascripts/fadeIn.js")

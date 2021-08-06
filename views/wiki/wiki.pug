@@ -37,6 +37,15 @@ html(lang='en')
       a.pcsidenav(href='#contactus') Contact
       include ../common/mbsidenav
     include ../common/cover
+    .menu
+      .buttonContainer
+        .closeButton X
+      .menuTitle.container Content
+      .linkContainer.container
+        a.col-md-12.menuLink(href="#applyingToCollege")
+          .menuDiv 申請大學
+        a.col-md-12.menuLink(href="#mindSet") 
+          .menuDiv 心態
     .container#title
       .row
         .col-md-1
@@ -54,7 +63,7 @@ html(lang='en')
           //-     a.card-link(href="#") Expand
           .card.path
             .card-body
-              h5.card-title(style="font-size: 30px") 申請大學
+              h5.card-title#applyingToCollege(style="font-size: 30px") 申請大學
               h6.card-subtitle.mb-2.text-muted #Applying to College
               p.card-text 申請國外大學懶人包 (個人建議與資源分享)
               //- a.card-link(href="#") Expand
@@ -320,7 +329,7 @@ html(lang='en')
                     strong Bold 是我最常用的！
           .card.path
             .card-body
-              h5.card-title(style="font-size: 30px") 心態
+              h5.card-title#mindSet(style="font-size: 30px") 心態
               h6.card-subtitle.mb-2.text-muted #Applying to College
               p.card-text 
               ul
@@ -359,5 +368,6 @@ html(lang='en')
                   li Confidence is self-efficacy, how well you can do something and how much you trust you can do it, it comes from experiences that validate ur ability. charisma is a trained or innate behavior. I’m other ways confidence is not a switch of a mindset, it’s a habit developed from experience. So that’s why I’m scared of dating, or asking a girl out, not that I don’t have the mindset of seeking discomfort but cuz of lack of experience 
         .col-md-1
     
+    include ../common/footer 
     script(src="javascripts/wiki/wiki.js")
 

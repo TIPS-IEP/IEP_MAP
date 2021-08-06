@@ -94,3 +94,66 @@ li {
   font-weight: 700;
 }
 
+.menu{
+  transition: 0.3s;
+  position:fixed;
+  height: 40vh;
+  width: 10vw;
+  top: 30%;
+  left: 0%;
+  background-color: rgba(65, 65, 65);
+  opacity: 0.95;
+  color: white;
+  padding-right: 10px;
+}
+
+.closeMenu{
+  left: -10vw;
+}
+
+.menuTitle{
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.linkContainer{
+  height: fit-content;
+  width: auto;
+}
+.menuLink{
+  align-self: center;
+}
+.menuLink:hover{
+  text-decoration: none;
+}
+.menuDiv{
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: white !important;
+}
+
+.menuDiv:hover{
+  color: rgb(255, 179, 37)!important; 
+  transition: 0.2s;
+}
+
+.buttonContainer{
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.closeButton{
+  width: fit-content;
+  font-size: 22px;
+  transform: scaleX(1.15);
+}
+
+.closeButton:hover{
+  cursor: pointer !important;
+}
