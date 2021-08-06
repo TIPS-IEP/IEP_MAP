@@ -50,5 +50,11 @@ function openToggle(){
 
 window.onload = function() {
   createToggle();
+  document.getElementsByClassName("closeButton")[0].addEventListener('click', function (event) {
+    closeMenu();
+  });
 }
 
+function closeMenu(){
+  document.getElementsByClassName("menu")[0].classList.add("closeMenu");
+}

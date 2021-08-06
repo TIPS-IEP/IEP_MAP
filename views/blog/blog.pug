@@ -21,15 +21,6 @@ html(lang='en')
     script(src="javascripts/index.js")
     script(src="javascripts/about.js")
     script(src='https://cdn.tiny.cloud/1/nda8paljag6qmrws041pc75kikjb5zuqz5du9x5ix1edjl77/tinymce/5/tinymce.min.js' referrerpolicy='origin')
-    script.
-      tinyMCE.init({
-        selector: '#content',  // change this value according to your HTML
-        plugins: 'lists advlist link image emoticons media autolink autoresize autosave charmap fullpage fullscreen hr imagetools insertdatetime preview searchreplace table toc visualblocks visualchars wordcount',
-        toolbar: ['undo redo | styleselect | bold italic | link image| alignleft aligncenter alignright | numlist bullist | restoredraft'],
-        height: '500',
-      });
-      var hello = "#{collegeBlogs[0].blogTitle}"
-      //- console.log(hello);
 
     script(src="javascripts/blog/blog.js")
     //- center website 
@@ -46,14 +37,14 @@ html(lang='en')
   body#main
     include ../common/nav
     include ../common/cover
-    //- #mySidenav.sidenav
-    //-   a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
-    //-   a.pcsidenav(href='#') Home 
-    //-   a.pcsidenav(href='#vision') Vision
-    //-   a.pcsidenav(href='#mission') Mission
-    //-   a.pcsidenav(href='#about') Features
-    //-   a.pcsidenav(href='#contactus') Contact
-    //-   include ../common/mbsidenav
+    #mySidenav.sidenav
+      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      a.pcsidenav(href='#') Home 
+      a.pcsidenav(href='#vision') Vision
+      a.pcsidenav(href='#mission') Mission
+      a.pcsidenav(href='#about') Features
+      a.pcsidenav(href='#contactus') Contact
+      include ../common/mbsidenav
     #mySidenav.sidenav
         include ../common/mbsidenav
     #overlay
