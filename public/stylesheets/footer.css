@@ -34,10 +34,10 @@ footer{
 	width: 30%;
 }
 
-.footer-distributed h3{
+.footer-distributed w3{
 	color:  #ffffff;
-	font: normal 36px 'Cookie', cursive;
-	margin: 0;
+	font: normal 36px 'Cookie', cursive!important;
+	margin: 0!important;
 }
 
 /* The company logo */
@@ -46,7 +46,7 @@ footer{
 	width: 30%;
 }
 
-.footer-distributed h3 span{
+.footer-distributed w3 span{
 	color:  #e0ac1c;
 }
 
@@ -54,7 +54,7 @@ footer{
 
 .footer-distributed .footer-links{
 	color:  #ffffff;
-	margin: 20px 0 12px;
+	margin: 5px 0 12px;
 }
 
 .footer-distributed .footer-links a{
@@ -142,21 +142,24 @@ footer{
 	margin-top: 25px;
 }
 
+
 .footer-distributed .footer-icons a{
 	display: inline-block;
-	width: 42px;
-	height: 42px;
+	width: 35px;
+	height: 35px;
 	cursor: pointer;
 	background-color:  #33383b;
-	border-radius: 2px;
+	border-radius: 3px;
 
-	font-size: 38px;
+	font-size: 20px;
 	color: #ffffff;
 	text-align: center;
+	line-height: 35px;
 
 	margin-right: 3px;
 	margin-bottom: 5px;
 }
+
 
 /* Here is the code for Responsive Footer */
 /* You can remove below code if you don't want Footer to be responsive */
