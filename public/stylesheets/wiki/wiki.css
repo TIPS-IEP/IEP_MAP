@@ -114,6 +114,7 @@ li {
 .menuTitle{
   margin-top: 10px;
   text-align: center;
+  text-decoration: underline;
   width: 100%;
   font-size: 27px;
   font-weight: 500;
