@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   background: rgb(255, 255, 255)!important;
   font-family: proxima-nova,Sans-serif;
@@ -97,34 +100,58 @@ li {
 .menu{
   transition: 0.3s;
   position:fixed;
-  height: 40vh;
+  height: fit-content;
   width: 10vw;
-  top: 30%;
+  top: 40%;
   left: 0%;
   background-color: rgba(65, 65, 65);
   opacity: 0.95;
   color: white;
   padding-right: 10px;
+  border-radius: 0 10px 10px 0px;
 }
 
 .closeMenu{
   left: -10vw;
 }
 
-.menuTitle{
-  margin-top: 10px;
-  text-align: center;
+.menuOpen{
+  transition: 0.3s;
+  position:fixed;
+  height: fit-content;
+  width: 50px;
+  top: 47.5%;
+  left: -10%;
+  opacity: 0.95;
+  color: white;
+  padding-right: 10px;
+}
+
+.openMenu{
+  left: 0%;
+}
+
+.menuOpenImg{
   width: 100%;
-  font-size: 27px;
+  height: auto;
+}
+.menuTitle{
+  margin-bottom: 10px;
+  text-align: center;
+  text-decoration: underline;
+  width: 100%;
+  font-size: 24px;
   font-weight: 500;
 }
 
 .linkContainer{
   height: fit-content;
   width: auto;
+  margin-bottom: 40px;
 }
 .menuLink{
   align-self: center;
+  transition: 0.5s;
 }
 .menuLink:hover{
   text-decoration: none;
@@ -142,7 +169,7 @@ li {
 }
 
 .buttonContainer{
-  margin-top: 10px;
+  margin-top: 5px;
   width: 100%;
   display: flex;
   justify-content: flex-end;

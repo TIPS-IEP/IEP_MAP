@@ -68,7 +68,7 @@ input[type=submit]:hover {
 }
 
 #subjectLabel {
-  padding-top: 20px;
+  padding-top: 0px;
 }
 
 @media screen and (max-width: 650px) {
@@ -116,7 +116,7 @@ input[type=submit]:hover {
 }
 
 #title{
-  margin-top: 50px;
+  margin-top: 80px;
   padding-top: 30px;
 }
 

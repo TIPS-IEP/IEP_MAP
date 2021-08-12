@@ -6,6 +6,7 @@ html(lang='en')
     link(rel="stylesheet" href="stylesheets/footer.css")
     link(rel="stylesheet" href="stylesheets/join.css")
     link(rel="stylesheet" href="stylesheets/common/fadeIn.css")
+    link(rel="stylesheet" href="stylesheets/contact.css")
 
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
@@ -41,7 +42,7 @@ html(lang='en')
           h5.alignCenter.fadeInUpward Reach out to us on 
             a(href='https://www.instagram.com/wego.iep/' target='_blank' rel='noopener') Instagram
             | , 
-            a(href='https://www.facebook.com/groups/266271838471963' target='_blank' rel='noopener') Email
+            a(href='#email' target='_self' rel='noopener') Email
             |  to add your own school's "Student Distribution Map" & other features. 
         .col-md-1
     .featuresContainer
@@ -62,30 +63,22 @@ html(lang='en')
               br 
               | • and lots more to come!
               .fadeInUpward
-                a.hero-link(href='/about') → Read Our Guides 
-    .container#title
+                a.hero-link(href='/map') → See Our Map  
+    #email
+    .container#title2
       .row#inputRow
         .col-md-1
-        .col-md-7
-          img.fadeInLeftward#contactPic(src='/images/hero/letter2.1.jpg')
-        .col-md-3
+        .col-md-10
           form#inputForm.fadeInUpward(action = "/contactUs" method="POST" onSubmit="return confirm('You have sent a message to us. We would reply you as soon as possible.')")
             label(for='fname') First Name
-            input(type='text' name='firstname' placeholder='Your name..' required)
+            input(type='text' name='firstname' placeholder='Your name...' required)
             label(for='lname') Last Name
-            input(type='text' name='lastname' placeholder='Your last name..' required)
-            label(for='country') Country
-            select#country(name='country')
-              option(value='taiwan') Taiwan
-              option(value='usa') USA
-              option(value='canada') Canada 
-              option(value='uk') UK
-              option(value='japan') Japan 
-              option(value='singapore') Singapore 
-              option(value='china')  China
-              option(value='thailand') Thailand
+            input(type='text' name='lastname' placeholder='Your last name...' required)
+            label(for='country') High School 
+            label#high-school(name='high-school')
+            input(type='text' name='high-school' placeholder='Name of your high school...' required)
             label#subjectLabel(for='subject') Subject
-            textarea(name='subject' placeholder='Write something..' style='height:110px' required)
+            textarea(name='subject' placeholder='How can we help...' style='height:110px' required)
             input(type='submit' value='Submit')
         .col-md-1
     include common/footer

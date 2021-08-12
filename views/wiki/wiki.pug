@@ -40,17 +40,19 @@ html(lang='en')
     .menu
       .buttonContainer
         .closeButton X
-      .menuTitle.container Content
+      .menuTitle.container Contents
       .linkContainer.container
-        a.col-md-12.menuLink(href="#applyingToCollege")
+        a.menuLink(href="#applyingToCollege")
           .menuDiv 申請大學
-        a.col-md-12.menuLink(href="#mindSet") 
+        a.menuLink(href="#mindSet") 
           .menuDiv 心態
+      .menuOpen
+        img.menuOpenImg(src="../images/icons/menu_open.png")
     .container#title
       .row
         .col-md-1
         .col-md-10
-          h1 Wiki ✏️
+          h1#applyingToCollege Wiki ✏️
           //- .card.path
           //-   .card-body
           //-     h5.card-title(style="font-size: 30px;") Path for Ravenclaw
@@ -63,7 +65,7 @@ html(lang='en')
           //-     a.card-link(href="#") Expand
           .card.path
             .card-body
-              h5.card-title#applyingToCollege(style="font-size: 30px") 申請大學
+              h5.card-title(style="font-size: 30px") 申請大學
               h6.card-subtitle.mb-2.text-muted #Applying to College
               p.card-text 申請國外大學懶人包 (個人建議與資源分享)
               //- a.card-link(href="#") Expand
@@ -294,7 +296,7 @@ html(lang='en')
                     strong 找出自己與別人思想的不同、習慣的不同、活動的不同
                     | ，認真地、真誠地做出最自己的自己！
                 .listener
-                  li.link 申請國外大學最有用的網站：
+                  li.link#mindSet 申請國外大學最有用的網站：
                 ul.toggle.notLink
                   li 大學資料搜集：
                     |
@@ -329,7 +331,7 @@ html(lang='en')
                     strong Bold 是我最常用的！
           .card.path
             .card-body
-              h5.card-title#mindSet(style="font-size: 30px") 心態
+              h5.card-title(style="font-size: 30px") 心態
               h6.card-subtitle.mb-2.text-muted #Applying to College
               p.card-text 
               ul

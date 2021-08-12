@@ -53,8 +53,17 @@ window.onload = function() {
   document.getElementsByClassName("closeButton")[0].addEventListener('click', function (event) {
     closeMenu();
   });
+  document.getElementsByClassName("menuOpen")[0].addEventListener('click', function (event) {
+    openMenu();
+  });
 }
 
 function closeMenu(){
   document.getElementsByClassName("menu")[0].classList.add("closeMenu");
+  document.getElementsByClassName("menuOpen")[0].classList.add("openMenu");
+}
+
+function openMenu(){
+  document.getElementsByClassName("menu")[0].classList.remove("closeMenu");
+  document.getElementsByClassName("menuOpen")[0].classList.remove("openMenu");
 }
