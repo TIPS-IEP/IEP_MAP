@@ -19,12 +19,6 @@ const BlogSchema = new mongoose.Schema({
     tag: {
         type: Array,
     },
-    blogId: {
-        allowNull: false,
-        primaryKey: true,
-        type: String,
-        default: MUUID.v4().toString(),
-    },
     createdAt: {
         type: Date,
         default: Date.now,
