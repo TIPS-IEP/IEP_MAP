@@ -45,12 +45,12 @@ exports.viewBlog = async function(req, res, next) {
   if(!blog){
     res.render('error')
   }else{
-    const pug = html2pug(blog[0].content, { tabs: true });
+    // const pug = html2pug(blog[0].content, { tabs: true });
     // console.log(pug)
     res.render('blog/viewBlog', {
       loggedin: isAuthenticated,
       name: firstName,
-      blog: pug,
+      blog: blog[0].content,
     });
   }
 }
