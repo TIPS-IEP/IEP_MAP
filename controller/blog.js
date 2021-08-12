@@ -2,6 +2,8 @@ var isAuthenticated = false;
 var image = null;
 var firstName = null;
 var Blog = require("../models/blog")
+const html2pug = require('html2pug')
+
 
 exports.addBlog = async function(req, res, next) {
   req.body.email = req.user.email
@@ -43,10 +45,12 @@ exports.viewBlog = async function(req, res, next) {
   if(!blog){
     res.render('error')
   }else{
+    const pug = html2pug(blog[0].content, { tabs: true });
+    // console.log(pug)
     res.render('blog/viewBlog', {
       loggedin: isAuthenticated,
       name: firstName,
-      blog: blog[0],
+      blog: pug,
     });
   }
 }
