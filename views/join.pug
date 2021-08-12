@@ -69,14 +69,14 @@ html(lang='en')
       .row#inputRow
         .col-md-1
         .col-md-10
-          form#inputForm.fadeInUpward(action = "/contactUs" method="POST" onSubmit="return confirm('You have sent a message to us. We would reply you as soon as possible.')")
+          form#inputForm.fadeInUpward(action = "/joinin" method="POST" onSubmit="return confirm('You are sending a message to us. We would reply you as soon as possible.')")
             label(for='fname') First Name
             input(type='text' name='firstname' placeholder='Your name...' required)
             label(for='lname') Last Name
             input(type='text' name='lastname' placeholder='Your last name...' required)
             label(for='country') High School 
-            label#high-school(name='high-school')
-            input(type='text' name='high-school' placeholder='Name of your high school...' required)
+            label#high-school
+            input(type='text' name='highschool' placeholder='Name of your high school...' required)
             label#subjectLabel(for='subject') Subject
             textarea(name='subject' placeholder='How can we help...' style='height:110px' required)
             input(type='submit' value='Submit')

@@ -8,6 +8,7 @@ const loginoutController = require('../controller/loginout')
 const showUsersInfoController = require('../controller/showUsersInfo')
 const contactController = require('../controller/contactUs')
 const blogController = require("../controller/blog")
+const joinController = require("../controller/join")
 
 //middleware
 const {ensureAuth, ensureGuest} = require('../middleware/auth')
@@ -34,6 +35,8 @@ router.get('/guides', indexController.showGuides);
 
 
 router.post('/contactUs', contactController.sendForm)
+router.post('/joinin', contactController.sendJoin)
+
 
 router.post('/add', ensureAuth, usersController.add)
 router.post('/confirm/:email', ensureAdmin, usersController.confirmUnAuthUser)

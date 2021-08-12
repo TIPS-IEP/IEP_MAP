@@ -31,7 +31,7 @@ function createEmailContentToAdmin(user){
       from: 'iep.alumni.association@gmail.com',
       to: 'crashingballoon@gmail.com, andrewchuang0110@gmail.com, alanhou911222@gmail.com',
       subject: user.firstname + ', ' + user.lastname + ' tried to contact us!',
-      text: 'sender: ' + user.firstname + ', ' + user.lastname + '\n' + 'high-school: ' + user.high-school + '\n' + 'subject: ' + user.subject
+      text: 'sender: ' + user.firstname + ', ' + user.lastname + '\n' + 'high-school: ' + user.highschool + '\n' + 'subject: ' + user.subject
   };
   return mailContent
 }
