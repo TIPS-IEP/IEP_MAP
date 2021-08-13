@@ -44,7 +44,6 @@ class alumniClass {
 exports.showMap = async function(req, res) {
     var universities = await Universities.find().lean();
     var alumni = await Alumni.find().lean();
-    
     const universitiesArranged = new universitiesClass(universities);
     const alumniArranged = new alumniClass(alumni);
 
