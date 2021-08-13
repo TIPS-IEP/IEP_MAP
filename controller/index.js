@@ -72,14 +72,53 @@ exports.showContact = function(req, res) {
 }
 
 exports.showBoard = function(req, res, next) {
-  res.render('board');
+  if(req.isAuthenticated()){
+    firstName = req.user.firstName;
+    isAuthenticated = true;
+    image = req.user.image;
+  }else{
+    firstName = null;
+    isAuthenticated = false;
+    image = null;
+  }
+  res.render('board', {
+    loggedin: req.isAuthenticated(),
+    name: firstName,
+    image: image,
+  });
 }
 exports.showShare = function(req, res, next) {
-  res.render('share');
+  if(req.isAuthenticated()){
+    firstName = req.user.firstName;
+    isAuthenticated = true;
+    image = req.user.image;
+  }else{
+    firstName = null;
+    isAuthenticated = false;
+    image = null;
+  }
+  res.render('share', {
+    loggedin: req.isAuthenticated(),
+    name: firstName,
+    image: image,
+  });
 }
 
 exports.showEvents = function(req, res, next) {
-  res.render('events');
+  if(req.isAuthenticated()){
+    firstName = req.user.firstName;
+    isAuthenticated = true;
+    image = req.user.image;
+  }else{
+    firstName = null;
+    isAuthenticated = false;
+    image = null;
+  }
+  res.render('events', {
+    loggedin: req.isAuthenticated(),
+    name: firstName,
+    image: image,
+  });
 }
 
 exports.showJoin = function(req, res) {

@@ -58,3 +58,10 @@ body {
   background-color: rgb(224, 121, 103);
 }
 
+#dashboardTitle {
+  font-weight: 700 !important;
+  letter-spacing: 1.4px;
+  font-size: 90px;
+  line-height: 1.3em;
+  text-align: center;
+}

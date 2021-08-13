@@ -45,8 +45,11 @@ html(lang='en')
       .row
         .col-md-1
         .col-md-10(style="margin-top: 10vh")
+          h1#dashboardTitle Blog Posts
           a(href="/writeblog")
             button.btn.btn-primary(type="button") ✏️ write
+          hr.solid
+            | 
           if blogs
             for blog in blogs
               a(href = "blog/" + blog._id + "/edit").link
