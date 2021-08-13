@@ -64,3 +64,20 @@ exports.showMap = async function(req, res) {
         image: image,
     });
 }
+
+exports.showUnAuthMap = function(req, res, next) {
+    if(req.isAuthenticated()){
+      firstName = req.user.firstName;
+      isAuthenticated = true;
+      image = req.user.image;
+    }else{
+      firstName = null;
+      isAuthenticated = false;
+      image = null;
+    }
+    res.render('unAuthMap', {
+      loggedin: isAuthenticated,
+      name: firstName,
+      image: image,
+    });
+  }
