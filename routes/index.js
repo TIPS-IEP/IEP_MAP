@@ -13,6 +13,7 @@ const blogController = require("../controller/blog")
 const {ensureAuth, ensureGuest} = require('../middleware/auth')
 const {ensureSuper} = require('../middleware/super')
 const {ensureAdmin} = require('../middleware/admin')
+const {ensureMapSuper} = require('../middleware/map')
 
 //database
 var mongoose = require('mongoose');
@@ -57,8 +58,7 @@ router.get('/auth', ensureAdmin, showUsersInfoController.showAuthUsers)
 router.get('/verifyblogs', ensureAdmin, showUsersInfoController.showUnverifiedBlogs)
 router.post('/blog/:blog_id/authDeleteBlog', ensureAuth, blogController.authDelete);
 
-router.get('/map', mapController.showMap);
-
+router.get('/map', ensureMapSuper, mapController.showMap);
 
 router.get('/dashboard', blogController.showDashboard);
 router.post('/blog', ensureAuth, blogController.addBlog);

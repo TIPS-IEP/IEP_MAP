@@ -39,8 +39,7 @@ html(lang='en')
 
       var alumniJSONUnorganized = "#{ JSON.stringify(alumni)}"
       alumniObject = JSON.parse(alumniJSONUnorganized.replace(/&quot;/g,'"'))
-      var test = "#{alumniDetect[0]}";
-      console.log(test)
+      
   body#body
     include common/nav
     include common/cover
