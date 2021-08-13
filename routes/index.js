@@ -8,7 +8,6 @@ const loginoutController = require('../controller/loginout')
 const showUsersInfoController = require('../controller/showUsersInfo')
 const contactController = require('../controller/contactUs')
 const blogController = require("../controller/blog")
-const joinController = require("../controller/join")
 
 //middleware
 const {ensureAuth, ensureGuest} = require('../middleware/auth')
