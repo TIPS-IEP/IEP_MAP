@@ -58,7 +58,7 @@ router.get('/verifyblogs', ensureAdmin, showUsersInfoController.showUnverifiedBl
 router.post('/blog/:blog_id/authDeleteBlog', ensureAuth, blogController.authDelete);
 
 router.get('/map', mapController.showMap);
-
+router.get('/unAuthMap', mapController.showUnAuthMap);
 
 router.get('/dashboard', blogController.showDashboard);
 router.post('/blog', ensureAuth, blogController.addBlog);
