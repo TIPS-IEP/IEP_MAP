@@ -36,21 +36,25 @@ exports.showDashboard = async function(req, res, next) {
 exports.viewBlog = async function(req, res, next) {
   var isAuthenticated = false;
   if(req.isAuthenticated()){
-    var firstName = req.user.firstName;
+    firstName = req.user.firstName;
     isAuthenticated = true;
+    image = req.user.image;
   }else{
-    var firstName = null
+    firstName = null;
+    isAuthenticated = false;
+    image = null;
   }
   var blog = await Blog.find({_id: req.params.blog_id}).lean();
   if(!blog){
     res.render('error')
   }else{
-    const pug = html2pug(blog[0].content, { tabs: true });
+    // const pug = html2pug(blog[0].content, { tabs: true });
     // console.log(pug)
     res.render('blog/viewBlog', {
       loggedin: isAuthenticated,
       name: firstName,
-      blog: pug,
+      blog: blog[0].content,
+      image,
     });
   }
 }
@@ -58,10 +62,13 @@ exports.viewBlog = async function(req, res, next) {
 exports.editBlog = async function(req, res, next) {
   var isAuthenticated = false;
   if(req.isAuthenticated()){
-    var firstName = req.user.firstName;
+    firstName = req.user.firstName;
     isAuthenticated = true;
+    image = req.user.image;
   }else{
-    var firstName = null
+    firstName = null;
+    isAuthenticated = false;
+    image = null;
   }
   var blog = await Blog.find({_id: req.params.blog_id, email: req.user.email }).lean();
   if(!blog){
@@ -71,6 +78,7 @@ exports.editBlog = async function(req, res, next) {
       loggedin: isAuthenticated,
       name: firstName,
       blog: blog[0],
+      image,
     });
   }
 }
@@ -78,10 +86,13 @@ exports.editBlog = async function(req, res, next) {
 exports.authEditBlog = async function(req, res, next) {
   var isAuthenticated = false;
   if(req.isAuthenticated()){
-    var firstName = req.user.firstName;
+    firstName = req.user.firstName;
     isAuthenticated = true;
+    image = req.user.image;
   }else{
-    var firstName = null
+    firstName = null;
+    isAuthenticated = false;
+    image = null;
   }
   var blog = await Blog.find({_id: req.params.blog_id}).lean();
   if(!blog){
@@ -91,6 +102,7 @@ exports.authEditBlog = async function(req, res, next) {
       loggedin: isAuthenticated,
       name: firstName,
       blog: blog[0],
+      image,
     });
   }
 }
@@ -111,14 +123,18 @@ exports.saveBlog = async function(req, res, next) {
 exports.showWriteBlog = function(req, res, next) {
   var isAuthenticated = false;
   if(req.isAuthenticated()){
-    var firstName = req.user.firstName;
+    firstName = req.user.firstName;
     isAuthenticated = true;
+    image = req.user.image;
   }else{
-    var firstName = null
+    firstName = null;
+    isAuthenticated = false;
+    image = null;
   }
   res.render('blog/writeBlog', {
     loggedin: isAuthenticated,
     name: firstName,
+    image,
   });
 }
 

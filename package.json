@@ -14,6 +14,7 @@
     "express": "~4.16.1",
     "express-flash": "^0.0.2",
     "express-session": "^1.17.2",
+    "fs": "*",
     "html2pug": "^4.0.0",
     "http-errors": "~1.6.3",
     "mongoose": "^5.12.11",
@@ -25,6 +26,7 @@
     "passport-local": "^1.0.0",
     "pg": "^8.6.0",
     "pug": "2.0.0-beta11",
+    "update": "^0.7.4",
     "uuid-mongodb": "^2.4.4",
     "validator": "^10.11.0"
   }

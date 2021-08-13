@@ -34,6 +34,8 @@ router.get('/guides', indexController.showGuides);
 
 
 router.post('/contactUs', contactController.sendForm)
+router.post('/joinin', contactController.sendJoin)
+
 
 router.post('/add', ensureAuth, usersController.add)
 router.post('/confirm/:email', ensureAdmin, usersController.confirmUnAuthUser)
