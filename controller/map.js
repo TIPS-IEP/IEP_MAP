@@ -65,7 +65,9 @@ exports.showMap = async function(req, res) {
     });
 }
 
-exports.showUnAuthMap = function(req, res, next) {
+exports.showUnAuthMap = async function(req, res, next) {
+    var universities = await Universities.find().lean();
+    const universitiesArranged = new universitiesClass(universities);
     if(req.isAuthenticated()){
       firstName = req.user.firstName;
       isAuthenticated = true;
@@ -76,6 +78,7 @@ exports.showUnAuthMap = function(req, res, next) {
       image = null;
     }
     res.render('unAuthMap', {
+      universities: universitiesArranged,
       loggedin: isAuthenticated,
       name: firstName,
       image: image,

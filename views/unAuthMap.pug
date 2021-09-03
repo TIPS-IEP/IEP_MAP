@@ -39,16 +39,13 @@ html(lang='en')
       universitiesLength = universitiesObject.universitiesLength  
   body#main
     include common/nav
-    .container
+    .container.bodyContainer
       .row
-        .col-md-9.schoolList
-          .row
-            .col-md-3
-            .col-md-3
-            .col-md-3
-            .col-md-3
-        .col-md-9.schoolSearch
-      
+        .col-md-2
+        .col-md-8.title Where we are!
+        .col-md-2
+      .row
+        .col-md-12#schoolList
     include common/footer
     script(src="javascripts/unAuthMap.js")
     script(src="javascripts/fadeIn.js")
