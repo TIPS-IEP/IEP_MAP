@@ -7,6 +7,8 @@ html(lang='en')
     link(rel="stylesheet" href="stylesheets/join.css")
     link(rel="stylesheet" href="stylesheets/common/fadeIn.css")
     link(rel="stylesheet" href="stylesheets/contact.css")
+    link(rel="stylesheet" href="stylesheets/unAuthMap.css")
+
 
     //- bootstrap setup
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
@@ -17,10 +19,9 @@ html(lang='en')
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
 
     //- js
-    script(src="javascripts/index.js")
     script(src="javascripts/nav.js")
     script(src="javascripts/about.js")
-    
+
     //- center website 
     meta(name='viewport' content='width=device-width, initial-scale=1')
 
@@ -28,58 +29,26 @@ html(lang='en')
     link(rel="preconnect" href="https://fonts.gstatic.com")
     link(href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet")
 
-    title Join In!
+    title unAuthMap
     //-favicon
     link(rel="icon" type="image/png" href="/images/icons/favicon.png")
-      
+
+  script.
+      var universityJSONUnorganized = "#{ JSON.stringify(universities)}"
+      universitiesObject = JSON.parse(universityJSONUnorganized.replace(/&quot;/g,'"'))
+      universitiesLength = universitiesObject.universitiesLength  
   body#main
     include common/nav
-    .container#title
+    .container
       .row
-        .col-md-1
-        .col-md-10
-          h1.fadeInUpward Join In!
-          h5.alignCenter.fadeInUpward Reach out to us on 
-            a(href='https://www.instagram.com/wego.iep/' target='_blank' rel='noopener') Instagram
-            | , 
-            a(href='#email' target='_self' rel='noopener') Email
-            |  to add your own school's "Student Distribution Map" & other features. 
-        .col-md-1
-    .featuresContainer
-      .container-fluid
-        .row
-          .col-md-1
-          .col-md-4
-            .imageContainer.fadeInLeftward
-              img(src="/images/blog/wego.png")
-          .col-md-7
-            h4.fadeInUpward(style="text-align: left") Student Distrubution Maps 
-            h5.fadeInUpward(style="text-align: left; color: DimGrey;") Connect with other Taiwanese students abroad
-            h5.fadeInUpward(style="text-align: left; color: BurlyWood;") 150+ student profiles 
-              | 
-              br 
-              | • Ideas to live by
-              |
-              br 
-              | • and lots more to come!
-              .fadeInUpward
-                a.hero-link(href='/map') → See Our Map  
-    #email
-    .container#title2
-      .row#inputRow
-        .col-md-1
-        .col-md-10
-          form#inputForm.fadeInUpward(action = "/joinin" method="POST" onSubmit="return confirm('You are sending a message to us. We would reply you as soon as possible.')")
-            label(for='fname') First Name
-            input(type='text' name='firstname' placeholder='Your name...' required)
-            label(for='lname') Last Name
-            input(type='text' name='lastname' placeholder='Your last name...' required)
-            label(for='country') High School 
-            label#high-school
-            input(type='text' name='highschool' placeholder='Name of your high school...' required)
-            label#subjectLabel(for='subject') Subject
-            textarea(name='subject' placeholder='How can we help...' style='height:110px' required)
-            input(type='submit' value='Submit')
-        .col-md-1
+        .col-md-9.schoolList
+          .row
+            .col-md-3
+            .col-md-3
+            .col-md-3
+            .col-md-3
+        .col-md-9.schoolSearch
+      
     include common/footer
+    script(src="javascripts/unAuthMap.js")
     script(src="javascripts/fadeIn.js")
