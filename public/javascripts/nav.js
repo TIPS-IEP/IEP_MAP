@@ -102,9 +102,9 @@ function dropContentScrollUp(){
 }
 
 function navbarScrollDown(){
-  nav.style.background = "rgb(29, 29, 29)";
-  nav.style.padding = "7px 10px";
-  nav.style.opacity = "85%";
+  document.getElementById("navbar").style.background = "rgb(29, 29, 29)";
+  document.getElementById("navbar").style.padding = "7px 10px";
+  document.getElementById("navbar").style.opacity = "85%";
   document.getElementById("navbar-right").style.fontSize = "25px";
 }
 
