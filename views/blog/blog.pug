@@ -81,6 +81,7 @@ html(lang='en')
                 img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
                 .card-body
                   h5.card-title #{adviceBlog.blogTitle}
+                  h7.card-title #{adviceBlog.author}
                   p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
                   a.btn.btn-primary(href='/blog/' + adviceBlog._id+ '/view') Read More
         .row.typeB.displayN.applyingBlogs
@@ -90,6 +91,7 @@ html(lang='en')
                 img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
                 .card-body
                   h5.card-title #{applyingBlog.blogTitle}
+                  h7.card-title #{applyingBlog.author}
                   p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
                   a.btn.btn-primary(href='/blog/' + applyingBlog._id+ '/view') Read More
         .row.typeB.displayN.fadeInUpward
@@ -99,6 +101,7 @@ html(lang='en')
                 img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
                 .card-body
                   h5.card-title #{activitiesBlog.blogTitle}
+                  h7.card-title #{activitiesBlog.author}
                   p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
                   a.btn.btn-primary(href='/blog/' + activitiesBlog._id+ '/view') Read More
     .container(style="margin-top: 10rem")
