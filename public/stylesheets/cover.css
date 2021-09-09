@@ -1,7 +1,7 @@
 .coverHero{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/hero/passionLedUsHere.jpeg");
   /* Set a specific height */
-  height: 45vh;
+  height: 42vh;
 
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
