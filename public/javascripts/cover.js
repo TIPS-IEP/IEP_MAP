@@ -17,4 +17,19 @@ $(document).ready(function() {
   else if(path=="/dashboard"){
     document.getElementsByClassName("coverHero")[0].style.backgroundImage = "url('/images/hero/passionLedUsHere.jpeg')";
   }
+  else if(path=="/join"){
+    document.getElementsByClassName("coverHero")[0].style.backgroundImage = "url('/images/hero/passionLedUsHere.jpeg')";
+  }
+  else if(path=="/board"){
+    document.getElementsByClassName("coverHero")[0].style.backgroundImage = "url('/images/hero/passionLedUsHere.jpeg')";
+  }
+  else if(path=="/share"){
+    document.getElementsByClassName("coverHero")[0].style.backgroundImage = "url('/images/hero/passionLedUsHere.jpeg')";
+  }
+  else if(path=="/map"){
+    document.getElementsByClassName("coverHero")[0].style.backgroundImage = "url('/images/hero/passionLedUsHere.jpeg')";
+  }
+  else if(path=="/events"){
+    document.getElementsByClassName("coverHero")[0].style.backgroundImage = "url('/images/hero/passionLedUsHere.jpeg')";
+  }
 });
