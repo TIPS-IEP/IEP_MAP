@@ -1,12 +1,20 @@
 var isAuthenticated = false;
 var image = null;
 var firstName = null;
-var Blog = require("../models/blog")
+var Blog = require("../models/blog");
+var Alumni = require("../models/Alumni")
+
+
 const html2pug = require('html2pug')
 
 
 exports.addBlog = async function(req, res, next) {
-  req.body.email = req.user.email
+  req.body.email = req.user.email;
+  if(await Alumni.find({ Email: req.user.email }).lean() != ""){
+    const authorObject = await Alumni.find({ Email: req.user.email }).lean();
+    req.body.author = authorObject[0].FirstName + " " + authorObject[0].LastName;
+  }
+
   await Blog.create(req.body, function(err, obj) {
     if (err) throw err;
     console.log("create new blog in blog");

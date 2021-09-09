@@ -26,6 +26,10 @@ const BlogSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
+    },
+    author: {
+        type: String,
+        required: true,
     }
 })
 
