@@ -32,4 +32,7 @@ $(document).ready(function() {
   else if(path=="/events"){
     document.getElementsByClassName("coverHero")[0].style.backgroundImage = "url('/images/hero/passionLedUsHere.jpeg')";
   }
+  else if(path=="/guides"){
+    document.getElementsByClassName("coverHero")[0].style.backgroundImage = "url('/images/hero/passionLedUsHere.jpeg')";
+  }
 });
