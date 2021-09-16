@@ -25,7 +25,7 @@ module.exports = {
   secret: "g25x6ba7U6buClbk60_p-gkz",
 
   // actual callback
-  callback: 'https://tips-iep.herokuapp.com/auth/google/callback'
+  callback: 'https://iepmap.herokuapp.com/auth/google/callback'
 
   //callback for testing
   // callback: 'http://localhost:3000/auth/google/callback'
