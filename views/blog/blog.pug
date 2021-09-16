@@ -72,7 +72,8 @@ html(lang='en')
                 .card-body
                   h5.card-title #{collegeBlog.blogTitle}
                   h7.card-title #{collegeBlog.author}
-                  p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+                  p
+                  //- p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
                   a.btn.btn-primary(href='/blog/' + collegeBlog._id+ '/view') Read More
         .row.typeB.displayN.fadeInUpward
           for adviceBlog in adviceBlogs
@@ -82,7 +83,8 @@ html(lang='en')
                 .card-body
                   h5.card-title #{adviceBlog.blogTitle}
                   h7.card-title #{adviceBlog.author}
-                  p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+                  p
+                  //- p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
                   a.btn.btn-primary(href='/blog/' + adviceBlog._id+ '/view') Read More
         .row.typeB.displayN.applyingBlogs
           for applyingBlog in applyingBlogs
@@ -92,7 +94,8 @@ html(lang='en')
                 .card-body
                   h5.card-title #{applyingBlog.blogTitle}
                   h7.card-title #{applyingBlog.author}
-                  p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+                  //- p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+                  p
                   a.btn.btn-primary(href='/blog/' + applyingBlog._id+ '/view') Read More
         .row.typeB.displayN.fadeInUpward
           for activitiesBlog in activitiesBlogs
@@ -102,7 +105,8 @@ html(lang='en')
                 .card-body
                   h5.card-title #{activitiesBlog.blogTitle}
                   h7.card-title #{activitiesBlog.author}
-                  p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+                  //- p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+                  p
                   a.btn.btn-primary(href='/blog/' + activitiesBlog._id+ '/view') Read More
     .container(style="margin-top: 10rem")
       .row 
