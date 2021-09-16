@@ -164,7 +164,8 @@ exports.authDelete = async function(req, res, next) {
 
 exports.verifyBlog = async function(req, res, next) {
   const blog = await Blog.find({ _id: req.params.blog_id }).lean();
-  blog[0].status = "verified"
+  blog[0].status = "verified";
+  console.log(blog[0]);
   await Blog.deleteOne({_id: req.params.blog_id}, function(err, obj) {
     if (err) throw err;
     console.log("delete blog " + req.params.blog_id + " from blog");
