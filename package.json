@@ -2,6 +2,9 @@
   "name": "iep",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "14.7.0"
+  },
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -25,7 +28,7 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
     "pg": "^8.6.0",
-    "pug": "2.0.0-beta11",
+    "pug": "^3.0.2",
     "update": "^0.7.4",
     "uuid-mongodb": "^2.4.4",
     "validator": "^10.11.0"
