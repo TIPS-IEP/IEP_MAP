@@ -116,11 +116,13 @@ exports.authEditBlog = async function(req, res, next) {
 }
 
 exports.saveBlog = async function(req, res, next) {
-  req.body.email = req.user.email;
-  if(await Alumni.find({_id: req.params.blog_id}).lean() != ""){
-    const authorObject = await Alumni.find({_id: req.params.blog_id}).lean();
-    req.body.author = authorObject[0].FirstName + " " + authorObject[0].LastName;
-    console.log("this is the author: " + req.body.author)
+  if(await Blog.find({_id: req.params.blog_id}).lean() != ""){
+    const authorBlogObject = await Blog.find({_id: req.params.blog_id}).lean();
+    req.body.email = authorBlogObject[0].email;
+  }
+  if(await Alumni.find({Email: req.body.email}).lean() != ""){
+    const authorNameObject = await Alumni.find({Email: req.body.email}).lean();
+    req.body.author = authorNameObject[0].FirstName + " " + authorNameObject[0].LastName;
   }
   await Blog.deleteOne({_id: req.params.blog_id}, function(err, obj) {
     if (err) throw err;
