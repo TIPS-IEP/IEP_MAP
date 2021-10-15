@@ -14,13 +14,10 @@ exports.addBlog = async function(req, res, next) {
     const authorObject = await Alumni.find({ Email: req.user.email }).lean();
     req.body.author = authorObject[0].FirstName + " " + authorObject[0].LastName;
   }
-  // console.log(req.body.content);
-  let imgLocation = req.body.content.indexOf("<img");
-  let srcLocation = req.body.content.indexOf("src=\"", imgLocation);
-  let endLocation = req.body.content.indexOf("\"", srcLocation+5);
-  // console.log(srcLocation);
-  // console.log(endLocation);
-  req.body.image = req.body.content.substring(srcLocation+5, endLocation);
+  //let imgLocation = req.body.content.indexOf("<img");
+  //let srcLocation = req.body.content.indexOf("src=\"", imgLocation);
+  //let endLocation = req.body.content.indexOf("\"", srcLocation+5);
+  //req.body.image = req.body.content.substring(srcLocation+5, endLocation);
   await Blog.create(req.body, function(err, obj) {
     if (err) throw err;
     console.log(req.body);
@@ -86,6 +83,7 @@ exports.editBlog = async function(req, res, next) {
     image = null;
   }
   var blog = await Blog.find({_id: req.params.blog_id, email: req.user.email }).lean();
+  console.log(blog[0]);
   if(!blog){
     res.render('error')
   }else{
@@ -123,7 +121,7 @@ exports.authEditBlog = async function(req, res, next) {
 }
 
 exports.saveBlog = async function(req, res, next) {
-  console.log(req.body.content);
+  //console.log(req.body.content);
   if(await Blog.find({_id: req.params.blog_id}).lean() != ""){
     const authorBlogObject = await Blog.find({_id: req.params.blog_id}).lean();
     req.body.email = authorBlogObject[0].email;
@@ -132,6 +130,11 @@ exports.saveBlog = async function(req, res, next) {
     const authorNameObject = await Alumni.find({Email: req.body.email}).lean();
     req.body.author = authorNameObject[0].FirstName + " " + authorNameObject[0].LastName;
   }
+  //let imgLocation = req.body.content.indexOf("<img");
+  //let secImgLocation = req.body.content.indexOf("<img", imgLocation+4);
+  //let srcLocation = req.body.content.indexOf("src=\"", secImgLocation);
+  //let endLocation = req.body.content.indexOf("\"", srcLocation+5);
+  //req.body.image = req.body.content.substring(srcLocation+5, endLocation);
   await Blog.deleteOne({_id: req.params.blog_id}, function(err, obj) {
     if (err) throw err;
     console.log("delete blog " + req.params.blog_id + " from blog");

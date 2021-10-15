@@ -68,7 +68,7 @@ html(lang='en')
           for collegeBlog in collegeBlogs
             .col-md-4.blogDiv(id=collegeBlog._id)
               .card
-                img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
+                img.card-img-top(src=collegeBlog.image alt="Card image cap")
                 .card-body
                   h5.card-title #{collegeBlog.blogTitle}
                   h7.card-title #{collegeBlog.author}
@@ -79,7 +79,7 @@ html(lang='en')
           for adviceBlog in adviceBlogs
             .col-md-4.blogDiv(id=adviceBlog._id)
               .card
-                img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
+                img.card-img-top(src=adviceBlog.image alt="Card image cap")
                 .card-body
                   h5.card-title #{adviceBlog.blogTitle}
                   h7.card-title #{adviceBlog.author}
@@ -90,7 +90,7 @@ html(lang='en')
           for applyingBlog in applyingBlogs
             .col-md-4.blogDiv(id=applyingBlog._id)
               .card
-                img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
+                img.card-img-top(src=applyingBlog.image alt="Card image cap")
                 .card-body
                   h5.card-title #{applyingBlog.blogTitle}
                   h7.card-title #{applyingBlog.author}
@@ -101,7 +101,7 @@ html(lang='en')
           for activitiesBlog in activitiesBlogs
             .col-md-4.blogDiv(id=activitiesBlog._id)
               .card
-                img.card-img-top(src="/images/blog/cover1.jpg" alt="Card image cap")
+                img.card-img-top(src=activitiesBlogs.iamge alt="Card image cap")
                 .card-body
                   h5.card-title #{activitiesBlog.blogTitle}
                   h7.card-title #{activitiesBlog.author}
