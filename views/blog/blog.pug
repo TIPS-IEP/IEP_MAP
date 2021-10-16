@@ -101,7 +101,7 @@ html(lang='en')
           for activitiesBlog in activitiesBlogs
             .col-md-4.blogDiv(id=activitiesBlog._id)
               .card
-                img.card-img-top(src=activitiesBlogs.iamge alt="Card image cap")
+                img.card-img-top(src=activitiesBlog.image alt="Card image cap")
                 .card-body
                   h5.card-title #{activitiesBlog.blogTitle}
                   h7.card-title #{activitiesBlog.author}
