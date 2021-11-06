@@ -28,5 +28,5 @@ module.exports = {
   callback: 'https://iepmap.herokuapp.com/auth/google/callback'
 
   //callback for testing
-  // callback: 'http://localhost:3000/auth/google/callback'
+  //callback: 'http://localhost:3000/auth/google/callback'
 }

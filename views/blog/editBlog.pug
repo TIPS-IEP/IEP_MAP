@@ -65,6 +65,8 @@ html(lang='en')
                 for i in blog.tag 
                   span.previousTags #{i}
               #hiddenInputContainer
+              h5 Image Url
+              input(type="text" class="form-control" id="" name="image" placeholder="Please Enter Your Image URL", value=blog.image, required)
               h5 Content
               textarea.tinymce#content(name="content") #{blog.content}
               input#saveButton(type='submit' value='Save')
