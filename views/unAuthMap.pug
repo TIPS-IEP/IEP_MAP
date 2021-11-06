@@ -37,17 +37,23 @@ html(lang='en')
       var universityJSONUnorganized = "#{ JSON.stringify(universities)}"
       universitiesObject = JSON.parse(universityJSONUnorganized.replace(/&quot;/g,'"'))
       universitiesLength = universitiesObject.universitiesLength  
+      var loggedin = #{loggedin}
+      console.log(loggedin)
   body#main
     include common/nav
     .container.bodyContainer
       .row
         .col-md-2
         .col-md-8.title Where we are!
-          .mapContent 
+          .mapContent
             a(href='/login') Login
             |  with your verified google account or 
-            a(href='https://forms.gle/966SWWUiMkxnVo5TA' target='_blank' rel='noopener') sign up to be verified
-            |  to view our alumni profiles.
+            if loggedin 
+              a(href='/profile' target='_blank' rel='noopener') fill out your profile to be verify
+              |  to view our alumni profiles.
+            else
+              a(href='/login' target='_blank' rel='noopener') log in and fill out your profile to be verify
+              |  to view our alumni profiles.
         .col-md-2
       .row
         .col-md-12#schoolList
