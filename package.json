@@ -31,6 +31,6 @@
     "pug": "^3.0.2",
     "update": "^0.7.4",
     "uuid-mongodb": "^2.4.4",
-    "validator": "^13.7.0"
+    "validator": "^10.11.0"
   }
 }
