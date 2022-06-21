@@ -1,3 +1,5 @@
+const dotenv = require('dotenv');
+dotenv.config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -20,7 +22,7 @@ require('./config/passport')(passport)
 var app = express();
 
 //connect to mongodb cloud
-const dbURI = 'mongodb+srv://alanhou:alan2357@iepmap.rejkd.mongodb.net/IEPMAPretryWrites=true&w=majority?retryWrites=true&w=majority';
+const dbURI = process.env.DB_URI;
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
   .then((result) => console.log('connect to db'))
   .catch((err) => console.log(err));
