@@ -11,7 +11,7 @@ var emailSender = nodemailer.createTransport({
     requireTLS: true,
     auth: {
       user: 'iep.alumni.association@gmail.com',
-      pass: 'IEP1234@',
+      pass: process.env.GMAIL_PASS,
     }
 });
 
