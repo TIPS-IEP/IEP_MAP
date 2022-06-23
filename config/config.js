@@ -25,9 +25,9 @@ module.exports = {
   secret: process.env.LOGIN_SECRET,
 
   // actual callback
-  // callback: 'https://iepmap.herokuapp.com/auth/google/callback'
+  callback: 'https://iep-map.herokuapp.com/auth/google/callback'
 
   //callback for testing
-  callback: 'http://localhost:3000/auth/google/callback'
+  // callback: 'http://localhost:3000/auth/google/callback'
 }
 
