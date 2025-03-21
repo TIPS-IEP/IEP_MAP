@@ -1,109 +1,46 @@
-#overlay {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: 51;
-  top: 0;
-  background-color: rgba(20, 20, 20, 0.5);
-  display: none;
-}
-/* The side navigation menu */
 .sidenav {
-  width: 250px;
-  height: 100vh;
-  position: fixed; /* Stay in place */
-  z-index: 100; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: -300px;
-  background-color: rgb(234, 240, 242); /* Black*/
-  box-shadow: 0 0.125rem 0.25rem rgb(83 88 93 / 95%) !important;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding: 20px 10px; 
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
 }
 
-#mySidenav{
-  transition: 0.4s;
-}
-
-#sidenavSeperateLine{
-  margin-top: 22px;
-  transition: 0.4s;
-}
-#sidenavOptionList{
-  margin-top: 35px;
-}
-.sidenavOptionLink:hover{
-  text-decoration: none;
-}
-
-/* The navigation menu links */
-.sideOption {
-  padding: 8px 8px 8px 24px;
+.sidenav a {
+  padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #050505;
+  color: #818181;
   display: block;
-  transition: 0.2s;
-  font-family: 'Lato', sans-serif !important;
+  transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sideOption:hover {
-  color: rgb(255, 179, 37);
+.sidenav a:hover {
+  color: #f1f1f1;
 }
 
-
-@media screen and (max-width: 20000px) {
-  .pcsidenav {
-    display: block!important;
-  }
-  .mbsidenav{
-    display: none!important;
-  }
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
-@media screen and (max-width: 599px) {
-  .pcsidenav {
-    display: none!important;
-  }
-  .mbsidenav{
-    display: block!important;
-  }
-
-  .sidenav {
-    height: 0;
-    width: 100vw;
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding: 0px;
-    text-align:center;
-  }
-
-  .sidenav a {
-    padding: 8px 8px;
-    text-decoration: none;
-    font-size: 40px;
-    color: #818181;
-    display: block;
-    line-height: 10vh;
-    transition: 0.2s;
-  }
-
-  .sidenav a:hover{
-    color: #f1f1f1;
-  }
-
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 99;
 }
