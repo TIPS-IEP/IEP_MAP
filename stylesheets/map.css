@@ -1,0 +1,218 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: rgb(255, 255, 255) !important;
+    font:16px/1.6 Arial,  sans-serif;
+}
+body, html {
+    height: 100%;
+}
+#mapRow{
+    padding: 1% !important;
+}
+#mapRow{
+    height: 500px;
+    margin-top: 100px;
+}
+#map {
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+    display: inline-block;
+    height: 100%;
+
+}
+.alumniName{
+    padding-left: 20px !important;
+    padding-right: 0px !important;
+    display: flex;
+    align-items: center;
+}
+.arrowDown{
+    padding-left: 10px !important;
+    padding-right: 0px !important;
+    align-items: center;
+    display: flex;
+}
+.alumniBlock:hover{
+    cursor: pointer;
+}
+.alumniBlock:hover .alumniName{
+    color: #fa6565;
+}
+.alumniBlock:hover .arrowDown{
+    padding-left: 14px !important;
+
+}
+/* map side show*/
+.alumniList {
+    height: auto;
+    width: 0; /* 0 width - change this with JavaScript */
+    z-index: 1; /* Stay on top */
+    left: 0;
+    background-color: rgb(255, 255, 255); /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    display: none;
+}
+
+/* The sidepanel links */
+.alumniList a {
+    width:20px;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+/* When you mouse over the navigation links, change their color */
+.alumniList a:hover {
+    color: #f1f1f1;
+}
+/* Position and style the close button (top right corner) */
+.alumniList .closebtn {
+    position: relative;
+    top: 0px;
+    left: 230px;
+    font-size: 36px;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .alumniList {padding-top: 15px;}
+    .alumniList a {font-size: 18px;}
+  }
+
+.alumniBlock{
+    color: rgb(0, 0, 0);
+    opacity:0;
+    transform-origin: top center;
+    display:none;
+}
+
+@keyframes rotateX {
+    0% {
+      opacity: 0;
+      transform: rotateX(-90deg);
+    }
+    50% {
+      transform: rotateX(-20deg);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateX(0deg);
+    }
+}
+
+#allUniversity{
+    height: 100%;
+    display: inline-block;
+    overflow: scroll;
+    background: #ffffff;
+    color: #000000;
+    transition: 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif !important;
+}
+.universityBlock{
+    padding: 1%;
+    cursor: pointer;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    background: rgb(245, 245, 245);   
+}
+.universityBlock:hover{
+    color: rgb(255,106,106);
+}
+
+#alumniProfile{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    min-height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    display:none;
+    padding:2%;
+}
+@keyframes onloadSlideIn{
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+#closeProfile{
+    position: absolute;
+    margin-top:30px;
+    margin-left:1%;
+    width: 30px;
+    height: 30px;
+}
+#closeProfile:hover{
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+}
+.card-body{
+    padding: 1% !important;
+}
+.miniCard {
+    padding: 10px !important;
+    background-color: rgb(247, 247, 247) !important;
+    transition: 0.3s;
+}
+
+.mini{
+    border: none !important;
+    margin-top: 11px;
+}
+
+.card-title {
+    text-align: center;
+}
+#profileTitle {
+    margin-top: 25px !important;
+    font-family: proxima-nova,Sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.1em;
+    letter-spacing: 1.4px;
+    margin-bottom: 25px;
+    margin-left: 5px;
+}
+/*Search Bar */
+.wrapper{
+    max-width: 450px;
+    margin: 10px auto;
+}
+.wrapper .search-input{
+    background: #fff;
+    width: 98%;
+    border-radius: 5px;
+    margin-left:1%;
+    box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
+}
+.search-input input{
+    height: 55px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 0 15px 0 15px;
+    font-size: 18px;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+}
+.search-input.active input{
+    border-radius: 5px 5px 0 0;
+}
+
+#universityNotFound{
+    display: none;
+}
+#universityList{
+    margin-top: 3%;
+    padding:1%;
+    margin-bottom:30px;
+}

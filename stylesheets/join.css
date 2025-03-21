@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  padding:0;
+	margin:0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.customContainer {
+  border-radius: 30px;
+  background-color: rgb(234, 240, 242);
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.63);
+  padding: 10px;
+  margin: 10px;
+}
+
+.customContainer:hover {
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.63);
+}
+
+.innerContainer {
+  text-align: center;
+  border-radius: 13px;
+  background-color: rgb(234, 240, 242);
+  padding: 10px;
+  color:rgb(0, 0, 0);
+  width: 100%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column-a {
+  float: left;
+  width: 23.4%;
+  margin: 0.8%;
+  margin-bottom: 1px;
+  padding: 0 8px;
+}
+
+.newFeatures{
+  color:rgb(0, 0, 0);
+  background-color:rgb(255, 255, 255);
+}
+
+.about-section {
+  padding: 5% 5%; 
+  text-align: center;
+  background-color:rgb(0, 0, 0);
+  background-image: linear-gradient(rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.363) 68%, rgba(0, 0, 0, 0.192) 85%, rgba(0, 0, 0, 0) 100%), url("/images/hero/waves.jpg");
+  color: rgb(255, 255, 255);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100%;
+}
+
+.container {
+  padding: 0 16px;
+  color: rgb(0, 0, 0);
+}
+
+.featuresContainer {
+  text-align: center;
+}
+
+.featuresContainer .container-fluid{
+  margin-top: 10px;
+}
+
+.featuresContainer h3 {
+  margin-top: 30px;
+}
+
+.imageContainer{
+  /* margin-top: 100px; */
+  height: 300px;
+  width: 300px;
+  border: none;
+  align-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.imageContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.mbBlogImageCol{
+  display: none;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#title2{
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+h1, h3, h4, h5{
+  font-weight: 700 !important;
+  letter-spacing: 1.4px!important;
+}
+
+h1 {
+  font-size: 90px !important;
+  line-height: 1.3em!important;
+  text-align: center!important;
+}
+
+h3 {
+  font-size: 50px!important;
+  line-height: 1.1em!important;
+  text-align: left;
+}
+
+h4 {
+  font-size: 43px!important;
+  line-height: 1em!important;
+  margin-top: 1vh!important;
+  margin-bottom: 2vh!important;
+  text-align: left!important;
+}
+
+h5 {
+  font-size: 30px!important;
+  line-height: 1.2em!important;
+  text-align: left!important;
+}
+
+.hero-link {
+  margin-top: 2vh!important;
+  text-align: left!important;
+  position: absolute!important;
+  /* top: 100%; */
+  left: 0%!important;
+  width: 100%!important;
+  /* transform: translate(-50%, -50%); */
+  /* text-decoration: dashed; */
+  color: rgb(201, 106, 106) !important;
+}
+
+
+@media screen and (max-width: 20000px) {
+  .pcsidenav {
+    display: block!important;
+  }
+  .mbsidenav{
+    display: none!important;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .medium2{
+    font-size: 40px;
+  }
+  .column-a, input[type=submit] {
+    width: 100%!important;
+    margin-top: 0;
+  }
+  .about-section {
+    height: 500vw;
+  }
+  .big2 {
+    font-size: 200%;
+    text-align: left;
+  }
+  /* .big {
+    font-size: 200%;
+    text-align: center;
+  } */
+  .paragraph2{
+    line-height: 120%;
+    font-size: 110%;
+    text-align: left;
+  }
+  .hero-image1{
+    height: 120vh;
+    width: 100%!important;
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0) 10%), url("/images/hero/newcover14mb.png");
+  }
+  .hero-image2, .hero-image3{
+    height: 60%;
+  }
+
+  .hero-text3, .hero-text2 {
+    width: 90%;
+  }
+  .pcBlogImageCol{
+    display: none;
+  }
+  h5 {
+    font-size: 26px;
+  }
+}
+
+.container {
+  padding: 0 16px;
+  color: rgb(0, 0, 0);
+}
+
+.alignCenter {
+  text-align: center !important;
+}

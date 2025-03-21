@@ -1,0 +1,41 @@
+body{
+  margin-left:30%;
+  margin-top: 30%;
+}
+
+@keyframes scaling{
+  0%, 100%{
+    transform: scale(0.2);
+    background-color: #30FFB7;
+  }
+  40%{
+    transform: scale(1);
+    background-color: #07DEFF;
+  }
+  50%{
+    transform: scale(1);
+    background-color: #0761FF;
+  }
+}
+
+.loadingDot {
+    height: 40px;
+    width: 40px;
+    border-radius:50%;
+    transform: scale(0);
+    background-color:red;
+    animation: scaling 1.5s ease-in-out infinite;
+    display: inline-block;
+    margin:.5rem;
+}
+
+.loadingDot:nth-child(1){
+  animation-delay:0.075s;
+}
+.loadingDot:nth-child(2){
+  animation-delay:0.25s;
+}
+.loadingDot:nth-child(3){
+  animation-delay:0.425s;
+}
+

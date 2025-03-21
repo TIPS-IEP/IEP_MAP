@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+body{
+    background-color: rgb(234, 240, 242) !important;
+}
+
+.row{
+   padding-top: 170px; 
+}
+
+#errorPic{
+    width: 100%;
+    height: auto;
+}
+
+.errorContainer h1, h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    letter-spacing: 1.4px;
+}
+
+.errorContainer{
+    text-align: center;
+}
+
+#buttonText{
+    font-family: 'Lato', sans-serif;
+}
+
+

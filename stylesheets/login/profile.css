@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+body {
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.bg {
+    width: 100%;
+    background-color: rgb(255, 255, 255)
+}
+
+.row {
+    width: 100%;
+}
+
+#image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.btn {
+    width: 90%;
+}
+
+#storyboard{
+    background-color: rgb(255, 255, 255) !important;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+}
+
+.profileButton{
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.miniCard {
+    padding: 10px !important;
+    background-color: rgb(247, 247, 247) !important;
+    transition: 0.3s;
+}
+
+.mini{
+    border: none !important;
+    margin-top: 10px;
+}
+
+.miniCard:hover{
+    background-color: rgb(230, 230, 230) !important;
+}
+
+#profileImageContainer{
+    border-radius: 15px;
+    height: 350px;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#profileImageContainer h4{
+    font-weight: 700;
+    text-align: center;
+}
+
+#blogContainer{
+    height: 150px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#blogContainer h4{
+    font-weight: 700;
+    text-align: center;
+}
+
+#status {
+    margin-top: 10px;
+}
+
+/* #update {
+    margin-top: 10px;
+} */
+
+#phoneLogOut{
+    margin-top: 10px;
+    display: none;
+}
+
+#phoneBlog {
+    display: none;
+}
+
+#profileTitle {
+    font-family: proxima-nova,Sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    letter-spacing: 1.4px;
+}
+
+.hero-image1 {
+  background-image: url("/images/hero/cover1.jpg");
+  background-size: cover;
+}
+
+
+@media only screen and (max-width: 1182px) {
+    #profileImageContainer {
+        display: none;
+    }
+
+    #blogContainer {
+        display: none;
+    }
+
+    #phoneLogOut {
+        display: block;
+    }
+    
+    #storyboard {
+        margin-left: 30px;
+    }
+
+    #phoneBlog {
+        display: block;
+    }
+
+    #profileCol{
+        display: none;
+    }
+}
+

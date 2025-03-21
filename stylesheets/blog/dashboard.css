@@ -1,0 +1,67 @@
+body {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.eachBlog{
+  margin-top: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.notVerified {
+  color: red !important;
+}
+
+.verified {
+  color: rgb(53, 233, 30); 
+}
+
+.deleteButton {
+  width: 60px;
+  height: 30px;
+  /* margin-left: 30px; */
+  text-align: center;
+  padding: 3px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgb(214, 219, 221);
+}
+
+.verifyButton {
+  width: 60px;
+  height: 30px;
+  margin-top: 5px;
+  text-align: center;
+  padding: 3px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgb(168, 228, 160);
+}
+
+.unverifyButton {
+  width: 60px;
+  height: 30px;
+  margin-top: 5px;
+  text-align: center;
+  padding: 3px;
+  border-radius: 3px;
+  border: none;
+  font-size: 13px;
+  background-color: rgb(224, 121, 103);
+}
+
+#dashboardTitle {
+  font-weight: 700 !important;
+  letter-spacing: 1.4px;
+  font-size: 90px;
+  line-height: 1.3em;
+  text-align: center;
+}

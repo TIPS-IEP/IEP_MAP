@@ -1,0 +1,186 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: rgb(255, 255, 255)!important;
+  font-family: proxima-nova,Sans-serif;
+}
+
+strong {
+  color: rgb(255, 179, 37)!important;
+  font-weight: 400 !important;
+}
+
+.url{
+  color: rgb(255, 179, 37)!important; 
+  font-size: 20px;
+}
+
+.paragraph{
+  font-size: 20px;
+}
+
+.emphasize{
+  font-weight: 700;
+}
+
+#navbar {
+  background: rgb(29, 29, 29);
+}
+
+#title{
+  padding-top: 100px;
+}
+
+#title h1, h3, h5 {
+  font-weight: 700 !important;
+  letter-spacing: 1.4px;
+}
+
+#title h1 {
+  font-size: 90px;
+  line-height: 1.3em;
+  text-align: center;
+}
+
+#title p {
+  font-size: 20px;
+  line-height: 1.4em;
+  letter-spacing: 1.4px;
+  text-align: left;
+}
+
+.toggle {
+  display: none;
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+@keyframes growDown {
+  0% {
+    transform: scaleY(0)
+  }
+  80% {
+    transform: scaleY(1.1)
+  }
+  100% {
+    transform: scaleY(1)
+  }
+}
+
+.listener {
+  cursor: pointer;
+}
+
+.link {
+  list-style: square outside url("/images/icons/caret-right-fill.svg");
+  font-size: 20px;
+}
+
+.notLink {
+  list-style: disc outside none;
+  font-size: 20px;
+}
+
+li {
+  margin: 10px 0;
+}
+
+.path {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 15px !important;
+}
+
+.test {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.menu{
+  transition: 0.3s;
+  position:fixed;
+  height: fit-content;
+  width: 10vw;
+  top: 40%;
+  left: 0%;
+  background-color: rgba(65, 65, 65);
+  opacity: 0.95;
+  color: white;
+  padding-right: 10px;
+  border-radius: 0 10px 10px 0px;
+}
+
+.closeMenu{
+  left: -10vw;
+}
+
+.menuOpen{
+  transition: 0.3s;
+  position:fixed;
+  height: fit-content;
+  width: 50px;
+  top: 47.5%;
+  left: -10%;
+  opacity: 0.95;
+  color: white;
+  padding-right: 10px;
+}
+
+.openMenu{
+  left: 0%;
+}
+
+.menuOpenImg{
+  width: 100%;
+  height: auto;
+}
+.menuTitle{
+  margin-bottom: 10px;
+  text-align: center;
+  text-decoration: underline;
+  width: 100%;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.linkContainer{
+  height: fit-content;
+  width: auto;
+  margin-bottom: 40px;
+}
+.menuLink{
+  align-self: center;
+  transition: 0.5s;
+}
+.menuLink:hover{
+  text-decoration: none;
+}
+.menuDiv{
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: white !important;
+}
+
+.menuDiv:hover{
+  color: rgb(255, 179, 37)!important; 
+  transition: 0.2s;
+}
+
+.buttonContainer{
+  margin-top: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.closeButton{
+  width: fit-content;
+  font-size: 22px;
+  transform: scaleX(1.15);
+}
+
+.closeButton:hover{
+  cursor: pointer !important;
+}

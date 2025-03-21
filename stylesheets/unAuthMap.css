@@ -1,0 +1,31 @@
+.bodyContainer{
+    width: 100vw !important;
+}
+.title{
+    width: 100vh;
+    margin-top: 120px;
+    font-size: 90px;
+    line-height: 1.3em;
+    text-align: center;
+    font-weight: 700 !important;
+    letter-spacing: 1.4px;
+
+}
+.uniImageDiv{
+    display: flex;
+    padding: 40px !important;
+    justify-items: center;
+    align-items: center;
+}
+.uniImage{
+    width: 100%;
+    height: auto;
+}
+
+.mapContent{
+    font-size: 24px;
+    line-height: 1.3em;
+    text-align: center;
+    font-weight: 300 !important;
+    letter-spacing: 1.4px;
+}

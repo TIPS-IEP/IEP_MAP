@@ -1,0 +1,164 @@
+body {
+  background: rgb(255, 255, 255)!important;
+  font-family: proxima-nova,Sans-serif;
+}
+
+#title{
+  padding-top: 100px;
+}
+
+#title h1 {
+  font-size: 90px;
+  line-height: 1.3em;
+  text-align: center;
+  font-weight: 700 !important;
+  letter-spacing: 1.4px;
+}
+
+#title p {
+  font-size: 20px;
+  line-height: 1.4em;
+  letter-spacing: 1.4px;
+  text-align: left;
+}
+
+#title p a {
+  color: rgb(255, 61, 61);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#contactPic {
+  border-radius: 15px;
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+}
+
+input[type=text], select, textarea {
+  border-radius: 15px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #f3c441;
+  border-radius: 15px;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #0082fc;
+}
+
+#inputRow {
+  padding-top: 20px;
+}
+
+#inputForm {
+  padding-top: 10px;
+}
+
+#subjectLabel {
+  padding-top: 0px;
+}
+
+@media screen and (max-width: 650px) {
+  #title h1 {
+    font-size: 200%;
+  }
+}
+
+.container {
+  padding: 0 16px;
+  color: rgb(0, 0, 0);
+}
+
+.featuresContainer {
+  text-align: center;
+}
+
+.featuresContainer .container-fluid{
+  margin-top: 100px;
+}
+
+.featuresContainer h3 {
+  margin-top: 30px;
+}
+
+.imageContainer{
+  /* margin-top: 100px; */
+  height: 300px;
+  width: 300px;
+  border: none;
+  align-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.imageContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#title{
+  margin-top: 80px;
+  padding-top: 30px;
+}
+
+#title h1, h3, h4, h5{
+  font-weight: 700 !important;
+  letter-spacing: 1.4px;
+}
+
+#title h1 {
+  font-size: 90px;
+  line-height: 1.3em;
+  text-align: center;
+}
+
+#title h3 {
+  font-size: 50px;
+  line-height: 1.1em;
+  text-align: left;
+}
+
+#title h4 {
+  font-size: 43px;
+  line-height: 1em;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+  text-align: left;
+}
+
+#title h5 {
+  font-size: 30px;
+  line-height: 1.2em;
+  text-align: left;
+}
+
+.hero-link {
+  margin-top: 2vh;
+  text-align: left;
+  position: absolute;
+  /* top: 100%; */
+  left: 0%;
+  width: 100%;
+  /* transform: translate(-50%, -50%); */
+  /* text-decoration: dashed; */
+  color: rgb(201, 106, 106) !important;
+}
