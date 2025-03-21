@@ -1,0 +1,5 @@
+name: GitHub Pages Config
+baseurl: ""
+url: "https://tips-iep.github.io/IEP_MAP"
+timezone: UTC
+encoding: utf-8

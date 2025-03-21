@@ -1,0 +1,110 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Create static site
+        run: |
+          mkdir -p dist
+          cp -R public/* dist/
+
+          # Create a simple index.html in the dist folder
+          cat > dist/index.html << 'EOL'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>IEP Alumni Association</title>
+            <link rel="stylesheet" href="stylesheets/index.css">
+            <link rel="stylesheet" href="stylesheets/nav.css">
+            <link rel="stylesheet" href="stylesheets/footer.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+            <link rel="icon" type="image/png" href="/images/icons/favicon.png">
+          </head>
+          <body id="main">
+            <div class="hero-image1"></div>
+            <div id="vision"></div>
+            <div class="hero-image2">
+              <div class="hero-text2">
+                <h1 class="big2 fadeInUpward">OUR VISION</h1>
+                <h3 class="paragraph2 line-height fadeInUpward">IEP Alumni Association aims to build a bridge between the school, students, and alumni. Through these partnerships, we leverage the resources of our schools and the experience of our alumni to elevate our students' successes in school, university, and beyond.</h3>
+              </div>
+              <div class="hero-button">
+                <div class="fadeInUpward">
+                  <a class="btn btn-outline-light" href="#" role="button">About Us</a>
+                </div>
+              </div>
+            </div>
+            <div id="mission"></div>
+            <div class="hero-image3">
+              <div class="hero-text3">
+                <h1 class="big2 fadeInUpward">OUR MISSION</h1>
+                <h3 class="paragraph2 line-height fadeInUpward">IEP Alumni Association utilizes student infographics and distribution maps, detailed guides and articles, experience sharing sessions, and annual events to promote and leverage the value of International Education Programs; assemble current students and alumni from various universities, industries, and countries; and create an international network platform.</h3>
+              </div>
+              <div class="hero-button">
+                <div class="fadeInUpward">
+                  <a class="btn btn-outline-light" href="#" role="button">Our Guides</a>
+                </div>
+              </div>
+            </div>
+            <div id="features"></div>
+            <div class="about-section">
+              <h1 class="big2 fadeInUpward" style="text-align:center">OUR FEATURES</h1>
+              <br>
+              <div class="row overflowHidden">
+                <div class="column-a fadeInUpward">
+                  <div class="container customContainer zoom">
+                    <a href="#">
+                      <p><br></p>
+                      <img src="/images/icons/profiles.png" alt="person icon" style="width:75%" class="center">
+                      <p></p>
+                      <div class="innerContainer">
+                        <h1 class="medium2" style="text-align:center">Student Profiles</h1>
+                      </div>
+                      <p></p>
+                    </a>
+                  </div>
+                </div>
+                <!-- More features here -->
+              </div>
+            </div>
+            <div id="contactus"></div>
+            <footer>
+              <p>&copy; 2023 IEP Alumni Association. All rights reserved.</p>
+            </footer>
+            <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+            <script src="javascripts/fadeIn.js"></script>
+          </body>
+          </html>
+          EOL
+
+          # Create a GitHub Pages CNAME file if needed (optional)
+          # echo "yourdomain.com" > dist/CNAME
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages
