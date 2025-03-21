@@ -23,8 +23,17 @@ jobs:
 
       - name: Create static site
         run: |
+          # Ensure dist directory exists
           mkdir -p dist
+
+          # Copy all static assets
           cp -R public/* dist/
+
+          # Ensure key directories exist
+          mkdir -p dist/images/icons
+          mkdir -p dist/images/background
+          mkdir -p dist/stylesheets
+          mkdir -p dist/javascripts
 
           # Create a simple index.html in the dist folder
           cat > dist/index.html << 'EOL'
@@ -34,12 +43,101 @@ jobs:
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>IEP Alumni Association</title>
+            <base href="/IEP_MAP/">
             <link rel="stylesheet" href="stylesheets/index.css">
             <link rel="stylesheet" href="stylesheets/nav.css">
             <link rel="stylesheet" href="stylesheets/footer.css">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
             <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-            <link rel="icon" type="image/png" href="/images/icons/favicon.png">
+            <link rel="icon" type="image/png" href="images/icons/favicon.png">
+            <style>
+              /* Additional CSS for GitHub Pages */
+              .hero-image1, .hero-image2, .hero-image3 {
+                background-size: cover;
+                background-position: center;
+                min-height: 400px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                color: white;
+                margin-bottom: 50px;
+              }
+              .hero-image1 {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background/map.jpg');
+              }
+              .hero-image2 {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background/vision.jpg');
+              }
+              .hero-image3 {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background/mission.jpg');
+              }
+              .big2 {
+                font-size: 3rem;
+                font-weight: bold;
+                margin-bottom: 1rem;
+              }
+              .paragraph2 {
+                font-size: 1.2rem;
+                max-width: 800px;
+                margin: 0 auto;
+              }
+              .about-section {
+                padding: 50px;
+                text-align: center;
+                background-color: #f8f9fa;
+              }
+              .row {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+              }
+              .column-a {
+                flex: 25%;
+                max-width: 25%;
+                padding: 0 15px;
+                margin-bottom: 30px;
+              }
+              .customContainer {
+                background-color: white;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                transition: transform 0.3s;
+              }
+              .customContainer:hover {
+                transform: scale(1.05);
+              }
+              .medium2 {
+                font-size: 1.5rem;
+              }
+              .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+              }
+              .fadeInUpward {
+                animation: fadeInUp 1s ease-out;
+              }
+              @keyframes fadeInUp {
+                from {
+                  opacity: 0;
+                  transform: translateY(20px);
+                }
+                to {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+              }
+              footer {
+                background-color: #343a40;
+                color: white;
+                text-align: center;
+                padding: 20px;
+                margin-top: 50px;
+              }
+            </style>
           </head>
           <body id="main">
             <div class="hero-image1"></div>
@@ -76,7 +174,7 @@ jobs:
                   <div class="container customContainer zoom">
                     <a href="#">
                       <p><br></p>
-                      <img src="/images/icons/profiles.png" alt="person icon" style="width:75%" class="center">
+                      <img src="images/icons/profiles.png" alt="person icon" style="width:75%" class="center">
                       <p></p>
                       <div class="innerContainer">
                         <h1 class="medium2" style="text-align:center">Student Profiles</h1>
@@ -85,7 +183,45 @@ jobs:
                     </a>
                   </div>
                 </div>
-                <!-- More features here -->
+                <div class="column-a fadeInUpward">
+                  <div class="container customContainer zoom">
+                    <a href="#">
+                      <p><br></p>
+                      <img src="images/icons/board.png" alt="3 ppl icon" style="width:75%" class="center">
+                      <p></p>
+                      <div class="innerContainer">
+                        <h1 class="medium2" style="text-align:center">Advisory Board</h1>
+                      </div>
+                      <p></p>
+                    </a>
+                  </div>
+                </div>
+                <div class="column-a fadeInUpward">
+                  <div class="container customContainer zoom">
+                    <a href="#">
+                      <p><br></p>
+                      <img src="images/icons/sharing.png" alt="seminar icon" style="width:75%" class="center">
+                      <p></p>
+                      <div class="innerContainer">
+                        <h1 class="medium2" style="text-align:center">Experience Sharing</h1>
+                      </div>
+                      <p></p>
+                    </a>
+                  </div>
+                </div>
+                <div class="column-a fadeInUpward">
+                  <div class="container customContainer zoom">
+                    <a href="#">
+                      <p><br></p>
+                      <img src="images/icons/events.png" alt="10 ppl icon" style="width:75%" class="center">
+                      <p></p>
+                      <div class="innerContainer">
+                        <h1 class="medium2" style="text-align:center">Annual Events</h1>
+                      </div>
+                      <p></p>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div id="contactus"></div>
@@ -95,13 +231,18 @@ jobs:
             <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-            <script src="javascripts/fadeIn.js"></script>
+            <script>
+              // Simple fade in animation
+              document.addEventListener('DOMContentLoaded', function() {
+                const fadeElements = document.querySelectorAll('.fadeInUpward');
+                fadeElements.forEach(function(element) {
+                  element.style.opacity = '1';
+                });
+              });
+            </script>
           </body>
           </html>
           EOL
-
-          # Create a GitHub Pages CNAME file if needed (optional)
-          # echo "yourdomain.com" > dist/CNAME
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
