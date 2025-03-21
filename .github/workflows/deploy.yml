@@ -29,13 +29,7 @@ jobs:
           # Copy all static assets
           cp -R public/* dist/
 
-          # Ensure key directories exist
-          mkdir -p dist/images/icons
-          mkdir -p dist/images/background
-          mkdir -p dist/stylesheets
-          mkdir -p dist/javascripts
-
-          # Create a simple index.html in the dist folder
+          # Create HTML for index page
           cat > dist/index.html << 'EOL'
           <!DOCTYPE html>
           <html lang="en">
@@ -44,102 +38,90 @@ jobs:
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>IEP Alumni Association</title>
             <base href="/IEP_MAP/">
+            <!-- Stylesheets -->
             <link rel="stylesheet" href="stylesheets/index.css">
             <link rel="stylesheet" href="stylesheets/nav.css">
             <link rel="stylesheet" href="stylesheets/footer.css">
+            <link rel="stylesheet" href="stylesheets/contact.css">
+            <link rel="stylesheet" href="stylesheets/sidenav.css">
+            <link rel="stylesheet" href="stylesheets/common/appleAnimation.css">
+            <link rel="stylesheet" href="stylesheets/common/loadingDots.css">
+            <link rel="stylesheet" href="stylesheets/common/fadeIn.css">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
             <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
             <link rel="icon" type="image/png" href="images/icons/favicon.png">
-            <style>
-              /* Additional CSS for GitHub Pages */
-              .hero-image1, .hero-image2, .hero-image3 {
-                background-size: cover;
-                background-position: center;
-                min-height: 400px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                color: white;
-                margin-bottom: 50px;
-              }
-              .hero-image1 {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background/map.jpg');
-              }
-              .hero-image2 {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background/vision.jpg');
-              }
-              .hero-image3 {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background/mission.jpg');
-              }
-              .big2 {
-                font-size: 3rem;
-                font-weight: bold;
-                margin-bottom: 1rem;
-              }
-              .paragraph2 {
-                font-size: 1.2rem;
-                max-width: 800px;
-                margin: 0 auto;
-              }
-              .about-section {
-                padding: 50px;
-                text-align: center;
-                background-color: #f8f9fa;
-              }
-              .row {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-              }
-              .column-a {
-                flex: 25%;
-                max-width: 25%;
-                padding: 0 15px;
-                margin-bottom: 30px;
-              }
-              .customContainer {
-                background-color: white;
-                border-radius: 10px;
-                padding: 20px;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-                transition: transform 0.3s;
-              }
-              .customContainer:hover {
-                transform: scale(1.05);
-              }
-              .medium2 {
-                font-size: 1.5rem;
-              }
-              .center {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-              }
-              .fadeInUpward {
-                animation: fadeInUp 1s ease-out;
-              }
-              @keyframes fadeInUp {
-                from {
-                  opacity: 0;
-                  transform: translateY(20px);
-                }
-                to {
-                  opacity: 1;
-                  transform: translateY(0);
-                }
-              }
-              footer {
-                background-color: #343a40;
-                color: white;
-                text-align: center;
-                padding: 20px;
-                margin-top: 50px;
-              }
-            </style>
           </head>
           <body id="main">
+            <!-- Navigation -->
+            <div id="navbar">
+              <div id="spanLogoContainer" class="container">
+                <div id="spanLogo" class="row">
+                  <div class="col-md-3" id="navContainer">
+                    <div class="nav-div">
+                      <img class="nav-logo" src="images/hero/nav-white.png" alt="LOGO" onclick="openNav()" onmousedown="mouseDown()" onmouseup="mouseUp()">
+                    </div>
+                  </div>
+                  <div class="col-md-9" id="logoDiv">
+                    <a id="logoLink" href="index.html">
+                      <img class="logo-image" src="images/logos/TIPS-logo6/cover.png" alt="LOGO">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="mbLogo">
+                <div class="mbSpanLogoDiv nav-div">
+                  <img class="nav-logo" src="images/hero/nav-white.png" alt="LOGO" onclick="openNav()" onmousedown="mouseDown()" onmouseup="mouseUp()">
+                </div>
+                <div class="mbLogoDiv">
+                  <a id="logoLink" href="index.html">
+                    <img class="logo-image" src="images/logos/TIPS-logo6/cover.png" alt="LOGO">
+                  </a>
+                </div>
+              </div>
+              
+              <div id="navbar-right" style="height: 52px !important;">
+                <div class="myDropdown allDropdown" style="">
+                  <a class="dropbtn navOption" id="hide4" href="about.html">About</a>
+                  <div class="dropdown-content all-dropdown-content">
+                    <a href="join.html">Join In!</a>
+                    <a href="contact.html">Contact Us</a>
+                  </div>
+                </div>
+                <div class="myDropdown allDropdown" style="">
+                  <a class="dropbtn navOption" id="hide4" href="guides.html">Guides</a>
+                  <div class="dropdown-content all-dropdown-content">
+                    <a href="wiki.html">Wiki Index</a>
+                    <a href="blog.html">Blog Entries</a>
+                  </div>
+                </div>
+                <div class="myDropdown allDropdown" style="">
+                  <a class="dropbtn navOption" id="hide4" href="iep.html">Wego IEP</a>
+                  <div class="dropdown-content all-dropdown-content">
+                    <a href="about.html">About IEP</a>
+                    <a href="map.html">Student Maps</a>
+                    <a href="events.html">Events</a>
+                  </div>
+                </div>
+                <div class="myDropdown allDropdown" style="">
+                  <a class="dropbtn navOption" id="hide4" href="#login">Login</a>
+                  <div class="dropdown-content all-dropdown-content"></div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Side navigation for mobile -->
+            <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <a href="index.html">Home</a>
+              <a href="about.html">About</a>
+              <a href="guides.html">Guides</a>
+              <a href="map.html">Student Maps</a>
+              <a href="events.html">Events</a>
+              <a href="contact.html">Contact</a>
+            </div>
+            <div id="overlay"></div>
+
+            <!-- Main Content -->
             <div class="hero-image1"></div>
             <div id="vision"></div>
             <div class="hero-image2">
@@ -149,7 +131,7 @@ jobs:
               </div>
               <div class="hero-button">
                 <div class="fadeInUpward">
-                  <a class="btn btn-outline-light" href="#" role="button">About Us</a>
+                  <a class="btn btn-outline-light" href="about.html" role="button">Read More About Us</a>
                 </div>
               </div>
             </div>
@@ -161,7 +143,7 @@ jobs:
               </div>
               <div class="hero-button">
                 <div class="fadeInUpward">
-                  <a class="btn btn-outline-light" href="#" role="button">Our Guides</a>
+                  <a class="btn btn-outline-light" href="guides.html" role="button">Read Our Guides</a>
                 </div>
               </div>
             </div>
@@ -172,7 +154,7 @@ jobs:
               <div class="row overflowHidden">
                 <div class="column-a fadeInUpward">
                   <div class="container customContainer zoom">
-                    <a href="#">
+                    <a href="map.html">
                       <p><br></p>
                       <img src="images/icons/profiles.png" alt="person icon" style="width:75%" class="center">
                       <p></p>
@@ -185,7 +167,7 @@ jobs:
                 </div>
                 <div class="column-a fadeInUpward">
                   <div class="container customContainer zoom">
-                    <a href="#">
+                    <a href="board.html">
                       <p><br></p>
                       <img src="images/icons/board.png" alt="3 ppl icon" style="width:75%" class="center">
                       <p></p>
@@ -198,7 +180,7 @@ jobs:
                 </div>
                 <div class="column-a fadeInUpward">
                   <div class="container customContainer zoom">
-                    <a href="#">
+                    <a href="share.html">
                       <p><br></p>
                       <img src="images/icons/sharing.png" alt="seminar icon" style="width:75%" class="center">
                       <p></p>
@@ -211,7 +193,7 @@ jobs:
                 </div>
                 <div class="column-a fadeInUpward">
                   <div class="container customContainer zoom">
-                    <a href="#">
+                    <a href="events.html">
                       <p><br></p>
                       <img src="images/icons/events.png" alt="10 ppl icon" style="width:75%" class="center">
                       <p></p>
@@ -224,10 +206,68 @@ jobs:
                 </div>
               </div>
             </div>
-            <div id="contactus"></div>
+            
+            <!-- Contact Us Section -->
+            <div id="contactus">
+              <div class="contact-container">
+                <div class="contact-title">
+                  <h2>CONTACT US</h2>
+                </div>
+                <div class="contact-content">
+                  <div class="contact-left">
+                    <p>Have questions or want to get in touch? We'd love to hear from you!</p>
+                    <p>Email: <a href="mailto:info@iepalumni.org">info@iepalumni.org</a></p>
+                  </div>
+                  <div class="contact-right">
+                    <form id="contactForm">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name" disabled>
+                      </div>
+                      <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email" disabled>
+                      </div>
+                      <div class="form-group">
+                        <textarea class="form-control" rows="4" placeholder="Your Message" disabled></textarea>
+                      </div>
+                      <button type="button" class="btn btn-primary" disabled>Contact form unavailable on static site</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Footer -->
             <footer>
-              <p>&copy; 2023 IEP Alumni Association. All rights reserved.</p>
+              <div class="footer-container">
+                <div class="footer-logo">
+                  <img src="images/logos/TIPS-logo6/cover.png" alt="Logo">
+                </div>
+                <div class="footer-links">
+                  <h3>Quick Links</h3>
+                  <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="guides.html">Guides</a></li>
+                    <li><a href="map.html">Student Maps</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+                <div class="footer-social">
+                  <h3>Connect With Us</h3>
+                  <div class="social-icons">
+                    <a href="#"><img src="images/icons/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="images/icons/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="images/icons/linkedin.png" alt="LinkedIn"></a>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-bottom">
+                <p>&copy; 2023 IEP Alumni Association. All rights reserved.</p>
+                <p><small>This is a static version of the site. For full functionality, please visit our main website.</small></p>
+              </div>
             </footer>
+
+            <!-- Scripts -->
             <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -239,9 +279,377 @@ jobs:
                   element.style.opacity = '1';
                 });
               });
+              
+              // Navigation functions
+              function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("overlay").style.display = "block";
+              }
+              
+              function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("overlay").style.display = "none";
+              }
+              
+              function mouseDown() {
+                document.getElementsByClassName("nav-logo")[0].style.opacity = "100%";
+              }
+              
+              function mouseUp() {
+                document.getElementsByClassName("nav-logo")[0].style.opacity = "90%";
+              }
             </script>
           </body>
           </html>
+          EOL
+
+          # Create other placeholder HTML pages
+          for page in about guides map events share board contact join; do
+            cat > dist/${page}.html << EOL
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>${page^} - IEP Alumni Association</title>
+            <base href="/IEP_MAP/">
+            <link rel="stylesheet" href="stylesheets/index.css">
+            <link rel="stylesheet" href="stylesheets/nav.css">
+            <link rel="stylesheet" href="stylesheets/footer.css">
+            <link rel="stylesheet" href="stylesheets/contact.css">
+            <link rel="stylesheet" href="stylesheets/sidenav.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+            <link rel="icon" type="image/png" href="images/icons/favicon.png">
+          </head>
+          <body id="main">
+            <!-- Navigation -->
+            <div id="navbar">
+              <div id="spanLogoContainer" class="container">
+                <div id="spanLogo" class="row">
+                  <div class="col-md-3" id="navContainer">
+                    <div class="nav-div">
+                      <img class="nav-logo" src="images/hero/nav-white.png" alt="LOGO" onclick="openNav()" onmousedown="mouseDown()" onmouseup="mouseUp()">
+                    </div>
+                  </div>
+                  <div class="col-md-9" id="logoDiv">
+                    <a id="logoLink" href="index.html">
+                      <img class="logo-image" src="images/logos/TIPS-logo6/cover.png" alt="LOGO">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="mbLogo">
+                <div class="mbSpanLogoDiv nav-div">
+                  <img class="nav-logo" src="images/hero/nav-white.png" alt="LOGO" onclick="openNav()" onmousedown="mouseDown()" onmouseup="mouseUp()">
+                </div>
+                <div class="mbLogoDiv">
+                  <a id="logoLink" href="index.html">
+                    <img class="logo-image" src="images/logos/TIPS-logo6/cover.png" alt="LOGO">
+                  </a>
+                </div>
+              </div>
+              
+              <div id="navbar-right" style="height: 52px !important;">
+                <div class="myDropdown allDropdown" style="">
+                  <a class="dropbtn navOption" id="hide4" href="about.html">About</a>
+                  <div class="dropdown-content all-dropdown-content">
+                    <a href="join.html">Join In!</a>
+                    <a href="contact.html">Contact Us</a>
+                  </div>
+                </div>
+                <div class="myDropdown allDropdown" style="">
+                  <a class="dropbtn navOption" id="hide4" href="guides.html">Guides</a>
+                  <div class="dropdown-content all-dropdown-content">
+                    <a href="wiki.html">Wiki Index</a>
+                    <a href="blog.html">Blog Entries</a>
+                  </div>
+                </div>
+                <div class="myDropdown allDropdown" style="">
+                  <a class="dropbtn navOption" id="hide4" href="iep.html">Wego IEP</a>
+                  <div class="dropdown-content all-dropdown-content">
+                    <a href="about.html">About IEP</a>
+                    <a href="map.html">Student Maps</a>
+                    <a href="events.html">Events</a>
+                  </div>
+                </div>
+                <div class="myDropdown allDropdown" style="">
+                  <a class="dropbtn navOption" id="hide4" href="#login">Login</a>
+                  <div class="dropdown-content all-dropdown-content"></div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Side navigation for mobile -->
+            <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <a href="index.html">Home</a>
+              <a href="about.html">About</a>
+              <a href="guides.html">Guides</a>
+              <a href="map.html">Student Maps</a>
+              <a href="events.html">Events</a>
+              <a href="contact.html">Contact</a>
+            </div>
+            <div id="overlay"></div>
+
+            <!-- Main Content -->
+            <div class="container" style="margin-top: 150px; min-height: 500px;">
+              <div class="row">
+                <div class="col-12">
+                  <h1 class="text-center">${page^} Page</h1>
+                  <p class="text-center">This is a static version of the ${page^} page.</p>
+                  <p class="text-center">The dynamic content from the original website is not available here.</p>
+                  <p class="text-center">For the full experience, please deploy the application to a server that supports Node.js/Express.</p>
+                  <div class="text-center mt-5">
+                    <a href="index.html" class="btn btn-primary">Return Home</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Footer -->
+            <footer>
+              <div class="footer-container">
+                <div class="footer-logo">
+                  <img src="images/logos/TIPS-logo6/cover.png" alt="Logo">
+                </div>
+                <div class="footer-links">
+                  <h3>Quick Links</h3>
+                  <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="guides.html">Guides</a></li>
+                    <li><a href="map.html">Student Maps</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+                <div class="footer-social">
+                  <h3>Connect With Us</h3>
+                  <div class="social-icons">
+                    <a href="#"><img src="images/icons/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="images/icons/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="images/icons/linkedin.png" alt="LinkedIn"></a>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-bottom">
+                <p>&copy; 2023 IEP Alumni Association. All rights reserved.</p>
+                <p><small>This is a static version of the site. For full functionality, please visit our main website.</small></p>
+              </div>
+            </footer>
+
+            <!-- Scripts -->
+            <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+            <script>
+              // Navigation functions
+              function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("overlay").style.display = "block";
+              }
+              
+              function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("overlay").style.display = "none";
+              }
+              
+              function mouseDown() {
+                document.getElementsByClassName("nav-logo")[0].style.opacity = "100%";
+              }
+              
+              function mouseUp() {
+                document.getElementsByClassName("nav-logo")[0].style.opacity = "90%";
+              }
+            </script>
+          </body>
+          </html>
+          EOL
+          done
+
+          # Create CSS for missing elements
+          cat > dist/stylesheets/sidenav.css << 'EOL'
+          .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+          }
+
+          .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+          }
+
+          .sidenav a:hover {
+            color: #f1f1f1;
+          }
+
+          .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+          }
+
+          #overlay {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 99;
+          }
+          EOL
+
+          # Create CSS for missing footer elements
+          cat > dist/stylesheets/footer.css << 'EOL'
+          footer {
+            background-color: #1d1d1d;
+            color: white;
+            padding: 40px 0 20px;
+          }
+
+          .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+          }
+
+          .footer-logo img {
+            width: 150px;
+            margin-bottom: 20px;
+          }
+
+          .footer-links h3, .footer-social h3 {
+            color: #ffb325;
+            margin-bottom: 15px;
+          }
+
+          .footer-links ul {
+            list-style: none;
+            padding: 0;
+          }
+
+          .footer-links li {
+            margin-bottom: 10px;
+          }
+
+          .footer-links a {
+            color: white;
+            text-decoration: none;
+          }
+
+          .footer-links a:hover {
+            color: #ffb325;
+          }
+
+          .social-icons {
+            display: flex;
+            gap: 15px;
+          }
+
+          .social-icons img {
+            width: 30px;
+            height: 30px;
+          }
+
+          .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+          }
+
+          @media (max-width: 768px) {
+            .footer-container {
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+            }
+            
+            .footer-logo, .footer-links, .footer-social {
+              margin-bottom: 30px;
+            }
+            
+            .social-icons {
+              justify-content: center;
+            }
+          }
+          EOL
+
+          # Create contact page CSS
+          cat > dist/stylesheets/contact.css << 'EOL'
+          .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+          }
+
+          .contact-title {
+            text-align: center;
+            margin-bottom: 40px;
+          }
+
+          .contact-title h2 {
+            font-size: 2.5rem;
+            color: #333;
+          }
+
+          .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+          }
+
+          .contact-left {
+            flex: 1;
+            min-width: 300px;
+          }
+
+          .contact-right {
+            flex: 2;
+            min-width: 300px;
+          }
+
+          .form-group {
+            margin-bottom: 20px;
+          }
+
+          .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+          }
+
+          textarea.form-control {
+            resize: vertical;
+          }
+
+          @media (max-width: 768px) {
+            .contact-content {
+              flex-direction: column;
+            }
+          }
           EOL
 
       - name: Deploy
